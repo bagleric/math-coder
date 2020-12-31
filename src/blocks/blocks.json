@@ -1,0 +1,61 @@
+{
+    "controls_repeat_ext": {
+        "type": "controls_repeat",
+        "message0": "%{BKY_CONTROLS_REPEAT_TITLE}",
+        "args0": [
+            {
+                "type": "field_number",
+                "name": "TIMES",
+                "value": 5,
+                "min": 0,
+                "precision": 1
+            }
+        ],
+        "message1": "%{BKY_CONTROLS_REPEAT_INPUT_DO} %1",
+        "args1": [
+            {
+                "type": "input_statement",
+                "name": "DO"
+            }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "style": "loop_blocks",
+        "tooltip": "%{BKY_CONTROLS_REPEAT_TOOLTIP}",
+        "helpUrl": "%{BKY_CONTROLS_REPEAT_HELPURL}"
+    },
+    "draw_shape_circle": {
+        "type": "draw_shape_circle",
+        "message0": "Draw Circle",
+        "inputsInline": false,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 270,
+        "tooltip": "This block will draw one circle",
+        "helpUrl": ""
+    },
+    "repeat_block": {
+        "type": "repeat_block",
+        "message0": "repeat %1 times %2 %3",
+        "args0": [
+            {
+                "type": "field_number",
+                "name": "NAME",
+                "value": 0
+            },
+            {
+                "type": "input_dummy"
+            },
+            {
+                "type": "input_statement",
+                "name": "NAME"
+            }
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 105,
+        "tooltip": "Use this block to draw a circle",
+        "helpUrl": ""
+    }
+}

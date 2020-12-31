@@ -25,25 +25,26 @@ const routes = [
     },
     component: () =>
     import(/* webpackChunkName: "module/pre-activity" */ '../views/PreActivity.view.vue')
+  },
+  {
+    name: 'Activity',
+    path: '/modules/:moduleId/activity/:activityNum',
+    props: (route) => {
+      let activityNum = Number.parseInt(route.params.activityNum, 10)
+      // if (Number.isNaN(activityNum)) {
+      //   activityNum = 0;
+      // }
+      return {
+        moduleId: route.params.moduleId,
+        activityNum
+      }
+    },
+    meta: {
+      breadcrumb: 'Activity'
+    },
+    component: () =>
+      import(/* webpackChunkName: "module/activity" */ '../views/Activity.view.vue')
   }
-  // {
-  //   name: "Activity",
-  //   path: "/modules/:moduleId/activity/:activityNum",
-  //   props: (route) => {
-  //     let activityNum = Number.parseInt(route.params.activityNum, 10)
-  //     // if (Number.isNaN(activityNum)) {
-  //     //   activityNum = 0;
-  //     // }
-  //     return {
-  //       moduleId: route.params.moduleId,
-  //       activityNum
-  //     };
-  //   },
-  //   meta: {
-  //     breadcrumb: "Activity"
-  //   }, component: () =>
-  //     import(/* webpackChunkName: "module/activity" */ "../views/Activity.view.vue")
-  // },
   // {
   // name: "PostActivity",
   //   path: "/modules/:moduleId/post-activity",

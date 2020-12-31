@@ -10,11 +10,25 @@ import 'vuetify/dist/vuetify.min.css'
 // import VueSanitize from "vue-sanitize";
 import VueFormulate from '@braid/vue-formulate'
 import '@braid/vue-formulate/dist/snow.min.css'
+import Define from '@/components/Define.component.vue'
 
 // Vue.use(VueSanitize);
 Vue.use(VueFormulate)
 
 Vue.config.productionTip = false
+
+// Add un-imported components to ignore list to prevent warnings.
+Vue.config.ignoredElements = [
+  'field',
+  'block',
+  'category',
+  'xml',
+  'mutation',
+  'value',
+  'sep'
+]
+
+Vue.component('Define', Define)
 
 /* eslint-disable no-new */
 new Vue({
