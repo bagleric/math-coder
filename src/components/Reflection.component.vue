@@ -7,11 +7,11 @@
       <AppRenderHtml :html="c_reflection"></AppRenderHtml>
     </div>
     <div class="controls">
-      <v-btn class="previous" text v-show="iter != 0" @click="decrementIter()">
+      <v-btn class="previous white--text" text v-show="iter != 0" @click="decrementIter()">
         <v-icon>mdi-chevron-left</v-icon>
         Previous
       </v-btn>
-      <v-btn outlined class="next" @click="incrementIter()">
+      <v-btn outlined class="next white--text" @click="incrementIter()">
         <span v-if="iter + 1 < reflections.length">Next</span>
         <span v-else>Done</span>
         <v-icon>mdi-chevron-right</v-icon>
@@ -78,6 +78,7 @@ export default {
   grid-auto-flow: column;
   justify-content: end;
   margin: 0 1em 1em;
+  color:white;
 }
 
 .previous,
