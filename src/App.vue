@@ -1,23 +1,36 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+  <v-app>
+    <v-app-bar app color="white">
+      <AppNavigation class="navigation"></AppNavigation>
+    </v-app-bar>
+    <v-main>
+      <router-view :key="$route.path" />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
+import AppNavigation from '@/components/Navigation.component.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    AppNavigation
+  }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }
 </style>
