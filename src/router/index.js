@@ -15,17 +15,17 @@ const routes = [
     meta: {
       breadcrumb: ''
     }
+  },
+  {
+    name: 'PreActivity',
+    path: '/modules/:moduleId/pre-activity',
+    props: true,
+    meta: {
+      breadcrumb: 'Pre-test'
+    },
+    component: () =>
+    import(/* webpackChunkName: "module/pre-activity" */ '../views/PreActivity.view.vue')
   }
-  // {
-  //   name: "PreActivity",
-  //   path: "/modules/:moduleId/pre-activity",
-  //   props: true,
-  //   meta: {
-  //     breadcrumb: "Pre-test"
-  //   },
-  //   component: () =>
-  //   import(/* webpackChunkName: "module/pre-activity" */ "../views/PreActivity.view.vue")
-  // },
   // {
   //   name: "Activity",
   //   path: "/modules/:moduleId/activity/:activityNum",

@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import vuetify from '@/plugins/vuetify' // path to vuetify export
-// import "./assets/main.scss"
+import '@/assets/main.css'
 import 'vuetify/dist/vuetify.min.css'
 
 // import VueSanitize from "vue-sanitize";

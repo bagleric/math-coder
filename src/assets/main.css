@@ -1,0 +1,6 @@
+
+.multi-column {
+  display: flex;
+  grid-auto-flow: column;
+  gap: 1em;
+}
