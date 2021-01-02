@@ -19,12 +19,14 @@
 </template>
 
 <script>
-import store from '@/forms/module.199e4bb2-04d1-4a95-9965-d74c259e17fc.json'
-import AppForm from '@/components/Form.component.vue'
-import AppTestInstructions from '@/components/TestInstructions.component.vue'
+import store from "@/forms/module.199e4bb2-04d1-4a95-9965-d74c259e17fc.json";
+import AppForm from "@/components/Form.component.vue";
+import AppTestInstructions from "@/components/TestInstructions.component.vue";
+import { STORE_ANSWER_URL } from "@/constants.js";
+import each from "lodash/each";
 
 export default {
-  name: 'PreActivity',
+  name: "PreActivity",
   components: { AppForm, AppTestInstructions },
   props: {
     moduleId: { required: true, type: String }
@@ -33,34 +35,45 @@ export default {
     showInstructions: true
   }),
   computed: {
-    theModule () {
-      let moduleId = this.moduleId
-      let mod = store.find((item) => {
-        return moduleId === item.id
-      })
-      return mod
+    theModule() {
+      let moduleId = this.moduleId;
+      let mod = store.find(item => {
+        return moduleId === item.id;
+      });
+      return mod;
     }
   },
   methods: {
-    processForm () {
-      // TODO: submit this information to the database.
+    answerQuestion(userId, questionId, answer) {
+      this.$http
+        .post(STORE_ANSWER_URL, {
+          user_id: userId,
+          question_id: questionId,
+          value: answer
+        })
+        .then(data => {
+          // console.log(data);
+        });
+    },
+    formComplete(data) {
+      console.log({ data });
+      const userId = this.$store.getters.userId;
+      each(data, (answer, questionId) => {
+        this.answerQuestion(userId, questionId, answer);
+      });
       this.$router.push({
-        name: 'Activity',
+        name: "Activity",
         params: {
           moduleId: this.moduleId,
           activityNum: 0
         }
-      })
+      });
     },
-    formComplete (data) {
-      console.log({ data })
-      this.processForm()
-    },
-    completeInstructions () {
-      this.showInstructions = false
+    completeInstructions() {
+      this.showInstructions = false;
     }
   }
-}
+};
 </script>
 
 <style scoped>

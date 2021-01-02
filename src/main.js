@@ -12,6 +12,34 @@ import VueFormulate from '@braid/vue-formulate'
 import '@braid/vue-formulate/dist/snow.min.css'
 import Define from '@/components/Define.component.vue'
 import axios from 'axios'
+import Vuex from 'vuex'
+import assign from 'lodash/assign'
+
+Vue.use(Vuex)
+
+
+const store = new Vuex.Store({
+  state: {
+    user: {
+      firstName: "",
+      lastName: "",
+      id: 0
+    }
+  },
+  mutations: {
+    updateUser(state, newUser) {
+      assign(state.user, newUser);
+    }
+  },
+  getters: {
+    firstName: state => {
+      return state.user.firstName;
+    },
+    userId: state => {
+      return state.user.id;
+    }
+  }
+})
 
 Vue.prototype.$http = axios
 // Vue.use(VueSanitize);
@@ -36,6 +64,7 @@ Vue.component('Define', Define)
 new Vue({
   el: '#app',
   router,
+  store,
   vuetify,
   components: { App },
   template: '<App/>'

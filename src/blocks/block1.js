@@ -20,20 +20,12 @@ Blockly.JavaScript['repeat_block'] = function (block) {
   let branch = Blockly.JavaScript.statementToCode(block, 'DO')
   branch = Blockly.JavaScript.addLoopTrap(branch, block)
   let code = ''
-  // let loopVar = Blockly.JavaScript.variableDB_.getDistinctName(
-  //     'count', Blockly.VARIABLE_CATEGORY_NAME);
   let endVar = repeats
   if (!repeats.match(/^\w+$/) && !Blockly.isNumber(repeats)) {
     endVar = Blockly.JavaScript.variableDB_.getDistinctName(
       'repeat_end', Blockly.VARIABLE_CATEGORY_NAME)
     code += `let ${endVar} = ${repeats};\n`
   }
-
-  // code += `for (let ${loopVar} = 0;
-  //     ${loopVar} <  ${endVar} ;
-  //     ${loopVar}++) {\n
-  //     ${branch} }\n`;
-
   code += `<div data-val='${endVar}'>`
   for (let i = 0; i < endVar; i++) {
     code += branch
@@ -57,9 +49,3 @@ Blockly.Blocks['repeat_block'] = {
     this.jsonInit(theBlocks.controls_repeat_ext)
   }
 }
-
-// Blockly.JavaScript["repeat_block"] = function (block) {
-//     console.log(block);
-//     console.log(block.inputList);
-//     return `< div > ${ block }</div > `;
-// };
