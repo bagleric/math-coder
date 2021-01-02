@@ -1,9 +1,8 @@
 <template>
-  <v-btn text disabled :to="{ name: 'Home' }" class="app-logo">
-    <span class="math-text">MATH-</span>
-    <span class="code-text">coder</span>
-    <v-icon color="primary"> mdi-home-outline </v-icon>
-  </v-btn>
+  <div class="app-logo">
+    <span class="math-text primary--text">MATH-</span>
+    <span class="code-text primary--text">coder</span>
+  </div>
 </template>
 
 <script>
