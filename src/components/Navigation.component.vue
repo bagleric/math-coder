@@ -5,7 +5,7 @@
       <span>|</span>
       <span>{{ c_location }}</span>
     </div>
-    <v-chip color="primary">{{ c_userName }}</v-chip>
+    <v-chip v-if="c_userName" color="primary">{{ c_userName }}</v-chip>
   </div>
 </template>
 
