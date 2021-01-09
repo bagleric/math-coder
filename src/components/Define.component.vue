@@ -25,52 +25,39 @@
 </template>
 
 <script>
-import store from '@/forms/module.199e4bb2-04d1-4a95-9965-d74c259e17fc.json'
-import AppRenderHtml from '@/components/RenderHtml.component.vue'
+import AppRenderHtml from "@/components/RenderHtml.component.vue";
 export default {
-  name: 'Define',
+  name: "Define",
   components: {
     AppRenderHtml
   },
   props: {
     word: { required: true, type: String }
   },
-  data () {
-    return { dialog: false }
+  data() {
+    return { dialog: false };
   },
   computed: {
-    wordDefinition () {
-      const moduleId = this.$route.params.moduleId
-      const theModule = store.find((item) => {
-        return item.id === moduleId
-      })
-      if (
-        theModule &&
-        theModule['word-definitions'] &&
-        theModule['word-definitions'][this.word]
-      ) {
-        return theModule['word-definitions'][this.word]
-      }
-      return {
-        name: 'Oops',
-        definitionHtml:
-          "Looks like we don't know that word. Ask your teacher for help."
-      }
+    wordDefinition() {
+      return this.$store.getters.getWordDefinition(
+        this.$route.params.moduleId,
+        this.word
+      );
     },
-    name () {
-      return this.wordDefinition.name
+    name() {
+      return this.wordDefinition.name;
     },
-    definitionHtml () {
-      return this.wordDefinition['definition-html']
+    definitionHtml() {
+      return this.wordDefinition.definitionHtml;
     }
   },
-  mounted: function () {
-    this.$nextTick(function () {
+  mounted: function() {
+    this.$nextTick(function() {
       // Code that will run only after the
       // entire view has been rendered
-    })
+    });
   }
-}
+};
 </script>
 
 <style scoped>

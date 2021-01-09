@@ -9,12 +9,13 @@
       <v-card-title>Navigation</v-card-title>
       <v-list nav dense>
         <v-list-item-group>
-          <v-list-item>
-            <v-list-item-title>Bar</v-list-item-title>
+          <v-list-item :to="{ name: 'Hello' }">
+            <v-list-item-title>Hello</v-list-item-title>
           </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>Fizz</v-list-item-title>
+        </v-list-item-group>
+        <v-list-item-group>
+          <v-list-item :to="{ name: 'Hello' }">
+            <v-list-item-title>Hello</v-list-item-title>
           </v-list-item>
 
           <v-list-item>

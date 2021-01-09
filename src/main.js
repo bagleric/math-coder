@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import vuetify from '@/plugins/vuetify' // path to vuetify export
+import store from '@/plugins/store'
 import '@/assets/main.css'
 import 'vuetify/dist/vuetify.min.css'
 
@@ -12,41 +13,7 @@ import VueFormulate from '@braid/vue-formulate'
 import '@braid/vue-formulate/dist/snow.min.css'
 import Define from '@/components/Define.component.vue'
 import axios from 'axios'
-import Vuex from 'vuex'
-import assign from 'lodash/assign'
 
-Vue.use(Vuex)
-
-
-const store = new Vuex.Store({
-  state: {
-    user: {
-      firstName: "",
-      lastName: "",
-      id: 0
-    },
-    isTesting: false
-  },
-  mutations: {
-    updateUser(state, newUser) {
-      assign(state.user, newUser);
-    },
-    toggleIsTesting(state) {
-      state.isTesting = !state.isTesting;
-    }
-  },
-  getters: {
-    firstName: state => {
-      return state.user.firstName;
-    },
-    userId: state => {
-      return state.user.id;
-    },
-    isTesting: state => {
-      return state.isTesting;
-    }
-  }
-})
 
 Vue.prototype.$http = axios
 // Vue.use(VueSanitize);

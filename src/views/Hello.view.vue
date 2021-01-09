@@ -24,6 +24,7 @@
 
 <script>
 import { CREATE_USER_URL } from "@/constants.js";
+
 export default {
   name: "ViewHello",
   components: {},
@@ -40,6 +41,16 @@ export default {
   methods: {
     createUser: function(data) {
       let store = this.$store;
+
+      if (this.$store.getters.isTesting) {
+        const user = {
+          firstName: "TEST",
+          lastName: "USER",
+          id: -1
+        };
+        store.commit("updateUser", user);
+        return Promise.resolve();
+      }
       return this.$http
         .post(CREATE_USER_URL, {
           first_name: data.firstName,

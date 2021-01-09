@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import store from "@/forms/module.199e4bb2-04d1-4a95-9965-d74c259e17fc.json";
 import AppForm from "@/components/Form.component.vue";
 import AppTestInstructions from "@/components/TestInstructions.component.vue";
 import { STORE_ANSWER_URL } from "@/constants.js";
@@ -36,11 +35,9 @@ export default {
   }),
   computed: {
     theModule() {
-      let moduleId = this.moduleId;
-      let mod = store.find(item => {
-        return moduleId === item.id;
-      });
-      return mod;
+      return (this.module = this.$store.getters.getModule(
+        this.$route.params.moduleId
+      ));
     }
   },
   methods: {

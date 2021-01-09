@@ -20,11 +20,10 @@
 </template>
 
 <script>
-import AppActivity from '@/components/Activity.component.vue'
-import store from '@/forms/module.199e4bb2-04d1-4a95-9965-d74c259e17fc.json'
+import AppActivity from "@/components/Activity.component.vue";
 
 export default {
-  name: 'ViewActivity',
+  name: "ViewActivity",
   components: { AppActivity },
   props: {
     moduleId: { type: String, required: true },
@@ -36,52 +35,48 @@ export default {
     activitiesComplete: false
   }),
   computed: {
-    c_module () {
-      let theModuleId = this.moduleId
-      return store.find((item) => {
-        return item.id === theModuleId
-      })
+    c_module() {
+      return this.$store.getters.getModule(this.moduleId);
     },
-    c_activitiesComplete () {
-      return this.activitiesComplete
+    c_activitiesComplete() {
+      return this.activitiesComplete;
     },
-    c_activity () {
+    c_activity() {
       if (
         this.activityNum >= 0 &&
         this.c_module.activities.length > this.activityNum
       ) {
-        return this.c_module.activities[this.activityNum]
+        return this.c_module.activities[this.activityNum];
       }
       // return {};
-      throw Error(`Error, activity number [ ${this.activityNum} ] is not valid. Number of activities [ ${this.c_module.activities.length} ]`)
+      throw Error(
+        `Error, activity number [ ${this.activityNum} ] is not valid. Number of activities [ ${this.c_module.activities.length} ]`
+      );
     }
   },
-  beforeCreate () {
-    let theModuleId = this.$route.params.moduleId
-    this.module = store.find((item) => {
-      return item.id === theModuleId
-    })
+  beforeCreate() {
+    this.module = this.$store.getters.getModule(this.$route.params.moduleId);
     if (this.module.activities.length <= this.$route.params.activityNum) {
-      this.activitiesComplete = true
+      this.activitiesComplete = true;
     }
   },
   methods: {
-    completeActivity (code) {
-      console.log({ code })
+    completeActivity(code) {
+      console.log({ code });
       if (this.activityNum + 1 < this.c_module.activities.length) {
         this.$router.push({
-          name: 'Activity',
+          name: "Activity",
           params: {
             moduleId: this.moduleId,
             activityNum: this.activityNum + 1
           }
-        })
+        });
       } else {
-        this.activitiesComplete = true
+        this.activitiesComplete = true;
       }
     }
   }
-}
+};
 </script>
 
 <style scoped>
