@@ -24,11 +24,15 @@ const store = new Vuex.Store({
       firstName: "",
       lastName: "",
       id: 0
-    }
+    },
+    isTesting: false
   },
   mutations: {
     updateUser(state, newUser) {
       assign(state.user, newUser);
+    },
+    toggleIsTesting(state) {
+      state.isTesting = !state.isTesting;
     }
   },
   getters: {
@@ -37,6 +41,9 @@ const store = new Vuex.Store({
     },
     userId: state => {
       return state.user.id;
+    },
+    isTesting: state => {
+      return state.isTesting;
     }
   }
 })

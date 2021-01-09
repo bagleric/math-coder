@@ -12,8 +12,7 @@
         Previous
       </v-btn>
       <v-btn outlined class="next white--text" @click="incrementIter()">
-        <span v-if="iter + 1 < reflections.length">Next</span>
-        <span v-else>Done</span>
+        <span>Next</span>
         <v-icon>mdi-chevron-right</v-icon>
       </v-btn>
     </div>

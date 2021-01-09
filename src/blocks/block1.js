@@ -3,7 +3,6 @@ import * as Blockly from 'blockly/core'
 
 import theBlocks from './blocks.json'
 // import anime from 'animejs/lib/anime.es.js';
-
 // Blockly.Blocks["loop"] = loops.
 
 Blockly.JavaScript['repeat_block'] = function (block) {
@@ -26,7 +25,7 @@ Blockly.JavaScript['repeat_block'] = function (block) {
       'repeat_end', Blockly.VARIABLE_CATEGORY_NAME)
     code += `let ${endVar} = ${repeats};\n`
   }
-  code += `<div data-val='${endVar}'>`
+  code += `<div data-val='${endVar}' style='width: max-content;'>`
   for (let i = 0; i < endVar; i++) {
     code += branch
   }
@@ -41,7 +40,7 @@ Blockly.Blocks['draw_shape_circle'] = {
 }
 
 Blockly.JavaScript['draw_shape_circle'] = function () {
-  return `<img height='50' src='https://vectr.com/bagleric/csVnq516.svg?width=50&height=50&select=c2dL2hBbd&source=selection'/>`
+  return `<svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>`
 }
 
 Blockly.Blocks['repeat_block'] = {

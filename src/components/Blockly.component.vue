@@ -8,17 +8,18 @@
 </template>
 
 <script>
-import Blockly from 'blockly'
+import defaults from "lodash/defaults";
+import Blockly from "blockly";
 export default {
-  name: 'AppBlockly',
-  props: ['options'],
-  data () {
+  name: "AppBlockly",
+  props: ["options"],
+  data() {
     return {
       workspace: null
-    }
+    };
   },
-  mounted () {
-    var options = this.$props.options || {
+  mounted() {
+    var options = defaults({}, this.$props.options, {
       // toolbox: this.$refs["blocklyToolbox"],
       // collapse: false,
       // comments: true,
@@ -31,39 +32,39 @@ export default {
       // scrollbars: false,
       sounds: true,
       oneBasedIndex: true
-    }
+    });
 
     if (!options.toolbox) {
-      options.toolbox = this.$refs['blocklyToolbox']
+      options.toolbox = this.$refs["blocklyToolbox"];
     }
-    var blocklyArea = this.$refs['blocklyArea']
-    var blocklyDiv = this.$refs['blocklyDiv']
+    var blocklyArea = this.$refs["blocklyArea"];
+    var blocklyDiv = this.$refs["blocklyDiv"];
 
-    this.workspace = Blockly.inject(blocklyDiv, options)
+    this.workspace = Blockly.inject(blocklyDiv, options);
 
-    var wksp = this.workspace
-    var onresize = function () {
+    var wksp = this.workspace;
+    var onresize = function() {
       // Compute the absolute coordinates and dimensions of blocklyArea.
-      let element = blocklyArea
-      var x = 0
-      var y = 0
+      let element = blocklyArea;
+      var x = 0;
+      var y = 0;
       do {
-        x += element.offsetLeft
-        y += element.offsetTop
-        element = element.offsetParent
-      } while (element)
+        x += element.offsetLeft;
+        y += element.offsetTop;
+        element = element.offsetParent;
+      } while (element);
       // Position blocklyDiv over blocklyArea.
-      blocklyDiv.style.left = x + 'px'
-      blocklyDiv.style.top = y + 'px'
-      blocklyDiv.style.width = blocklyArea.offsetWidth + 'px'
-      blocklyDiv.style.height = blocklyArea.offsetHeight + 'px'
-      Blockly.svgResize(wksp)
-    }
-    window.addEventListener('resize', onresize, false)
-    onresize()
-    Blockly.svgResize(this.workspace)
+      blocklyDiv.style.left = x + "px";
+      blocklyDiv.style.top = y + "px";
+      blocklyDiv.style.width = blocklyArea.offsetWidth + "px";
+      blocklyDiv.style.height = blocklyArea.offsetHeight + "px";
+      Blockly.svgResize(wksp);
+    };
+    window.addEventListener("resize", onresize, false);
+    onresize();
+    Blockly.svgResize(this.workspace);
   }
-}
+};
 </script>
 
 <style scoped>
