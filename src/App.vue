@@ -7,6 +7,7 @@
       absolute
       bottom
       :temporary="true"
+      width="400"
     >
       <AppTest></AppTest>
     </v-navigation-drawer>

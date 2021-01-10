@@ -44,8 +44,11 @@ export default new Vuex.Store({
       console.log(state.data);
       return [];
     },
-    getModule: (state) => (id) => {
-      const mods = get(state, ["data", "modules"], []);
+    getModules: (state) => () => {
+      return get(state, ["data", "modules"], []);
+    },
+    getModule: (state, getters) => (id) => {
+      const mods = getters.getModules()
       return find(mods, (mod => mod.id === id))
     },
     getActivities: (state, getters) => (moduleId) => {
