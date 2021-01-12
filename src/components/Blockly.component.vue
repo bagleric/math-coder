@@ -1,7 +1,18 @@
 <template>
   <div class="blocklyArea" ref="blocklyArea">
-    <xml ref="blocklyToolbox" style="display: none">
-      <slot></slot>
+    <xml
+      xmlns="https://developers.google.com/blockly/xml"
+      ref="blocklyToolbox"
+      style="display: none"
+    >
+      <slot name="toolbox-blocks"></slot>
+    </xml>
+    <xml
+      xmlns="https://developers.google.com/blockly/xml"
+      ref="workspaceBlocks"
+      style="display: none"
+    >
+      <slot name="canvas-blocks"></slot>
     </xml>
     <div class="blocklyDiv" ref="blocklyDiv"></div>
   </div>
@@ -12,7 +23,9 @@ import defaults from "lodash/defaults";
 import Blockly from "blockly";
 export default {
   name: "AppBlockly",
-  props: ["options"],
+  props: {
+    options: { type: Object }
+  },
   data() {
     return {
       workspace: null
@@ -41,6 +54,11 @@ export default {
     var blocklyDiv = this.$refs["blocklyDiv"];
 
     this.workspace = Blockly.inject(blocklyDiv, options);
+    /* TODO: Change workspace blocks XML ID if necessary. Can export workspace blocks XML from Workspace Factory. */
+    var workspaceBlocks = this.$refs["workspaceBlocks"];
+
+    /* Load blocks to workspace. */
+    Blockly.Xml.domToWorkspace(workspaceBlocks, this.workspace);
 
     var wksp = this.workspace;
     var onresize = function() {
@@ -63,7 +81,9 @@ export default {
     window.addEventListener("resize", onresize, false);
     onresize();
     Blockly.svgResize(this.workspace);
-  }
+    this.workspace.addChangeListener(this.onFirstComment);
+  },
+  methods: {}
 };
 </script>
 

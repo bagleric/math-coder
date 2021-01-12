@@ -5,18 +5,30 @@
     </header>
     <div class="main-cont">
       <div class="app-blockly">
-        <AppBlockly ref="activityBlockly" :options="c_activity.blockOptions">
-          <block
-            v-for="theBlock in c_activity.blocks"
-            :key="theBlock.type"
-            :type="theBlock.type"
-          ></block>
+        <AppBlockly
+          ref="activityBlockly"
+          :options="c_activity.blockOptions"
+          :blocks="c_activity.blocks"
+        >
+          <template v-slot:toolbox-blocks>
+            <block
+              v-for="theBlock in c_activity.blockSelection"
+              :key="theBlock.type"
+              :type="theBlock.type"
+            ></block>
+          </template>
+          <template v-if="c_activity.startingBlocksXml" v-slot:canvas-blocks>
+            <AppRenderHtml
+              :html="c_activity.startingBlocksXml"
+              :hasParentTag="false"
+            />
+          </template>
         </AppBlockly>
         <v-btn
-          tile
+          rounded
           large
           color="green"
-          class="white--text"
+          class="run-button white--text"
           v-on:click="showCode()"
           >Run</v-btn
         >
@@ -131,6 +143,13 @@ export default {
   grid-area: appBlockly;
   display: grid;
   grid-template-rows: 1fr auto;
+  position: relative;
+}
+
+.run-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 
 .view {

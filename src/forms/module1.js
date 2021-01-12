@@ -378,13 +378,14 @@ const data = {
             },
             activities: [
                 {
-                    id: "d2280c13-d2cc-456c-b40a-014830b52616",
-                    name: "Starting off",
-                    description: "This activity introduces students to the basic pieces of the UI: Blocks, the page, and the view.",
+                    id: "0664afb6-e8a8-4ced-be69-ce2bab0e3c32",
+                    name: "Compiling with the Run Button",
+                    description: "This activity starts out with a block already on the canvas. The student will click the Run Button in order to compile the code.",
                     blockOptions: {
                         maxBlocks: 1
                     },
-                    blocks: [
+                    startingBlocksXml: `<block type="draw_shape_circle" id="bK+~uQDjQp#oOAxbX$_=" x="188" y="113"></block>`,
+                    blockSelection: [
                         {
                             type: "draw_shape_circle",
                             limit: 1
@@ -393,20 +394,43 @@ const data = {
                     reflections: [
                         "Well done! You ran the code!"
                     ],
-                    prompt: "Drag a <define word='circle_block'>circle block</define> onto the page. Then press the <define word='run_button'>run button</define> at the bottom of the page.",
+                    prompt: "Click the green <define word='run_button'>run button</define>.",
+                    solution: "<svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>"
+                },
+                {
+                    id: "d2280c13-d2cc-456c-b40a-014830b52616",
+                    name: "Adding blocks to the canvas",
+                    description: "This activity asks the students to drag a block onto the canvas. The student will then click the Run Button in order to compile the code and view it run.",
+                    blockOptions: {
+                        maxBlocks: 1
+                    },
+                    blockSelection: [
+                        {
+                            type: "draw_shape_circle",
+                            limit: 1
+                        }
+                    ],
+                    reflections: [
+                        "Well done! You ran the code!"
+                    ],
+                    prompt: "Drag a <define word='circle_block'>circle block</define> onto the page. Then press the <define word='run_button'>run button</define>.",
                     solution: "<svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>"
                 },
                 {
                     id: "b572bba0-3eec-475e-aadd-a42d99e96268",
                     name: "Connecting blocks together",
                     description: "This introduces the concept of connecting two blocks together.",
-                    blocks: [
+                    blockOptions: {
+                        maxBlocks: 2
+                    },
+                    startingBlocksXml: `<block type="draw_shape_circle" id="bK+~uQDjQp#oOAxbX$_=" x="188" y="113"></block>`,
+                    blockSelection: [
                         {
                             type: "draw_shape_circle",
                             limit: 2
                         }
                     ],
-                    prompt: "Drag two <define word='circle_block'>circle blocks</define> onto the page and <define word='connect_block'>connect</define> them together. Press the <define word='run_button'>run button</define>.",
+                    prompt: "Drag another <define word='circle_block'>circle block</define> onto the page and <define word='connect_block'>connect</define> it to the one that's already there. Press the <define word='run_button'>run button</define>.",
                     solution: "<svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg><svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>",
                     reflections: [
                         "By <define word='connect_block'>connecting</define> the two blocks you told the computer to draw a circle. You have written code!"
@@ -416,7 +440,10 @@ const data = {
                     id: "a32bd178-30af-436b-8f37-52cfe1bfb6b0",
                     name: "Connecting multiple blocks together",
                     description: "Learn about connecting multiple blocks together",
-                    blocks: [
+                    blockOptions: {
+                        maxBlocks: 5
+                    },
+                    blockSelection: [
                         {
                             type: "draw_shape_circle",
                             limit: 5
@@ -434,7 +461,11 @@ const data = {
                     name: "The intro to the Repeat Block",
                     description: "Introduction to the repeat block. The repeat block will already be on the canvas. The goal is to learn how to place one block [the circle block] inside another block [the repeat block].",
                     maxBlocks: 2,
-                    blocks: [
+                    blockOptions: {
+                        maxBlocks: 2
+                    },
+                    startingBlocksXml: `<block type="repeat_block" id="bK+~uQDjQp#oOAxbX$_=" x="100" y="100"></block>`,
+                    blockSelection: [
                         {
                             type: "draw_shape_circle",
                             limit: 1
@@ -442,10 +473,9 @@ const data = {
                         {
                             type: "repeat_block",
                             limit: 1,
-                            onCanvas: 1
                         }
                     ],
-                    prompt: "Drag a <define word='circle_block'>circle block</define> onto the page and place it inside the <define word='repeat_block'>repeat block</define>.",
+                    prompt: "Drag a <define word='circle_block'>circle block</define> onto the page and place it inside the <define word='repeat_block'>repeat block</define>. Click the  <define word='run_button'>run button</define>.",
                     solution: "<div data-val='5' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>",
                     reflections: [
                         "We told the computer to do the same thing as last time. This time we only used two blocks."
@@ -455,7 +485,10 @@ const data = {
                     id: "c1b6e7a8-4aec-43c1-81ce-f7dc9584c0bc",
                     name: "The Repeat Block",
                     description: "Learn about the repeat block. In this activity you will observe the default behavior of the repeat block. You should expect it to repeat the action inside it the number of times found in the input.",
-                    blocks: [
+                    blockOptions: {
+                        maxBlocks: 2
+                    },
+                    blockSelection: [
                         {
                             type: "draw_shape_circle",
                             limit: 1
@@ -475,7 +508,17 @@ const data = {
                     id: "626ebc9a-ccf7-49a0-a337-067eebc93580",
                     name: "Adjusting the Repeat Block",
                     description: "Learn how to adjust the repeat block.",
-                    blocks: [
+                    blockOptions: {
+                        maxBlocks: 2
+                    },
+                    startingBlocksXml:
+                        `<block type="repeat_block" id="5}b)[uwQL_NqSZtYhv{%" x="138" y="113">
+                        <field name="TIMES">5</field>
+                        <statement name="DO">
+                          <block type="draw_shape_circle" id="bK+~uQDjQp#oOAxbX$_="></block>
+                        </statement>
+                      </block>`,
+                    blockSelection: [
                         {
                             type: "draw_shape_circle",
                             limit: 1
@@ -485,14 +528,24 @@ const data = {
                             limit: 1
                         }
                     ],
-                    prompt: "Tell the computer to draw 7 circles using the <define word='repeat_block'>repeat block</define> by changing the number 5 on the <define word='repeat_block'>repeat block</define> to 7.",
+                    prompt: "Tell the computer to draw 7 circles by changing the 5 in the <define word='repeat_block'>repeat block</define> to a 7.",
                     solution: "<div data-val='7' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>"
                 },
                 {
                     id: "ec2475cf-621b-426e-8168-86b042650724",
                     name: "A lot of repeating",
                     description: "Learn about placing one repeat block inside another one.",
-                    blocks: [
+                    blockOptions: {
+                        maxBlocks: 3
+                    },
+                    startingBlocksXml:
+                        `<block type="repeat_block" id="5}b)[uwQL_NqSZtYhv{%" x="138" y="113">
+                            <field name="TIMES">5</field>
+                            <statement name="DO">
+                            <block type="repeat_block" id="bK+~uQDjQp#oOAxbX$_="></block>
+                            </statement>
+                        </block>`,
+                    blockSelection: [
                         {
                             type: "draw_shape_circle",
                             limit: 1
@@ -502,13 +555,13 @@ const data = {
                             limit: 2
                         }
                     ],
-                    prompt: "Tell the computer to draw 5 groups of 5 circles.  <ol><li>To do this, place one of the <define word='repeat_block'>repeat blocks</define> inside another <define word='repeat_block'>repeat block</define>.</li><li> Then place a <define word='circle_block'>circle block</define> into the second <define word='repeat_block'>repeat block</define>. </li></ol>",
+                    prompt: "Tell the computer to draw 5 groups of 5 circles. Drag a <define word='circle_block'>circle block</define> onto the page and place it inside the second <define word='repeat_block'>repeat block</define>. </li></ol>",
                     solution: "<div data-val='5' style='width: max-content;'>  <div data-val='5' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='5' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='5' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='5' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='5' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div></div>",
                     reflections: [
                         "We have taught our computer to do <define word='repeated_addition'>repeated addition</define>.",
-                        "<p>A row is from side to side like standing in a line. It looks like this:</p><div style='background-color: white; padding: 1em;' data-val='1'>  <div data-val='5' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div></div>",
+                        "<p>A row is from side to side like standing in a line. It looks like this:</p><div style='background-color: white; padding: 5px;' data-val='1'>  <div data-val='5' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div></div>",
                         "We have 5 rows with 5 circles in each row. Each row has the same number of items.",
-                        "<p>A column is up and down like climbing a ladder. It looks like this:</p><div style='background-color: white; padding: 1em;' data-val='5'>  <div data-val='1' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='1' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='1' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='1' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='1' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div></div>",
+                        "<p>A column is up and down like climbing a ladder. It looks like this:</p><div style='background-color: white; padding: 1em;' data-val='5'>  <div data-val='1' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div>  <div data-val='1' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div>  <div data-val='1' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div>  <div data-val='1' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div>  <div data-val='1' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div></div>",
                         "We also have 5 columns with 5 circles in each column. Each column has the same number of items.",
                         "Repeated addition is also called <define word='multiplication'>multiplication</define>."
                     ]
@@ -517,7 +570,22 @@ const data = {
                     id: "c12e692c-8293-47c6-8e4b-7fce1e509e83",
                     name: "Multiplying using the repeat block",
                     description: "Modify the defaults of the nested repeat blocks",
-                    blocks: [
+                    blockOptions: {
+                        maxBlocks: 3
+                    },
+                    startingBlocksXml:
+                        `<block type="repeat_block" id="5}b)[uwQL_NqSZtYhv{%">
+                            <field name="TIMES">5</field>
+                            <statement name="DO">
+                                <block type="repeat_block" id="bK+~uQDjQp#oOAxbX$_=">
+                                    <field name="TIMES">5</field>
+                                    <statement name="DO">
+                                        <block type="draw_shape_circle" id="bK+~uQDjQp#oOAxbX$_="></block>
+                                    </statement>
+                                </block>
+                            </statement>
+                        </block>`,
+                    blockSelection: [
                         {
                             type: "draw_shape_circle",
                             limit: 1
@@ -527,7 +595,7 @@ const data = {
                             limit: 2
                         }
                     ],
-                    prompt: "Now, let’s <define word='multiplication'>multiply</define>. Place one <define word='repeat_block'>repeat block</define> inside the other one. Then place the <define word='circle_block'>circle block</define> inside the second <define word='repeat_block'>repeat block</define>. Change the <define word='repeat_block'>repeat block</define> numbers to 3 and 4.",
+                    prompt: "Now, let’s <define word='multiplication'>multiply</define> using blocks. Change the outside <define word='repeat_block'>repeat block</define> number to 3. Change the inside <define word='repeat_block'>repeat block</define> number to 4.",
                     solution: "<div data-val='3' style='width: max-content;'>  <div data-val='4' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='4' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='4' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div></div>",
                     reflections: [
                         "There are 3 rows with 4 circles in each row. ",
@@ -538,7 +606,10 @@ const data = {
                     id: "4fcf1ebf-3044-4573-91ec-2da17ea82591",
                     name: "Multiplying",
                     description: "Explore multiplication again.",
-                    blocks: [
+                    blockOptions: {
+                        maxBlocks: 3
+                    },
+                    blockSelection: [
                         {
                             type: "draw_shape_circle",
                             limit: 1
@@ -548,7 +619,7 @@ const data = {
                             limit: 2
                         }
                     ],
-                    prompt: "Doing the same thing as before, tell the computer to <define word='multiplication'>multiply</define> by making it repeat 4 circles 3 times.",
+                    prompt: "Now it's your turn to do the whole thing. Tell the computer to <define word='multiplication'>multiply</define> by making it repeat 4 circles 3 times. Remember, place one <define word='repeat_block'>repeat block</define> inside another <define word='repeat_block'>repeat block</define>. then place a circle inside the second <define word='repeat_block'>repeat block</define>. Adjust the numbers.",
                     solution: "<div data-val='4' style='width: max-content;'>  <div data-val='3' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='3' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='3' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='3' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div></div>",
                     reflections: [
                         "3 rows of 4 circles make the same number of circles as 4 rows of 3 circles.",
@@ -563,7 +634,10 @@ const data = {
                     id: "1ddb9234-5940-44c1-a595-6122373e3be4",
                     name: "Applying multiplication",
                     description: "Solve the multiplication problem",
-                    blocks: [
+                    blockOptions: {
+                        maxBlocks: 3
+                    },
+                    blockSelection: [
                         {
                             type: "draw_shape_circle",
                             limit: 1
