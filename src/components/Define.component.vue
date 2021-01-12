@@ -3,7 +3,8 @@
     <v-dialog v-model="dialog" max-width="290">
       <template v-slot:activator="{ on, attrs }">
         <v-hover>
-          <span class="word" v-bind="attrs" v-on="on">
+          <AppRenderHtml v-if="inlineHtml" :html="inlineHtml"></AppRenderHtml>
+          <span v-else class="word" v-bind="attrs" v-on="on">
             <slot></slot>
           </span>
         </v-hover>
@@ -49,6 +50,9 @@ export default {
     },
     definitionHtml() {
       return this.wordDefinition.definitionHtml;
+    },
+    inlineHtml() {
+      return this.wordDefinition.inlineHtml;
     }
   },
   mounted: function() {
@@ -62,8 +66,6 @@ export default {
 
 <style scoped>
 .word {
-  font: inherit;
-  color: inherit;
   font-style: italic;
 }
 .word:hover {

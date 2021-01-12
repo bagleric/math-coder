@@ -1,7 +1,10 @@
 <template>
   <div class="activity-view">
     <header class="prompt primary white--text">
-      <AppRenderHtml :html="c_activity.prompt"></AppRenderHtml>
+      <AppRenderHtml
+        class="prompt-rendered"
+        :html="c_activity.prompt"
+      ></AppRenderHtml>
     </header>
     <div class="main-cont">
       <div class="app-blockly">
@@ -123,6 +126,12 @@ export default {
   font-weight: bolder;
   transform: opacity 5s;
   /* font-size: larger; */
+}
+
+.prompt-rendered {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
 }
 
 .main-cont {

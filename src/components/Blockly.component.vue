@@ -81,9 +81,15 @@ export default {
     window.addEventListener("resize", onresize, false);
     onresize();
     Blockly.svgResize(this.workspace);
-    this.workspace.addChangeListener(this.onFirstComment);
+    this.workspace.addChangeListener(this.fireChangeEvent);
   },
-  methods: {}
+  methods: {
+    fireChangeEvent(event) {
+      console.log(event);
+      // console.log(this.workspace.getBlockById(event.blockId).pathObject);
+      // console.log(this.workspace.getBlockById(event.blockId).svgGroup_);
+    }
+  }
 };
 </script>
 

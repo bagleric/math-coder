@@ -1013,7 +1013,21 @@ const data = {
             wordDefinitions: {
                 circle_block: {
                     name: "Circle Block",
-                    definitionHtml: "A code block that draws a circle"
+                    definitionHtml: "A code block that draws a circle",
+                    inlineHtml: `
+                    <svg width="100" height="30">
+                    <path
+                      class="blocklyPath"
+                      stroke="white"
+                      fill="#5b5ba5"
+                      d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 65  v 5  H 95  V 5  H 95  V 22  H 95  V 22  V 26  h -66  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z">
+                    </path>
+                    <g transform="translate(10,5)">
+                      <text font-weight="lighter" font-size="14.6" font-family="sans-serif" fill="white" x="0" y="13">
+                        Draw Circle
+                      </text>
+                    </g>
+                  </svg>`
                 },
                 connect_block: {
                     name: "Connect",
@@ -1033,7 +1047,9 @@ const data = {
                 },
                 run_button: {
                     name: "Run Button, Run",
-                    definitionHtml: "The button that tells the computer to make our code do something."
+                    definitionHtml: "The button that tells the computer to make our code do something.",
+                    inlineHtml: `
+                    <v-btn rounded large color="green" class="run-button white--text">Run</v-btn>`
                 }
             }
         }
