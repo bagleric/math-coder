@@ -39,51 +39,11 @@
         >
       </div>
       <div class="view" id="code">
-        <div class="items">
-          <div class="row" v-for="(row, rowIndex) in c_rows" :key="rowIndex">
-            <AppRenderHtml
-              v-for="(item, itemIndex) in row"
-              :key="itemIndex"
-              :html="item"
-              :hasParentTag="false"
-            />
-          </div>
-        </div>
-        <span class="num-columns">
-          <!-- <span>
-            <span>{{ c_columns }}</span>
-            <span>groups of</span>
-            <span>{{ c_numRows }}</span>
-            <span>items = </span>
-            <span>{{ c_numItems }}</span>
-            <span> total items</span>
-          </span> -->
-          <AppBrace type="top">
-            <template v-slot:outside>
-              <span class="label-group">
-                <span class="count">{{ c_columns }}</span>
-                <span class="count-label">Columns</span>
-              </span>
-            </template>
-          </AppBrace>
-        </span>
-        <span class="num-items">
-          <span class="equal">=</span>
-          <span class="label-group">
-            <span class="count">{{ c_numItems }}</span>
-            <span class="count-label">Total Items</span>
-          </span>
-        </span>
-        <span class="num-rows">
-          <AppBrace type="right">
-            <template v-slot:outside>
-              <span class="label-group">
-                <span class="count">{{ c_numRows }}</span>
-                <span class="count-label">Rows</span>
-              </span>
-            </template>
-          </AppBrace>
-        </span>
+        <RowColumnLayout
+          :columns="c_columns"
+          :rows="c_numRows"
+          :items="c_items"
+        />
       </div>
       <div v-if="c_codeComplete" class="reflection">
         <AppReflection
@@ -103,6 +63,7 @@
 import AppBlockly from "@/components/Blockly.component.vue";
 import AppBrace from "@/components/Brace.component.vue";
 import AppRenderHtml from "@/components/RenderHtml.component.vue";
+import RowColumnLayout from "@/components/RowColumnLayout.component.vue";
 import AppReflection from "@/components/Reflection.component.vue";
 import BlocklyJS from "blockly/javascript";
 import "@/blocks/block1.js";
@@ -115,6 +76,7 @@ const JSInterpreter = require("@/plugins/JS-Interpreter/interpreter");
 export default {
   name: "AppActivity",
   components: {
+    RowColumnLayout,
     AppBlockly,
     AppRenderHtml,
     AppReflection,
@@ -414,11 +376,6 @@ export default {
   grid-area: view;
   padding: 1em;
   overflow: hidden;
-  display: grid;
-  gap: 1em;
-  grid-template:
-    ".       numColumns .       " auto
-    "numRows items      numItems" 1fr / auto auto 1fr;
 }
 
 .view-header {
@@ -441,35 +398,5 @@ export default {
 }
 .items {
   grid-area: items;
-}
-.num-items {
-  grid-area: numItems;
-  display: grid;
-  place-items: center;
-  grid-template-columns: auto auto;
-}
-
-.label-group {
-  display: grid;
-  place-items: start;
-  height: min-content;
-  grid-template:
-    "count" auto
-    "label" auto / 1fr;
-}
-
-.equal {
-  font-size: xx-large;
-  font-weight: bolder;
-}
-.count {
-  grid-area: count;
-  font-size: xx-large;
-  font-weight: bolder;
-}
-
-.count-label {
-  grid-area: label;
-  font-size: x-small;
 }
 </style>
