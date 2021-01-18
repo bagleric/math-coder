@@ -14,7 +14,6 @@ import '@braid/vue-formulate/dist/snow.min.css'
 import Define from '@/components/Define.component.vue'
 import axios from 'axios'
 
-
 Vue.prototype.$http = axios
 // Vue.use(VueSanitize);
 Vue.use(VueFormulate)

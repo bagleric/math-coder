@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@braid/vue-formulate": "^2.4.5",
+    "acorn": "^8.0.4",
     "animejs": "^3.2.1",
     "axios": "^0.21.1",
     "blockly": "^4.20201217.0",

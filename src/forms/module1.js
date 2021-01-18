@@ -394,8 +394,9 @@ const data = {
                     reflections: [
                         "Well done! You ran the code!"
                     ],
-                    prompt: "Click the green <define word='run_button'>run button</define>.",
-                    solution: "<svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>"
+                    prompt: "Click the <define word='run_button'>run button</define>.",
+                    solution: "-false-circle-false-"
+                    // solution: "<svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>"
                 },
                 {
                     id: "d2280c13-d2cc-456c-b40a-014830b52616",
@@ -414,7 +415,8 @@ const data = {
                         "Well done! You ran the code!"
                     ],
                     prompt: "Drag a <define word='circle_block'>circle block</define> onto the page. Then press the <define word='run_button'>run button</define>.",
-                    solution: "<svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>"
+                    solution: "-false-circle-false-"
+                    // solution: "<svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>"
                 },
                 {
                     id: "b572bba0-3eec-475e-aadd-a42d99e96268",
@@ -430,8 +432,10 @@ const data = {
                             limit: 2
                         }
                     ],
-                    prompt: "Drag another <define word='circle_block'>circle block</define> onto the page and <define word='connect_block'>connect</define> it to the one that's already there. Press the <define word='run_button'>run button</define>.",
-                    solution: "<svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg><svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>",
+                    prompt: "Drag another <define word='circle_block'>circle block</define> onto the page. <define word='connect_block'>Connect</define> it to the one that's already there. Press the <define word='run_button'>run button</define>.",
+
+                    solution: "-false-circle-true--true-circle-false-",
+                    // solution: "<svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg><svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>",
                     reflections: [
                         "By <define word='connect_block'>connecting</define> the two blocks you told the computer to draw a circle. You have written code!"
                     ]
@@ -450,7 +454,8 @@ const data = {
                         }
                     ],
                     prompt: "Tell the computer to draw 5 circles by <define word='connect_block'>connecting</define> 5 <define word='circle_block'>circle blocks</define> together.",
-                    solution: "<svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg><svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg><svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg><svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg><svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>",
+                    // solution: "<svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg><svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg><svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg><svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg><svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>",
+                    solution: "-false-circle-true--true-circle-true--true-circle-true--true-circle-true--true-circle-false-",
                     reflections: [
                         "<p>Well done! We are telling our computer to add.</p>",
                         "<p>In this case, our math sentence looks like this:</p> <p><strong>1 circle + 1 circle + 1 circle + 1 circle + 1 circle = 5 circles</strong>.</p>"
@@ -475,8 +480,9 @@ const data = {
                             limit: 1,
                         }
                     ],
-                    prompt: "Drag a <define word='circle_block'>circle block</define> onto the page and place it inside the <define word='repeat_block'>repeat block</define>. Click the  <define word='run_button'>run button</define>.",
-                    solution: "<div data-val='5' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>",
+                    solution: "-repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-",
+                    prompt: "Drag a <define word='circle_block'>circle block</define> onto the page. Place it inside the <define word='repeat_block'>repeat block</define>. Click the  <define word='run_button'>run button</define>.",
+                    // solution: "<div data-val='5' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>",
                     reflections: [
                         "We told the computer to do the same thing as last time. This time we only used two blocks."
                     ]
@@ -498,8 +504,8 @@ const data = {
                             limit: 1
                         }
                     ],
-                    prompt: "Drag a <define word='repeat_block'>repeat block</define>  onto the page and then then place a <define word='circle_block'>circle block</define> inside of the <define word='repeat_block'>repeat block</define>.",
-                    solution: "<div data-val='5' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>",
+                    prompt: "Drag a <define word='repeat_block'>repeat block</define>  onto the page. Then place a <define word='circle_block'>circle block</define> inside of the <define word='repeat_block'>repeat block</define>.",
+                    solution: "-repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-",
                     reflections: [
                         "Well done!"
                     ]
@@ -529,7 +535,7 @@ const data = {
                         }
                     ],
                     prompt: "Tell the computer to draw 7 circles by changing the 5 in the <define word='repeat_block'>repeat block</define> to a 7.",
-                    solution: "<div data-val='7' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>"
+                    solution: "-repeat-7-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-"
                 },
                 {
                     id: "ec2475cf-621b-426e-8168-86b042650724",
@@ -555,8 +561,8 @@ const data = {
                             limit: 2
                         }
                     ],
-                    prompt: "Tell the computer to draw 5 groups of 5 circles. Drag a <define word='circle_block'>circle block</define> onto the page and place it inside the second <define word='repeat_block'>repeat block</define>. </li></ol>",
-                    solution: "<div data-val='5' style='width: max-content;'>  <div data-val='5' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='5' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='5' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='5' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='5' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div></div>",
+                    prompt: "Tell the computer to draw 5 groups of 5 circles. Drag a <define word='circle_block'>circle block</define> onto the page. Place it inside the second <define word='repeat_block'>repeat block</define>. </li></ol>",
+                    solution: "-repeat-5-times--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-",
                     reflections: [
                         "We have taught our computer to do <define word='repeated_addition'>repeated addition</define>.",
                         "<p>A row is from side to side like standing in a line. It looks like this:</p><div style='background-color: white; padding: 5px;' data-val='1'>  <div data-val='5' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div></div>",
@@ -596,7 +602,7 @@ const data = {
                         }
                     ],
                     prompt: "Now, let’s <define word='multiplication'>multiply</define> using blocks. Change the outside <define word='repeat_block'>repeat block</define> number to 3. Change the inside <define word='repeat_block'>repeat block</define> number to 4.",
-                    solution: "<div data-val='3' style='width: max-content;'>  <div data-val='4' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='4' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='4' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div></div>",
+                    solution: "-repeat-3-times--repeat-4-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-4-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-4-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false-",
                     reflections: [
                         "There are 3 rows with 4 circles in each row. ",
                         "By counting the circles we know that there are 12 circles total."
@@ -620,7 +626,7 @@ const data = {
                         }
                     ],
                     prompt: "Now it's your turn to do the whole thing. Tell the computer to <define word='multiplication'>multiply</define> by making it repeat 4 circles 3 times. Remember, place one <define word='repeat_block'>repeat block</define> inside another <define word='repeat_block'>repeat block</define>. then place a circle inside the second <define word='repeat_block'>repeat block</define>. Adjust the numbers.",
-                    solution: "<div data-val='4' style='width: max-content;'>  <div data-val='3' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='3' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='3' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='3' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div></div>",
+                    solution: "-repeat-4-times--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false-",
                     reflections: [
                         "3 rows of 4 circles make the same number of circles as 4 rows of 3 circles.",
                         "By counting all the circles we know that there are 12 circles again. That was the same as last time.",
@@ -653,7 +659,7 @@ const data = {
                         "Think about what we told the computer to do. What is the answer to 5 x 3 = ___? Then click next.",
                         "The correct answer is 15."
                     ],
-                    solution: "<div data-val='5' style='width: max-content;'>  <div data-val='3' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='3' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='3' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='3' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>  <div data-val='3' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div></div>"
+                    solution: "-repeat-5-times--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false-"
                 }
             ],
             postModule: {
@@ -1049,7 +1055,7 @@ const data = {
                     name: "Run Button, Run",
                     definitionHtml: "The button that tells the computer to make our code do something.",
                     inlineHtml: `
-                    <v-btn rounded large color="green" class="run-button white--text">Run</v-btn>`
+                    <v-btn rounded small color="green" class="run-button white--text">Run</v-btn>`
                 }
             }
         }

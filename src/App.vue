@@ -5,13 +5,12 @@
       v-if="c_isTesting"
       v-model="drawer"
       absolute
-      bottom
       :temporary="true"
       width="400"
     >
       <AppTest></AppTest>
     </v-navigation-drawer>
-    <v-app-bar app color="white">
+    <v-app-bar app color="white" dense>
       <AppNavigation class="navigation"></AppNavigation>
       <v-app-bar-nav-icon
         v-if="c_isTesting"
