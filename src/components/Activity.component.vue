@@ -1,11 +1,9 @@
 <template>
   <div class="activity-view">
     <header class="prompt primary white--text">
-      <span>Instructions:</span>
-      <AppRenderHtml
-        class="prompt-rendered"
-        :html="c_activity.prompt"
-      ></AppRenderHtml>
+      <span class="bold-text">Instructions:</span>
+      <AppRenderHtml class="prompt-rendered" :html="c_activity.prompt">
+      </AppRenderHtml>
     </header>
     <div class="main-cont">
       <div class="app-blockly">
@@ -29,14 +27,25 @@
           </template>
         </AppBlockly>
         <v-btn
-          ref="runButton"
           rounded
           large
+          v-if="!c_isRunning"
           color="green"
           class="run-button white--text"
-          v-on:click="showCode()"
-          >Run</v-btn
+          v-on:click="runCode()"
         >
+          Run
+        </v-btn>
+        <v-btn
+          v-else
+          rounded
+          large
+          color="red"
+          class="run-button white--text"
+          v-on:click="resetExecution()"
+        >
+          Stop
+        </v-btn>
       </div>
       <div class="view" id="code">
         <RowColumnLayout
@@ -45,7 +54,7 @@
           :items="c_items"
         />
       </div>
-      <div v-if="c_codeComplete" class="reflection">
+      <div v-if="!c_isRunning" class="reflection">
         <AppReflection
           v-if="c_codeIsValid"
           @reflection-complete="submitCode"
@@ -97,34 +106,27 @@ export default {
     numRows: 0,
     path: "",
     items: [],
-    highlightPause: false,
     myInterpreter: null,
+    execution: null,
     runner: null,
     rows: [],
-    codeComplete: false
+    isRunning: false
   }),
   computed: {
     c_activity() {
       return this.activity;
     },
-    c_codeComplete() {
-      return this.codeComplete;
+    c_isRunning() {
+      return this.isRunning;
     },
     c_codeIsValid() {
-      console.log(this.path);
       return this.c_activity.solution === this.path;
     },
     c_madeAttemtps() {
       return this.attempts > 0;
     },
-    c_rows() {
-      return this.rows;
-    },
     c_numRows() {
       return this.rows.length;
-    },
-    c_numItems() {
-      return this.items.length || 0;
     },
     c_columns() {
       return get(this.rows, ["0", "length"], 0);
@@ -134,12 +136,6 @@ export default {
     },
     demoWorkspace() {
       return get(this, ["$refs", "activityBlockly", "workspace"]);
-    },
-    outputArea() {
-      return get(this, ["$refs", "outputArea"]);
-    },
-    runButton() {
-      return get(this, ["$refs", "runButton"]);
     }
   },
   methods: {
@@ -159,19 +155,6 @@ export default {
     },
     addToPath(toAdd) {
       this.path += toAdd;
-    },
-    showCode() {
-      this.attempts++;
-      this.code = BlocklyJS.workspaceToCode(
-        this.$refs["activityBlockly"].workspace
-      );
-      if (this.code != "") this.runCode();
-    },
-    clearData() {
-      this.numCircles = 0;
-      this.path = "";
-      this.items = [];
-      this.rows = [];
     },
     initApi(interpreter, globalObject) {
       // Add an API function for add item.
@@ -223,85 +206,69 @@ export default {
     },
     highlightBlock(id) {
       this.demoWorkspace.highlightBlock(id);
-      this.highlightPause = true;
     },
-    resetStepUi(clearOutput) {
-      this.demoWorkspace.highlightBlock(null);
-      this.highlightPause = false;
-      // this.runButton.disabled = false;
+    resetExecution() {
+      // reset the data
+      this.numCircles = 0;
+      this.path = "";
+      this.items = [];
+      this.rows = [];
 
-      if (clearOutput) {
-        this.clearData();
-      }
+      //reset the workspace
+      this.demoWorkspace.highlightBlock(null);
+
+      //reset the interpreter
+      this.myInterpreter = null;
+      this.isRunning = false;
+
+      // clear out the timeout functions
+      clearTimeout(this.runner);
+      clearTimeout(this.execution);
     },
     generateCodeAndLoadIntoInterpreter() {
-      // Generate JavaScript code and parse it.
-      Blockly.JavaScript.STATEMENT_PREFIX = "highlightBlock(%1);\n";
-      Blockly.JavaScript.addReservedWords("highlightBlock");
-      // Blockly.JavaScript.workspaceToCode(this.demoWorkspace);
+      // reset
+      this.resetExecution();
       this.code = BlocklyJS.workspaceToCode(
         this.$refs["activityBlockly"].workspace
       );
-
-      this.resetStepUi(true);
-    },
-    resetInterpreter() {
-      this.myInterpreter = null;
-      if (this.runner) {
-        clearTimeout(this.runner);
-        this.runner = null;
-      }
-    },
-    runTheCode() {
-      // latestCode = this.code;
-      if (!this.myInterpreter) {
-        // First statement of this code.
-        // Clear the program output.
-        this.resetStepUi(true);
-        // this.runButton.disabled = true;
-        var scope = this;
-        // And then show generated code in an alert.
-        // In a timeout to allow the outputArea.value to reset first.
-        setTimeout(function() {
-          // Begin execution
-          scope.highlightPause = false;
-          scope.myInterpreter = new JSInterpreter.Interpreter(
-            scope.code,
-            scope.initApi
-          );
-
-          function nextStep() {
-            if (scope.myInterpreter.step()) {
-              setTimeout(nextStep, 10);
-            }
-          }
-
-          while (nextStep());
-        }, 0.25);
-        this.codeComplete = true;
-
-        return;
-      }
     },
     runCode() {
+      this.attempts++;
       // Exit is used to signal the end of a script.
       Blockly.JavaScript.addReservedWords("exit");
 
-      this.highlightPause = false;
       // var latestCode = this.code;
 
       // Load the interpreter now, and upon future changes.
-      this.generateCodeAndLoadIntoInterpreter();
       let scope = this;
       this.demoWorkspace.addChangeListener(function(event) {
         if (!event.isUiEvent) {
           // Something changed. Parser needs to be reloaded.
-          scope.resetInterpreter();
           scope.generateCodeAndLoadIntoInterpreter();
         }
       });
 
-      this.runTheCode();
+      this.generateCodeAndLoadIntoInterpreter();
+      if (!this.myInterpreter && this.code != "") {
+        this.isRunning = true;
+        this.execution = setTimeout(function() {
+          // Begin execution
+          scope.myInterpreter = new JSInterpreter.Interpreter(
+            scope.code,
+            scope.initApi
+          );
+          function nextStep() {
+            if (scope.myInterpreter.step()) {
+              scope.runner = setTimeout(nextStep, 1);
+            } else {
+              scope.isRunning = false;
+            }
+          }
+
+          nextStep();
+        }, 0.25);
+        return;
+      }
     },
     submitCode() {
       // TODO submit code
@@ -321,24 +288,17 @@ export default {
     "main  " 2fr/ 1fr;
 }
 
-.row {
-  background: lightblue;
-  margin: 0.25em;
-  padding: 0.25em;
-}
-
 .prompt {
   grid-area: prompt;
   border: solid 1px grey;
   display: grid;
   align-content: center;
-  padding: 1em;
-  font-weight: bolder;
+  padding: 0.5em;
   transform: opacity 5s;
-  /* font-size: larger; */
 }
 
 .prompt-rendered {
+  padding-left: 1em;
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
@@ -353,10 +313,6 @@ export default {
   overflow: hidden;
 }
 
-.rendered-code {
-  height: inherit;
-  overflow: auto;
-}
 .app-blockly {
   border: solid 1px grey;
   grid-area: appBlockly;
@@ -378,25 +334,10 @@ export default {
   overflow: hidden;
 }
 
-.view-header {
-  display: grid;
-}
-
 .not-quite {
   display: grid;
   background: grey;
   color: white;
   padding: 1em;
-}
-
-.num-columns {
-  grid-area: numColumns;
-}
-
-.num-rows {
-  grid-area: numRows;
-}
-.items {
-  grid-area: items;
 }
 </style>

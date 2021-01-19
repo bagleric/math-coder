@@ -394,9 +394,8 @@ const data = {
                     reflections: [
                         "Well done! You ran the code!"
                     ],
-                    prompt: "Click the <define word='run_button'>run button</define>.",
+                    prompt: "Click the <define word='run_button'>run button</define> below.",
                     solution: "-false-circle-false-"
-                    // solution: "<svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>"
                 },
                 {
                     id: "d2280c13-d2cc-456c-b40a-014830b52616",
@@ -416,7 +415,6 @@ const data = {
                     ],
                     prompt: "Drag a <define word='circle_block'>circle block</define> onto the page. Then press the <define word='run_button'>run button</define>.",
                     solution: "-false-circle-false-"
-                    // solution: "<svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>"
                 },
                 {
                     id: "b572bba0-3eec-475e-aadd-a42d99e96268",
@@ -435,7 +433,6 @@ const data = {
                     prompt: "Drag another <define word='circle_block'>circle block</define> onto the page. <define word='connect_block'>Connect</define> it to the one that's already there. Press the <define word='run_button'>run button</define>.",
 
                     solution: "-false-circle-true--true-circle-false-",
-                    // solution: "<svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg><svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>",
                     reflections: [
                         "By <define word='connect_block'>connecting</define> the two blocks you told the computer to draw a circle. You have written code!"
                     ]
@@ -454,7 +451,6 @@ const data = {
                         }
                     ],
                     prompt: "Tell the computer to draw 5 circles by <define word='connect_block'>connecting</define> 5 <define word='circle_block'>circle blocks</define> together.",
-                    // solution: "<svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg><svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg><svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg><svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg><svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>",
                     solution: "-false-circle-true--true-circle-true--true-circle-true--true-circle-true--true-circle-false-",
                     reflections: [
                         "<p>Well done! We are telling our computer to add.</p>",
@@ -481,8 +477,7 @@ const data = {
                         }
                     ],
                     solution: "-repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-",
-                    prompt: "Drag a <define word='circle_block'>circle block</define> onto the page. Place it inside the <define word='repeat_block'>repeat block</define>. Click the  <define word='run_button'>run button</define>.",
-                    // solution: "<div data-val='5' style='width: max-content;'>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg>  <svg height='60' width='60'><circle cx='30' cy='30' r='25' fill='black' /></svg></div>",
+                    prompt: "Drag a <define word='circle_block'>circle block</define> onto the page. Place it inside the <define word='repeat_block'>repeat block</define>. Click the  <define word='run_button'>run button</define> button.",
                     reflections: [
                         "We told the computer to do the same thing as last time. This time we only used two blocks."
                     ]
@@ -1041,7 +1036,70 @@ const data = {
                 },
                 repeat_block: {
                     name: "Repeat Block",
-                    definitionHtml: "This block is made up of two parts. < ol ><li><strong>Number Input:</strong> this tells us how many times we should run the code inside the code slot</li><li><strong>Code Slot:</strong> The area we can put other code blocks.</li></ol> This block allows us to do one thing many times"
+                    definitionHtml: "This block is made up of two parts. < ol ><li><strong>Number Input:</strong> this tells us how many times we should run the code inside the code slot</li><li><strong>Code Slot:</strong> The area we can put other code blocks.</li></ol> This block allows us to do one thing many times",
+                    inlineHtml: `
+                    <svg height="50" width="100" viewBox="60 0 1 65">
+                        <path
+                            class="blocklyPath"
+                            stroke="white"
+                            fill="#a5a55b"
+                            d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 94.745849609375  v 5  H 124.745849609375  V 5  H 124.745849609375  V 22  H 124.745849609375  V 26  H 66.30636596679688  l -6,4  -3,0  -6,-4  h -7 a 8 8 0 0,0 -8,8  v 8 a 8 8 0 0,0 8,8  H 124.745849609375  H 124.745849609375  V 50  V 60  h -95.245849609375  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z
+                                "
+                        ></path>
+                        <g transform="translate(10,5)">
+                            <text
+                            font-weight="lighter"
+                            font-size="14.6"
+                            font-family="sans-serif"
+                            fill="white"
+                            x="0"
+                            y="13"
+                            >
+                            repeat
+                            </text>
+                        </g>
+                        <g
+                            class="blocklyEditableText"
+                            transform="translate(56.567626953125,5)"
+                            style="cursor: text;"
+                        >
+                            <rect
+                            fill="#ffffffaa"
+                            rx="4"
+                            ry="4"
+                            x="0"
+                            y="0"
+                            height="17"
+                            width="18.153182983398438"
+                            class="blocklyFieldRect"
+                            ></rect>
+                        </g>
+                        <g transform="translate(79.72080993652344,5)">
+                            <text
+                            font-weight="lighter"
+                            font-size="14.6"
+                            font-family="sans-serif"
+                            fill="white"
+                            x="0"
+                            y="13"
+                            >
+                            times
+                            </text>
+                        </g>
+                        <g transform="translate(10,31)">
+                            <text
+                            font-weight="lighter"
+                            font-size="14.6"
+                            font-family="sans-serif"
+                            fill="white"
+                            x="0"
+                            y="13"
+                            >
+                            do
+                            </text>
+                        </g>
+                    </svg>`
+
                 },
                 multiplication: {
                     name: "Multiplication, Multiply",

@@ -80,10 +80,12 @@ export default {
   },
   methods: {
     getItemClass(index) {
-      if (this.showColumns && !(index % this.columns)) {
-        return "marked-item";
-      } else if (!this.showColumns && index < this.columns) {
-        return "marked-item";
+      if (this.rows > 1) {
+        if (this.showColumns && !(index % this.columns)) {
+          return "marked-item";
+        } else if (!this.showColumns && index < this.columns) {
+          return "marked-item";
+        }
       }
       return "";
     }
