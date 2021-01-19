@@ -450,7 +450,7 @@ const data = {
                             limit: 5
                         }
                     ],
-                    prompt: "Tell the computer to draw 5 circles by <define word='connect_block'>connecting</define> 5 <define word='circle_block'>circle blocks</define> together.",
+                    prompt: "Tell the computer to draw 5 circles.<define word='connect_block'>Connect</define> 5 <define word='circle_block'>circle blocks</define> together.",
                     solution: "-false-circle-true--true-circle-true--true-circle-true--true-circle-true--true-circle-false-",
                     reflections: [
                         "<p>Well done! We are telling our computer to add.</p>",
@@ -529,7 +529,7 @@ const data = {
                             limit: 1
                         }
                     ],
-                    prompt: "Tell the computer to draw 7 circles by changing the 5 in the <define word='repeat_block'>repeat block</define> to a 7.",
+                    prompt: "Tell the computer to draw 7 circles. Changing the 5 in the <define word='repeat_block'>repeat block</define> to a 7.",
                     solution: "-repeat-7-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-"
                 },
                 {
@@ -556,7 +556,7 @@ const data = {
                             limit: 2
                         }
                     ],
-                    prompt: "Tell the computer to draw 5 groups of 5 circles. Drag a <define word='circle_block'>circle block</define> onto the page. Place it inside the second <define word='repeat_block'>repeat block</define>. </li></ol>",
+                    prompt: "Tell the computer to draw 5 groups of 5 circles. Drag a <define word='circle_block'>circle block</define> onto the page. Place it inside the second <define word='repeat_block'>repeat block</define>.",
                     solution: "-repeat-5-times--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-",
                     reflections: [
                         "We have taught our computer to do <define word='repeated_addition'>repeated addition</define>.",
@@ -620,7 +620,7 @@ const data = {
                             limit: 2
                         }
                     ],
-                    prompt: "Now it's your turn to do the whole thing. Tell the computer to <define word='multiplication'>multiply</define> by making it repeat 4 circles 3 times. Remember, place one <define word='repeat_block'>repeat block</define> inside another <define word='repeat_block'>repeat block</define>. then place a circle inside the second <define word='repeat_block'>repeat block</define>. Adjust the numbers.",
+                    prompt: "Tell the computer to <define word='multiplication'>multiply</define>. Repeat 4 circles 3 times.",
                     solution: "-repeat-4-times--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false-",
                     reflections: [
                         "3 rows of 4 circles make the same number of circles as 4 rows of 3 circles.",
@@ -628,7 +628,7 @@ const data = {
                         "In math we say it like this: 3 times 4 equals 12, and we write it like this: 3 x 4 = 12.",
                         "This means that we have 3 groups of 4 items and 12 items in total.",
                         "If we had 5 groups of 3 items, we would write it like this: 5 x 3.",
-                        "To get our computer to do this for us we would use 2 <define word='repeat_block'>repeat blocks</define> like before. Then we would modify the first <define word='repeat_block'>repeat block</define> to have 5 as its value and the second <define word='repeat_block'>repeat block</define> would have 3 as its value."
+                        "To get our computer to do this for us we would use 2 <define word='repeat_block' :showInlineHtml='false'>repeat blocks</define> like before. Then we would modify the first <define word='repeat_block' :showInlineHtml='false'>repeat block</define> to have 5 as its value and the second <define word='repeat_block' :showInlineHtml='false'>repeat block</define> would have 3 as its value."
                     ]
                 },
                 {
@@ -1036,7 +1036,7 @@ const data = {
                 },
                 repeat_block: {
                     name: "Repeat Block",
-                    definitionHtml: "This block is made up of two parts. < ol ><li><strong>Number Input:</strong> this tells us how many times we should run the code inside the code slot</li><li><strong>Code Slot:</strong> The area we can put other code blocks.</li></ol> This block allows us to do one thing many times",
+                    definitionHtml: "<div>This block is made up of two parts. <ol><li><strong>Number Input:</strong> this tells us how many times we should run the code inside the code slot</li><li><strong>Code Slot:</strong> The area we can put other code blocks.</li></ol> This block allows us to do one thing many times</div>",
                     inlineHtml: `
                     <svg height="50" width="100" viewBox="60 0 1 65">
                         <path
@@ -1103,7 +1103,7 @@ const data = {
                 },
                 multiplication: {
                     name: "Multiplication, Multiply",
-                    definitionHtml: "This is similar to repeated addition.We add up one or more groups with equal items in each group."
+                    definitionHtml: "This is repeated addition. We add the items from one or more groups of equal items."
                 },
                 coding: {
                     name: "Coding",
