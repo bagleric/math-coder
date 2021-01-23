@@ -8,6 +8,7 @@
     <div class="main-cont">
       <div class="app-blockly">
         <AppBlockly
+          :key="resetCount"
           ref="activityBlockly"
           :options="c_activity.blockOptions"
           :blocks="c_activity.blocks"
@@ -26,6 +27,16 @@
             />
           </template>
         </AppBlockly>
+        <v-btn
+          :style="c_extraResetStyle"
+          rounded
+          outlined
+          color="primary"
+          class="reset-button"
+          v-on:click="restart()"
+        >
+          Start Over
+        </v-btn>
         <v-btn
           rounded
           large
@@ -61,7 +72,7 @@
           :reflections="c_activity.reflections"
         ></AppReflection>
         <span v-else-if="c_madeAttemtps" class="not-quite">
-          It looks like we didn't quite make it. Keep trying. {{ numCircles }}
+          It looks like we didn't quite make it. Keep trying.
         </span>
       </div>
     </div>
@@ -110,9 +121,15 @@ export default {
     execution: null,
     runner: null,
     rows: [],
-    isRunning: false
+    isRunning: false,
+    resetCount: 0
   }),
   computed: {
+    c_extraResetStyle() {
+      return get(this.c_activity, ["blockOptions", "showToolbox"], true)
+        ? "left: 150px;"
+        : "";
+    },
     c_activity() {
       return this.activity;
     },
@@ -139,6 +156,9 @@ export default {
     }
   },
   methods: {
+    restart() {
+      this.resetCount++;
+    },
     addItem(itemToAdd) {
       this.items.push(itemToAdd);
       if (isEmpty(this.rows)) {
@@ -324,6 +344,12 @@ export default {
 .run-button {
   position: absolute;
   right: 10px;
+  top: 10px;
+}
+
+.reset-button {
+  position: absolute;
+  left: 10px;
   top: 10px;
 }
 
