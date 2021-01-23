@@ -41,6 +41,47 @@ Blockly.Blocks['repeat_block'] = {
     this.jsonInit(theBlocks.controls_repeat_ext)
   }
 }
+
+Blockly.Blocks['circle_repeat'] = {
+  init: function () {
+    this.jsonInit(theBlocks.circle_repeat)
+  }
+}
+
+Blockly.JavaScript['circle_repeat'] = function (block) {
+  // Repeat n times.
+  let repeats
+  if (block.getField('TIMES')) {
+    // Internal number.
+    repeats = String(Number(block.getFieldValue('TIMES')))
+  } else {
+    // External number.
+    repeats = Blockly.JavaScript.valueToCode(block, 'TIMES',
+      Blockly.JavaScript.ORDER_ASSIGNMENT) || '0'
+  }
+  let endVar = repeats
+  let i = 0;
+  let item = "";
+  const circle = `<svg height='30' width='30'><circle cx='15' cy='15' r='12' fill='black' /></svg>`
+  while (i < endVar) {
+    item = item + circle;
+    i++;
+  }
+  item = `<div>${item}</div>`;
+
+  const hasChildren = !isEmpty(get(block, ["childBlocks_"], []))
+  const hasParent = has(block, ["parentBlock_", "id"]);
+  console.log(item)
+  const report = `-${hasParent}-circle-${endVar}-${hasChildren}-`;
+  return `
+   highlightBlock("${block.id}")
+   addToPath('${report}');
+   addItem("${item}");
+   addItems("${circle}", ${endVar});
+   `;
+
+}
+
 Blockly.Blocks['draw_ball'] = {
   init: function () {
     this.jsonInit(theBlocks.draw_ball)
