@@ -159,6 +159,16 @@ export default {
     restart() {
       this.resetCount++;
     },
+    addItems(itemToAdd, timesToAdd) {
+      this.items.push(itemToAdd);
+      if (isEmpty(this.rows)) {
+        this.rows.push([]);
+      }
+      let theLast = last(this.rows);
+      for (let i = 0; i < timesToAdd; i++) {
+        theLast.push(itemToAdd);
+      }
+    },
     addItem(itemToAdd) {
       this.items.push(itemToAdd);
       if (isEmpty(this.rows)) {
@@ -177,6 +187,19 @@ export default {
       this.path += toAdd;
     },
     initApi(interpreter, globalObject) {
+      // Add an API function for add item.
+      let addItems = this.addItems;
+      var wrapper = function(item, times) {
+        item = item ? item.toString() : "";
+        times = times ? times : 0;
+        return addItems(item, times);
+      };
+      interpreter.setProperty(
+        globalObject,
+        "addItems",
+        interpreter.createNativeFunction(wrapper)
+      );
+
       // Add an API function for add item.
       let addItem = this.addItem;
       var wrapper = function(item) {
