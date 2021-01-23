@@ -62,7 +62,6 @@ export default {
   },
   methods: {
     completeActivity(code) {
-      console.log({ code });
       if (this.activityNum + 1 < this.c_module.activities.length) {
         this.$router.push({
           name: "Activity",

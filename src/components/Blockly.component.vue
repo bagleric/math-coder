@@ -86,9 +86,9 @@ export default {
   },
   methods: {
     fireChangeEvent(event) {
-      console.log("TODO: handle events", { event });
       // console.log(this.workspace.getBlockById(event.blockId).pathObject);
       // console.log(this.workspace.getBlockById(event.blockId).svgGroup_);
+      this.$emit("blockly-event", event);
     }
   }
 };

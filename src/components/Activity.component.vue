@@ -12,6 +12,7 @@
           ref="activityBlockly"
           :options="c_activity.blockOptions"
           :blocks="c_activity.blocks"
+          @blockly-event="logEvent"
         >
           <template v-slot:toolbox-blocks>
             <block
@@ -87,11 +88,20 @@ import RowColumnLayout from "@/components/RowColumnLayout.component.vue";
 import AppReflection from "@/components/Reflection.component.vue";
 import BlocklyJS from "blockly/javascript";
 import "@/blocks/block1.js";
-import max from "lodash/max";
 import get from "lodash/get";
 import last from "lodash/last";
+import has from "lodash/has";
+import assign from "lodash/assign";
+import isFunction from "lodash/isFunction";
 import isEmpty from "lodash/isEmpty";
+import {
+  STORE_EVENT_URL,
+  TIMESTAMP_FORMAT,
+  FINISH_ACTIVITY_URL
+} from "@/constants.js";
+import { escape } from "html-escaper";
 const JSInterpreter = require("@/plugins/JS-Interpreter/interpreter");
+const timestamp = require("time-stamp");
 
 export default {
   name: "AppActivity",
@@ -122,12 +132,20 @@ export default {
     runner: null,
     rows: [],
     isRunning: false,
-    resetCount: 0
+    resetCount: 0,
+    activityStats: {
+      started_at: timestamp.utc(TIMESTAMP_FORMAT),
+      ended_at: null,
+      no_of_compiles: 0,
+      completed: false,
+      compilation_timestamps: [],
+      screen_size: ""
+    }
   }),
   computed: {
     c_extraResetStyle() {
       return get(this.c_activity, ["blockOptions", "showToolbox"], true)
-        ? "left: 150px;"
+        ? "left: 175px;"
         : "";
     },
     c_activity() {
@@ -276,6 +294,10 @@ export default {
       );
     },
     runCode() {
+      console.log(this.getViewSize());
+      this.activityStats.compilation_timestamps.push(
+        timestamp.utc(TIMESTAMP_FORMAT)
+      );
       this.attempts++;
       // Exit is used to signal the end of a script.
       Blockly.JavaScript.addReservedWords("exit");
@@ -317,9 +339,63 @@ export default {
       }
     },
     submitCode() {
+      // update to the latest
+      assign(this.activityStats, {
+        user_id: this.$store.getters.userId,
+        activity_id: this.activity.id,
+        module_id: this.moduleId,
+        completed: true,
+        ended_at: timestamp.utc(TIMESTAMP_FORMAT),
+        no_of_compiles: this.attempts,
+        screen_size: this.getViewSize()
+      });
+
+      if (!this.$store.getters.isTesting) {
+        this.$http
+          .post(FINISH_ACTIVITY_URL, this.activityStats)
+          .then(result => {
+            if (!result.data.success) {
+              console.log("Failed to submitt event. Response:", result);
+            } else {
+              // console.log("Event submitted. Response:", result);
+            }
+          });
+      }
+
       // TODO submit code
-      console.log("TODO: submit code to database");
       this.$emit("activity-complete", this.code);
+    },
+    logEvent(blocklyEvent) {
+      if (blocklyEvent.isUiEvent) {
+        return; // Don't mirror UI events.
+      }
+      if (!isFunction(blocklyEvent.toJson)) return;
+      let jsonEvent = blocklyEvent.toJson();
+
+      if (has(jsonEvent, "xml")) {
+        jsonEvent.xml = escape(jsonEvent.xml);
+      }
+
+      if (has(jsonEvent, "oldXml")) {
+        jsonEvent.oldXml = escape(jsonEvent.oldXml);
+      }
+
+      if (!this.$store.getters.isTesting) {
+        let toSend = {
+          user_id: this.$store.getters.userId,
+          activity_id: this.c_activity.id,
+          module_id: this.moduleId,
+          blockly_event: JSON.stringify(jsonEvent),
+          created_at: timestamp.utc(TIMESTAMP_FORMAT)
+        };
+        this.$http.post(STORE_EVENT_URL, toSend).then(result => {
+          if (!result.data.success) {
+            console.log("Failed to submitt event. Response:", result);
+          } else {
+            // console.log("Event submitted. Response:", result);
+          }
+        });
+      }
     }
   }
 };
@@ -345,7 +421,6 @@ export default {
 
 .prompt-rendered {
   padding-left: 1em;
-  display: inline-flex;
   align-items: center;
   gap: 0.5em;
 }

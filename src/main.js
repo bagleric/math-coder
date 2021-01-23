@@ -34,6 +34,11 @@ Vue.config.ignoredElements = [
 
 Vue.component('Define', Define)
 
+
+Vue.prototype.getViewSize = () => {
+  return `height: ${window.innerHeight}; width: ${window.innerWidth};`;
+}
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
