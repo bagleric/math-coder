@@ -15,8 +15,13 @@
         label="Last Name"
         name="lastName"
       />
-      <v-btn color="primary" type="submit" outlined>
+      <v-btn :disabled="c_isRegistering" color="primary" type="submit" outlined>
         Continue
+        <v-progress-circular
+          v-if="c_isRegistering"
+          indeterminate
+          color="primary"
+        ></v-progress-circular>
       </v-btn>
     </FormulateForm>
   </div>
@@ -30,16 +35,21 @@ export default {
   components: {},
   data: () => {
     return {
-      formValues: {}
+      formValues: {},
+      isRegistering: false
     };
   },
   computed: {
     firstName() {
       return this.$store.getters.firstName;
+    },
+    c_isRegistering() {
+      return this.isRegistering;
     }
   },
   methods: {
     createUser: function(data) {
+      this.isRegistering = true;
       let store = this.$store;
 
       if (this.$store.getters.isTesting) {
@@ -63,18 +73,23 @@ export default {
             id: result.data.user.id
           };
           store.commit("updateUser", user);
+          console.log("Hello submitted. Response:", result);
         });
     },
     submitForm(data) {
       this.createUser(data)
         .then(() => {
+          this.isRegistering = false;
           this.$router.push({
             name: "PreActivity",
             params: { moduleId: "199e4bb2-04d1-4a95-9965-d74c259e17fc" }
           });
         })
         .catch(err => {
-          // console.log({ err });
+          this.isRegistering = false;
+          if (this.$store.getters.isTesting) {
+            console.log({ err });
+          }
         });
     }
   }
