@@ -382,19 +382,17 @@ const data = {
                     name: "Compiling with the Run Button",
                     description: "This activity starts out with a block already on the canvas. The student will click the Run Button in order to compile the code.",
                     blockOptions: {
+                        showToolbox: false,
+                        trashcan: false,
                         maxBlocks: 1
                     },
                     startingBlocksXml: `<block type="draw_shape_circle" id="bK+~uQDjQp#oOAxbX$_=" x="188" y="113"></block>`,
                     blockSelection: [
-                        {
-                            type: "draw_shape_circle",
-                            limit: 1
-                        }
                     ],
                     reflections: [
-                        "Well done! You ran the code!"
+                        "Well done. You ran the code! It drew one circle."
                     ],
-                    prompt: "Click the <define word='run_button'>run button</define> below.",
+                    prompt: "Click the <define word='run_button' showInlineHtml>run button</define> below.",
                     solution: "-false-circle-false-"
                 },
                 {
@@ -402,7 +400,7 @@ const data = {
                     name: "Adding blocks to the canvas",
                     description: "This activity asks the students to drag a block onto the canvas. The student will then click the Run Button in order to compile the code and view it run.",
                     blockOptions: {
-                        maxBlocks: 1
+                        maxBlocks: 1,
                     },
                     blockSelection: [
                         {
@@ -413,7 +411,7 @@ const data = {
                     reflections: [
                         "Well done! You ran the code!"
                     ],
-                    prompt: "Drag a <define word='circle_block'>circle block</define> onto the page. Then press the <define word='run_button'>run button</define>.",
+                    prompt: "Drag a <define word='circle_block' showInlineHtml>circle block</define> onto the page. Press the <define word='run_button' showInlineHtml>run button</define> button.",
                     solution: "-false-circle-false-"
                 },
                 {
@@ -430,7 +428,7 @@ const data = {
                             limit: 2
                         }
                     ],
-                    prompt: "Drag another <define word='circle_block'>circle block</define> onto the page. <define word='connect_block'>Connect</define> it to the one that's already there. Press the <define word='run_button'>run button</define>.",
+                    prompt: "Drag another <define word='circle_block' showInlineHtml>circle block</define> onto the page. <define word='connect_block'>Connect</define> it to the one that's already there. Press the <define word='run_button' showInlineHtml>run button</define>.",
 
                     solution: "-false-circle-true--true-circle-false-",
                     reflections: [
@@ -450,7 +448,7 @@ const data = {
                             limit: 5
                         }
                     ],
-                    prompt: "Tell the computer to draw 5 circles.<define word='connect_block'>Connect</define> 5 <define word='circle_block'>circle blocks</define> together.",
+                    prompt: "Tell the computer to draw 5 circles.<define word='connect_block'>Connect</define> 5 <define word='circle_block' showInlineHtml>circle blocks</define> together.",
                     solution: "-false-circle-true--true-circle-true--true-circle-true--true-circle-true--true-circle-false-",
                     reflections: [
                         "<p>Well done! We are telling our computer to add.</p>",
@@ -471,13 +469,9 @@ const data = {
                             type: "draw_shape_circle",
                             limit: 1
                         },
-                        {
-                            type: "repeat_block",
-                            limit: 1,
-                        }
                     ],
                     solution: "-repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-",
-                    prompt: "Drag a <define word='circle_block'>circle block</define> onto the page. Place it inside the <define word='repeat_block'>repeat block</define>. Click the  <define word='run_button'>run button</define> button.",
+                    prompt: "Drag a <define word='circle_block' showInlineHtml>circle block</define> onto the page. Place it inside the <define word='repeat_block' showInlineHtml>repeat block</define>. Click the  <define word='run_button' showInlineHtml>run button</define> button.",
                     reflections: [
                         "We told the computer to do the same thing as last time. This time we only used two blocks."
                     ]
@@ -499,7 +493,7 @@ const data = {
                             limit: 1
                         }
                     ],
-                    prompt: "Drag a <define word='repeat_block'>repeat block</define>  onto the page. Then place a <define word='circle_block'>circle block</define> inside of the <define word='repeat_block'>repeat block</define>.",
+                    prompt: "Drag a <define word='repeat_block' showInlineHtml>repeat block</define>  onto the page. Then place a <define word='circle_block' showInlineHtml>circle block</define> inside of it.",
                     solution: "-repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-",
                     reflections: [
                         "Well done!"
@@ -510,8 +504,11 @@ const data = {
                     name: "Adjusting the Repeat Block",
                     description: "Learn how to adjust the repeat block.",
                     blockOptions: {
-                        maxBlocks: 2
+                        maxBlocks: 2,
+                        trashcan: false,
+                        showToolbox: false
                     },
+                    showToolBox: false,
                     startingBlocksXml:
                         `<block type="repeat_block" id="5}b)[uwQL_NqSZtYhv{%" x="138" y="113">
                         <field name="TIMES">5</field>
@@ -520,16 +517,8 @@ const data = {
                         </statement>
                       </block>`,
                     blockSelection: [
-                        {
-                            type: "draw_shape_circle",
-                            limit: 1
-                        },
-                        {
-                            type: "repeat_block",
-                            limit: 1
-                        }
                     ],
-                    prompt: "Tell the computer to draw 7 circles. Changing the 5 in the <define word='repeat_block'>repeat block</define> to a 7.",
+                    prompt: "Tell the computer to draw 7 circles. Changing the 5 in the <define word='repeat_block' showInlineHtml>repeat block</define> to a 7.",
                     solution: "-repeat-7-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-"
                 },
                 {
@@ -551,19 +540,15 @@ const data = {
                             type: "draw_shape_circle",
                             limit: 1
                         },
-                        {
-                            type: "repeat_block",
-                            limit: 2
-                        }
                     ],
-                    prompt: "Tell the computer to draw 5 groups of 5 circles. Drag a <define word='circle_block'>circle block</define> onto the page. Place it inside the second <define word='repeat_block'>repeat block</define>.",
+                    prompt: "Tell the computer to draw 5 groups of 5 circles. Drag a <define word='circle_block' showInlineHtml>circle block</define> onto the page. Place it inside the second <define word='repeat_block' showInlineHtml>repeat block</define>.",
                     solution: "-repeat-5-times--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-",
                     reflections: [
                         "We have taught our computer to do <define word='repeated_addition'>repeated addition</define>.",
-                        "<p>A row is from side to side like standing in a line. It looks like this:</p><div style='background-color: white; padding: 5px;' data-val='1'>  <div data-val='5' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div></div>",
-                        "We have 5 rows with 5 circles in each row. Each row has the same number of items.",
-                        "<p>A column is up and down like climbing a ladder. It looks like this:</p><div style='background-color: white; padding: 1em;' data-val='5'>  <div data-val='1' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div>  <div data-val='1' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div>  <div data-val='1' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div>  <div data-val='1' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div>  <div data-val='1' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div></div>",
-                        "We also have 5 columns with 5 circles in each column. Each column has the same number of items.",
+                        "<p>A <define word='row'>row</define> is from side to side like standing in a line. It looks like this:</p> <define showInlineHtml word='row'>row</define>",
+                        "We have 5 <define word='row'>rows</define> with 5 circles in each <define word='row'>row</define>. Each <define word='row'>row</define> has the same number of items.",
+                        "<span>A <define word='column'>column</define> is up and down like climbing a ladder. It looks like this:</span><define showInlineHtml word='column'>column</define>",
+                        "We also have 5 <define word='column'>columns</define> with 5 circles in each <define word='column'>column</define>. Each <define word='column'>column</define> has the same number of items.",
                         "Repeated addition is also called <define word='multiplication'>multiplication</define>."
                     ]
                 },
@@ -572,10 +557,12 @@ const data = {
                     name: "Multiplying using the repeat block",
                     description: "Modify the defaults of the nested repeat blocks",
                     blockOptions: {
-                        maxBlocks: 3
+                        maxBlocks: 3,
+                        showToolbox: false,
+                        trashCan: false
                     },
                     startingBlocksXml:
-                        `<block type="repeat_block" id="5}b)[uwQL_NqSZtYhv{%">
+                        `<block type="repeat_block" id="5}b)[uwQL_NqSZtYhv{%" x="25" y="70">
                             <field name="TIMES">5</field>
                             <statement name="DO">
                                 <block type="repeat_block" id="bK+~uQDjQp#oOAxbX$_=">
@@ -587,20 +574,12 @@ const data = {
                             </statement>
                         </block>`,
                     blockSelection: [
-                        {
-                            type: "draw_shape_circle",
-                            limit: 1
-                        },
-                        {
-                            type: "repeat_block",
-                            limit: 2
-                        }
                     ],
-                    prompt: "Now, let’s <define word='multiplication'>multiply</define> using blocks. Change the outside <define word='repeat_block'>repeat block</define> number to 3. Change the inside <define word='repeat_block'>repeat block</define> number to 4.",
+                    prompt: "Now, let’s <define word='multiplication'>multiply</define> using blocks. Change the outside <define word='repeat_block' showInlineHtml>repeat block</define> number to 3. Change the inside <define word='repeat_block' showInlineHtml>repeat block</define> number to 4.",
                     solution: "-repeat-3-times--repeat-4-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-4-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-4-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false-",
                     reflections: [
                         "There are 3 rows with 4 circles in each row. ",
-                        "By counting the circles we know that there are 12 circles total."
+                        "There are 12 circles total."
                     ]
                 },
                 {
@@ -624,11 +603,10 @@ const data = {
                     solution: "-repeat-4-times--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false-",
                     reflections: [
                         "3 rows of 4 circles make the same number of circles as 4 rows of 3 circles.",
-                        "By counting all the circles we know that there are 12 circles again. That was the same as last time.",
+                        "There are 12 circles again. That was the same as last time.",
                         "In math we say it like this: 3 times 4 equals 12, and we write it like this: 3 x 4 = 12.",
                         "This means that we have 3 groups of 4 items and 12 items in total.",
-                        "If we had 5 groups of 3 items, we would write it like this: 5 x 3.",
-                        "To get our computer to do this for us we would use 2 <define word='repeat_block' :showInlineHtml='false'>repeat blocks</define> like before. Then we would modify the first <define word='repeat_block' :showInlineHtml='false'>repeat block</define> to have 5 as its value and the second <define word='repeat_block' :showInlineHtml='false'>repeat block</define> would have 3 as its value."
+                        "If we had 5 groups of 3 items, we would write it like this: 5 x 3."
                     ]
                 },
                 {
@@ -651,10 +629,130 @@ const data = {
                     prompt: "Use <define word='coding'>coding</define>. Find the value of the missing number. 5 x 3 = ____.",
                     reflections: [
                         "You have written the correct code. Well done!",
-                        "Think about what we told the computer to do. What is the answer to 5 x 3 = ___? Then click next.",
-                        "The correct answer is 15."
+                        "Think about what we told the computer to do.",
+                        "5 x 3 = 15"
                     ],
                     solution: "-repeat-5-times--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false-"
+                },
+                {
+                    id: "bfc930c1-8edd-434a-be4b-c4b7297e7e7d",
+                    name: "Applying multiplication",
+                    description: "Solve the multiplication problem",
+                    blockOptions: {
+                        maxBlocks: 3
+                    },
+                    blockSelection: [
+                        {
+                            type: "draw_shape_circle",
+                            limit: 1
+                        },
+                        {
+                            type: "repeat_block",
+                            limit: 2
+                        }
+                    ],
+                    prompt: "Use <define word='coding'>coding</define>. Find the value of the missing number. 4 x 5 = ____.",
+                    reflections: [
+                        "You have written the correct code. Well done!",
+                        "Here is the math sentence: 4 x 5 = 20"
+                    ],
+                    solution: "-repeat-4-times--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-"
+                },
+                {
+                    id: "d8c70db5-c53c-4bd2-812d-0c5584bec5c8",
+                    name: "Applying multiplication",
+                    description: "Solve the multiplication problem",
+                    blockOptions: {
+                        maxBlocks: 3
+                    },
+                    blockSelection: [
+                        {
+                            type: "circle_repeat",
+                            limit: 1
+                        },
+                        {
+                            type: "repeat_block",
+                            limit: 2
+                        }
+                    ],
+                    prompt: "Use <define word='coding'>coding</define>. Jake has 4 boxes. Each box has 2 balls. How many balls does he have in total?",
+                    reflections: [
+                        "You have written the correct code. Well done!",
+                        "Here is the math sentence: 4 x 2 = 8"
+                    ],
+                    solution: "-repeat-4-times--repeat-2-times--true-ball-false--true-ball-false--repeat-2-times--true-ball-false--true-ball-false--repeat-2-times--true-ball-false--true-ball-false--repeat-2-times--true-ball-false--true-ball-false-"
+                },
+                {
+                    id: "a87e0340-da4d-40fd-9758-7b1a947216f5",
+                    name: "Applying multiplication",
+                    description: "Solve the multiplication problem",
+                    blockOptions: {
+                        maxBlocks: 3
+                    },
+                    blockSelection: [
+                        {
+                            type: "draw_candy",
+                            limit: 1
+                        },
+                        {
+                            type: "repeat_block",
+                            limit: 2
+                        }
+                    ],
+                    prompt: "Use <define word='coding'>coding</define>. Kay has 3 bags. Each bag has 7 candies. How many candies does she have?",
+                    reflections: [
+                        "Well done!",
+                        "Here is the math sentence: 3 x 7 = 21"
+                    ],
+                    solution: "-repeat-3-times--repeat-7-times--true-candy-false--true-candy-false--true-candy-false--true-candy-false--true-candy-false--true-candy-false--true-candy-false--repeat-7-times--true-candy-false--true-candy-false--true-candy-false--true-candy-false--true-candy-false--true-candy-false--true-candy-false--repeat-7-times--true-candy-false--true-candy-false--true-candy-false--true-candy-false--true-candy-false--true-candy-false--true-candy-false-"
+                },
+                {
+                    id: "cf8b34f6-480e-4a7e-985b-869403908652",
+                    name: "Applying multiplication",
+                    description: "Solve the multiplication problem",
+                    blockOptions: {
+                        maxBlocks: 3
+                    },
+                    blockSelection: [
+                        {
+                            type: "draw_pillow",
+                            limit: 1
+                        },
+                        {
+                            type: "repeat_block",
+                            limit: 2
+                        }
+                    ],
+                    prompt: "Use <define word='coding'>coding</define>. Jack, Troy, and Sara each have 6 pillows. How many pillows do they have in all?",
+                    reflections: [
+                        "Well done!",
+                        "Here is the math sentence: 3 x 6 = 18"
+                    ],
+                    solution: "-repeat-3-times--repeat-6-times--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--repeat-6-times--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--repeat-6-times--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false-"
+                },
+                {
+                    id: "dd179c2b-481e-40cc-9195-00b8a10c378d",
+                    name: "Applying multiplication",
+                    description: "Solve the multiplication problem",
+                    blockOptions: {
+                        maxBlocks: 3
+                    },
+                    blockSelection: [
+                        {
+                            type: "draw_pillow",
+                            limit: 1
+                        },
+                        {
+                            type: "repeat_block",
+                            limit: 2
+                        }
+                    ],
+                    prompt: "Use <define word='coding'>coding</define>. Each plate has 4 cookies. How many pillows do they have in all?",
+                    reflections: [
+                        "Well done!",
+                        "Here is the math sentence: 3 x 6 = 18"
+                    ],
+                    solution: "-repeat-3-times--repeat-6-times--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--repeat-6-times--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--repeat-6-times--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false-"
                 }
             ],
             postModule: {
@@ -1032,13 +1130,88 @@ const data = {
                 },
                 connect_block: {
                     name: "Connect",
-                    definitionHtml: "Make one block attach to another block"
+                    definitionHtml: "Make one block attach to another block",
+                    inlineHtml: `
+                    <svg height="50" width="250" viewBox="60 0 1 65">
+                        <g transform="translate(-90,0)">
+                        <path
+                            stroke="white"
+                            fill="#5b5ba5"
+                            d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 65.74800109863281  v 5  H 95.74800109863281  V 5  H 95.74800109863281  V 22  H 95.74800109863281  V 22  V 26  h -66.24800109863281  l -6,4  -3,0  -6,-4  h -14.5  H 0 z"
+                        ></path>
+                        <g transform="translate(10,5)">
+                            <text fill="white" x="0" y="13">Draw&nbsp;Circle</text>
+                        </g>
+                        <g style="display: block;" transform="translate(0,27)">
+                            <path
+                            stroke="white"
+                            fill="#5b5ba5"
+                            d=" m 0,0  h 15  l 6,4  3,0  6,-4  h 65.74800109863281  v 5  H 95.74800109863281  V 5  H 95.74800109863281  V 22  H 95.74800109863281  V 22  V 26  h -66.24800109863281  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z"
+                            ></path>
+                            <g transform="translate(10,5)">
+                            <text fill="white" x="0" y="13">Draw&nbsp;Circle</text>
+                            </g>
+                        </g>
+                        </g>
+                        <g transform="translate(20,10)">
+                        <text x="0" y="13">OR</text>
+                        </g>
+                        <g style="display: block;" transform="translate(60,0)">
+                        <path
+                            class="blocklyPath"
+                            stroke="white"
+                            fill="#a5a55b"
+                            d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 94.745849609375  v 5  H 124.745849609375  V 5  H 124.745849609375  V 22  H 124.745849609375  V 26  H 66.30636596679688  l -6,4  -3,0  -6,-4  h -7 a 8 8 0 0,0 -8,8  v 8 a 8 8 0 0,0 8,8  H 124.745849609375  H 124.745849609375  V 50  V 60  h -95.245849609375  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z
+                                                "
+                        ></path>
+                        <g transform="translate(10,5)">
+                            <text fill="white" x="0" y="13">
+                            repeat
+                            </text>
+                        </g>
+                        <g
+                            transform="translate(56.567626953125,5)"
+                            style="cursor: text;"
+                        >
+                            <rect
+                            fill="#ffffffaa"
+                            rx="4"
+                            ry="4"
+                            x="0"
+                            y="0"
+                            height="17"
+                            width="18.153182983398438"
+                            class="blocklyFieldRect"
+                            ></rect>
+                        </g>
+                        <g transform="translate(79.72080993652344,5)">
+                            <text fill="white" x="0" y="13">
+                            times
+                            </text>
+                        </g>
+                        <g transform="translate(10,31)">
+                            <text fill="white" x="0" y="13">
+                            do
+                            </text>
+                        </g>
+                        <g transform="translate(37,27)" style="display: block;">
+                            <path
+                            stroke="white"
+                            fill="#5b5ba5"
+                            d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 65.74800109863281  v 5  H 95.74800109863281  V 5  H 95.74800109863281  V 22  H 95.74800109863281  V 22  V 26  h -66.24800109863281  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z"
+                            ></path>
+                            <g transform="translate(10,5)">
+                            <text fill="white" x="0" y="13">Draw&nbsp;Circle</text>
+                            </g>
+                        </g>
+                        </g>
+                    </svg>`
                 },
                 repeat_block: {
                     name: "Repeat Block",
                     definitionHtml: "<div>This block is made up of two parts. <ol><li><strong>Number Input:</strong> this tells us how many times we should run the code inside the code slot</li><li><strong>Code Slot:</strong> The area we can put other code blocks.</li></ol> This block allows us to do one thing many times</div>",
                     inlineHtml: `
-                    <svg height="50" width="100" viewBox="60 0 1 65">
+                        <svg height="50" width="100" viewBox="60 0 1 65">
                         <path
                             class="blocklyPath"
                             stroke="white"
@@ -1055,7 +1228,7 @@ const data = {
                             x="0"
                             y="13"
                             >
-                            repeat
+                                repeat
                             </text>
                         </g>
                         <g
@@ -1083,7 +1256,7 @@ const data = {
                             x="0"
                             y="13"
                             >
-                            times
+                                times
                             </text>
                         </g>
                         <g transform="translate(10,31)">
@@ -1095,15 +1268,16 @@ const data = {
                             x="0"
                             y="13"
                             >
-                            do
+                                do
                             </text>
                         </g>
-                    </svg>`
+                    </svg > `
 
                 },
                 multiplication: {
                     name: "Multiplication, Multiply",
                     definitionHtml: "This is repeated addition. We add the items from one or more groups of equal items."
+
                 },
                 coding: {
                     name: "Coding",
@@ -1112,8 +1286,17 @@ const data = {
                 run_button: {
                     name: "Run Button, Run",
                     definitionHtml: "The button that tells the computer to make our code do something.",
-                    inlineHtml: `
-                    <v-btn rounded small color="green" class="run-button white--text">Run</v-btn>`
+                    inlineHtml: `<v-btn rounded small color="green" class="run-button white--text">Run</v-btn>`
+                },
+                column: {
+                    name: "Column",
+                    definitionHtml: "Runs up and down like a ladder",
+                    inlineHtml: `<div style='background-color: white; padding: 1em;' data-val='5'>  <div data-val='1' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div>  <div data-val='1' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div>  <div data-val='1' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div>  <div data-val='1' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div>  <div data-val='1' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div></div>`
+                },
+                row: {
+                    name: "Row",
+                    definitionHtml: "A row from side to side like standing in a line",
+                    inlineHtml: `<div style='background-color: white; padding: 5px;' data-val='1'>  <div data-val='5' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div></div>`
                 }
             }
         }

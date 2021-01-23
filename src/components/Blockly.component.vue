@@ -37,17 +37,18 @@ export default {
       // collapse: false,
       // comments: true,
       // maxBlocks: 5,
-      trashcan: true,
+      trashcan: false,
       // horizontalLayout: false,
       // toolboxPosition: "start",
       // css: false,
       // rtl: false,
       // scrollbars: false,
       sounds: true,
-      oneBasedIndex: true
+      oneBasedIndex: true,
+      showToolbox: true
     });
 
-    if (!options.toolbox) {
+    if (!options.toolbox && options.showToolbox) {
       options.toolbox = this.$refs["blocklyToolbox"];
     }
     var blocklyArea = this.$refs["blocklyArea"];
@@ -85,7 +86,7 @@ export default {
   },
   methods: {
     fireChangeEvent(event) {
-      console.log(event);
+      console.log("TODO: handle events", { event });
       // console.log(this.workspace.getBlockById(event.blockId).pathObject);
       // console.log(this.workspace.getBlockById(event.blockId).svgGroup_);
     }

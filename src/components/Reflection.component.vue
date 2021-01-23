@@ -4,10 +4,15 @@
   -->
   <div class="reflection">
     <div class="message">
-      <AppRenderHtml :html="c_reflection"></AppRenderHtml>
+      <AppRenderHtml parentTag="span" :html="c_reflection"></AppRenderHtml>
     </div>
     <div class="controls">
-      <v-btn class="previous white--text" text v-show="iter != 0" @click="decrementIter()">
+      <v-btn
+        class="previous white--text"
+        text
+        v-show="iter != 0"
+        @click="decrementIter()"
+      >
         <v-icon>mdi-chevron-left</v-icon>
         Previous
       </v-btn>
@@ -20,45 +25,45 @@
 </template>
 
 <script>
-import AppRenderHtml from '@/components/RenderHtml.component.vue'
+import AppRenderHtml from "@/components/RenderHtml.component.vue";
 
-const sample = require('lodash/sample')
-const isArray = require('lodash/isArray')
+const sample = require("lodash/sample");
+const isArray = require("lodash/isArray");
 export default {
-  name: 'AppReflection',
+  name: "AppReflection",
   components: { AppRenderHtml },
   props: {
     reflections: {
-      default: function () {
-        var selected = sample(['Well done!', 'Good job!', 'You did it!'])
-        return [selected]
+      default: function() {
+        var selected = sample(["Well done!", "Good job!", "You did it!"]);
+        return [selected];
       },
-      validator: function (reflections) {
-        return isArray(reflections)
+      validator: function(reflections) {
+        return isArray(reflections);
       }
     },
     message: String
   },
   computed: {
-    c_reflection () {
-      return this.reflections[this.iter]
+    c_reflection() {
+      return this.reflections[this.iter];
     }
   },
   data: () => ({
     iter: 0
   }),
   methods: {
-    incrementIter () {
-      this.iter++
+    incrementIter() {
+      this.iter++;
       if (this.reflections.length < this.iter + 1) {
-        this.$emit('reflection-complete')
+        this.$emit("reflection-complete");
       }
     },
-    decrementIter () {
-      if (this.iter > 0) this.iter--
+    decrementIter() {
+      if (this.iter > 0) this.iter--;
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -71,13 +76,17 @@ export default {
   grid-area: message;
 }
 
+.message > span {
+  gap: 0.25em;
+}
+
 .controls {
   display: grid;
   grid-area: controls;
   grid-auto-flow: column;
   justify-content: end;
   margin: 0 1em 1em;
-  color:white;
+  color: white;
 }
 
 .previous,

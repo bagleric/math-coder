@@ -3,7 +3,7 @@
     <v-dialog v-model="dialog" max-width="290">
       <template v-slot:activator="{ on, attrs }">
         <v-hover>
-          <div v-bind="attrs" v-on="on">
+          <span v-bind="attrs" v-on="on">
             <AppRenderHtml
               v-if="showInlineHtml && inlineHtml"
               :html="inlineHtml"
@@ -11,14 +11,18 @@
             <span v-else class="word">
               <slot></slot>
             </span>
-          </div>
+          </span>
         </v-hover>
       </template>
       <v-card>
         <v-card-title class="headline">{{ name }}</v-card-title>
         <v-card-text>
+          <AppRenderHtml
+            v-if="inlineHtml"
+            parentTag="header"
+            :html="inlineHtml"
+          ></AppRenderHtml>
           <AppRenderHtml :html="definitionHtml"></AppRenderHtml>
-          <AppRenderHtml :html="inlineHtml"></AppRenderHtml>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -40,7 +44,7 @@ export default {
   },
   props: {
     word: { required: true, type: String },
-    showInlineHtml: { type: Boolean, default: true }
+    showInlineHtml: { type: Boolean, default: false }
   },
   data() {
     return { dialog: false };
