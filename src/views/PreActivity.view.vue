@@ -23,5 +23,6 @@ export default {
 <style scoped>
 .pre-activity-view {
   height: 100%;
+  overflow: auto;
 }
 </style>

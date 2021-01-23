@@ -11,8 +11,8 @@
       v-else
       :inputs="theModule.postModule.inputs"
       :results="theModule.postModule.results"
-      :stepper="true"
-      :shuffle="true"
+      :stepper="!c_viewAllQuestions"
+      :shuffle="!c_viewAllQuestions"
       @form-complete="formComplete"
     ></AppForm>
   </div>
@@ -38,6 +38,9 @@ export default {
       return (this.module = this.$store.getters.getModule(
         this.$route.params.moduleId
       ));
+    },
+    c_viewAllQuestions() {
+      return this.$store.getters.viewAllQuestions;
     }
   },
   methods: {
@@ -49,7 +52,7 @@ export default {
           value: answer
         })
         .then(data => {
-          // console.log(data);
+          console.log("Post Test submitted. Response:", data);
         });
     },
     formComplete(data) {

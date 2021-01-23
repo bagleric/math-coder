@@ -18,7 +18,9 @@ export default new Vuex.Store({
       lastName: "",
       id: 0
     },
-    isTesting: false,
+    isTesting: true,
+    viewAllQuestions: true,
+    executionWait: 1,
     data
   },
   mutations: {
@@ -27,6 +29,14 @@ export default new Vuex.Store({
     },
     toggleIsTesting(state) {
       state.isTesting = !state.isTesting;
+    },
+    setViewAllQuestions(state, value) {
+      console.log(value)
+      state.viewAllQuestions = value;
+    },
+    setExecutionWait(state, value) {
+      console.log(value)
+      state.executionWait = value;
     }
   },
   getters: {
@@ -38,6 +48,12 @@ export default new Vuex.Store({
     },
     isTesting: state => {
       return state.isTesting;
+    },
+    executionWait: state => {
+      return state.executionWait;
+    },
+    viewAllQuestions: state => {
+      return state.viewAllQuestions;
     },
     // dataGetters
     dataModules: state => {

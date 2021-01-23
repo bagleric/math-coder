@@ -22,6 +22,7 @@ export default {
 <style scoped>
 .post-activity {
   height: 100%;
+  overflow: auto;
   padding: 2em;
 }
 </style>

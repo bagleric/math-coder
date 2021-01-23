@@ -3,6 +3,20 @@
     <div>
       <span>Settings</span>
       <span>TODO</span>
+      <v-switch
+        v-model="viewAllQuestions"
+        @change="updateViewAllQuestions"
+        label="View all questions"
+      ></v-switch>
+      <v-subheader class="pl-0">
+        Execution Wait: {{ c_executionWait }}
+      </v-subheader>
+      <v-slider
+        @change="updateExecuteWait"
+        :thumb-label="true"
+        :max="25"
+        tick-size="4"
+      ></v-slider>
     </div>
     <v-divider></v-divider>
     <v-card elevation="0">
@@ -97,13 +111,27 @@ export default {
   name: "AppTest",
   components: {},
   props: {},
-  data: () => ({}),
+  data: () => ({
+    viewAllQuestions: false
+  }),
   computed: {
     modules() {
       return this.$store.getters.getModules();
+    },
+    c_executionWait() {
+      return this.$store.getters.executionWait;
     }
   },
-  methods: {}
+  methods: {
+    updateViewAllQuestions(value) {
+      console.log(value);
+      this.$store.commit("setViewAllQuestions", value);
+    },
+    updateExecuteWait(value) {
+      console.log(value);
+      this.$store.commit("setExecutionWait", value);
+    }
+  }
 };
 </script>
 

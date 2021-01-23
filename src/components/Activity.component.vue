@@ -302,7 +302,10 @@ export default {
           );
           function nextStep() {
             if (scope.myInterpreter.step()) {
-              scope.runner = setTimeout(nextStep, 1);
+              scope.runner = setTimeout(
+                nextStep,
+                scope.$store.getters.executionWait
+              );
             } else {
               scope.isRunning = false;
             }

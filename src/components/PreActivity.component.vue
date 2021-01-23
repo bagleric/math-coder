@@ -11,8 +11,8 @@
       v-else
       :inputs="theModule.preModule.inputs"
       :results="theModule.preModule.results"
-      :stepper="true"
-      :shuffle="true"
+      :stepper="!c_viewAllQuestions"
+      :shuffle="!c_viewAllQuestions"
       @form-complete="formComplete"
     ></AppForm>
   </div>
@@ -38,18 +38,21 @@ export default {
       return (this.module = this.$store.getters.getModule(
         this.$route.params.moduleId
       ));
+    },
+    c_viewAllQuestions() {
+      return this.$store.getters.viewAllQuestions;
     }
   },
   methods: {
     answerQuestion(userId, questionId, answer) {
-      this.$http
+      return this.$http
         .post(STORE_ANSWER_URL, {
           user_id: userId,
           question_id: questionId,
           value: answer
         })
         .then(data => {
-          // console.log(data);
+          console.log("Pre Test submitted. Response:", data);
         });
     },
     formComplete(data) {
