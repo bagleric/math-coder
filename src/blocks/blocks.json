@@ -24,6 +24,36 @@
         "tooltip": "%{BKY_CONTROLS_REPEAT_TOOLTIP}",
         "helpUrl": "%{BKY_CONTROLS_REPEAT_HELPURL}"
     },
+    "draw_ball": {
+        "type": "draw_ball",
+        "message0": "Draw Ball",
+        "inputsInline": false,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 240,
+        "tooltip": "This block will draw one ball",
+        "helpUrl": ""
+    },
+    "draw_book": {
+        "type": "draw_book",
+        "message0": "Draw Book",
+        "inputsInline": false,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 240,
+        "tooltip": "This block will draw one ball",
+        "helpUrl": ""
+    },
+    "draw_candy": {
+        "type": "draw_candy",
+        "message0": "Draw Candy",
+        "inputsInline": false,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 330,
+        "tooltip": "This block will draw one piece of candy",
+        "helpUrl": ""
+    },
     "draw_shape_circle": {
         "type": "draw_shape_circle",
         "message0": "Draw Circle",
@@ -32,6 +62,16 @@
         "nextStatement": null,
         "colour": 240,
         "tooltip": "This block will draw one circle",
+        "helpUrl": ""
+    },
+    "draw_pillow": {
+        "type": "draw_pillow",
+        "message0": "Draw Pillow",
+        "inputsInline": false,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 225,
+        "tooltip": "This block will draw one pillow",
         "helpUrl": ""
     },
     "repeat_block": {
