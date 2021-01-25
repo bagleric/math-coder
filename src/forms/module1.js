@@ -489,6 +489,10 @@ const data = {
                             limit: 1
                         },
                         {
+                            type: "circle_repeat",
+                            limit: 1
+                        },
+                        {
                             type: "repeat_block",
                             limit: 1
                         }
@@ -595,6 +599,10 @@ const data = {
                             limit: 1
                         },
                         {
+                            type: "circle_repeat",
+                            limit: 1
+                        },
+                        {
                             type: "repeat_block",
                             limit: 2
                         }
@@ -619,6 +627,10 @@ const data = {
                     blockSelection: [
                         {
                             type: "draw_shape_circle",
+                            limit: 1
+                        },
+                        {
+                            type: "circle_repeat",
                             limit: 1
                         },
                         {
@@ -647,6 +659,10 @@ const data = {
                             limit: 1
                         },
                         {
+                            type: "circle_repeat",
+                            limit: 1
+                        },
+                        {
                             type: "repeat_block",
                             limit: 2
                         }
@@ -666,6 +682,10 @@ const data = {
                         maxBlocks: 3
                     },
                     blockSelection: [
+                        {
+                            type: "draw_shape_circle",
+                            limit: 1
+                        },
                         {
                             type: "circle_repeat",
                             limit: 1
@@ -695,6 +715,10 @@ const data = {
                             limit: 1
                         },
                         {
+                            type: "circle_repeat",
+                            limit: 1
+                        },
+                        {
                             type: "repeat_block",
                             limit: 2
                         }
@@ -719,6 +743,10 @@ const data = {
                             limit: 1
                         },
                         {
+                            type: "circle_repeat",
+                            limit: 1
+                        },
+                        {
                             type: "repeat_block",
                             limit: 2
                         }
@@ -740,6 +768,10 @@ const data = {
                     blockSelection: [
                         {
                             type: "draw_pillow",
+                            limit: 1
+                        },
+                        {
+                            type: "circle_repeat",
                             limit: 1
                         },
                         {
