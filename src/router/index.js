@@ -23,7 +23,7 @@ const routes = [
       breadcrumb: 'Pre-test'
     },
     component: () =>
-    import(/* webpackChunkName: "module/pre-activity" */ '../views/PreActivity.view.vue')
+      import(/* webpackChunkName: "module/pre-activity" */ '../views/PreActivity.view.vue')
   },
   {
     name: 'Activity',

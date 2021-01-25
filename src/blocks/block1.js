@@ -59,26 +59,18 @@ Blockly.JavaScript['circle_repeat'] = function (block) {
     repeats = Blockly.JavaScript.valueToCode(block, 'TIMES',
       Blockly.JavaScript.ORDER_ASSIGNMENT) || '0'
   }
-  let endVar = repeats
-  let i = 0;
-  let item = "";
   const circle = `<svg height='30' width='30'><circle cx='15' cy='15' r='12' fill='black' /></svg>`
-  while (i < endVar) {
-    item = item + circle;
-    i++;
-  }
-  item = `<div>${item}</div>`;
 
   const hasChildren = !isEmpty(get(block, ["childBlocks_"], []))
   const hasParent = has(block, ["parentBlock_", "id"]);
-  console.log(item)
-  const report = `-${hasParent}-circle-${endVar}-${hasChildren}-`;
-  return `
+  const report = `-${hasParent}-circle-${repeats}-${hasChildren}-`;
+  let code = `
    highlightBlock("${block.id}")
    addToPath('${report}');
-   addItem("${item}");
-   addItems("${circle}", ${endVar});
+   addRow();
+   addItems("${circle}", ${repeats});
    `;
+  return code;
 
 }
 

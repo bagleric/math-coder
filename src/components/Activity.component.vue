@@ -178,12 +178,12 @@ export default {
       this.resetCount++;
     },
     addItems(itemToAdd, timesToAdd) {
-      this.items.push(itemToAdd);
       if (isEmpty(this.rows)) {
         this.rows.push([]);
       }
       let theLast = last(this.rows);
       for (let i = 0; i < timesToAdd; i++) {
+        this.items.push(itemToAdd);
         theLast.push(itemToAdd);
       }
     },
