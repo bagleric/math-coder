@@ -130,7 +130,7 @@ export default {
   display: grid;
 }
 .marked-item {
-  background: pink;
+  background: lightblue;
 }
 .totals-label {
   padding: 0 1em;

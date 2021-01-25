@@ -548,7 +548,7 @@ const data = {
                     prompt: "Tell the computer to draw 5 groups of 5 circles. Drag a <define word='circle_block' showInlineHtml>circle block</define> onto the page. Place it inside the second <define word='repeat_block' showInlineHtml>repeat block</define>.",
                     solution: "-repeat-5-times--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-",
                     reflections: [
-                        "We have taught our computer to do <define word='repeated_addition'>repeated addition</define>.",
+                        "We have taught our computer to do <define word='multiplication'>repeated addition</define>.",
                         "<p>A <define word='row'>row</define> is from side to side like standing in a line. It looks like this:</p> <define showInlineHtml word='row'>row</define>",
                         "We have 5 <define word='row'>rows</define> with 5 circles in each <define word='row'>row</define>. Each <define word='row'>row</define> has the same number of items.",
                         "<span>A <define word='column'>column</define> is up and down like climbing a ladder. It looks like this:</span><define showInlineHtml word='column'>column</define>",
@@ -607,10 +607,10 @@ const data = {
                             limit: 2
                         }
                     ],
-                    prompt: "Tell the computer to <define word='multiplication'>multiply</define>. Repeat 4 circles 3 times.",
+                    prompt: "Tell the computer to <define word='multiplication'>multiply</define>. Repeat 3 circles 4 times.",
                     solution: "-repeat-4-times--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false-",
                     reflections: [
-                        "3 rows of 4 circles make the same number of circles as 4 rows of 3 circles.",
+                        "3 rows, or groups, of 4 circles make the same number of circles as 4 rows of 3 circles.",
                         "There are 12 circles again. That was the same as last time.",
                         "In math we say it like this: 3 times 4 equals 12, and we write it like this: 3 x 4 = 12.",
                         "This means that we have 3 groups of 4 items and 12 items in total.",
@@ -683,7 +683,7 @@ const data = {
                     },
                     blockSelection: [
                         {
-                            type: "draw_shape_circle",
+                            type: "draw_ball",
                             limit: 1
                         },
                         {
