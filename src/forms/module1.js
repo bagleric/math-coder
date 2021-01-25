@@ -386,7 +386,7 @@ const data = {
                         trashcan: false,
                         maxBlocks: 1
                     },
-                    startingBlocksXml: `<block type="draw_shape_circle" id="bK+~uQDjQp#oOAxbX$_=" x="188" y="113"></block>`,
+                    startingBlocksXml: `<block type="draw_shape_circle" id="bK+~uQDjQp#oOAxbX$_=" x="10" y="65"></block>`,
                     blockSelection: [
                     ],
                     reflections: [
@@ -421,7 +421,7 @@ const data = {
                     blockOptions: {
                         maxBlocks: 2
                     },
-                    startingBlocksXml: `<block type="draw_shape_circle" id="bK+~uQDjQp#oOAxbX$_=" x="188" y="113"></block>`,
+                    startingBlocksXml: `<block type="draw_shape_circle" id="bK+~uQDjQp#oOAxbX$_=" x="10" y="65"></block>`,
                     blockSelection: [
                         {
                             type: "draw_shape_circle",
@@ -463,7 +463,7 @@ const data = {
                     blockOptions: {
                         maxBlocks: 2
                     },
-                    startingBlocksXml: `<block type="repeat_block" id="bK+~uQDjQp#oOAxbX$_=" x="100" y="100"></block>`,
+                    startingBlocksXml: `<block type="repeat_block" id="bK+~uQDjQp#oOAxbX$_="  x="10" y="65"></block>`,
                     blockSelection: [
                         {
                             type: "draw_shape_circle",
@@ -514,7 +514,7 @@ const data = {
                     },
                     showToolBox: false,
                     startingBlocksXml:
-                        `<block type="repeat_block" id="5}b)[uwQL_NqSZtYhv{%" x="138" y="113">
+                        `<block type="repeat_block" id="5}b)[uwQL_NqSZtYhv{%" x="10" y="65">
                         <field name="TIMES">5</field>
                         <statement name="DO">
                           <block type="draw_shape_circle" id="bK+~uQDjQp#oOAxbX$_="></block>
@@ -533,7 +533,7 @@ const data = {
                         maxBlocks: 3
                     },
                     startingBlocksXml:
-                        `<block type="repeat_block" id="5}b)[uwQL_NqSZtYhv{%" x="138" y="113">
+                        `<block type="repeat_block" id="5}b)[uwQL_NqSZtYhv{%" x="10" y="65">
                             <field name="TIMES">5</field>
                             <statement name="DO">
                             <block type="repeat_block" id="bK+~uQDjQp#oOAxbX$_="></block>
@@ -566,7 +566,7 @@ const data = {
                         trashCan: false
                     },
                     startingBlocksXml:
-                        `<block type="repeat_block" id="5}b)[uwQL_NqSZtYhv{%" x="25" y="70">
+                        `<block type="repeat_block" id="5}b)[uwQL_NqSZtYhv{%" x="10" y="65">
                             <field name="TIMES">5</field>
                             <statement name="DO">
                                 <block type="repeat_block" id="bK+~uQDjQp#oOAxbX$_=">
@@ -715,10 +715,6 @@ const data = {
                             limit: 1
                         },
                         {
-                            type: "circle_repeat",
-                            limit: 1
-                        },
-                        {
                             type: "repeat_block",
                             limit: 2
                         }
@@ -743,10 +739,6 @@ const data = {
                             limit: 1
                         },
                         {
-                            type: "circle_repeat",
-                            limit: 1
-                        },
-                        {
                             type: "repeat_block",
                             limit: 2
                         }
@@ -767,11 +759,7 @@ const data = {
                     },
                     blockSelection: [
                         {
-                            type: "draw_pillow",
-                            limit: 1
-                        },
-                        {
-                            type: "circle_repeat",
+                            type: "draw_cookie",
                             limit: 1
                         },
                         {
@@ -779,12 +767,12 @@ const data = {
                             limit: 2
                         }
                     ],
-                    prompt: "Use <define word='coding'>coding</define>. Each plate has 4 cookies. How many pillows do they have in all?",
+                    prompt: "Use <define word='coding'>coding</define>. Each plate has 4 cookies. Jack has 7 plates. How many cookies does Jack have?",
                     reflections: [
                         "Well done!",
-                        "Here is the math sentence: 3 x 6 = 18"
+                        "Here is the math sentence: 7 x 4 = 28"
                     ],
-                    solution: "-repeat-3-times--repeat-6-times--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--repeat-6-times--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--repeat-6-times--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false-"
+                    solution: "-repeat-7-times--repeat-4-times--true-cookie-false--true-cookie-false--true-cookie-false--true-cookie-false--repeat-4-times--true-cookie-false--true-cookie-false--true-cookie-false--true-cookie-false--repeat-4-times--true-cookie-false--true-cookie-false--true-cookie-false--true-cookie-false--repeat-4-times--true-cookie-false--true-cookie-false--true-cookie-false--true-cookie-false--repeat-4-times--true-cookie-false--true-cookie-false--true-cookie-false--true-cookie-false--repeat-4-times--true-cookie-false--true-cookie-false--true-cookie-false--true-cookie-false--repeat-4-times--true-cookie-false--true-cookie-false--true-cookie-false--true-cookie-false-"
                 }
             ],
             postModule: {

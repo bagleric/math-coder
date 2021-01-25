@@ -54,6 +54,16 @@
         "tooltip": "This block will draw one piece of candy",
         "helpUrl": ""
     },
+    "draw_cookie": {
+        "type": "draw_cookie",
+        "message0": "Draw Cookie",
+        "inputsInline": false,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": 45,
+        "tooltip": "This block will draw one cookie",
+        "helpUrl": ""
+    },
     "draw_shape_circle": {
         "type": "draw_shape_circle",
         "message0": "Draw Circle",
