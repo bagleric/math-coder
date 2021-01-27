@@ -1,7 +1,12 @@
 <template>
   <div class="activity-view">
     <header class="prompt primary white--text">
-      <span class="bold-text">Instructions:</span>
+      <span class="bold-text">
+        Instructions:
+        <span v-if="c_isTesting">
+          <v-btn @click="submitCode"> NEXT </v-btn>
+        </span>
+      </span>
       <AppRenderHtml class="prompt-rendered" :html="c_activity.prompt">
       </AppRenderHtml>
     </header>
@@ -73,7 +78,7 @@
           :reflections="c_activity.reflections"
         ></AppReflection>
         <span v-else-if="c_madeAttemtps" class="not-quite">
-          It looks like we didn't quite make it. Keep trying.
+          {{ c_keepTryingMessage }}
         </span>
       </div>
     </div>
@@ -133,6 +138,7 @@ export default {
     rows: [],
     isRunning: false,
     resetCount: 0,
+    keepTryingMsg: "",
     activityStats: {
       started_at: timestamp.utc(TIMESTAMP_FORMAT),
       ended_at: null,
@@ -171,6 +177,15 @@ export default {
     },
     demoWorkspace() {
       return get(this, ["$refs", "activityBlockly", "workspace"]);
+    },
+    c_keepTryingMessage() {
+      return (
+        this.keepTryingMsg ||
+        "It looks like we didn't quite make it. Keep trying."
+      );
+    },
+    c_isTesting() {
+      return get(this.$store, ["getters", "isTesting"], false);
     }
   },
   methods: {
@@ -203,6 +218,7 @@ export default {
     },
     addToPath(toAdd) {
       this.path += toAdd;
+      console.log(this.path);
     },
     initApi(interpreter, globalObject) {
       // Add an API function for add item.
@@ -294,7 +310,14 @@ export default {
       );
     },
     runCode() {
-      console.log(this.getViewSize());
+      this.keepTryingMsg = "";
+
+      if (this.demoWorkspace.getTopBlocks().length > 1) {
+        this.keepTryingMsg =
+          "Make sure you connect all of the blocks together!";
+        return;
+      }
+
       this.activityStats.compilation_timestamps.push(
         timestamp.utc(TIMESTAMP_FORMAT)
       );

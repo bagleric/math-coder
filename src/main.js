@@ -29,7 +29,8 @@ Vue.config.ignoredElements = [
   'mutation',
   'value',
   'sep',
-  'statement'
+  'statement',
+  'next'
 ]
 
 Vue.component('Define', Define)

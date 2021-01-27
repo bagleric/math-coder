@@ -386,33 +386,34 @@ const data = {
                         trashcan: false,
                         maxBlocks: 1
                     },
-                    startingBlocksXml: `<block type="draw_shape_circle" id="bK+~uQDjQp#oOAxbX$_=" x="10" y="65"></block>`,
+                    startingBlocksXml: `<block type="draw_circle" id="bK+~uQDjQp#oOAxbX$_=" x="10" y="65"></block>`,
                     blockSelection: [
                     ],
                     reflections: [
                         "Well done. You ran the code! It drew one circle."
                     ],
                     prompt: "Click the <define word='run_button' showInlineHtml>run button</define> below.",
-                    solution: "-false-circle-false-"
+                    solution: "-false-circle-false-",
+                    isSingle: true
                 },
                 {
                     id: "d2280c13-d2cc-456c-b40a-014830b52616",
-                    name: "Adding blocks to the canvas",
+                    name: "Dragging blocks onto the canvas",
                     description: "This activity asks the students to drag a block onto the canvas. The student will then click the Run Button in order to compile the code and view it run.",
                     blockOptions: {
                         maxBlocks: 1,
                     },
                     blockSelection: [
                         {
-                            type: "draw_shape_circle",
-                            limit: 1
+                            type: "draw_circle"
                         }
                     ],
                     reflections: [
                         "Well done! You ran the code!"
                     ],
                     prompt: "Drag a <define word='circle_block' showInlineHtml>circle block</define> onto the page. Press the <define word='run_button' showInlineHtml>run button</define> button.",
-                    solution: "-false-circle-false-"
+                    solution: "-false-circle-false-",
+                    isSingle: true
                 },
                 {
                     id: "b572bba0-3eec-475e-aadd-a42d99e96268",
@@ -421,11 +422,10 @@ const data = {
                     blockOptions: {
                         maxBlocks: 2
                     },
-                    startingBlocksXml: `<block type="draw_shape_circle" id="bK+~uQDjQp#oOAxbX$_=" x="10" y="65"></block>`,
+                    startingBlocksXml: `<block type="draw_circle" id="bK+~uQDjQp#oOAxbX$_=" x="10" y="65"></block>`,
                     blockSelection: [
                         {
-                            type: "draw_shape_circle",
-                            limit: 2
+                            type: "draw_circle"
                         }
                     ],
                     prompt: "Drag another <define word='circle_block' showInlineHtml>circle block</define> onto the page. <define word='connect_block'>Connect</define> it to the one that's already there. Press the <define word='run_button' showInlineHtml>run button</define>.",
@@ -433,18 +433,19 @@ const data = {
                     solution: "-false-circle-true--true-circle-false-",
                     reflections: [
                         "By <define word='connect_block'>connecting</define> the two blocks you told the computer to draw a circle. You have written code!"
-                    ]
+                    ],
+                    isSingle: true
                 },
                 {
                     id: "a32bd178-30af-436b-8f37-52cfe1bfb6b0",
-                    name: "Connecting multiple blocks together",
+                    name: "Connecting 5 blocks together",
                     description: "Learn about connecting multiple blocks together",
                     blockOptions: {
                         maxBlocks: 5
                     },
                     blockSelection: [
                         {
-                            type: "draw_shape_circle",
+                            type: "draw_circle",
                             limit: 5
                         }
                     ],
@@ -453,28 +454,154 @@ const data = {
                     reflections: [
                         "<p>Well done! We are telling our computer to add.</p>",
                         "<p>In this case, our math sentence looks like this:</p> <p><strong>1 circle + 1 circle + 1 circle + 1 circle + 1 circle = 5 circles</strong>.</p>"
-                    ]
+                    ],
+                    isSingle: true
+                },
+                {
+                    id: "5c85e072-0da1-4341-a79c-a1fa647f592a",
+                    name: "Intro to Row blocks",
+                    description: "Introduction to Row Blocks. The goal is to introduce them to our first type of loop block.",
+                    blockOptions: {
+                        maxBlocks: 1
+                    },
+                    blockSelection: [
+                        {
+                            type: "repeat_circle"
+                        },
+                    ],
+                    solution: "-false-repeat_circle-5-false-",
+                    prompt: "Drag a <define word='row_block' showInlineHtml>Row Block</define> onto the page.",
+                    reflections: [
+                        "We told the computer to do the same thing as last time. This time we only used one block."
+                    ],
+                    isAddition: true
+                },
+                {
+                    id: "841b0d32-fd3e-420e-b742-56992ddcdcee",
+                    name: "Modifying the Row block",
+                    description: "The goal is to modify the number of items in a row.",
+                    blockOptions: {
+                        maxBlocks: 1,
+                        showToolbox: false,
+                    },
+                    startingBlocksXml: `<block type="repeat_circle" id="bK+~uQDjQp#oOAxbX$_="  x="10" y="65"></block>`,
+                    blockSelection: [],
+                    solution: "-false-repeat_circle-3-false-",
+                    prompt: "Change the 5 on the <define word='row_block' showInlineHtml>Draw circles block</define> to a 3.",
+                    reflections: [
+                        "Changing the number changes the number of items in the row."
+                    ],
+                    isAddition: true
+                },
+                {
+                    id: "31ba48c3-875e-4fbe-9b5e-ee20b369eba0",
+                    name: "Multiple Row blocks: addition sentences",
+                    description: "The goal is to connect multiple rows blocks together. This will form a math sentence.",
+                    blockOptions: {
+                        maxBlocks: 3
+                    },
+                    blockSelection: [
+                        {
+                            type: "repeat_circle"
+                        },
+                    ],
+                    solution: "-false-repeat_circle-5-true--true-repeat_circle-5-true--true-repeat_circle-5-false-",
+                    prompt: "Drag 3 <define word='row_block' showInlineHtml>Draw circles blocks</define> onto the page. Connect them together.",
+                    reflections: [
+                        "Well done! Connecting these blocks together make the math sentence 5 + 5 + 5 = 15."
+                    ],
+                    isAddition: true
+                },
+                {
+                    id: "cb00ebd3-fa66-4aad-903b-7c356a2f9aaf",
+                    name: "Learn: Modify multiple row blocks",
+                    description: "The goal is to connect multiple rows blocks together and then modify each of their values to produce a math sentence.",
+                    startingBlocksXml: `
+                    <block type="repeat_circle" id="m[bfwg2|2]?YL=(!A~m#" x="10" y="65">
+                        <field name="TIMES">3</field>
+                        <next>
+                            <block type="repeat_circle" id="J;%ZCw019N(zc}OIA#+P">
+                                <field name="TIMES">4</field>
+                                <next>
+                                    <block type="repeat_circle" id="r:7.AGge{s8;gP9As2Ci">
+                                        <field name="TIMES">5</field>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>`,
+                    blockOptions: {
+                        maxBlocks: 3,
+                        showToolbox: false
+                    },
+                    blockSelection: [],
+                    solution: "-false-repeat_circle-4-true--true-repeat_circle-4-true--true-repeat_circle-4-false-",
+                    prompt: "Change all of the numbers on the blocks to 4. This will make the math sentence 4 + 4 + 4 = __ ",
+                    reflections: [
+                        "We are doing repeated addition."
+                    ],
+                    isAddition: true
+                },
+                {
+                    id: "c52da5a4-0642-4350-b638-68491384ede9",
+                    name: "Challenge: Multiple modified Row blocks",
+                    description: "The goal is to connect multiple rows blocks together.",
+                    blockOptions: {
+                        maxBlocks: 4
+                    },
+                    blockSelection: [
+                        {
+                            type: "repeat_circle"
+                        },
+                    ],
+                    solution: "-false-repeat_circle-3-true--true-repeat_circle-3-true--true-repeat_circle-3-true--true-repeat_circle-3-false-",
+                    prompt: "Drag 4 blocks onto the page. Make all of their numbers a 3.",
+                    reflections: [
+                        "This code makes the addition sentence 3 + 3 + 3 + 3 = __.",
+                        " It makes the multiplication sentence 4 x 3 = __."
+                    ],
+                    isAddition: true
+                },
+                {
+                    id: "d8feab5b-458c-4b74-9541-cb3813c76d95",
+                    name: "Multiple modified Row blocks",
+                    description: "Transition from repeated addition to multiplication.",
+                    blockOptions: {
+                        maxBlocks: 5
+                    },
+                    blockSelection: [
+                        {
+                            type: "repeat_circle"
+                        },
+                    ],
+                    solution: "TODO",
+                    prompt: "Drag 5 blocks onto the page. Make all of their numbers 5.",
+                    reflections: [
+                        "This code gives us the addition sentence: 5 + 5 + 5 + 5 = 20.",
+                        "It also gives us the multiplication sentence 4 x 5 = 20"
+                    ],
+                    isAddition: true,
+                    isMultiplication: true
                 },
                 {
                     id: "8b911749-ce73-4ef1-a285-ad0a4ae5e4ee",
                     name: "The intro to the Repeat Block",
                     description: "Introduction to the repeat block. The repeat block will already be on the canvas. The goal is to learn how to place one block [the circle block] inside another block [the repeat block].",
-                    maxBlocks: 2,
                     blockOptions: {
                         maxBlocks: 2
                     },
                     startingBlocksXml: `<block type="repeat_block" id="bK+~uQDjQp#oOAxbX$_="  x="10" y="65"></block>`,
                     blockSelection: [
                         {
-                            type: "draw_shape_circle",
-                            limit: 1
+                            type: "repeat_circle"
                         },
                     ],
-                    solution: "-repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-",
-                    prompt: "Drag a <define word='circle_block' showInlineHtml>circle block</define> onto the page. Place it inside the <define word='repeat_block' showInlineHtml>repeat block</define>. Click the  <define word='run_button' showInlineHtml>run button</define> button.",
+                    solution: "-repeat-5-times--true-repeat_circle-5-false--true-repeat_circle-5-false--true-repeat_circle-5-false--true-repeat_circle-5-false--true-repeat_circle-5-false-",
+                    prompt: "Drag a <define word='row_block' showInlineHtml>Draw circles block</define> onto the page. Place it inside the <define word='repeat_block' showInlineHtml>repeat block</define>. Click the  <define word='run_button' showInlineHtml>run button</define> button.",
                     reflections: [
                         "We told the computer to do the same thing as last time. This time we only used two blocks."
-                    ]
+                    ],
+                    isMultiplication: true
                 },
                 {
                     id: "c1b6e7a8-4aec-43c1-81ce-f7dc9584c0bc",
@@ -485,157 +612,143 @@ const data = {
                     },
                     blockSelection: [
                         {
-                            type: "draw_shape_circle",
-                            limit: 1
+                            type: "repeat_circle"
                         },
                         {
-                            type: "circle_repeat",
-                            limit: 1
-                        },
-                        {
-                            type: "repeat_block",
-                            limit: 1
+                            type: "repeat_block"
                         }
                     ],
-                    prompt: "Drag a <define word='repeat_block' showInlineHtml>repeat block</define>  onto the page. Then place a <define word='circle_block' showInlineHtml>circle block</define> inside of it.",
+                    prompt: "Drag a <define word='repeat_block' showInlineHtml>repeat block</define>  onto the page. Then place a <define word='row_block' showInlineHtml>row block</define> inside of it.",
                     solution: "-repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-",
                     reflections: [
                         "Well done!"
-                    ]
-                },
-                {
-                    id: "626ebc9a-ccf7-49a0-a337-067eebc93580",
-                    name: "Adjusting the Repeat Block",
-                    description: "Learn how to adjust the repeat block.",
-                    blockOptions: {
-                        maxBlocks: 2,
-                        trashcan: false,
-                        showToolbox: false
-                    },
-                    showToolBox: false,
-                    startingBlocksXml:
-                        `<block type="repeat_block" id="5}b)[uwQL_NqSZtYhv{%" x="10" y="65">
-                        <field name="TIMES">5</field>
-                        <statement name="DO">
-                          <block type="draw_shape_circle" id="bK+~uQDjQp#oOAxbX$_="></block>
-                        </statement>
-                      </block>`,
-                    blockSelection: [
                     ],
-                    prompt: "Tell the computer to draw 7 circles. Changing the 5 in the <define word='repeat_block' showInlineHtml>repeat block</define> to a 7.",
-                    solution: "-repeat-7-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-"
+                    isMultiplication: true
                 },
-                {
-                    id: "ec2475cf-621b-426e-8168-86b042650724",
-                    name: "A lot of repeating",
-                    description: "Learn about placing one repeat block inside another one.",
-                    blockOptions: {
-                        maxBlocks: 3
-                    },
-                    startingBlocksXml:
-                        `<block type="repeat_block" id="5}b)[uwQL_NqSZtYhv{%" x="10" y="65">
-                            <field name="TIMES">5</field>
-                            <statement name="DO">
-                            <block type="repeat_block" id="bK+~uQDjQp#oOAxbX$_="></block>
-                            </statement>
-                        </block>`,
-                    blockSelection: [
-                        {
-                            type: "draw_shape_circle",
-                            limit: 1
-                        },
-                    ],
-                    prompt: "Tell the computer to draw 5 groups of 5 circles. Drag a <define word='circle_block' showInlineHtml>circle block</define> onto the page. Place it inside the second <define word='repeat_block' showInlineHtml>repeat block</define>.",
-                    solution: "-repeat-5-times--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-",
-                    reflections: [
-                        "We have taught our computer to do <define word='multiplication'>repeated addition</define>.",
-                        "<p>A <define word='row'>row</define> is from side to side like standing in a line. It looks like this:</p> <define showInlineHtml word='row'>row</define>",
-                        "We have 5 <define word='row'>rows</define> with 5 circles in each <define word='row'>row</define>. Each <define word='row'>row</define> has the same number of items.",
-                        "<span>A <define word='column'>column</define> is up and down like climbing a ladder. It looks like this:</span><define showInlineHtml word='column'>column</define>",
-                        "We also have 5 <define word='column'>columns</define> with 5 circles in each <define word='column'>column</define>. Each <define word='column'>column</define> has the same number of items.",
-                        "Repeated addition is also called <define word='multiplication'>multiplication</define>."
-                    ]
-                },
-                {
-                    id: "c12e692c-8293-47c6-8e4b-7fce1e509e83",
-                    name: "Multiplying using the repeat block",
-                    description: "Modify the defaults of the nested repeat blocks",
-                    blockOptions: {
-                        maxBlocks: 3,
-                        showToolbox: false,
-                        trashCan: false
-                    },
-                    startingBlocksXml:
-                        `<block type="repeat_block" id="5}b)[uwQL_NqSZtYhv{%" x="10" y="65">
-                            <field name="TIMES">5</field>
-                            <statement name="DO">
-                                <block type="repeat_block" id="bK+~uQDjQp#oOAxbX$_=">
-                                    <field name="TIMES">5</field>
-                                    <statement name="DO">
-                                        <block type="draw_shape_circle" id="bK+~uQDjQp#oOAxbX$_="></block>
-                                    </statement>
-                                </block>
-                            </statement>
-                        </block>`,
-                    blockSelection: [
-                    ],
-                    prompt: "Now, let’s <define word='multiplication'>multiply</define> using blocks. Change the outside <define word='repeat_block' showInlineHtml>repeat block</define> number to 3. Change the inside <define word='repeat_block' showInlineHtml>repeat block</define> number to 4.",
-                    solution: "-repeat-3-times--repeat-4-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-4-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-4-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false-",
-                    reflections: [
-                        "There are 3 rows with 4 circles in each row. ",
-                        "There are 12 circles total."
-                    ]
-                },
+                // {
+                //     id: "626ebc9a-ccf7-49a0-a337-067eebc93580",
+                //     name: "Adjusting the Repeat Block",
+                //     description: "Learn how to adjust the repeat block.",
+                //     blockOptions: {
+                //         maxBlocks: 2,
+                //         trashcan: false,
+                //         showToolbox: false
+                //     },
+                //     startingBlocksXml:
+                //         `<block type="repeat_block" id="5}b)[uwQL_NqSZtYhv{%" x="10" y="65">
+                //         <field name="TIMES">5</field>
+                //         <statement name="DO">
+                //           <block type="repeat_circle" id="bK+~uQDjQp#oOAxbX$_="></block>
+                //         </statement>
+                //       </block>`,
+                //     blockSelection: [
+                //     ],
+                //     prompt: "Tell the computer to draw 7 rows. Change the 5 in the <define word='repeat_block' showInlineHtml>repeat block</define> to a 7.",
+                //     solution: "-repeat-7-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-"
+                //     ,
+                //     isMultiplication: true
+                // },
+                // {
+                //     id: "ec2475cf-621b-426e-8168-86b042650724",
+                //     name: "A lot of repeating",
+                //     description: "Learn about placing one repeat block inside another one.",
+                //     blockOptions: {
+                //         maxBlocks: 3
+                //     },
+                //     startingBlocksXml:
+                //         `<block type="repeat_block" id="5}b)[uwQL_NqSZtYhv{%" x="10" y="65">
+                //             <field name="TIMES">5</field>
+                //             <statement name="DO">
+                //             <block type="repeat_circle" id="bK+~uQDjQp#oOAxbX$_="></block>
+                //             </statement>
+                //         </block>`,
+                //     blockSelection: [
+                //         {
+                //             type: "draw_circle"
+                //         },
+                //     ],
+                //     prompt: "Tell the computer to draw 5 rows of 5 circles. Drag a <define word='circle_block' showInlineHtml>circle block</define> onto the page. Place it inside the second <define word='repeat_block' showInlineHtml>repeat block</define>.",
+                //     solution: "-repeat-5-times--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-",
+                //     reflections: [
+                //         "We have taught our computer to do <define word='multiplication'>repeated addition</define>.",
+                //         "<p>A <define word='row'>row</define> is from side to side like standing in a line. It looks like this:</p> <define showInlineHtml word='row'>row</define>",
+                //         "We have 5 <define word='row'>rows</define> with 5 circles in each <define word='row'>row</define>. Each <define word='row'>row</define> has the same number of items.",
+                //         "<span>A <define word='column'>column</define> is up and down like climbing a ladder. It looks like this:</span><define showInlineHtml word='column'>column</define>",
+                //         "We also have 5 <define word='column'>columns</define> with 5 circles in each <define word='column'>column</define>. Each <define word='column'>column</define> has the same number of items.",
+                //         "Repeated addition is also called <define word='multiplication'>multiplication</define>."
+                //     ],
+                //     isMultiplication: true
+                // },
+                // {
+                //     id: "c12e692c-8293-47c6-8e4b-7fce1e509e83",
+                //     name: "Multiplying using the repeat block",
+                //     description: "Modify the defaults of the nested repeat blocks",
+                //     blockOptions: {
+                //         maxBlocks: 3,
+                //         showToolbox: false,
+                //         trashCan: false
+                //     },
+                //     startingBlocksXml:
+                //         `<block type="repeat_block" id="5}b)[uwQL_NqSZtYhv{%" x="10" y="65">
+                //             <field name="TIMES">5</field>
+                //             <statement name="DO">
+                //                 <block type="repeat_block" id="bK+~uQDjQp#oOAxbX$_=">
+                //                     <field name="TIMES">5</field>
+                //                     <statement name="DO">
+                //                         <block type="draw_circle" id="bK+~uQDjQp#oOAxbX$_="></block>
+                //                     </statement>
+                //                 </block>
+                //             </statement>
+                //         </block>`,
+                //     blockSelection: [
+                //     ],
+                //     prompt: "Now, let’s <define word='multiplication'>multiply</define> using blocks. Change the outside <define word='repeat_block' showInlineHtml>repeat block</define> number to 3. Change the inside <define word='repeat_block' showInlineHtml>repeat block</define> number to 4.",
+                //     solution: "-repeat-3-times--repeat-4-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-4-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-4-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false-",
+                //     reflections: [
+                //         "There are 3 rows with 4 circles in each row. ",
+                //         "There are 12 circles total."
+                //     ],
+                //     isMultiplication: true
+                // },
                 {
                     id: "4fcf1ebf-3044-4573-91ec-2da17ea82591",
                     name: "Multiplying",
                     description: "Explore multiplication again.",
                     blockOptions: {
-                        maxBlocks: 3
+                        maxBlocks: 2
                     },
                     blockSelection: [
                         {
-                            type: "draw_shape_circle",
-                            limit: 1
-                        },
-                        {
-                            type: "circle_repeat",
-                            limit: 1
+                            type: "repeat_circle"
                         },
                         {
                             type: "repeat_block",
-                            limit: 2
                         }
                     ],
-                    prompt: "Tell the computer to <define word='multiplication'>multiply</define>. Repeat 3 circles 4 times.",
-                    solution: "-repeat-4-times--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false-",
+                    prompt: "Tell the computer to <define word='multiplication'>multiply</define>. Draw a row of 3 circles. Repeat it 4 times.",
+                    solution: "-repeat-4-times--true-repeat_circle-3-false--true-repeat_circle-3-false--true-repeat_circle-3-false--true-repeat_circle-3-false-",
                     reflections: [
-                        "3 rows, or groups, of 4 circles make the same number of circles as 4 rows of 3 circles.",
+                        "3 rows of 4 circles make the same number of circles as 4 rows of 3 circles.",
                         "There are 12 circles again. That was the same as last time.",
                         "In math we say it like this: 3 times 4 equals 12, and we write it like this: 3 x 4 = 12.",
-                        "This means that we have 3 groups of 4 items and 12 items in total.",
-                        "If we had 5 groups of 3 items, we would write it like this: 5 x 3."
-                    ]
+                        "This means that we have 3 rows of 4 items and 12 items in total.",
+                        "If we had 5 rows of 3 items, we would write it like this: 5 x 3."
+                    ],
+                    isMultiplication: true
                 },
                 {
                     id: "1ddb9234-5940-44c1-a595-6122373e3be4",
                     name: "Applying multiplication",
                     description: "Solve the multiplication problem",
                     blockOptions: {
-                        maxBlocks: 3
+                        maxBlocks: 2
                     },
                     blockSelection: [
                         {
-                            type: "draw_shape_circle",
-                            limit: 1
+                            type: "repeat_circle"
                         },
                         {
-                            type: "circle_repeat",
-                            limit: 1
-                        },
-                        {
-                            type: "repeat_block",
-                            limit: 2
+                            type: "repeat_block"
                         }
                     ],
                     prompt: "Use <define word='coding'>coding</define>. Find the value of the missing number. 5 x 3 = ____.",
@@ -644,27 +757,23 @@ const data = {
                         "Think about what we told the computer to do.",
                         "5 x 3 = 15"
                     ],
-                    solution: "-repeat-5-times--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false--repeat-3-times--true-circle-false--true-circle-false--true-circle-false-"
+                    solution: "-repeat-5-times--true-repeat_circle-3-false--true-repeat_circle-3-false--true-repeat_circle-3-false--true-repeat_circle-3-false--true-repeat_circle-3-false-"
+                    ,
+                    isMultiplication: true
                 },
                 {
                     id: "bfc930c1-8edd-434a-be4b-c4b7297e7e7d",
                     name: "Applying multiplication",
                     description: "Solve the multiplication problem",
                     blockOptions: {
-                        maxBlocks: 3
+                        maxBlocks: 2
                     },
                     blockSelection: [
                         {
-                            type: "draw_shape_circle",
-                            limit: 1
+                            type: "repeat_circle"
                         },
                         {
-                            type: "circle_repeat",
-                            limit: 1
-                        },
-                        {
-                            type: "repeat_block",
-                            limit: 2
+                            type: "repeat_block"
                         }
                     ],
                     prompt: "Use <define word='coding'>coding</define>. Find the value of the missing number. 4 x 5 = ____.",
@@ -672,27 +781,22 @@ const data = {
                         "You have written the correct code. Well done!",
                         "Here is the math sentence: 4 x 5 = 20"
                     ],
-                    solution: "-repeat-4-times--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false--repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-"
+                    isMultiplication: true,
+                    solution: "-repeat-4-times--true-repeat_circle-5-false--true-repeat_circle-5-false--true-repeat_circle-5-false--true-repeat_circle-5-false-"
                 },
                 {
                     id: "d8c70db5-c53c-4bd2-812d-0c5584bec5c8",
                     name: "Applying multiplication",
                     description: "Solve the multiplication problem",
                     blockOptions: {
-                        maxBlocks: 3
+                        maxBlocks: 2
                     },
                     blockSelection: [
                         {
-                            type: "draw_ball",
-                            limit: 1
+                            type: "repeat_ball"
                         },
                         {
-                            type: "circle_repeat",
-                            limit: 1
-                        },
-                        {
-                            type: "repeat_block",
-                            limit: 2
+                            type: "repeat_block"
                         }
                     ],
                     prompt: "Use <define word='coding'>coding</define>. Jake has 4 boxes. Each box has 2 balls. How many balls does he have in total?",
@@ -700,23 +804,22 @@ const data = {
                         "You have written the correct code. Well done!",
                         "Here is the math sentence: 4 x 2 = 8"
                     ],
-                    solution: "-repeat-4-times--repeat-2-times--true-ball-false--true-ball-false--repeat-2-times--true-ball-false--true-ball-false--repeat-2-times--true-ball-false--true-ball-false--repeat-2-times--true-ball-false--true-ball-false-"
+                    isMultiplication: true,
+                    solution: "-repeat-4-times--true-repeat_ball-2-false--true-repeat_ball-2-false--true-repeat_ball-2-false--true-repeat_ball-2-false-"
                 },
                 {
                     id: "a87e0340-da4d-40fd-9758-7b1a947216f5",
                     name: "Applying multiplication",
                     description: "Solve the multiplication problem",
                     blockOptions: {
-                        maxBlocks: 3
+                        maxBlocks: 2
                     },
                     blockSelection: [
                         {
-                            type: "draw_candy",
-                            limit: 1
+                            type: "repeat_candy"
                         },
                         {
-                            type: "repeat_block",
-                            limit: 2
+                            type: "repeat_block"
                         }
                     ],
                     prompt: "Use <define word='coding'>coding</define>. Kay has 3 bags. Each bag has 7 candies. How many candies does she have?",
@@ -724,23 +827,22 @@ const data = {
                         "Well done!",
                         "Here is the math sentence: 3 x 7 = 21"
                     ],
-                    solution: "-repeat-3-times--repeat-7-times--true-candy-false--true-candy-false--true-candy-false--true-candy-false--true-candy-false--true-candy-false--true-candy-false--repeat-7-times--true-candy-false--true-candy-false--true-candy-false--true-candy-false--true-candy-false--true-candy-false--true-candy-false--repeat-7-times--true-candy-false--true-candy-false--true-candy-false--true-candy-false--true-candy-false--true-candy-false--true-candy-false-"
+                    isMultiplication: true,
+                    solution: "-repeat-3-times--true-repeat_candy-7-false--true-repeat_candy-7-false--true-repeat_candy-7-false-"
                 },
                 {
                     id: "cf8b34f6-480e-4a7e-985b-869403908652",
                     name: "Applying multiplication",
                     description: "Solve the multiplication problem",
                     blockOptions: {
-                        maxBlocks: 3
+                        maxBlocks: 2
                     },
                     blockSelection: [
                         {
-                            type: "draw_pillow",
-                            limit: 1
+                            type: "repeat_pillow"
                         },
                         {
-                            type: "repeat_block",
-                            limit: 2
+                            type: "repeat_block"
                         }
                     ],
                     prompt: "Use <define word='coding'>coding</define>. Jack, Troy, and Sara each have 6 pillows. How many pillows do they have in all?",
@@ -748,31 +850,31 @@ const data = {
                         "Well done!",
                         "Here is the math sentence: 3 x 6 = 18"
                     ],
-                    solution: "-repeat-3-times--repeat-6-times--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--repeat-6-times--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--repeat-6-times--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false--true-pillow-false-"
+                    isMultiplication: true,
+                    solution: "-repeat-3-times--true-repeat_pillow-6-false--true-repeat_pillow-6-false--true-repeat_pillow-6-false-"
                 },
                 {
                     id: "dd179c2b-481e-40cc-9195-00b8a10c378d",
                     name: "Applying multiplication",
                     description: "Solve the multiplication problem",
                     blockOptions: {
-                        maxBlocks: 3
+                        maxBlocks: 2
                     },
                     blockSelection: [
                         {
-                            type: "draw_cookie",
-                            limit: 1
+                            type: "repeat_cookie"
                         },
                         {
-                            type: "repeat_block",
-                            limit: 2
+                            type: "repeat_block"
                         }
                     ],
-                    prompt: "Use <define word='coding'>coding</define>. Each plate has 4 cookies. Jack has 7 plates. How many cookies does Jack have?",
+                    prompt: "Use <define word='coding'>coding</define>. Jack baked cookies on a pan. Each row had 4 cookies. There were 7 rows on the pan. How many cookies does Jack have?",
                     reflections: [
                         "Well done!",
                         "Here is the math sentence: 7 x 4 = 28"
                     ],
-                    solution: "-repeat-7-times--repeat-4-times--true-cookie-false--true-cookie-false--true-cookie-false--true-cookie-false--repeat-4-times--true-cookie-false--true-cookie-false--true-cookie-false--true-cookie-false--repeat-4-times--true-cookie-false--true-cookie-false--true-cookie-false--true-cookie-false--repeat-4-times--true-cookie-false--true-cookie-false--true-cookie-false--true-cookie-false--repeat-4-times--true-cookie-false--true-cookie-false--true-cookie-false--true-cookie-false--repeat-4-times--true-cookie-false--true-cookie-false--true-cookie-false--true-cookie-false--repeat-4-times--true-cookie-false--true-cookie-false--true-cookie-false--true-cookie-false-"
+                    isMultiplication: true,
+                    solution: "-repeat-7-times--true-repeat_cookie-4-false--true-repeat_cookie-4-false--true-repeat_cookie-4-false--true-repeat_cookie-4-false--true-repeat_cookie-4-false--true-repeat_cookie-4-false--true-repeat_cookie-4-false-"
                 }
             ],
             postModule: {
