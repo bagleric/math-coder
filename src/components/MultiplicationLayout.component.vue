@@ -47,7 +47,7 @@
 import AppRenderHtml from "@/components/RenderHtml.component.vue";
 import AppBrace from "@/components/Brace.component.vue";
 export default {
-  name: "RowColumnLayout",
+  name: "MultiplicationLayout",
   components: { AppRenderHtml, AppBrace },
   props: {
     columns: { type: Number, default: 0 },
@@ -97,7 +97,6 @@ export default {
 
 <style scoped>
 .row-column-layout {
-  height: 100%;
   display: grid;
   gap: 2em;
   grid-template: "layout-view totals-label" auto / 1fr auto;

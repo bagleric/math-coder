@@ -394,7 +394,7 @@ const data = {
                     ],
                     prompt: "Click the <define word='run_button' showInlineHtml>run button</define> below.",
                     solution: "-false-circle-false-",
-                    isSingle: true
+                    isAddition: true
                 },
                 {
                     id: "d2280c13-d2cc-456c-b40a-014830b52616",
@@ -413,7 +413,7 @@ const data = {
                     ],
                     prompt: "Drag a <define word='circle_block' showInlineHtml>circle block</define> onto the page. Press the <define word='run_button' showInlineHtml>run button</define> button.",
                     solution: "-false-circle-false-",
-                    isSingle: true
+                    isAddition: true
                 },
                 {
                     id: "b572bba0-3eec-475e-aadd-a42d99e96268",
@@ -434,7 +434,7 @@ const data = {
                     reflections: [
                         "By <define word='connect_block'>connecting</define> the two blocks you told the computer to draw a circle. You have written code!"
                     ],
-                    isSingle: true
+                    isAddition: true
                 },
                 {
                     id: "a32bd178-30af-436b-8f37-52cfe1bfb6b0",
@@ -455,7 +455,7 @@ const data = {
                         "<p>Well done! We are telling our computer to add.</p>",
                         "<p>In this case, our math sentence looks like this:</p> <p><strong>1 circle + 1 circle + 1 circle + 1 circle + 1 circle = 5 circles</strong>.</p>"
                     ],
-                    isSingle: true
+                    isAddition: true
                 },
                 {
                     id: "5c85e072-0da1-4341-a79c-a1fa647f592a",
@@ -538,9 +538,11 @@ const data = {
                     solution: "-false-repeat_circle-4-true--true-repeat_circle-4-true--true-repeat_circle-4-false-",
                     prompt: "Change all of the numbers on the blocks to 4. This will make the math sentence 4 + 4 + 4 = __ ",
                     reflections: [
-                        "We are doing repeated addition."
+                        "We are doing repeated addition.",
+                        "Repeated addition is also called multiplication."
                     ],
-                    isAddition: true
+                    isAddition: true,
+                    isMultiplication: true
                 },
                 {
                     id: "c52da5a4-0642-4350-b638-68491384ede9",
@@ -556,11 +558,9 @@ const data = {
                     ],
                     solution: "-false-repeat_circle-3-true--true-repeat_circle-3-true--true-repeat_circle-3-true--true-repeat_circle-3-false-",
                     prompt: "Drag 4 blocks onto the page. Make all of their numbers a 3.",
-                    reflections: [
-                        "This code makes the addition sentence 3 + 3 + 3 + 3 = __.",
-                        " It makes the multiplication sentence 4 x 3 = __."
-                    ],
-                    isAddition: true
+                    reflections: ["You repeated 4 circles 3 times"],
+                    isAddition: true,
+                    isMultiplication: true
                 },
                 {
                     id: "d8feab5b-458c-4b74-9541-cb3813c76d95",
@@ -574,12 +574,9 @@ const data = {
                             type: "repeat_circle"
                         },
                     ],
-                    solution: "TODO",
+                    solution: "-false-repeat_circle-5-true--true-repeat_circle-5-true--true-repeat_circle-5-true--true-repeat_circle-5-true--true-repeat_circle-5-false-",
                     prompt: "Drag 5 blocks onto the page. Make all of their numbers 5.",
-                    reflections: [
-                        "This code gives us the addition sentence: 5 + 5 + 5 + 5 = 20.",
-                        "It also gives us the multiplication sentence 4 x 5 = 20"
-                    ],
+                    reflections: ["You repeated 5 circles 5 times"],
                     isAddition: true,
                     isMultiplication: true
                 },
@@ -599,32 +596,33 @@ const data = {
                     solution: "-repeat-5-times--true-repeat_circle-5-false--true-repeat_circle-5-false--true-repeat_circle-5-false--true-repeat_circle-5-false--true-repeat_circle-5-false-",
                     prompt: "Drag a <define word='row_block' showInlineHtml>Draw circles block</define> onto the page. Place it inside the <define word='repeat_block' showInlineHtml>repeat block</define>. Click the  <define word='run_button' showInlineHtml>run button</define> button.",
                     reflections: [
-                        "We told the computer to do the same thing as last time. This time we only used two blocks."
+                        "We told the computer to do the same thing as last time. This time we only used two blocks.",
+                        "Well done! You're multiplying.",
                     ],
                     isMultiplication: true
                 },
-                {
-                    id: "c1b6e7a8-4aec-43c1-81ce-f7dc9584c0bc",
-                    name: "The Repeat Block",
-                    description: "Learn about the repeat block. In this activity you will observe the default behavior of the repeat block. You should expect it to repeat the action inside it the number of times found in the input.",
-                    blockOptions: {
-                        maxBlocks: 2
-                    },
-                    blockSelection: [
-                        {
-                            type: "repeat_circle"
-                        },
-                        {
-                            type: "repeat_block"
-                        }
-                    ],
-                    prompt: "Drag a <define word='repeat_block' showInlineHtml>repeat block</define>  onto the page. Then place a <define word='row_block' showInlineHtml>row block</define> inside of it.",
-                    solution: "-repeat-5-times--true-circle-false--true-circle-false--true-circle-false--true-circle-false--true-circle-false-",
-                    reflections: [
-                        "Well done!"
-                    ],
-                    isMultiplication: true
-                },
+                // {
+                //     id: "c1b6e7a8-4aec-43c1-81ce-f7dc9584c0bc",
+                //     name: "The Repeat Block",
+                //     description: "Learn about the repeat block. In this activity you will observe the default behavior of the repeat block. You should expect it to repeat the action inside it the number of times found in the input.",
+                //     blockOptions: {
+                //         maxBlocks: 2
+                //     },
+                //     blockSelection: [
+                //         {
+                //             type: "repeat_circle"
+                //         },
+                //         {
+                //             type: "repeat_block"
+                //         }
+                //     ],
+                //     prompt: "Drag a <define word='repeat_block' showInlineHtml>repeat block</define>  onto the page. Then place a <define word='row_block' showInlineHtml>row block</define> inside of it.",
+                //     solution: "-repeat-5-times--true-repeat_circle-5-false--true-repeat_circle-5-false--true-repeat_circle-5-false--true-repeat_circle-5-false--true-repeat_circle-5-false-",
+                //     reflections: [
+                //         "Well done! You're multiplying.",
+                //     ],
+                //     isMultiplication: true
+                // },
                 // {
                 //     id: "626ebc9a-ccf7-49a0-a337-067eebc93580",
                 //     name: "Adjusting the Repeat Block",
@@ -725,13 +723,10 @@ const data = {
                             type: "repeat_block",
                         }
                     ],
-                    prompt: "Tell the computer to <define word='multiplication'>multiply</define>. Draw a row of 3 circles. Repeat it 4 times.",
+                    prompt: "Use coding. Multiply <define word='multiplication'>multiply</define>. Draw a row of 3 circles. Repeat it 4 times.",
                     solution: "-repeat-4-times--true-repeat_circle-3-false--true-repeat_circle-3-false--true-repeat_circle-3-false--true-repeat_circle-3-false-",
                     reflections: [
-                        "3 rows of 4 circles make the same number of circles as 4 rows of 3 circles.",
-                        "There are 12 circles again. That was the same as last time.",
-                        "In math we say it like this: 3 times 4 equals 12, and we write it like this: 3 x 4 = 12.",
-                        "This means that we have 3 rows of 4 items and 12 items in total.",
+                        "This means that we have 4 rows of 3 items and 12 items in total.",
                         "If we had 5 rows of 3 items, we would write it like this: 5 x 3."
                     ],
                     isMultiplication: true
@@ -753,9 +748,7 @@ const data = {
                     ],
                     prompt: "Use <define word='coding'>coding</define>. Find the value of the missing number. 5 x 3 = ____.",
                     reflections: [
-                        "You have written the correct code. Well done!",
-                        "Think about what we told the computer to do.",
-                        "5 x 3 = 15"
+                        "Well done math buddy.",
                     ],
                     solution: "-repeat-5-times--true-repeat_circle-3-false--true-repeat_circle-3-false--true-repeat_circle-3-false--true-repeat_circle-3-false--true-repeat_circle-3-false-"
                     ,
@@ -779,7 +772,6 @@ const data = {
                     prompt: "Use <define word='coding'>coding</define>. Find the value of the missing number. 4 x 5 = ____.",
                     reflections: [
                         "You have written the correct code. Well done!",
-                        "Here is the math sentence: 4 x 5 = 20"
                     ],
                     isMultiplication: true,
                     solution: "-repeat-4-times--true-repeat_circle-5-false--true-repeat_circle-5-false--true-repeat_circle-5-false--true-repeat_circle-5-false-"
@@ -802,7 +794,6 @@ const data = {
                     prompt: "Use <define word='coding'>coding</define>. Jake has 4 boxes. Each box has 2 balls. How many balls does he have in total?",
                     reflections: [
                         "You have written the correct code. Well done!",
-                        "Here is the math sentence: 4 x 2 = 8"
                     ],
                     isMultiplication: true,
                     solution: "-repeat-4-times--true-repeat_ball-2-false--true-repeat_ball-2-false--true-repeat_ball-2-false--true-repeat_ball-2-false-"
@@ -823,10 +814,7 @@ const data = {
                         }
                     ],
                     prompt: "Use <define word='coding'>coding</define>. Kay has 3 bags. Each bag has 7 candies. How many candies does she have?",
-                    reflections: [
-                        "Well done!",
-                        "Here is the math sentence: 3 x 7 = 21"
-                    ],
+                    reflections: [],
                     isMultiplication: true,
                     solution: "-repeat-3-times--true-repeat_candy-7-false--true-repeat_candy-7-false--true-repeat_candy-7-false-"
                 },
@@ -846,10 +834,7 @@ const data = {
                         }
                     ],
                     prompt: "Use <define word='coding'>coding</define>. Jack, Troy, and Sara each have 6 pillows. How many pillows do they have in all?",
-                    reflections: [
-                        "Well done!",
-                        "Here is the math sentence: 3 x 6 = 18"
-                    ],
+                    reflections: [],
                     isMultiplication: true,
                     solution: "-repeat-3-times--true-repeat_pillow-6-false--true-repeat_pillow-6-false--true-repeat_pillow-6-false-"
                 },
@@ -869,10 +854,7 @@ const data = {
                         }
                     ],
                     prompt: "Use <define word='coding'>coding</define>. Jack baked cookies on a pan. Each row had 4 cookies. There were 7 rows on the pan. How many cookies does Jack have?",
-                    reflections: [
-                        "Well done!",
-                        "Here is the math sentence: 7 x 4 = 28"
-                    ],
+                    reflections: [],
                     isMultiplication: true,
                     solution: "-repeat-7-times--true-repeat_cookie-4-false--true-repeat_cookie-4-false--true-repeat_cookie-4-false--true-repeat_cookie-4-false--true-repeat_cookie-4-false--true-repeat_cookie-4-false--true-repeat_cookie-4-false-"
                 }

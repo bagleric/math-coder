@@ -46,7 +46,10 @@ export default {
   },
   computed: {
     c_reflection() {
-      return this.reflections[this.iter];
+      if (this.reflections.length > 0) {
+        return this.reflections[this.iter];
+      }
+      return "Well done!";
     }
   },
   data: () => ({

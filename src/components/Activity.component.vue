@@ -65,10 +65,27 @@
         </v-btn>
       </div>
       <div class="view" id="code">
-        <RowColumnLayout
+        <AdditionLayout
+          v-if="c_activity.isAddition"
+          :numColumns="c_columns"
+          :numRows="c_numRows"
+          :items="c_items"
+          :collectionRows="c_rows"
+          :displayMathSentence="!c_isRunning"
+        />
+        <MultiplicationLayout
+          v-if="c_showMultiplicationLayout"
           :columns="c_columns"
           :rows="c_numRows"
           :items="c_items"
+        />
+        <AdditionSentence
+          v-if="!c_isRunning && c_activity.isAddition"
+          :values="c_rowSizes"
+        />
+        <MultiplicationSentence
+          v-if="c_showMultiplicationSentence"
+          :values="c_multiplySentence"
         />
       </div>
       <div v-if="!c_isRunning" class="reflection">
@@ -89,7 +106,12 @@
 import AppBlockly from "@/components/Blockly.component.vue";
 import AppBrace from "@/components/Brace.component.vue";
 import AppRenderHtml from "@/components/RenderHtml.component.vue";
-import RowColumnLayout from "@/components/RowColumnLayout.component.vue";
+import AdditionLayout from "@/components/AdditionLayout.component.vue";
+import MultiplicationLayout from "@/components/MultiplicationLayout.component.vue";
+import AdditionSentence from "@/components/AdditionSentence.component.vue";
+import MultiplicationSentence from "@/components/MultiplicationSentence.component.vue";
+import map from "lodash/map";
+import every from "lodash/every";
 import AppReflection from "@/components/Reflection.component.vue";
 import BlocklyJS from "blockly/javascript";
 import "@/blocks/block1.js";
@@ -111,7 +133,10 @@ const timestamp = require("time-stamp");
 export default {
   name: "AppActivity",
   components: {
-    RowColumnLayout,
+    AdditionLayout,
+    MultiplicationLayout,
+    AdditionSentence,
+    MultiplicationSentence,
     AppBlockly,
     AppRenderHtml,
     AppReflection,
@@ -172,6 +197,9 @@ export default {
     c_columns() {
       return get(this.rows, ["0", "length"], 0);
     },
+    c_rows() {
+      return this.rows;
+    },
     c_items() {
       return this.items;
     },
@@ -186,6 +214,26 @@ export default {
     },
     c_isTesting() {
       return get(this.$store, ["getters", "isTesting"], false);
+    },
+    c_rowSizes() {
+      return map(this.rows, row => {
+        return row.length;
+      });
+    },
+    c_multiplySentence() {
+      return [this.c_numRows, this.c_columns];
+    },
+    c_showMultiplicationLayout() {
+      return this.c_activity.isMultiplication && !this.c_activity.isAddition;
+    },
+    c_showMultiplicationSentence() {
+      return (
+        this.c_activity.isMultiplication &&
+        !this.c_isRunning &&
+        every(this.rows, row => {
+          return row.length == this.c_columns;
+        })
+      );
     }
   },
   methods: {
@@ -367,7 +415,7 @@ export default {
         user_id: this.$store.getters.userId,
         activity_id: this.activity.id,
         module_id: this.moduleId,
-        completed: true,
+        completed: 1,
         ended_at: timestamp.utc(TIMESTAMP_FORMAT),
         no_of_compiles: this.attempts,
         screen_size: this.getViewSize()
@@ -382,6 +430,9 @@ export default {
             } else {
               // console.log("Event submitted. Response:", result);
             }
+          })
+          .catch(error => {
+            console.log({ error });
           });
       }
 
