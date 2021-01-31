@@ -18,7 +18,7 @@ export default new Vuex.Store({
       lastName: "",
       id: 0
     },
-    isTesting: true,
+    isTesting: false,
     viewAllQuestions: true,
     executionWait: 1,
     data
