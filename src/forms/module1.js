@@ -320,7 +320,7 @@ const data = {
               , {
                 name: "735846de-d9eb-49ba-b852-ee3c54f409e7"
                 , component: "img"
-                , src: "https://vectr.com/bagleric/b2zYQQZaCG.svg?width=150&height=102.33&select=aeDnEcaAO,dtqGRzgoA,a5JHUgkIFH&source=selection"
+                // , src: "https://vectr.com/bagleric/b2zYQQZaCG.svg?width=150&height=102.33&select=aeDnEcaAO,dtqGRzgoA,a5JHUgkIFH&source=selection"
               }
               , {
                 name: "a75530b9-002a-4ab1-8c0a-2a29cb22c52c"
@@ -340,7 +340,7 @@ const data = {
               , {
                 name: "eaf3904a-2f29-47fa-bafa-91498f4c7b56"
                 , component: "img"
-                , src: "https://vectr.com/bagleric/guFoCZpw2.svg?width=150&height=150&select=a9yE8WMmJG&source=selection"
+                // , src: "https://vectr.com/bagleric/guFoCZpw2.svg?width=150&height=150&select=a9yE8WMmJG&source=selection"
               }
               , {
                 name: "5d599866-8f2e-4b92-9956-3dd6f5fa8875"
@@ -1251,7 +1251,7 @@ const data = {
               , {
                 name: "b2f0485b-02c7-400e-969f-e42f0964d7e3"
                 , component: "img"
-                , src: "https://vectr.com/bagleric/jpfNDTlde.svg?width=150&height=144.74&select=cpTaEfQiA,iumIvp1cS&source=selection"
+                // , src: "https://vectr.com/bagleric/jpfNDTlde.svg?width=150&height=144.74&select=cpTaEfQiA,iumIvp1cS&source=selection"
               }
               , {
                 name: "c288a289-38b8-469e-ac84-1d0df1ad44a1"
@@ -1271,7 +1271,7 @@ const data = {
               , {
                 name: "a194aba2-1555-441a-ad5f-e996dec35081"
                 , component: "img"
-                , src: "https://vectr.com/bagleric/hcMmSr5s.svg?width=150&height=158.55&select=b3LoNg95M&source=selection"
+                // , src: "https://vectr.com/bagleric/hcMmSr5s.svg?width=150&height=158.55&select=b3LoNg95M&source=selection"
               }
               , {
                 name: "8f64f2af-7354-43d9-9539-fc86eb4fc81a"
