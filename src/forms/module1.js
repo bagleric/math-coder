@@ -440,7 +440,7 @@ const data = {
           ]
           , prompt: `Drag another <define word='circle_block' showInlineHtml>circle block</define> onto the page. <define word='connect_block'>Connect</define> it to the one that's already there. Press the <define word='run_button' showInlineHtml>run button</define>.`
           , reflections: [
-            `By <define word='connect_block'>connecting</define> the two blocks you told the computer to draw a circle. You have written code!`
+            `By <define word='connect_block'>connecting</define> the two blocks you told the computer to draw two circles. You have written code!`
           ]
           , solution: "-false-circle-true--true-circle-false-"
           , hints: [
@@ -458,17 +458,17 @@ const data = {
           , description: "This continues on the concept introduced in P-3"
           , blockOptions: {
             showToolbox: true
-            , maxBlocks: 5
+            , maxBlocks: 3
           }
           , startingBlocksXml: ``
           , blockSelection: [
             { type: "draw_ball" }
           ]
-          , prompt: `Drag 5 blocks onto the page. <define word='connect_block'>Connect</define> them all together.`
+          , prompt: `Drag 3 blocks onto the page. <define word='connect_block'>Connect</define> them all together.`
           , reflections: [
             `Your pretty good at this!`
           ]
-          , solution: "-false-ball-true--true-ball-true--true-ball-true--true-ball-true--true-ball-false-"
+          , solution: "-false-ball-true--true-ball-true--true-ball-false-"
           , hints: [
             {
               answer: ""
@@ -492,7 +492,7 @@ const data = {
           ]
           , prompt: `Tell the computer to draw 5 stars. <define word='connect_block'>Connect</define> 5 draw star blocks together.`
           , reflections: [
-            `5 stars. Well done!`
+            `5 stars, well done!`
           ]
           , solution: "-false-star-true--true-star-true--true-star-true--true-star-true--true-star-false-"
           , hints: [
@@ -521,7 +521,7 @@ const data = {
           ]
           , prompt: `The <define word='value_of_block'>value</define> in the block is a 7. Change the <define word='value_of_block'>value</define> to a 5`
           , reflections: [
-            "Another 5 Stars!"
+            "Another 5 Stars! Great job."
             , "We told the computer to do the same thing as last time. This time we only used one block. TODO: show what happened last time"
           ]
           , solution: "-false-repeat_star-5-false-"
