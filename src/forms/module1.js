@@ -420,7 +420,6 @@ const data = {
             {
               answer: ""
               , hintHtml: ``
-              ,
             }
           ]
           , isAddition: true
@@ -519,17 +518,17 @@ const data = {
           , blockSelection: [
             { type: "repeat_star" }
           ]
-          , prompt: `The <define word='value_of_block'>value</define> in the block is a 7. Change the <define word='value_of_block'>value</define> to a 5`
+          , prompt: `Draw 5 stars. Change the 7 on the block to a 5.`
           , reflections: [
             "Another 5 Stars! Great job."
-            , "We told the computer to do the same thing as last time. This time we only used one block. TODO: show what happened last time"
+            , `We told the computer to do the same thing as last time. This time we only used one block. 
+            <svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' preserveAspectRatio='xMidYMid meet' viewBox='185.4761904761905 135.5 82.3333333333334 126.99513238309748' width='64.83' height='100'><defs><path d='M213.81 160.17C211.61 161.98 210.24 163.11 209.69 163.56C208.79 164.3 207.5 164.3 206.6 163.56C206.05 163.11 204.68 161.98 202.48 160.17C194.54 160.17 189.58 160.17 187.6 160.17C186.43 160.17 185.48 159.22 185.48 158.05C185.48 153.54 185.48 142.13 185.48 137.62C185.48 136.45 186.43 135.5 187.6 135.5C189.58 135.5 194.54 135.5 202.48 135.5C204.65 137.16 206.01 138.2 206.55 138.62C207.49 139.34 208.79 139.34 209.73 138.62C210.28 138.2 211.63 137.16 213.81 135.5C241.1 135.5 258.16 135.5 264.98 135.5C266.54 135.5 267.81 136.77 267.81 138.33C267.81 142.7 267.81 153.65 267.81 158.19C267.81 159.28 266.92 160.17 265.83 160.17C258.89 160.17 241.55 160.17 213.81 160.17Z' id='aKYc7aytM'/><text id='d109jqNyyI' x='287.75' y='265.25' font-size='14' font-family='Open Sans' font-weight='normal' font-style='normal' letter-spacing='0' alignment-baseline='before-edge' transform='matrix(1 0 0 1 -91.85714285714286 -127.16666666666669)' style='line-height:100%' xml:space='preserve' dominant-baseline='text-before-edge'><tspan x='287.75' dy='0em' alignment-baseline='before-edge' dominant-baseline='text-before-edge' text-anchor='start'>Draw Star</tspan></text><path d='M213.81 184.05C211.61 185.86 210.24 186.99 209.69 187.44C208.79 188.18 207.5 188.18 206.6 187.44C206.05 186.99 204.68 185.86 202.48 184.05C194.54 184.05 189.58 184.05 187.6 184.05C186.43 184.05 185.48 183.1 185.48 181.92C185.48 177.42 185.48 166.01 185.48 161.5C185.48 160.33 186.43 159.38 187.6 159.38C189.58 159.38 194.54 159.38 202.48 159.38C204.65 161.04 206.01 162.08 206.55 162.5C207.49 163.21 208.79 163.21 209.73 162.5C210.28 162.08 211.63 161.04 213.81 159.38C241.1 159.38 258.16 159.38 264.98 159.38C266.54 159.38 267.81 160.65 267.81 162.21C267.81 166.58 267.81 177.53 267.81 182.07C267.81 183.16 266.92 184.05 265.83 184.05C258.89 184.05 241.55 184.05 213.81 184.05Z' id='ceFDOkBCa'/><text id='b6bcnB18Os' x='287.75' y='265.25' font-size='14' font-family='Open Sans' font-weight='normal' font-style='normal' letter-spacing='0' alignment-baseline='before-edge' transform='matrix(1 0 0 1 -91.85714285714286 -103.2873368246818)' style='line-height:100%' xml:space='preserve' dominant-baseline='text-before-edge'><tspan x='287.75' dy='0em' alignment-baseline='before-edge' dominant-baseline='text-before-edge' text-anchor='start'>Draw Star</tspan></text><path d='M213.81 208.55C211.61 210.36 210.24 211.49 209.69 211.94C208.79 212.68 207.5 212.68 206.6 211.94C206.05 211.49 204.68 210.36 202.48 208.55C194.54 208.55 189.58 208.55 187.6 208.55C186.43 208.55 185.48 207.6 185.48 206.42C185.48 201.92 185.48 190.51 185.48 186C185.48 184.83 186.43 183.88 187.6 183.88C189.58 183.88 194.54 183.88 202.48 183.88C204.65 185.54 206.01 186.58 206.55 187C207.49 187.71 208.79 187.71 209.73 187C210.28 186.58 211.63 185.54 213.81 183.88C241.1 183.88 258.16 183.88 264.98 183.88C266.54 183.88 267.81 185.15 267.81 186.71C267.81 191.08 267.81 202.03 267.81 206.57C267.81 207.66 266.92 208.55 265.83 208.55C258.89 208.55 241.55 208.55 213.81 208.55Z' id='a1lH4aaJvs'/><text id='a3Ho7myPYT' x='287.75' y='265.25' font-size='14' font-family='Open Sans' font-weight='normal' font-style='normal' letter-spacing='0' alignment-baseline='before-edge' transform='matrix(1 0 0 1 -91.85714285714286 -78.78733682468177)' style='line-height:100%' xml:space='preserve' dominant-baseline='text-before-edge'><tspan x='287.75' dy='0em' alignment-baseline='before-edge' dominant-baseline='text-before-edge' text-anchor='start'>Draw Star</tspan></text><path d='M213.81 233.55C211.61 235.36 210.24 236.49 209.69 236.94C208.79 237.68 207.5 237.68 206.6 236.94C206.05 236.49 204.68 235.36 202.48 233.55C194.54 233.55 189.58 233.55 187.6 233.55C186.43 233.55 185.48 232.6 185.48 231.42C185.48 226.92 185.48 215.51 185.48 211C185.48 209.83 186.43 208.88 187.6 208.88C189.58 208.88 194.54 208.88 202.48 208.88C204.65 210.54 206.01 211.58 206.55 212C207.49 212.71 208.79 212.71 209.73 212C210.28 211.58 211.63 210.54 213.81 208.88C241.1 208.88 258.16 208.88 264.98 208.88C266.54 208.88 267.81 210.15 267.81 211.71C267.81 216.08 267.81 227.03 267.81 231.57C267.81 232.66 266.92 233.55 265.83 233.55C258.89 233.55 241.55 233.55 213.81 233.55Z' id='a3tQoTCaDV'/><text id='aDzgw66V0' x='287.75' y='265.25' font-size='14' font-family='Open Sans' font-weight='normal' font-style='normal' letter-spacing='0' alignment-baseline='before-edge' transform='matrix(1 0 0 1 -91.85714285714286 -53.787336824681745)' style='line-height:100%' xml:space='preserve' dominant-baseline='text-before-edge'><tspan x='287.75' dy='0em' alignment-baseline='before-edge' dominant-baseline='text-before-edge' text-anchor='start'>Draw Star</tspan></text><path d='M213.81 258.55C211.61 260.36 210.24 261.49 209.69 261.94C208.79 262.68 207.5 262.68 206.6 261.94C206.05 261.49 204.68 260.36 202.48 258.55C194.54 258.55 189.58 258.55 187.6 258.55C186.43 258.55 185.48 257.6 185.48 256.42C185.48 251.92 185.48 240.51 185.48 236C185.48 234.83 186.43 233.88 187.6 233.88C189.58 233.88 194.54 233.88 202.48 233.88C204.65 235.54 206.01 236.58 206.55 237C207.49 237.71 208.79 237.71 209.73 237C210.28 236.58 211.63 235.54 213.81 233.88C241.1 233.88 258.16 233.88 264.98 233.88C266.54 233.88 267.81 235.15 267.81 236.71C267.81 241.08 267.81 252.03 267.81 256.57C267.81 257.66 266.92 258.55 265.83 258.55C258.89 258.55 241.55 258.55 213.81 258.55Z' id='bbCtwQNYA'/><text id='bEDaCyfYU' x='287.75' y='265.25' font-size='14' font-family='Open Sans' font-weight='normal' font-style='normal' letter-spacing='0' alignment-baseline='before-edge' transform='matrix(1 0 0 1 -91.85714285714283 -28.787336824681745)' style='line-height:100%' xml:space='preserve' dominant-baseline='text-before-edge'><tspan x='287.75' dy='0em' alignment-baseline='before-edge' dominant-baseline='text-before-edge' text-anchor='start'>Draw Star</tspan></text></defs><g><g><g><use xlink:href='#aKYc7aytM' opacity='1' fill='#a65c5d' fill-opacity='1'/><g><use xlink:href='#aKYc7aytM' opacity='1' fill-opacity='0' stroke='#ffffff' stroke-width='0.5' stroke-opacity='1'/></g></g><g id='b10tZdjRwk'><use xlink:href='#d109jqNyyI' opacity='1' fill='#ffffff' fill-opacity='1'/></g></g><g><g><use xlink:href='#ceFDOkBCa' opacity='1' fill='#a65c5d' fill-opacity='1'/><g><use xlink:href='#ceFDOkBCa' opacity='1' fill-opacity='0' stroke='#ffffff' stroke-width='0.5' stroke-opacity='1'/></g></g><g id='b3tMumqW9'><use xlink:href='#b6bcnB18Os' opacity='1' fill='#ffffff' fill-opacity='1'/></g></g><g><g><use xlink:href='#a1lH4aaJvs' opacity='1' fill='#a65c5d' fill-opacity='1'/><g><use xlink:href='#a1lH4aaJvs' opacity='1' fill-opacity='0' stroke='#ffffff' stroke-width='0.5' stroke-opacity='1'/></g></g><g id='dqrdRyBGs'><use xlink:href='#a3Ho7myPYT' opacity='1' fill='#ffffff' fill-opacity='1'/></g></g><g><g><use xlink:href='#a3tQoTCaDV' opacity='1' fill='#a65c5d' fill-opacity='1'/><g><use xlink:href='#a3tQoTCaDV' opacity='1' fill-opacity='0' stroke='#ffffff' stroke-width='0.5' stroke-opacity='1'/></g></g><g id='a7sJPaGe2'><use xlink:href='#aDzgw66V0' opacity='1' fill='#ffffff' fill-opacity='1'/></g></g><g><g><use xlink:href='#bbCtwQNYA' opacity='1' fill='#a65c5d' fill-opacity='1'/><g><use xlink:href='#bbCtwQNYA' opacity='1' fill-opacity='0' stroke='#ffffff' stroke-width='0.5' stroke-opacity='1'/></g></g><g id='b1h2hXH7ys'><use xlink:href='#bEDaCyfYU' opacity='1' fill='#ffffff' fill-opacity='1'/></g></g></g></svg>`
           ]
           , solution: "-false-repeat_star-5-false-"
           , hints: [
             {
-              answer: ""
-              , hintHtml: ``
-              ,
+              answer: "-false-repeat_star-7-false-"
+              , hintHtml: `Make sure you change the value to a 5.`
             }
           ]
           , isAddition: true
@@ -549,7 +548,7 @@ const data = {
           , blockSelection: [
             { type: "repeat_ball" }
           ]
-          , prompt: `The <define word='value_of_block'>value</define> in the block is a 3. Change the <define word='value_of_block'>value</define> to a 4`
+          , prompt: `Draw a group of 4 balls. Change the 3 to a 4`
           , reflections: []
           , solution: "-false-repeat_ball-4-false-"
           , hints: [
@@ -575,7 +574,7 @@ const data = {
           , blockSelection: [
             { type: "repeat_candy" }
           ]
-          , prompt: `Make the <define word='value_of_block'>value</define> in the block a 6.`
+          , prompt: `Draw 6 candies.`
           , reflections: []
           , solution: "-false-repeat_candy-6-false-"
           , hints: [
@@ -612,7 +611,7 @@ const data = {
           , blockSelection: [
             { type: "repeat_circle" }
           ]
-          , prompt: `Make all of the <define word='value_of_block'>values</define> 4.`
+          , prompt: `Make all of the block numbers 4.`
           , reflections: [
             "Good Job! This is repeated addition."
             , " Repeated Addition means adding the same number many times."
@@ -639,7 +638,7 @@ const data = {
           , blockSelection: [
             { type: "repeat_apple" }
           ]
-          , prompt: `Use <define word='coding'>coding</define>. There are 3 rows on a table. Each row has 4 apples. <define word='connect_block'>Connect</define> 3 together. Change all of the <define word='value_of_block'>values</define> to 4.`
+          , prompt: `There are 3 rows on a table. Each row has 4 apples. How many apples are there in all?`
           , reflections: []
           , solution: "-false-repeat_apple-4-true--true-repeat_apple-4-true--true-repeat_apple-4-false-"
           , hints: [
@@ -663,7 +662,7 @@ const data = {
           , blockSelection: [
             { type: "repeat_tree" }
           ]
-          , prompt: `Use <define word='coding'>coding</define>. There are 2 rows of trees at a park. Each row has 3 trees. <define word='connect_block'>Connect</define> 2 tree row blocks together. Change all of the <define word='value_of_block'>values</define> to 3.`
+          , prompt: `There are 2 rows of trees at a park. Each row has 3 trees. How many trees are there in all?`
           , reflections: []
           , solution: "-false-repeat_tree-3-true--true-repeat_tree-3-false-"
           , hints: [
@@ -687,7 +686,7 @@ const data = {
           , blockSelection: [
             { type: "repeat_pea" }
           ]
-          , prompt: `Use <define word='coding'>coding</define>. Jack has 5 pea pods. There are 4 peas in each pod. <define word='connect_block'>Connect</define> 5 pea pod blocks together. Make all of the <define word='value_of_block'>values</define> 4.`
+          , prompt: `Jack has 5 pea pods. There are 4 peas in each pod. How many peas does Jack have in all?`
           , reflections: []
           , solution: "-false-repeat_pea-4-true--true-repeat_pea-4-true--true-repeat_pea-4-true--true-repeat_pea-4-true--true-repeat_pea-4-false-"
           , hints: [
@@ -711,7 +710,7 @@ const data = {
           , blockSelection: [
             { type: "repeat_shoe" }
           ]
-          , prompt: `Use <define word='coding'>coding</define>. There are 4 pairs of shoes by the door. Each pair has 2 shoes. How many shoes are there?`
+          , prompt: `There are 4 pairs of shoes by the door. Each pair has 2 shoes. How many shoes are there?`
           , reflections: []
           , solution: "-false-repeat_shoe-2-true--true-repeat_shoe-2-true--true-repeat_shoe-2-true--true-repeat_shoe-2-false-"
           , hints: [
@@ -735,7 +734,7 @@ const data = {
           , blockSelection: [
             { type: "repeat_apple" }
           ]
-          , prompt: `Use <define word='coding'>coding</define>. Find the sum. 3 + 3 + 3 = ?`
+          , prompt: `Find the sum. 3 + 3 + 3 = ?`
           , reflections: []
           , solution: "-false-repeat_apple-3-true--true-repeat_apple-3-true--true-repeat_apple-3-false-"
           , hints: [
@@ -759,7 +758,7 @@ const data = {
           , blockSelection: [
             { type: "repeat_book" }
           ]
-          , prompt: `Use <define word='coding'>coding</define>. A book case has 3 shelves. Each shelf has 5 books. How many books do we have total?`
+          , prompt: `A book case has 3 shelves. Each shelf has 5 books. How many books do we have total?`
           , reflections: []
           , solution: "-false-repeat_book-5-true--true-repeat_book-5-true--true-repeat_book-5-false-"
           , hints: [
@@ -786,7 +785,7 @@ const data = {
           , blockSelection: [
             { type: "repeat_book" }
           ]
-          , prompt: `Use <define word='coding'>coding</define>. Drag a bookshelf block onto the page. Place it inside of the new repeat block.`
+          , prompt: `Drag a bookshelf block onto the page. Place it inside of the new repeat block.`
           , reflections: [
             "We got the same result as last time! This time we only used 2 blocks. TODO: add the picture of what happened last time."
             , "We are still doing repeated addition."
@@ -815,7 +814,7 @@ const data = {
             { type: "repeat_cake" }
             , { type: "repeat_block" }
           ]
-          , prompt: `Use <define word='coding'>coding</define>. A cake was cut into 5 rows. Each row had 6 pieces of cake. Make the repeat block <define word='value_of_block'>value</define> 5. Make the pieces of cake <define word='value_of_block'>value</define> 6.`
+          , prompt: `A cake was cut into 5 rows. Each row had 6 pieces of cake. How many pieces of cake are there in all?`
           , reflections: []
           , solution: "-repeat-5-times--true-repeat_cake-6-false--true-repeat_cake-6-false--true-repeat_cake-6-false--true-repeat_cake-6-false--true-repeat_cake-6-false-"
           , hints: [
@@ -840,7 +839,7 @@ const data = {
             { type: "repeat_ball" }
             , { type: "repeat_block" }
           ]
-          , prompt: `Use <define word='coding'>coding</define>. Alex has 4 boxes. Each box has 2 balls. Make the repeat block <define word='value_of_block'>value</define> 3. Make the pieces of cake <define word='value_of_block'>value</define> 8.`
+          , prompt: `Alex has 4 boxes. Each box has 2 balls. How many balls does Alex have?`
           , reflections: []
           , solution: "-repeat-4-times--true-repeat_ball-2-false--true-repeat_ball-2-false--true-repeat_ball-2-false--true-repeat_ball-2-false-"
           , hints: [
@@ -865,7 +864,7 @@ const data = {
             { type: "repeat_candy" }
             , { type: "repeat_block" }
           ]
-          , prompt: `Use <define word='coding'>coding</define>. Kay has 3 Bags. Each bag has 7 candies. How many candies does Kay have?`
+          , prompt: `Kay has 3 Bags. Each bag has 7 candies. How many candies does Kay have?`
           , reflections: []
           , solution: "-repeat-3-times--true-repeat_candy-7-false--true-repeat_candy-7-false--true-repeat_candy-7-false-"
           , hints: [
@@ -890,7 +889,7 @@ const data = {
             { type: "repeat_pillow" }
             , { type: "repeat_block" }
           ]
-          , prompt: `Use <define word='coding'>coding</define>. Jack, Troy, and Sara each have 6 pillows. How many pillows do they have in all?`
+          , prompt: `Jack, Troy, and Sara each have 6 pillows. How many pillows do they have in all?`
           , reflections: []
           , solution: "-repeat-3-times--true-repeat_pillow-6-false--true-repeat_pillow-6-false--true-repeat_pillow-6-false-"
           , hints: [
@@ -915,7 +914,7 @@ const data = {
             { type: "repeat_tree" }
             , { type: "repeat_block" }
           ]
-          , prompt: `Use <define word='coding'>coding</define>.Find the product. 3 x 4 = ?`
+          , prompt: `Find the product. 3 x 4 = ? <i>Hint: Draw 3 rows with 4 trees in each row.</i>`
           , reflections: []
           , solution: "-repeat-3-times--true-repeat_tree-4-false--true-repeat_tree-4-false--true-repeat_tree-4-false--true-repeat_tree-4-false-"
           , hints: [
@@ -940,7 +939,7 @@ const data = {
             { type: "repeat_cookie" }
             , { type: "repeat_block" }
           ]
-          , prompt: `Use <define word='coding'>coding</define>. Jane baked cookies on a pan. Each row had 7 cookies. There were 4 rows on the pan. How many cookies does Jane have?`
+          , prompt: `Jane baked cookies on a pan. Each row had 7 cookies. There were 4 rows on the pan. How many cookies does Jane have?`
           , reflections: []
           , solution: "-repeat-4-times--true-repeat_cookie-7-false--true-repeat_cookie-7-false--true-repeat_cookie-7-false--true-repeat_cookie-7-false-"
           , hints: [
