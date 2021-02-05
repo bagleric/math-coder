@@ -7,8 +7,7 @@
       @activity-complete="completeActivity"
     ></AppActivity>
     <div class="complete-view" v-else>
-      <h1 class="title">Activities complete</h1>
-      <h2>Well done, you've completed all of the activities.</h2>
+      <h2>Well done! You're pretty good at this.</h2>
       <v-btn
         outlined
         color="primary"

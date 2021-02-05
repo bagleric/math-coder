@@ -127,7 +127,7 @@ let shapes = {
       {
         type: "field_number",
         name: "TIMES",
-        value: 3
+        value: 4
       }
     ],
     groupLabel: "a group of "

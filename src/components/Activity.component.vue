@@ -49,7 +49,7 @@
           v-if="!c_isRunning"
           color="green"
           class="run-button white--text"
-          v-on:click="runCode()"
+          @click="runCode()"
         >
           Run
         </v-btn>
@@ -121,6 +121,7 @@ import has from "lodash/has";
 import assign from "lodash/assign";
 import isFunction from "lodash/isFunction";
 import isEmpty from "lodash/isEmpty";
+import reduce from "lodash/reduce";
 import {
   STORE_EVENT_URL,
   TIMESTAMP_FORMAT,
@@ -163,7 +164,7 @@ export default {
     rows: [],
     isRunning: false,
     resetCount: 0,
-    keepTryingMsg: "",
+    keepTryingMsg: undefined,
     activityStats: {
       started_at: timestamp.utc(TIMESTAMP_FORMAT),
       ended_at: null,
@@ -206,10 +207,28 @@ export default {
     demoWorkspace() {
       return get(this, ["$refs", "activityBlockly", "workspace"]);
     },
+    c_answerHints() {
+      return get(this, ["c_activity", "hints"], []);
+    },
+    c_mappedHints() {
+      return reduce(
+        this.c_answerHints,
+        (result, value) => {
+          result[value.answer] = value.hintHtml;
+          return result;
+        },
+        {}
+      );
+    },
     c_keepTryingMessage() {
-      return (
-        this.keepTryingMsg ||
-        "It looks like we didn't quite make it. Keep trying."
+      return get(
+        this.c_mappedHints,
+        this.path,
+        get(
+          this,
+          ["keepTryingMsg"],
+          "It looks like we didn't quite make it. Keep trying."
+        )
       );
     },
     c_isTesting() {
@@ -353,12 +372,12 @@ export default {
     generateCodeAndLoadIntoInterpreter() {
       // reset
       this.resetExecution();
-      this.code = BlocklyJS.workspaceToCode(
-        this.$refs["activityBlockly"].workspace
-      );
+      if (this.demoWorkspace) {
+        this.code = BlocklyJS.workspaceToCode(this.demoWorkspace);
+      }
     },
     runCode() {
-      this.keepTryingMsg = "";
+      this.keepTryingMsg = undefined;
 
       if (this.demoWorkspace.getTopBlocks().length > 1) {
         this.keepTryingMsg =
@@ -436,7 +455,7 @@ export default {
           });
       }
 
-      // TODO submit code
+      this.demoWorkspace.clear();
       this.$emit("activity-complete", this.code);
     },
     logEvent(blocklyEvent) {
@@ -532,7 +551,7 @@ export default {
   border: solid 1px grey;
   grid-area: view;
   padding: 1em;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .not-quite {

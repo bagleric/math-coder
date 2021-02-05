@@ -19,7 +19,7 @@ export default new Vuex.Store({
       id: 0
     },
     isTesting: false,
-    viewAllQuestions: true,
+    viewAllQuestions: false,
     executionWait: 1,
     data
   },
@@ -31,11 +31,9 @@ export default new Vuex.Store({
       state.isTesting = !state.isTesting;
     },
     setViewAllQuestions(state, value) {
-      console.log(value)
       state.viewAllQuestions = value;
     },
     setExecutionWait(state, value) {
-      console.log(value)
       state.executionWait = value;
     }
   },
@@ -57,7 +55,6 @@ export default new Vuex.Store({
     },
     // dataGetters
     dataModules: state => {
-      console.log(state.data);
       return [];
     },
     getModules: (state) => () => {

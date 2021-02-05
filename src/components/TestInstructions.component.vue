@@ -2,7 +2,8 @@
   <div class="instructions">
     <v-icon x-large color="primary">mdi-account</v-icon>
     <span>
-      You should do this test by yourself.
+      You should do this test by yourself. But, if you don't know a word you may
+      ask.
     </span>
     <v-icon x-large color="primary">mdi-file-edit-outline</v-icon>
     <span>You can use scratch paper to find your answers.</span>
@@ -18,8 +19,8 @@
 
 <script>
 export default {
-  name: 'AppTestInstructions'
-}
+  name: "AppTestInstructions"
+};
 </script>
 
 <style scoped>

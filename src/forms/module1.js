@@ -320,7 +320,7 @@ const data = {
               , {
                 name: "735846de-d9eb-49ba-b852-ee3c54f409e7"
                 , component: "img"
-                // , src: "https://vectr.com/bagleric/b2zYQQZaCG.svg?width=150&height=102.33&select=aeDnEcaAO,dtqGRzgoA,a5JHUgkIFH&source=selection"
+                , src: "https://vectr.com/bagleric/b2zYQQZaCG.svg?width=150&height=102.33&select=aeDnEcaAO,dtqGRzgoA,a5JHUgkIFH&source=selection"
               }
               , {
                 name: "a75530b9-002a-4ab1-8c0a-2a29cb22c52c"
@@ -340,7 +340,7 @@ const data = {
               , {
                 name: "eaf3904a-2f29-47fa-bafa-91498f4c7b56"
                 , component: "img"
-                // , src: "https://vectr.com/bagleric/guFoCZpw2.svg?width=150&height=150&select=a9yE8WMmJG&source=selection"
+                , src: "https://vectr.com/bagleric/guFoCZpw2.svg?width=150&height=150&select=a9yE8WMmJG&source=selection"
               }
               , {
                 name: "5d599866-8f2e-4b92-9956-3dd6f5fa8875"
@@ -391,10 +391,10 @@ const data = {
           , reflections: []
           , solution: "-false-circle-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: true
           , isMultiplication: false
@@ -417,10 +417,10 @@ const data = {
           , reflections: []
           , solution: "-false-circle-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: true
           , isMultiplication: false
@@ -443,10 +443,10 @@ const data = {
           ]
           , solution: "-false-circle-true--true-circle-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: true
           , isMultiplication: false
@@ -463,16 +463,16 @@ const data = {
           , blockSelection: [
             { type: "draw_ball" }
           ]
-          , prompt: `Drag 3 blocks onto the page. <define word='connect_block'>Connect</define> them all together.`
+          , prompt: `Drag 3 <define word='ball_block' showInlineHtml> blocks </define> onto the page. <define word='connect_block'>Connect</define> them all together.`
           , reflections: [
             `Your pretty good at this!`
           ]
           , solution: "-false-ball-true--true-ball-true--true-ball-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: true
           , isMultiplication: false
@@ -495,10 +495,10 @@ const data = {
           ]
           , solution: "-false-star-true--true-star-true--true-star-true--true-star-true--true-star-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: true
           , isMultiplication: false
@@ -521,14 +521,13 @@ const data = {
           , prompt: `Draw 5 stars. Change the 7 on the block to a 5.`
           , reflections: [
             "Another 5 Stars! Great job."
-            , `We told the computer to do the same thing as last time. This time we only used one block. 
-            <svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' preserveAspectRatio='xMidYMid meet' viewBox='185.4761904761905 135.5 82.3333333333334 126.99513238309748' width='64.83' height='100'><defs><path d='M213.81 160.17C211.61 161.98 210.24 163.11 209.69 163.56C208.79 164.3 207.5 164.3 206.6 163.56C206.05 163.11 204.68 161.98 202.48 160.17C194.54 160.17 189.58 160.17 187.6 160.17C186.43 160.17 185.48 159.22 185.48 158.05C185.48 153.54 185.48 142.13 185.48 137.62C185.48 136.45 186.43 135.5 187.6 135.5C189.58 135.5 194.54 135.5 202.48 135.5C204.65 137.16 206.01 138.2 206.55 138.62C207.49 139.34 208.79 139.34 209.73 138.62C210.28 138.2 211.63 137.16 213.81 135.5C241.1 135.5 258.16 135.5 264.98 135.5C266.54 135.5 267.81 136.77 267.81 138.33C267.81 142.7 267.81 153.65 267.81 158.19C267.81 159.28 266.92 160.17 265.83 160.17C258.89 160.17 241.55 160.17 213.81 160.17Z' id='aKYc7aytM'/><text id='d109jqNyyI' x='287.75' y='265.25' font-size='14' font-family='Open Sans' font-weight='normal' font-style='normal' letter-spacing='0' alignment-baseline='before-edge' transform='matrix(1 0 0 1 -91.85714285714286 -127.16666666666669)' style='line-height:100%' xml:space='preserve' dominant-baseline='text-before-edge'><tspan x='287.75' dy='0em' alignment-baseline='before-edge' dominant-baseline='text-before-edge' text-anchor='start'>Draw Star</tspan></text><path d='M213.81 184.05C211.61 185.86 210.24 186.99 209.69 187.44C208.79 188.18 207.5 188.18 206.6 187.44C206.05 186.99 204.68 185.86 202.48 184.05C194.54 184.05 189.58 184.05 187.6 184.05C186.43 184.05 185.48 183.1 185.48 181.92C185.48 177.42 185.48 166.01 185.48 161.5C185.48 160.33 186.43 159.38 187.6 159.38C189.58 159.38 194.54 159.38 202.48 159.38C204.65 161.04 206.01 162.08 206.55 162.5C207.49 163.21 208.79 163.21 209.73 162.5C210.28 162.08 211.63 161.04 213.81 159.38C241.1 159.38 258.16 159.38 264.98 159.38C266.54 159.38 267.81 160.65 267.81 162.21C267.81 166.58 267.81 177.53 267.81 182.07C267.81 183.16 266.92 184.05 265.83 184.05C258.89 184.05 241.55 184.05 213.81 184.05Z' id='ceFDOkBCa'/><text id='b6bcnB18Os' x='287.75' y='265.25' font-size='14' font-family='Open Sans' font-weight='normal' font-style='normal' letter-spacing='0' alignment-baseline='before-edge' transform='matrix(1 0 0 1 -91.85714285714286 -103.2873368246818)' style='line-height:100%' xml:space='preserve' dominant-baseline='text-before-edge'><tspan x='287.75' dy='0em' alignment-baseline='before-edge' dominant-baseline='text-before-edge' text-anchor='start'>Draw Star</tspan></text><path d='M213.81 208.55C211.61 210.36 210.24 211.49 209.69 211.94C208.79 212.68 207.5 212.68 206.6 211.94C206.05 211.49 204.68 210.36 202.48 208.55C194.54 208.55 189.58 208.55 187.6 208.55C186.43 208.55 185.48 207.6 185.48 206.42C185.48 201.92 185.48 190.51 185.48 186C185.48 184.83 186.43 183.88 187.6 183.88C189.58 183.88 194.54 183.88 202.48 183.88C204.65 185.54 206.01 186.58 206.55 187C207.49 187.71 208.79 187.71 209.73 187C210.28 186.58 211.63 185.54 213.81 183.88C241.1 183.88 258.16 183.88 264.98 183.88C266.54 183.88 267.81 185.15 267.81 186.71C267.81 191.08 267.81 202.03 267.81 206.57C267.81 207.66 266.92 208.55 265.83 208.55C258.89 208.55 241.55 208.55 213.81 208.55Z' id='a1lH4aaJvs'/><text id='a3Ho7myPYT' x='287.75' y='265.25' font-size='14' font-family='Open Sans' font-weight='normal' font-style='normal' letter-spacing='0' alignment-baseline='before-edge' transform='matrix(1 0 0 1 -91.85714285714286 -78.78733682468177)' style='line-height:100%' xml:space='preserve' dominant-baseline='text-before-edge'><tspan x='287.75' dy='0em' alignment-baseline='before-edge' dominant-baseline='text-before-edge' text-anchor='start'>Draw Star</tspan></text><path d='M213.81 233.55C211.61 235.36 210.24 236.49 209.69 236.94C208.79 237.68 207.5 237.68 206.6 236.94C206.05 236.49 204.68 235.36 202.48 233.55C194.54 233.55 189.58 233.55 187.6 233.55C186.43 233.55 185.48 232.6 185.48 231.42C185.48 226.92 185.48 215.51 185.48 211C185.48 209.83 186.43 208.88 187.6 208.88C189.58 208.88 194.54 208.88 202.48 208.88C204.65 210.54 206.01 211.58 206.55 212C207.49 212.71 208.79 212.71 209.73 212C210.28 211.58 211.63 210.54 213.81 208.88C241.1 208.88 258.16 208.88 264.98 208.88C266.54 208.88 267.81 210.15 267.81 211.71C267.81 216.08 267.81 227.03 267.81 231.57C267.81 232.66 266.92 233.55 265.83 233.55C258.89 233.55 241.55 233.55 213.81 233.55Z' id='a3tQoTCaDV'/><text id='aDzgw66V0' x='287.75' y='265.25' font-size='14' font-family='Open Sans' font-weight='normal' font-style='normal' letter-spacing='0' alignment-baseline='before-edge' transform='matrix(1 0 0 1 -91.85714285714286 -53.787336824681745)' style='line-height:100%' xml:space='preserve' dominant-baseline='text-before-edge'><tspan x='287.75' dy='0em' alignment-baseline='before-edge' dominant-baseline='text-before-edge' text-anchor='start'>Draw Star</tspan></text><path d='M213.81 258.55C211.61 260.36 210.24 261.49 209.69 261.94C208.79 262.68 207.5 262.68 206.6 261.94C206.05 261.49 204.68 260.36 202.48 258.55C194.54 258.55 189.58 258.55 187.6 258.55C186.43 258.55 185.48 257.6 185.48 256.42C185.48 251.92 185.48 240.51 185.48 236C185.48 234.83 186.43 233.88 187.6 233.88C189.58 233.88 194.54 233.88 202.48 233.88C204.65 235.54 206.01 236.58 206.55 237C207.49 237.71 208.79 237.71 209.73 237C210.28 236.58 211.63 235.54 213.81 233.88C241.1 233.88 258.16 233.88 264.98 233.88C266.54 233.88 267.81 235.15 267.81 236.71C267.81 241.08 267.81 252.03 267.81 256.57C267.81 257.66 266.92 258.55 265.83 258.55C258.89 258.55 241.55 258.55 213.81 258.55Z' id='bbCtwQNYA'/><text id='bEDaCyfYU' x='287.75' y='265.25' font-size='14' font-family='Open Sans' font-weight='normal' font-style='normal' letter-spacing='0' alignment-baseline='before-edge' transform='matrix(1 0 0 1 -91.85714285714283 -28.787336824681745)' style='line-height:100%' xml:space='preserve' dominant-baseline='text-before-edge'><tspan x='287.75' dy='0em' alignment-baseline='before-edge' dominant-baseline='text-before-edge' text-anchor='start'>Draw Star</tspan></text></defs><g><g><g><use xlink:href='#aKYc7aytM' opacity='1' fill='#a65c5d' fill-opacity='1'/><g><use xlink:href='#aKYc7aytM' opacity='1' fill-opacity='0' stroke='#ffffff' stroke-width='0.5' stroke-opacity='1'/></g></g><g id='b10tZdjRwk'><use xlink:href='#d109jqNyyI' opacity='1' fill='#ffffff' fill-opacity='1'/></g></g><g><g><use xlink:href='#ceFDOkBCa' opacity='1' fill='#a65c5d' fill-opacity='1'/><g><use xlink:href='#ceFDOkBCa' opacity='1' fill-opacity='0' stroke='#ffffff' stroke-width='0.5' stroke-opacity='1'/></g></g><g id='b3tMumqW9'><use xlink:href='#b6bcnB18Os' opacity='1' fill='#ffffff' fill-opacity='1'/></g></g><g><g><use xlink:href='#a1lH4aaJvs' opacity='1' fill='#a65c5d' fill-opacity='1'/><g><use xlink:href='#a1lH4aaJvs' opacity='1' fill-opacity='0' stroke='#ffffff' stroke-width='0.5' stroke-opacity='1'/></g></g><g id='dqrdRyBGs'><use xlink:href='#a3Ho7myPYT' opacity='1' fill='#ffffff' fill-opacity='1'/></g></g><g><g><use xlink:href='#a3tQoTCaDV' opacity='1' fill='#a65c5d' fill-opacity='1'/><g><use xlink:href='#a3tQoTCaDV' opacity='1' fill-opacity='0' stroke='#ffffff' stroke-width='0.5' stroke-opacity='1'/></g></g><g id='a7sJPaGe2'><use xlink:href='#aDzgw66V0' opacity='1' fill='#ffffff' fill-opacity='1'/></g></g><g><g><use xlink:href='#bbCtwQNYA' opacity='1' fill='#a65c5d' fill-opacity='1'/><g><use xlink:href='#bbCtwQNYA' opacity='1' fill-opacity='0' stroke='#ffffff' stroke-width='0.5' stroke-opacity='1'/></g></g><g id='b1h2hXH7ys'><use xlink:href='#bEDaCyfYU' opacity='1' fill='#ffffff' fill-opacity='1'/></g></g></g></svg>`
+            , `We told the computer to do the same thing as last time. This time we only used one block.`
           ]
           , solution: "-false-repeat_star-5-false-"
           , hints: [
             {
               answer: "-false-repeat_star-7-false-"
-              , hintHtml: `Make sure you change the value to a 5.`
+              , hintHtml: `To draw 5 circles, make sure you change the 7 to a 5.`
             }
           ]
           , isAddition: true
@@ -548,14 +547,14 @@ const data = {
           , blockSelection: [
             { type: "repeat_ball" }
           ]
-          , prompt: `Draw a group of 4 balls. Change the 3 to a 4`
+          , prompt: `Draw a group of 4 balls. Change the number 3 to a 4`
           , reflections: []
           , solution: "-false-repeat_ball-4-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: true
           , isMultiplication: false
@@ -578,10 +577,10 @@ const data = {
           , reflections: []
           , solution: "-false-repeat_candy-6-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: true
           , isMultiplication: false
@@ -613,15 +612,15 @@ const data = {
           ]
           , prompt: `Make all of the block numbers 4.`
           , reflections: [
-            "Good Job! This is repeated addition."
-            , " Repeated Addition means adding the same number many times."
+            `Good Job! This is repeated addition</define>.`
+            , `Repeated addition means adding the same number many times.`
           ]
           , solution: "-false-repeat_circle-4-true--true-repeat_circle-4-true--true-repeat_circle-4-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: true
           , isMultiplication: false
@@ -642,10 +641,10 @@ const data = {
           , reflections: []
           , solution: "-false-repeat_apple-4-true--true-repeat_apple-4-true--true-repeat_apple-4-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: true
           , isMultiplication: false
@@ -666,10 +665,10 @@ const data = {
           , reflections: []
           , solution: "-false-repeat_tree-3-true--true-repeat_tree-3-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: true
           , isMultiplication: false
@@ -690,10 +689,34 @@ const data = {
           , reflections: []
           , solution: "-false-repeat_pea-4-true--true-repeat_pea-4-true--true-repeat_pea-4-true--true-repeat_pea-4-true--true-repeat_pea-4-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
+          ]
+          , isAddition: true
+          , isMultiplication: false
+        },
+        {
+          id: "2nd-3-1"
+          , name: "2nd-3-1: Repeated Addition"
+          , description: "A continuation of concepts introduced in 2nd"
+          , blockOptions: {
+            showToolbox: true
+            , maxBlocks: 3
+          }
+          , startingBlocksXml: ``
+          , blockSelection: [
+            { type: "repeat_cookie" }
+          ]
+          , prompt: `Find the sum. 5 + 5 + 5 = ?`
+          , reflections: []
+          , solution: "-false-repeat_cookie-5-true--true-repeat_cookie-5-true--true-repeat_cookie-5-false-"
+          , hints: [
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: true
           , isMultiplication: false
@@ -714,10 +737,10 @@ const data = {
           , reflections: []
           , solution: "-false-repeat_shoe-2-true--true-repeat_shoe-2-true--true-repeat_shoe-2-true--true-repeat_shoe-2-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: true
           , isMultiplication: false
@@ -738,10 +761,10 @@ const data = {
           , reflections: []
           , solution: "-false-repeat_apple-3-true--true-repeat_apple-3-true--true-repeat_apple-3-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: true
           , isMultiplication: false
@@ -762,10 +785,10 @@ const data = {
           , reflections: []
           , solution: "-false-repeat_book-5-true--true-repeat_book-5-true--true-repeat_book-5-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: true
           , isMultiplication: true
@@ -785,25 +808,24 @@ const data = {
           , blockSelection: [
             { type: "repeat_book" }
           ]
-          , prompt: `Drag a bookshelf block onto the page. Place it inside of the new repeat block.`
+          , prompt: `Drag a bookshelf block onto the page. Place it inside of the <define word="repeat_block" showInlineHtml>repeat block</define>. Click the <define word="run_button">Run button</define>.`
           , reflections: [
-            "We got the same result as last time! This time we only used 2 blocks. TODO: add the picture of what happened last time."
-            , "We are still doing repeated addition."
-            , "Repeated addition is also called multiplication."
+            "We got the same result as last time! This time we only used 2 blocks."
+            , `We are now doing multiplication.`
           ]
           , solution: "-repeat-3-times--true-repeat_book-5-false--true-repeat_book-5-false--true-repeat_book-5-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: true
           , isMultiplication: true
         },
         {
           id: "3rd-1"
-          , name: "3rd-1: Repeated Addition"
+          , name: "3rd-1: Multiplication"
           , description: "A continuation of concepts introduced in P-5"
           , blockOptions: {
             showToolbox: true
@@ -818,17 +840,17 @@ const data = {
           , reflections: []
           , solution: "-repeat-5-times--true-repeat_cake-6-false--true-repeat_cake-6-false--true-repeat_cake-6-false--true-repeat_cake-6-false--true-repeat_cake-6-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: false
           , isMultiplication: true
         },
         {
           id: "3rd-2"
-          , name: "3rd-2: Repeated Addition"
+          , name: "3rd-2: Multiplication"
           , description: "A continuation of concepts introduced in P-5"
           , blockOptions: {
             showToolbox: true
@@ -843,17 +865,17 @@ const data = {
           , reflections: []
           , solution: "-repeat-4-times--true-repeat_ball-2-false--true-repeat_ball-2-false--true-repeat_ball-2-false--true-repeat_ball-2-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: false
           , isMultiplication: true
         },
         {
           id: "3rd-3"
-          , name: "3rd-3: Repeated Addition"
+          , name: "3rd-3: Multiplication"
           , description: "A continuation of concepts introduced in P-5"
           , blockOptions: {
             showToolbox: true
@@ -868,17 +890,42 @@ const data = {
           , reflections: []
           , solution: "-repeat-3-times--true-repeat_candy-7-false--true-repeat_candy-7-false--true-repeat_candy-7-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
+          ]
+          , isAddition: false
+          , isMultiplication: true
+        },
+        {
+          id: "3rd-3-1"
+          , name: "3rd-3-1: Multiplication"
+          , description: "A continuation of concepts introduced in P-5"
+          , blockOptions: {
+            showToolbox: true
+            , maxBlocks: 2
+          }
+          , startingBlocksXml: ``
+          , blockSelection: [
+            { type: "repeat_tree" }
+            , { type: "repeat_block" }
+          ]
+          , prompt: `Find the product. 3 x 4 = ? <i>Hint: Draw 3 rows with 4 trees in each row.</i>`
+          , reflections: []
+          , solution: "-repeat-3-times--true-repeat_tree-4-false--true-repeat_tree-4-false--true-repeat_tree-4-false-"
+          , hints: [
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: false
           , isMultiplication: true
         },
         {
           id: "3rd-4"
-          , name: "3rd-4: Repeated Addition"
+          , name: "3rd-4: Multiplication"
           , description: "A continuation of concepts introduced in P-5"
           , blockOptions: {
             showToolbox: true
@@ -893,17 +940,17 @@ const data = {
           , reflections: []
           , solution: "-repeat-3-times--true-repeat_pillow-6-false--true-repeat_pillow-6-false--true-repeat_pillow-6-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: false
           , isMultiplication: true
         },
         {
           id: "3rd-4-1"
-          , name: "3rd-4-1: Repeated Addition"
+          , name: "3rd-4-1: Multiplication"
           , description: "A continuation of concepts introduced in P-5"
           , blockOptions: {
             showToolbox: true
@@ -911,24 +958,24 @@ const data = {
           }
           , startingBlocksXml: ``
           , blockSelection: [
-            { type: "repeat_tree" }
+            { type: "repeat_ball" }
             , { type: "repeat_block" }
           ]
-          , prompt: `Find the product. 3 x 4 = ? <i>Hint: Draw 3 rows with 4 trees in each row.</i>`
+          , prompt: `Find the product. 5 x 8 = ?`
           , reflections: []
-          , solution: "-repeat-3-times--true-repeat_tree-4-false--true-repeat_tree-4-false--true-repeat_tree-4-false--true-repeat_tree-4-false-"
+          , solution: "-repeat-5-times--true-repeat_ball-8-false--true-repeat_ball-8-false--true-repeat_ball-8-false--true-repeat_ball-8-false--true-repeat_ball-8-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: false
           , isMultiplication: true
         },
         {
           id: "3rd-5"
-          , name: "3rd-5: Repeated Addition"
+          , name: "3rd-5: Multiplication"
           , description: "A continuation of concepts introduced in P-5"
           , blockOptions: {
             showToolbox: true
@@ -943,10 +990,10 @@ const data = {
           , reflections: []
           , solution: "-repeat-4-times--true-repeat_cookie-7-false--true-repeat_cookie-7-false--true-repeat_cookie-7-false--true-repeat_cookie-7-false-"
           , hints: [
-            {
-              answer: ""
-              , hintHtml: ``
-            }
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
           ]
           , isAddition: false
           , isMultiplication: true
@@ -1250,7 +1297,7 @@ const data = {
               , {
                 name: "b2f0485b-02c7-400e-969f-e42f0964d7e3"
                 , component: "img"
-                // , src: "https://vectr.com/bagleric/jpfNDTlde.svg?width=150&height=144.74&select=cpTaEfQiA,iumIvp1cS&source=selection"
+                , src: "https://vectr.com/bagleric/jpfNDTlde.svg?width=150&height=144.74&select=cpTaEfQiA,iumIvp1cS&source=selection"
               }
               , {
                 name: "c288a289-38b8-469e-ac84-1d0df1ad44a1"
@@ -1270,7 +1317,7 @@ const data = {
               , {
                 name: "a194aba2-1555-441a-ad5f-e996dec35081"
                 , component: "img"
-                // , src: "https://vectr.com/bagleric/hcMmSr5s.svg?width=150&height=158.55&select=b3LoNg95M&source=selection"
+                , src: "https://vectr.com/bagleric/hcMmSr5s.svg?width=150&height=158.55&select=b3LoNg95M&source=selection"
               }
               , {
                 name: "8f64f2af-7354-43d9-9539-fc86eb4fc81a"
@@ -1321,6 +1368,24 @@ const data = {
                     <g transform="translate(10,5)">
                       <text font-weight="lighter" font-size="14.6" font-family="sans-serif" fill="white" x="0" y="13">
                         Draw Circle
+                      </text>
+                    </g>
+                  </svg>`
+        },
+        ball_block: {
+          name: " Draw Ball Block"
+          , definitionHtml: "A code block that draws a circle"
+          , inlineHtml: `
+                    <svg width="80" height="30">
+                    <path
+                      class="blocklyPath"
+                      stroke="white"
+                      fill="#5b5ba5"
+                      d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 65  v 5  H 95  V 5  H 95  V 22  H 95  V 22  V 26  h -66  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z">
+                    </path>
+                    <g transform="translate(10,5)">
+                      <text font-weight="lighter" font-size="14.6" font-family="sans-serif" fill="white" x="0" y="13">
+                        Draw ball
                       </text>
                     </g>
                   </svg>`
@@ -1471,35 +1536,11 @@ const data = {
                     </svg > `
 
         },
-        multiplication: {
-          name: "Multiplication, Multiply"
-          , definitionHtml: "This is repeated addition. We add the items from one or more groups of equal items."
-
-        },
-        coding: {
-          name: "Coding"
-          , definitionHtml: "Creating instructions for a computer to read.This is how we tell computers what to do."
-        },
         run_button: {
           name: "Run Button, Run"
           , definitionHtml: "The button that tells the computer to make our code do something."
           , inlineHtml: `<v-btn rounded small color="green" class="run-button white--text">Run</v-btn>`
         },
-        column: {
-          name: "Column"
-          , definitionHtml: "Runs up and down like a ladder"
-          , inlineHtml: `<div style='background-color: white; padding: 1em;' data-val='5'>  <div data-val='1' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div>  <div data-val='1' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div>  <div data-val='1' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div>  <div data-val='1' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div>  <div data-val='1' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div></div>`
-        },
-        row: {
-          name: "Row"
-          , definitionHtml: "A row from side to side like standing in a line"
-          , inlineHtml: `<div style='background-color: white; padding: 5px;' data-val='1'>  <div data-val='5' style='width: max-content;'>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg>  <svg height='20' width='20'><circle cx='10' cy='10' r='4' fill='black' /></svg></div></div>`
-        },
-        value_of_block: {
-          name: "Block Value"
-          , definitionHtml: "A number on the block that you can change."
-          , inlineHtml: `<svg width='70px' height='30px' ><g fill='#c0c08c' transform='translate(49.209014892578125,5)' style='cursor: text;'><rect rx='4' ry='4' x='0' y='0' height='17' width='18.153182983398438'></rect><text fill='black' x='5' y='13'>5</text></g></svg>`
-        }
       }
     }
   ]
