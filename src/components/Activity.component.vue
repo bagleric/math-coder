@@ -34,7 +34,6 @@
           </template>
         </AppBlockly>
         <v-btn
-          :style="c_extraResetStyle"
           rounded
           outlined
           color="primary"
@@ -175,11 +174,6 @@ export default {
     }
   }),
   computed: {
-    c_extraResetStyle() {
-      return get(this.c_activity, ["blockOptions", "showToolbox"], true)
-        ? "left: 175px;"
-        : "";
-    },
     c_activity() {
       return this.activity;
     },
@@ -522,7 +516,7 @@ export default {
   height: 100%;
   grid-template:
     "appBlockly view      " 1fr
-    "appBlockly reflection" auto/ 1fr 1fr;
+    "appBlockly reflection" auto/ 2fr 1fr;
   display: grid;
   overflow: hidden;
 }
@@ -543,8 +537,8 @@ export default {
 
 .reset-button {
   position: absolute;
-  left: 10px;
-  top: 10px;
+  right: 10px;
+  bottom: 10px;
 }
 
 .view {
@@ -552,6 +546,7 @@ export default {
   grid-area: view;
   padding: 1em;
   overflow: auto;
+  background: #f3f3f3;
 }
 
 .not-quite {

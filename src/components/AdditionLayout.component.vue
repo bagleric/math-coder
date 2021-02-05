@@ -17,7 +17,7 @@
         </span>
       </div>
     </div>
-    <div class="totals-label" v-if="c_showTotalsLabel">
+    <!-- <div class="totals-label" v-if="c_showTotalsLabel">
       <span>
         <span>TOTAL ITEMS</span>
         <span class="label-group">
@@ -25,7 +25,7 @@
           <span class="count-label">items</span>
         </span>
       </span>
-    </div>
+    </div> -->
   </div>
 </template>
 

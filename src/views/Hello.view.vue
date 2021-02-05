@@ -80,10 +80,19 @@ export default {
       this.createUser(data)
         .then(() => {
           this.isRegistering = false;
-          this.$router.push({
-            name: "PreActivity",
-            params: { moduleId: "199e4bb2-04d1-4a95-9965-d74c259e17fc" }
-          });
+          this.$router.push(
+            {
+              name: "Activity",
+              params: {
+                moduleId: "199e4bb2-04d1-4a95-9965-d74c259e17fc",
+                activityNum: 0
+              }
+            }
+            //   {
+            //   name: "PreActivity",
+            //   params: { moduleId: "199e4bb2-04d1-4a95-9965-d74c259e17fc" }
+            // }
+          );
         })
         .catch(err => {
           this.isRegistering = false;

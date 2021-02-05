@@ -463,7 +463,7 @@ const data = {
           , blockSelection: [
             { type: "draw_ball" }
           ]
-          , prompt: `Drag 3 <define word='ball_block' showInlineHtml> blocks </define> onto the page. <define word='connect_block'>Connect</define> them all together.`
+          , prompt: `Drag 3 blocks onto the white page. <define word='connect_block'>Connect</define> them all together.`
           , reflections: [
             `Your pretty good at this!`
           ]
@@ -626,6 +626,80 @@ const data = {
           , isMultiplication: false
         },
         {
+          id: "2nd-0-1"
+          , name: "2nd-0-1: Multiple Row blocks - leading into repeated addition"
+          , description: "A continuation of concepts introduced in P-4"
+          , blockOptions: {
+            showToolbox: true
+            , maxBlocks: 1
+          }
+          // , startingBlocksXml: `<block type="repeat_circle" id="m[bfwg2|2]?YL=(!A~m#" x="10" y="65">
+          //                           <field name="TIMES">3</field>
+          //                           <next>
+          //                               <block type="repeat_circle" id="J;%ZCw019N(zc}OIA#+P">
+          //                                   <field name="TIMES">4</field>
+          //                                   <next>
+          //                                       <block type="repeat_circle" id="r:7.AGge{s8;gP9As2Ci">
+          //                                           <field name="TIMES">5</field>
+          //                                       </block>
+          //                                   </next>
+          //                               </block>
+          //                           </next>
+          //                       </block>`
+          , blockSelection: [
+            { type: "repeat_circle" }
+          ]
+          , prompt: `Tell the computer to draw a row of 5 circles.`
+          , reflections: [
+          ]
+          , solution: "-false-repeat_circle-5-false-"
+          , hints: [
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
+          ]
+          , isAddition: true
+          , isMultiplication: false
+        },
+        {
+          id: "2nd-0-1"
+          , name: "2nd-0-1: Multiple Row blocks - leading into repeated addition"
+          , description: "A continuation of concepts introduced in P-4"
+          , blockOptions: {
+            showToolbox: true
+            , maxBlocks: 3
+          }
+          // , startingBlocksXml: `<block type="repeat_circle" id="m[bfwg2|2]?YL=(!A~m#" x="10" y="65">
+          //                           <field name="TIMES">3</field>
+          //                           <next>
+          //                               <block type="repeat_circle" id="J;%ZCw019N(zc}OIA#+P">
+          //                                   <field name="TIMES">4</field>
+          //                                   <next>
+          //                                       <block type="repeat_circle" id="r:7.AGge{s8;gP9As2Ci">
+          //                                           <field name="TIMES">5</field>
+          //                                       </block>
+          //                                   </next>
+          //                               </block>
+          //                           </next>
+          //                       </block>`
+          , blockSelection: [
+            { type: "repeat_circle" }
+          ]
+          , prompt: `Tell the computer to draw 3 rows. Make each row have 5 circles.`
+          , reflections: [
+          ]
+          , solution: "-false-repeat_circle-5-true--true-repeat_circle-5-true--true-repeat_circle-5-false-"
+          , hints: [
+            // {
+            //   answer: ""
+            //   , hintHtml: ``
+            // }
+          ]
+          , isAddition: true
+          , isMultiplication: false
+        },
+        {
           id: "2nd-1"
           , name: "2nd-1: Repeated Addition"
           , description: "A continuation of concepts introduced in 2nd-0"
@@ -637,7 +711,7 @@ const data = {
           , blockSelection: [
             { type: "repeat_apple" }
           ]
-          , prompt: `There are 3 rows on a table. Each row has 4 apples. How many apples are there in all?`
+          , prompt: `Tell the computer how to answer the question. There are 3 rows on a table. Each row has 4 apples. How many apples are there in all?`
           , reflections: []
           , solution: "-false-repeat_apple-4-true--true-repeat_apple-4-true--true-repeat_apple-4-false-"
           , hints: [
@@ -661,7 +735,7 @@ const data = {
           , blockSelection: [
             { type: "repeat_tree" }
           ]
-          , prompt: `There are 2 rows of trees at a park. Each row has 3 trees. How many trees are there in all?`
+          , prompt: `Tell the computer how to answer the question. There are 2 rows of trees at a park. Each row has 3 trees. How many trees are there in all?`
           , reflections: []
           , solution: "-false-repeat_tree-3-true--true-repeat_tree-3-false-"
           , hints: [
@@ -709,7 +783,7 @@ const data = {
           , blockSelection: [
             { type: "repeat_cookie" }
           ]
-          , prompt: `Find the sum. 5 + 5 + 5 = ?`
+          , prompt: `Tell the computer how to find the sum. 5 + 5 + 5 = ?`
           , reflections: []
           , solution: "-false-repeat_cookie-5-true--true-repeat_cookie-5-true--true-repeat_cookie-5-false-"
           , hints: [
@@ -757,7 +831,7 @@ const data = {
           , blockSelection: [
             { type: "repeat_apple" }
           ]
-          , prompt: `Find the sum. 3 + 3 + 3 = ?`
+          , prompt: `Tell the computer how to find the sum. 3 + 3 + 3 = ?`
           , reflections: []
           , solution: "-false-repeat_apple-3-true--true-repeat_apple-3-true--true-repeat_apple-3-false-"
           , hints: [
