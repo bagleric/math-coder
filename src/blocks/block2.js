@@ -47,22 +47,43 @@ Blockly.Blocks['repeat_block'] = {
         "args0": [
           {
             "type": "input_value",
-            "name": "NAME",
-            // "check": "String"
+            "name": "DO",
+            "check": "String"
           },
           {
             "type": "field_number",
-            "name": "NAME",
-            "value": 3,
-            "min": 0,
-            "max": 30
-          },
+            "name": "TIMES",
+            "value": 3
+          }
         ],
         "inputsInline": true,
-        "colour": "#f9a825",
+        "colour": 105,
         "tooltip": "",
-        "helpUrl": "",
-      })
+        "helpUrl": ""
+      }
+      // {
+      //   "type": "repeat_block",
+      //   "message0": "%1 repeat %2 times",
+      //   "args0": [
+      //     {
+      //       "type": "input_value",
+      //       "name": "NAME",
+      //       // "check": "String"
+      //     },
+      //     {
+      //       "type": "field_number",
+      //       "name": "NAME",
+      //       "value": 3,
+      //       "min": 0,
+      //       "max": 30
+      //     },
+      //   ],
+      //   "inputsInline": true,
+      //   "colour": "#f9a825",
+      //   "tooltip": "",
+      //   "helpUrl": "",
+      // }
+    )
   }
 }
 

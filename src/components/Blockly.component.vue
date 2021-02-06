@@ -45,7 +45,7 @@ export default {
       // css: false,
       // rtl: false,
       // scrollbars: false,
-      // renderer: "zelos",
+      renderer: "zelos",
       theme: Blockly.Themes.MathCoder,
       sounds: true,
       oneBasedIndex: true,

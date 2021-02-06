@@ -904,6 +904,7 @@ const data = {
           , blockOptions: {
             showToolbox: true
             , maxBlocks: 2
+            , maxInstances: { "repeat_cake": 1 }
           }
           , startingBlocksXml: ``
           , blockSelection: [
