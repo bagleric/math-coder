@@ -22,6 +22,7 @@
 import defaults from "lodash/defaults";
 import forEach from "lodash/forEach";
 import Blockly from "blockly";
+import "@/blocks/mathcoder.theme.js";
 export default {
   name: "AppBlockly",
   props: {
@@ -44,8 +45,8 @@ export default {
       // css: false,
       // rtl: false,
       // scrollbars: false,
-      renderer: "zelos",
-      // theme: "zelos",
+      // renderer: "zelos",
+      theme: Blockly.Themes.MathCoder,
       sounds: true,
       oneBasedIndex: true,
       showToolbox: true
