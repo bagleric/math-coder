@@ -20,6 +20,7 @@
 
 <script>
 import defaults from "lodash/defaults";
+import forEach from "lodash/forEach";
 import Blockly from "blockly";
 export default {
   name: "AppBlockly",
@@ -34,15 +35,17 @@ export default {
   mounted() {
     var options = defaults({}, this.$props.options, {
       // toolbox: this.$refs["blocklyToolbox"],
-      // collapse: false,
-      // comments: true,
+      collapse: false,
+      // comments: false,
       // maxBlocks: 5,
       trashcan: false,
-      // horizontalLayout: false,
-      // toolboxPosition: "start",
+      horizontalLayout: true,
+      // toolboxPosition: "start", //"end"
       // css: false,
       // rtl: false,
       // scrollbars: false,
+      renderer: "zelos",
+      // theme: "zelos",
       sounds: true,
       oneBasedIndex: true,
       showToolbox: true
@@ -86,6 +89,11 @@ export default {
   },
   methods: {
     fireChangeEvent(event) {
+      forEach(this.workspace.getAllBlocks(), ablock => {
+        // disable the context menu
+        ablock.contextMenu = false;
+      });
+
       // console.log(this.workspace.getBlockById(event.blockId).pathObject);
       // console.log(this.workspace.getBlockById(event.blockId).svgGroup_);
       this.$emit("blockly-event", event);

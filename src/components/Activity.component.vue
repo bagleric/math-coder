@@ -279,7 +279,7 @@ export default {
     },
     addToPath(toAdd) {
       this.path += toAdd;
-      console.log(this.path);
+      // console.log(this.path);
     },
     initApi(interpreter, globalObject) {
       // Add an API function for add item.
@@ -372,7 +372,6 @@ export default {
     },
     runCode() {
       this.keepTryingMsg = undefined;
-
       if (this.demoWorkspace.getTopBlocks().length > 1) {
         this.keepTryingMsg =
           "Make sure you connect all of the blocks together!";
@@ -532,12 +531,12 @@ export default {
 .run-button {
   position: absolute;
   right: 10px;
-  top: 10px;
+  bottom: 10px;
 }
 
 .reset-button {
   position: absolute;
-  right: 10px;
+  left: 10px;
   bottom: 10px;
 }
 
