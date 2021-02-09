@@ -1,5 +1,13 @@
 // data to be used
 
+function importAll(r) {
+  let audios = {};
+  r.keys().map((item, index) => { audios[item.replace('./', '')] = r(item); });
+  return audios;
+}
+
+const audios = importAll(require.context('@/assets', false, /\.(mp3)$/));
+
 const data = {
   modules: [
     {
@@ -388,6 +396,7 @@ const data = {
           , startingBlocksXml: `<block type="draw_circle" id="bK+~uQDjQp#oOAxbX$_=" x="10" y="65"></block>`
           , blockSelection: []
           , prompt: `Click the <define word="run_button" showInlineHtml>run button</define> below.`
+          , promptAudio: audios['Test.mp3']
           , reflections: []
           , solution: "-false-circle-false-"
           , hints: [

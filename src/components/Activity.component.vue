@@ -7,6 +7,11 @@
           <v-btn @click="submitCode"> NEXT </v-btn>
         </span>
       </span>
+      <AppAudio
+        ref="prompt-sound"
+        :source="c_activity.promptAudio"
+        playOnMounted
+      />
       <AppRenderHtml class="prompt-rendered" :html="c_activity.prompt">
       </AppRenderHtml>
     </header>
@@ -34,6 +39,7 @@
           </template>
         </AppBlockly>
         <v-btn
+          large
           rounded
           outlined
           color="primary"
@@ -42,26 +48,34 @@
         >
           Start Over
         </v-btn>
-        <v-btn
-          rounded
-          large
-          v-if="!c_isRunning"
-          color="green"
-          class="run-button white--text"
-          @click="runCode()"
-        >
-          Run
-        </v-btn>
-        <v-btn
-          v-else
-          rounded
-          large
-          color="red"
-          class="run-button white--text"
-          v-on:click="resetExecution()"
-        >
-          Stop
-        </v-btn>
+        <span class="run-button">
+          <v-btn
+            v-if="c_isRunning"
+            large
+            rounded
+            outlined
+            class="red--text"
+            color="white"
+            v-on:click="resetExecution()"
+          >
+            <v-icon>mdi-octagon</v-icon>
+            Stop
+          </v-btn>
+          <v-btn
+            rounded
+            large
+            color="green"
+            class="white--text"
+            v-on:click="runCode()"
+          >
+            <AppAudio
+              ref="prompt-sound"
+              :source="c_activity.promptAudio"
+              playOnMounted
+            />
+            Run
+          </v-btn>
+        </span>
       </div>
       <div class="view" id="code">
         <AdditionLayout
@@ -112,6 +126,7 @@ import MultiplicationSentence from "@/components/MultiplicationSentence.componen
 import map from "lodash/map";
 import every from "lodash/every";
 import AppReflection from "@/components/Reflection.component.vue";
+import AppAudio from "@/components/Audio.component.vue";
 import BlocklyJS from "blockly/javascript";
 import "@/blocks/block1.js";
 import get from "lodash/get";
@@ -140,7 +155,8 @@ export default {
     AppBlockly,
     AppRenderHtml,
     AppReflection,
-    AppBrace
+    AppBrace,
+    AppAudio
   },
   props: {
     moduleId: { type: String, required: true },
