@@ -26,6 +26,7 @@ export default {
   },
   methods: {
     play: function() {
+      console.log(this.source);
       this.$refs["sound"].play();
     }
   },

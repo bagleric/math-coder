@@ -3,6 +3,13 @@
 <AppReflection :title="" :message=""></AppReflection>
   -->
   <div class="reflection">
+    <AppAudio
+      ref="prompt-sound"
+      hideIcon
+      :source="c_successAudio"
+      playOnMounted
+    >
+    </AppAudio>
     <div class="message">
       <AppRenderHtml parentTag="span" :html="c_reflection"></AppRenderHtml>
     </div>
@@ -26,12 +33,13 @@
 
 <script>
 import AppRenderHtml from "@/components/RenderHtml.component.vue";
+import AppAudio from "@/components/Audio.component.vue";
 
 const sample = require("lodash/sample");
 const isArray = require("lodash/isArray");
 export default {
   name: "AppReflection",
-  components: { AppRenderHtml },
+  components: { AppRenderHtml, AppAudio },
   props: {
     reflections: {
       default: function() {
@@ -50,6 +58,11 @@ export default {
         return this.reflections[this.iter];
       }
       return "Well done!";
+    },
+    c_successAudio() {
+      var audios = require.context("@/assets/", false, /\.mp3$/);
+      console.log(audios);
+      return audios("./well_done_bell.mp3") || "";
     }
   },
   data: () => ({

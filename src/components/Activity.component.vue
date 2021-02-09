@@ -108,7 +108,13 @@
           :reflections="c_activity.reflections"
         ></AppReflection>
         <span v-else-if="c_madeAttemtps" class="not-quite">
-          {{ c_keepTryingMessage }}
+          <AppAudio
+            ref="prompt-sound"
+            :source="c_keepTryingAudio"
+            playOnMounted
+          >
+            {{ c_keepTryingMessage }}
+          </AppAudio>
         </span>
       </div>
     </div>
@@ -220,6 +226,26 @@ export default {
     c_answerHints() {
       return get(this, ["c_activity", "hints"], []);
     },
+    c_mappedHintsAudio() {
+      return reduce(
+        this.c_answerHints,
+        (result, value) => {
+          result[value.answer] = value.audio;
+          return result;
+        },
+        {}
+      );
+    },
+    c_defaultHintAudio() {
+      var audios = require.context("@/assets/", false, /\.mp3$/);
+      console.log(audios);
+      return audios("./keepTrying.mp3") || "";
+    },
+    c_keepTryingAudio() {
+      console.log(this.c_mappedHintsAudio);
+      return get(this.c_mappedHintsAudio, this.path, this.c_defaultHintAudio);
+    },
+
     c_mappedHints() {
       return reduce(
         this.c_answerHints,
@@ -515,7 +541,7 @@ export default {
 .prompt {
   grid-area: prompt;
   border: solid 1px grey;
-  display: grid;
+  display: flex;
   align-content: center;
   padding: 0.5em;
   transform: opacity 5s;

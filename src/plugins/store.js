@@ -7,7 +7,7 @@ import get from 'lodash/get'
 import defaults from 'lodash/defaults'
 import find from 'lodash/find'
 
-import data from "@/forms/module1.js"
+import data from "@/forms/module2.js"
 
 Vue.use(Vuex)
 
