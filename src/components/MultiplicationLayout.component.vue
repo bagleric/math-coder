@@ -1,45 +1,34 @@
 <template>
-  <div class="row-column-layout">
-    <div class="layout-view">
-      <div class="row-label">
-        <AppBrace v-if="c_showRowLabel" type="right">
-          <template v-slot:outside>
-            <span class="label-group">
-              <span class="count">{{ rows }}</span>
-              <span class="count-label">Groups</span>
-            </span>
-          </template>
-        </AppBrace>
-      </div>
-      <div class="column-label">
-        <AppBrace v-if="c_showColumnLabel" type="top">
-          <template v-slot:outside>
-            <span class="label-group">
-              <span class="count">{{ columns }}</span>
-              <span class="count-label">Items</span>
-            </span>
-          </template>
-        </AppBrace>
-      </div>
-      <div :class="c_itemsGridClass" :style="c_gridStyle">
-        <AppRenderHtml
-          :class="getItemClass(itemIndex)"
-          v-for="(item, itemIndex) in items"
-          :key="itemIndex"
-          :html="item"
-          :hasParentTag="false"
-        />
-      </div>
+  <div class="layout-view">
+    <div class="row-label">
+      <AppBrace v-if="c_showRowLabel" type="right">
+        <template v-slot:outside>
+          <span class="label-group">
+            <span class="count">{{ rows }}</span>
+            <span class="count-label">Groups</span>
+          </span>
+        </template>
+      </AppBrace>
     </div>
-    <!-- <div class="totals-label" v-if="c_showTotalsLabel">
-      <span>
-        <span>TOTAL ITEMS</span>
-        <span class="label-group">
-          <span class="count">{{ c_numItems }}</span>
-          <span class="count-label">items</span>
-        </span>
-      </span>
-    </div> -->
+    <div class="column-label">
+      <AppBrace v-if="c_showColumnLabel" type="top">
+        <template v-slot:outside>
+          <span class="label-group">
+            <span class="count">{{ columns }}</span>
+            <span class="count-label">Items</span>
+          </span>
+        </template>
+      </AppBrace>
+    </div>
+    <div :class="c_itemsGridClass" :style="c_gridStyle">
+      <AppRenderHtml
+        :class="getItemClass(itemIndex)"
+        v-for="(item, itemIndex) in items"
+        :key="itemIndex"
+        :html="item"
+        :hasParentTag="false"
+      />
+    </div>
   </div>
 </template>
 
@@ -97,20 +86,16 @@ export default {
 
 <style scoped>
 .row-column-layout {
-  display: grid;
-  gap: 2em;
-  grid-template: "layout-view totals-label" auto / 1fr auto;
 }
 
 .layout-view {
   width: max-content;
   display: grid;
-  grid-area: layout-view;
   align-self: start;
   gap: 0.5em;
   grid-template:
     ".         column-label" auto
-    "row-label items-grid  " auto / auto auto;
+    "row-label items-grid  " auto / 80px auto;
 }
 
 .row-label {

@@ -40,8 +40,7 @@ export default {
   props: {
     numColumns: { type: Number, default: 0 },
     numRows: { type: Number, default: 0 },
-    collectionRows: { type: Array, default: [] },
-    displayMathSentence: { type: Boolean, default: false }
+    collectionRows: { type: Array, default: [] }
   },
   computed: {
     c_numItems() {

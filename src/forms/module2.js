@@ -391,723 +391,347 @@ const data = {
           , description: "This activity starts out with a block already on the canvas. The student will click the Run Button in order to compile the code."
           , blockOptions: {
             showToolbox: false
-            , maxBlocks: 1
+            , maxInstances: { "repeat_circle": 1 }
           }
-          , startingBlocksXml: `<block type="draw_circle" id="bK+~uQDjQp#oOAxbX$_=" x="10" y="65"></block>`
+          , startingBlocksXml: `<block type="repeat_circle" x="10" y="65"></block>`
           , blockSelection: []
-          , prompt: `Click the <define word="run_button" showInlineHtml>run button</define> below.`
-          , promptAudio: audios['Test.mp3']
-          , promptAudio: audios['Test.mp3']
+          , prompt: `<p>The blocks on the white page are going to tell the computer what to do.</p><p>Click the <define word="run_button" showInlineHtml>run button</define> below to see what happens.</p>`
+          , promptAudio: audios['p1prompt.mp3']
           , reflections: []
-          , solution: "-false-circle-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: true
+          , solution: "-false-repeat_circle-5-false-"
+          , hints: []
           , isMultiplication: false
         },
         {
-          id: "P-2"
-          , name: "P-2: Dragging Blocks onto the canvas"
-          , description: "This activity asks the students to drag a block onto the canvas. The student will then click the Run Button in order to compile the code and view it run."
-          , blockOptions: {
-            showToolbox: true
-            , maxBlocks: 1
-          }
-          , startingBlocksXml: ""
-          , blockSelection: [
-            {
-              type: "draw_circle"
-            }
-          ]
-          , prompt: "Drag a <define word='circle_block' showInlineHtml>circle block</define> onto the page. Press the <define word='run_button' showInlineHtml>run button</define> button."
-          , promptAudio: audios['Test.mp3']
-          , reflections: []
-          , solution: "-false-circle-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: true
-          , isMultiplication: false
-        },
-        {
-          id: "P-3"
-          , name: "P-3: Connecting blocks together"
-          , description: "This introduces the concept of connecting two blocks together."
-          , blockOptions: {
-            showToolbox: true
-            , maxBlocks: 2
-          }
-          , startingBlocksXml: `<block type="draw_circle" id="bK+~uQDjQp#oOAxbX$_=" x="10" y="65"></block>`
-          , blockSelection: [
-            { type: "draw_circle" }
-          ]
-          , prompt: `Drag another <define word='circle_block' showInlineHtml>circle block</define> onto the page. <define word='connect_block'>Connect</define> it to the one that's already there. Press the <define word='run_button' showInlineHtml>run button</define>.`
-          , promptAudio: audios['Test.mp3']
-          , reflections: [
-            `By <define word='connect_block'>connecting</define> the two blocks you told the computer to draw two circles. You have written code!`
-          ]
-          , solution: "-false-circle-true--true-circle-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: true
-          , isMultiplication: false
-        },
-        {
-          id: "P-3-1"
-          , name: "P-3-1: Connecting blocks together"
-          , description: "This continues on the concept introduced in P-3"
-          , blockOptions: {
-            showToolbox: true
-            , maxBlocks: 3
-          }
-          , startingBlocksXml: ``
-          , blockSelection: [
-            { type: "draw_ball" }
-          ]
-          , prompt: `Drag 3 blocks onto the white page. <define word='connect_block'>Connect</define> them all together.`
-          , promptAudio: audios['Test.mp3']
-          , reflections: [
-            `Your pretty good at this!`
-          ]
-          , solution: "-false-ball-true--true-ball-true--true-ball-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: true
-          , isMultiplication: false
-        },
-        {
-          id: "P-3"
-          , name: "P-3: Connecting blocks together"
-          , description: "This continues on the concept introduced in P-3"
-          , blockOptions: {
-            showToolbox: true
-            , maxBlocks: 5
-          }
-          , startingBlocksXml: ``
-          , blockSelection: [
-            { type: "draw_star" }
-          ]
-          , prompt: `Tell the computer to draw 5 stars. <define word='connect_block'>Connect</define> 5 draw star blocks together.`
-          , promptAudio: audios['Test.mp3']
-          , reflections: [
-            `5 stars, well done!`
-          ]
-          , solution: "-false-star-true--true-star-true--true-star-true--true-star-true--true-star-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: true
-          , isMultiplication: false
-        },
-        //TODO add more P-3 activities.
-        {
-          id: "P-4"
-          , name: "P-4: Intro to the Row Block and modifying values"
-          , description: "Introduction to Row Blocks. The goal is to introduce them to our first type of loop block."
+          id: "A-1"
+          , name: "A-1: Modifying the Row Block"
+          , description: "This activity starts out with a block already on the canvas. The student will change the value and then click run."
           , blockOptions: {
             showToolbox: false
-            , maxBlocks: 1
+            , maxInstances: { "repeat_ball": 1 }
           }
-          , startingBlocksXml: `<block type="repeat_star" id="bK+~uQDjQp#oOAxbX$_="  x="10" y="65">
+          , startingBlocksXml: `<block type="repeat_ball" x="10" y="65">
                                   <field name="TIMES">7</field>
                                 </block>`
-          , blockSelection: [
-            { type: "repeat_star" }
+          , blockSelection: []
+          , prompt: `<p>The blocks on the white page are going to tell the computer what to do.</p><p>Change the 7 on the block to a 4. Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , promptAudio: audios['a1prompt.mp3']
+          , reflections: []
+          , successAudio: audios['a1success.mp3']
+          , solution: "-false-repeat_ball-4-false-"
+          , hints: [
+            {
+              answer: "-false-repeat_ball-7-false-"
+              , hintHtml: `To draw 4 balls, make sure you change the 7 to a 4.`
+              , audio: audios["a1hint1.mp3"]
+            }
           ]
-          , prompt: `Draw 5 stars. Change the 7 on the block to a 5.`
-          , promptAudio: audios['Test.mp3']
-          , reflections: [
-            "Another 5 Stars! Great job."
-            , `We told the computer to do the same thing as last time. This time we only used one block.`
+        },
+        {
+          id: "A-2"
+          , name: "A-2: Modifying the Row Block"
+          , description: "This activity starts out with a block already on the canvas. The student will change the value and then click run."
+          , blockOptions: {
+            showToolbox: false
+            , maxInstances: { "repeat_book": 1 }
+          }
+          , startingBlocksXml: `<block type="repeat_book" x="10" y="65">
+                                  <field name="TIMES">5</field>
+                                </block>`
+          , blockSelection: []
+          , prompt: `<p>Tell the computer to draw 8 books.</p><p>Change the 5 on the block to an 8. Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , promptAudio: audios['a2prompt.mp3']
+          , reflections: []
+          , successAudio: audios['a2success.mp3']
+          , solution: "-false-repeat_book-8-false-"
+          , hints: [
+            {
+              answer: "-false-repeat_book-5-false-"
+              , hintHtml: `To draw 8 books, make sure you change the 5 to an 8.`
+              , audio: audios["a2hint1.mp3"]
+            }
           ]
+        },
+        {
+          id: "A-3"
+          , name: "A-3: Modifying the Row Block"
+          , description: "This activity starts out with a block already on the canvas. The student will change the value and then click run."
+          , blockOptions: {
+            showToolbox: false
+            , maxInstances: { "repeat_candy": 1 }
+          }
+          , startingBlocksXml: `<block type="repeat_candy" x="10" y="65">
+                                  <field name="TIMES">3</field>
+                                </block>`
+          , blockSelection: []
+          , prompt: `<p>Tell the computer to draw 7 pieces of candy.</p><p>Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , promptAudio: audios['a3prompt.mp3']
+          , reflections: []
+          , successAudio: audios['a3success.mp3']
+          , solution: "-false-repeat_candy-7-false-"
+          , hints: [
+            {
+              answer: "-false-repeat_candy-3-false-"
+              , hintHtml: `To draw 7 pieces of candy, make sure you change the 3 to a 7.`
+              , audio: audios["a3hint1.mp3"]
+            }
+          ]
+        },
+        {
+          id: "B-1"
+          , name: "B-1: Dragging and Modifying the row block"
+          , description: "This activity asks students to drag the needed block onto the canvas. The student will change the value and then click run."
+          , blockOptions: {
+            showToolbox: true
+            , maxInstances: { "repeat_cookie": 1 }
+          }
+          , startingBlocksXml: ``
+          , blockSelection: [{
+            type: "repeat_cookie"
+          }]
+          , prompt: `<p>Tell the computer to draw 6 cookies. Drag the block onto the white page.</p><p>Change the 4 on the block to a 6. Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , promptAudio: audios['b1prompt.mp3']
+          , reflections: []
+          , successAudio: audios['b1success.mp3']
+          , solution: "-false-repeat_cookie-6-false-"
+          , hints: [
+            {
+              answer: "-false-repeat_cookie-4-false-"
+              , hintHtml: `To draw 6 cookies, make sure you change the 4 to a 6.`
+              , audio: audios["b1hint1.mp3"]
+            },
+            {
+              answer: "-"
+              , hintHtml: `Remember to Drag the blocks onto the white page.`
+              , audio: audios["dragOntoPage.mp3"]
+            }
+          ]
+        },
+        {
+          id: "B-2"
+          , name: "B-2: Dragging and Modifying the row block"
+          , description: "This activity asks students to drag the needed block onto the canvas. The student will change the value and then click run."
+          , blockOptions: {
+            showToolbox: true
+            , maxInstances: { "repeat_pillow": 1 }
+          }
+          , startingBlocksXml: ``
+          , blockSelection: [{
+            type: "repeat_pillow"
+          }]
+          , prompt: `<p>Tell the computer to draw 5 pillows. Drag the block onto the white page.</p><p>Change the 9 on the block to a 5. Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , promptAudio: audios['b2prompt.mp3']
+          , reflections: []
+          , successAudio: audios['b2success.mp3']
+          , solution: "-false-repeat_pillow-5-false-"
+          , hints: [
+            {
+              answer: "-false-repeat_pillow-9-false-"
+              , hintHtml: `To draw 5 pillows, make sure you change the 9 to a 5.`
+              , audio: audios["b2hint1.mp3"]
+            },
+            {
+              answer: "-"
+              , hintHtml: `Remember to Drag the blocks onto the white page.`
+              , audio: audios["dragOntoPage.mp3"]
+            }
+          ]
+        },
+        {
+          id: "B-3"
+          , name: "B-3: Dragging and Modifying the row block"
+          , description: "This activity asks students to drag the needed block onto the canvas. The student will change the value and then click run."
+          , blockOptions: {
+            showToolbox: true
+            , maxInstances: { "repeat_star": 1 }
+          }
+          , startingBlocksXml: ``
+          , blockSelection: [{
+            type: "repeat_star"
+          }]
+          , prompt: `<p>Tell the computer to draw 5 stars.</p><p>Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , promptAudio: audios['b3prompt.mp3']
+          , reflections: []
+          , successAudio: audios['b3success.mp3']
           , solution: "-false-repeat_star-5-false-"
           , hints: [
             {
               answer: "-false-repeat_star-7-false-"
-              , hintHtml: `To draw 5 circles, make sure you change the 7 to a 5.`
-              , audio: audios["P-4_hint-1.mp3"]
+              , hintHtml: `To draw 5 stars, make sure you change the 7 to a 5.`
+              , audio: audios["b3hint1.mp3"]
+            },
+            {
+              answer: "-"
+              , hintHtml: `Remember to Drag the blocks onto the white page.`
+              , audio: audios["dragOntoPage.mp3"]
             }
           ]
-          , isAddition: true
-          , isMultiplication: false
         },
         {
-          id: "P-4-1"
-          , name: "P-4-1: Row Block and modifying values"
-          , description: "A continuation of concepts introduced in P-4"
-          , blockOptions: {
-            showToolbox: false
-            , maxBlocks: 1
-          }
-          , startingBlocksXml: `<block type="repeat_ball" id="bK+~uQDjQp#oOAxbX$_="  x="10" y="65">
-                                  <field name="TIMES">3</field>
-                                </block>`
-          , blockSelection: [
-            { type: "repeat_ball" }
-          ]
-          , prompt: `Draw a group of 4 balls. Change the number 3 to a 4`
-          , promptAudio: audios['Test.mp3']
-          , reflections: []
-          , solution: "-false-repeat_ball-4-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: true
-          , isMultiplication: false
-        },
-        {
-          id: "P-4-2"
-          , name: "P-4-2: Row Block and modifying values"
-          , description: "A continuation of concepts introduced in P-4"
-          , blockOptions: {
-            showToolbox: false
-            , maxBlocks: 1
-          }
-          , startingBlocksXml: `<block type="repeat_candy" id="bK+~uQDjQp#oOAxbX$_="  x="10" y="65">
-                                  <field name="TIMES">2</field>
-                                </block>`
-          , blockSelection: [
-            { type: "repeat_candy" }
-          ]
-          , prompt: `Draw 6 candies.`
-          , promptAudio: audios['Test.mp3']
-          , reflections: []
-          , solution: "-false-repeat_candy-6-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: true
-          , isMultiplication: false
-        },
-        // multiple row blocks
-        {
-          id: "2nd-0"
-          , name: "2nd-0: Multiple Row blocks - leading into repeated addition"
-          , description: "A continuation of concepts introduced in P-4"
-          , blockOptions: {
-            showToolbox: false
-            , maxBlocks: 3
-          }
-          , startingBlocksXml: `<block type="repeat_circle" id="m[bfwg2|2]?YL=(!A~m#" x="10" y="65">
-                                    <field name="TIMES">3</field>
-                                    <next>
-                                        <block type="repeat_circle" id="J;%ZCw019N(zc}OIA#+P">
-                                            <field name="TIMES">4</field>
-                                            <next>
-                                                <block type="repeat_circle" id="r:7.AGge{s8;gP9As2Ci">
-                                                    <field name="TIMES">5</field>
-                                                </block>
-                                            </next>
-                                        </block>
-                                    </next>
-                                </block>`
-          , blockSelection: [
-            { type: "repeat_circle" }
-          ]
-          , prompt: `Make all of the block numbers 4.`
-          , promptAudio: audios['Test.mp3']
-          , reflections: [
-            `Good Job! This is repeated addition</define>.`
-            , `Repeated addition means adding the same number many times.`
-          ]
-          , solution: "-false-repeat_circle-4-true--true-repeat_circle-4-true--true-repeat_circle-4-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: true
-          , isMultiplication: false
-        },
-        {
-          id: "2nd-0-1"
-          , name: "2nd-0-1: Multiple Row blocks - leading into repeated addition"
-          , description: "A continuation of concepts introduced in P-4"
+          id: "C-1a"
+          , name: "C-1a: Introducing the Repeat Block"
+          , description: "This activity has two parts. It asks students to drag the needed row block onto the canvas and update the value. Then It asks the student to Drag the repeat block onto the canvas and update its value."
           , blockOptions: {
             showToolbox: true
-            , maxBlocks: 1
-          }
-          // , startingBlocksXml: `<block type="repeat_circle" id="m[bfwg2|2]?YL=(!A~m#" x="10" y="65">
-          //                           <field name="TIMES">3</field>
-          //                           <next>
-          //                               <block type="repeat_circle" id="J;%ZCw019N(zc}OIA#+P">
-          //                                   <field name="TIMES">4</field>
-          //                                   <next>
-          //                                       <block type="repeat_circle" id="r:7.AGge{s8;gP9As2Ci">
-          //                                           <field name="TIMES">5</field>
-          //                                       </block>
-          //                                   </next>
-          //                               </block>
-          //                           </next>
-          //                       </block>`
-          , blockSelection: [
-            { type: "repeat_circle" }
-          ]
-          , prompt: `Tell the computer to draw a row of 5 circles.`
-          , promptAudio: audios['Test.mp3']
-          , reflections: [
-          ]
-          , solution: "-false-repeat_circle-5-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: true
-          , isMultiplication: false
-        },
-        {
-          id: "2nd-0-1"
-          , name: "2nd-0-1: Multiple Row blocks - leading into repeated addition"
-          , description: "A continuation of concepts introduced in P-4"
-          , blockOptions: {
-            showToolbox: true
-            , maxBlocks: 3
-          }
-          // , startingBlocksXml: `<block type="repeat_circle" id="m[bfwg2|2]?YL=(!A~m#" x="10" y="65">
-          //                           <field name="TIMES">3</field>
-          //                           <next>
-          //                               <block type="repeat_circle" id="J;%ZCw019N(zc}OIA#+P">
-          //                                   <field name="TIMES">4</field>
-          //                                   <next>
-          //                                       <block type="repeat_circle" id="r:7.AGge{s8;gP9As2Ci">
-          //                                           <field name="TIMES">5</field>
-          //                                       </block>
-          //                                   </next>
-          //                               </block>
-          //                           </next>
-          //                       </block>`
-          , blockSelection: [
-            { type: "repeat_circle" }
-          ]
-          , prompt: `Tell the computer to draw 3 rows. Make each row have 5 circles.`
-          , promptAudio: audios['Test.mp3']
-          , reflections: [
-          ]
-          , solution: "-false-repeat_circle-5-true--true-repeat_circle-5-true--true-repeat_circle-5-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: true
-          , isMultiplication: false
-        },
-        {
-          id: "2nd-1"
-          , name: "2nd-1: Repeated Addition"
-          , description: "A continuation of concepts introduced in 2nd-0"
-          , blockOptions: {
-            showToolbox: true
-            , maxBlocks: 3
+            , maxInstances: { "repeat_apple": 1 }
           }
           , startingBlocksXml: ``
+          , blockSelection: [{
+            type: "repeat_apple"
+          }]
+          , prompt: `<p>Tell the computer to draw 5 apples.</p><p>Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , promptAudio: audios['c1aprompt.mp3']
+          , reflections: []
+          , successAudio: audios['c1asuccess.mp3']
+          , solution: "-false-repeat_apple-5-false-"
+          , hints: [
+            {
+              answer: "-false-repeat_apple-4-false-"
+              , hintHtml: `To draw 5 apples, make sure you change the 4 to a 5.`
+              , audio: audios["c1ahint1.mp3"]
+            },
+            {
+              answer: "-"
+              , hintHtml: `Remember to Drag the blocks onto the white page.`
+              , audio: audios["dragOntoPage.mp3"]
+            }
+          ]
+        },
+        {
+          id: "C-1b"
+          , name: "C-1b: Introducing the Repeat Block"
+          , description: "This activity has two parts. It asks students to drag the needed row block onto the canvas and update the value. Then It asks the student to Drag the repeat block onto the canvas and update its value."
+          , blockOptions: {
+            showToolbox: true
+            , maxInstances: { "repeat_apple": 1, "repeat_block": 1 }
+          }
+          , startingBlocksXml: `<block type="repeat_apple" x="10" y="65">
+                                  <field name="TIMES">5</field>
+                                </block>`
           , blockSelection: [
             { type: "repeat_apple" }
+            , { type: "repeat_block" }
           ]
-          , prompt: `Tell the computer how to answer the question. There are 3 rows on a table. Each row has 4 apples. How many apples are there in all?`
-          , promptAudio: audios['Test.mp3']
+          , prompt: `<p>Tell the computer to draw 3 rows of 5 apples.</p> To do this drag the repeat block onto the white page. Place the apple block inside of the repeat block.<p>Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , promptAudio: audios['c1bprompt.mp3']
           , reflections: []
-          , solution: "-false-repeat_apple-4-true--true-repeat_apple-4-true--true-repeat_apple-4-false-"
+          , successAudio: audios['c1bsuccess.mp3']
+          , solution: "-repeat-3-times--true-repeat_apple-5-false--true-repeat_apple-5-false--true-repeat_apple-5-false-"
           , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
+            {
+              answer: "-false-repeat_apple-5-false-"
+              , hintHtml: `Make sure you drag the repeat block onto the white page too.`
+              , audio: audios["dragRepeatHint.mp3"]
+            },
+            {
+              answer: "-"
+              , hintHtml: `Remember to Drag the blocks onto the white page.`
+              , audio: audios["dragOntoPage.mp3"]
+            }
           ]
-          , isAddition: true
-          , isMultiplication: false
         },
+
+
         {
-          id: "2nd-2"
-          , name: "2nd-2: Repeated Addition"
-          , description: "A continuation of concepts introduced in 2nd"
+          id: "C-2a"
+          , name: "C-2a: Introducing the Repeat Block"
+          , description: "This activity has two parts. It asks students to drag the needed row block onto the canvas and update the value. Then It asks the student to Drag the repeat block onto the canvas and update its value."
           , blockOptions: {
             showToolbox: true
-            , maxBlocks: 2
+            , maxInstances: { "repeat_tree": 1 }
           }
           , startingBlocksXml: ``
-          , blockSelection: [
-            { type: "repeat_tree" }
-          ]
-          , prompt: `Tell the computer how to answer the question. There are 2 rows of trees at a park. Each row has 3 trees. How many trees are there in all?`
-          , promptAudio: audios['Test.mp3']
+          , blockSelection: [{
+            type: "repeat_tree"
+          }]
+          , prompt: `<p>Tell the computer to draw 4 trees.</p><p>Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , promptAudio: audios['c2aprompt.mp3']
           , reflections: []
-          , solution: "-false-repeat_tree-3-true--true-repeat_tree-3-false-"
+          , successAudio: audios['c2asuccess.mp3']
+          , solution: "-false-repeat_tree-4-false-"
           , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
+            {
+              answer: "-false-repeat_tree-5-false-"
+              , hintHtml: `To draw 4 trees, make sure you change the 5 to a 4.`
+              , audio: audios["c2ahint1.mp3"]
+            },
+            {
+              answer: "-"
+              , hintHtml: `Remember to Drag the blocks onto the white page.`
+              , audio: audios["dragOntoPage.mp3"]
+            }
           ]
-          , isAddition: true
-          , isMultiplication: false
         },
         {
-          id: "2nd-3"
-          , name: "2nd-3: Repeated Addition"
-          , description: "A continuation of concepts introduced in 2nd"
+          id: "C-2b"
+          , name: "C-2b: Introducing the Repeat Block"
+          , description: "This activity has two parts. It asks students to drag the needed row block onto the canvas and update the value. Then It asks the student to Drag the repeat block onto the canvas and update its value."
           , blockOptions: {
             showToolbox: true
-            , maxBlocks: 5
+            , maxInstances: { "repeat_tree": 1, "repeat_block": 1 }
           }
-          , startingBlocksXml: ``
-          , blockSelection: [
-            { type: "repeat_pea" }
-          ]
-          , prompt: `Jack has 5 pea pods. There are 4 peas in each pod. How many peas does Jack have in all?`
-          , promptAudio: audios['Test.mp3']
-          , reflections: []
-          , solution: "-false-repeat_pea-4-true--true-repeat_pea-4-true--true-repeat_pea-4-true--true-repeat_pea-4-true--true-repeat_pea-4-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: true
-          , isMultiplication: false
-        },
-        {
-          id: "2nd-3-1"
-          , name: "2nd-3-1: Repeated Addition"
-          , description: "A continuation of concepts introduced in 2nd"
-          , blockOptions: {
-            showToolbox: true
-            , maxBlocks: 3
-          }
-          , startingBlocksXml: ``
-          , blockSelection: [
-            { type: "repeat_cookie" }
-          ]
-          , prompt: `Tell the computer how to find the sum. 5 + 5 + 5 = ?`
-          , promptAudio: audios['Test.mp3']
-          , reflections: []
-          , solution: "-false-repeat_cookie-5-true--true-repeat_cookie-5-true--true-repeat_cookie-5-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: true
-          , isMultiplication: false
-        },
-        {
-          id: "2nd-4"
-          , name: "2nd-4: Repeated Addition"
-          , description: "A continuation of concepts introduced in 2nd"
-          , blockOptions: {
-            showToolbox: true
-            , maxBlocks: 4
-          }
-          , startingBlocksXml: ``
-          , blockSelection: [
-            { type: "repeat_shoe" }
-          ]
-          , prompt: `There are 4 pairs of shoes by the door. Each pair has 2 shoes. How many shoes are there?`
-          , promptAudio: audios['Test.mp3']
-          , reflections: []
-          , solution: "-false-repeat_shoe-2-true--true-repeat_shoe-2-true--true-repeat_shoe-2-true--true-repeat_shoe-2-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: true
-          , isMultiplication: false
-        },
-        {
-          id: "2nd-4-1"
-          , name: "2nd-4-1: Repeated Addition"
-          , description: "A continuation of concepts introduced in 2nd"
-          , blockOptions: {
-            showToolbox: true
-            , maxBlocks: 4
-          }
-          , startingBlocksXml: ``
-          , blockSelection: [
-            { type: "repeat_apple" }
-          ]
-          , prompt: `Tell the computer how to find the sum. 3 + 3 + 3 = ?`
-          , promptAudio: audios['Test.mp3']
-          , reflections: []
-          , solution: "-false-repeat_apple-3-true--true-repeat_apple-3-true--true-repeat_apple-3-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: true
-          , isMultiplication: false
-        },
-        {
-          id: "2nd-5"
-          , name: "2nd-5: Repeated Addition"
-          , description: "A continuation of concepts introduced in 2nd"
-          , blockOptions: {
-            showToolbox: true
-            , maxBlocks: 3
-          }
-          , startingBlocksXml: ``
-          , blockSelection: [
-            { type: "repeat_book" }
-          ]
-          , prompt: `A book case has 3 shelves. Each shelf has 5 books. How many books do we have total?`
-          , promptAudio: audios['Test.mp3']
-          , reflections: []
-          , solution: "-false-repeat_book-5-true--true-repeat_book-5-true--true-repeat_book-5-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: true
-          , isMultiplication: true
-        },
-        // Transition to Multiplication
-        {
-          id: "P-5"
-          , name: "P-5: Intro to the Repeat Block and placing blocks inside"
-          , description: ""
-          , blockOptions: {
-            showToolbox: true
-            , maxBlocks: 2
-          }
-          , startingBlocksXml: `<block type="repeat_block" id="5}b)[uwQL_NqSZtYhv{%" x="10" y="65">
-                                  <field name="TIMES">3</field>
+          , startingBlocksXml: `<block type="repeat_tree" x="10" y="65">
+                                  <field name="TIMES">4</field>
                                 </block>`
-          , blockSelection: [
-            { type: "repeat_book" }
-          ]
-          , prompt: `Drag a bookshelf block onto the page. Place it inside of the <define word="repeat_block" showInlineHtml>repeat block</define>. Click the <define word="run_button">Run button</define>.`
-          , promptAudio: audios['Test.mp3']
-          , reflections: [
-            "We got the same result as last time! This time we only used 2 blocks."
-            , `We are now doing multiplication.`
-          ]
-          , solution: "-repeat-3-times--true-repeat_book-5-false--true-repeat_book-5-false--true-repeat_book-5-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: true
-          , isMultiplication: true
-        },
-        {
-          id: "3rd-1"
-          , name: "3rd-1: Multiplication"
-          , description: "A continuation of concepts introduced in P-5"
-          , blockOptions: {
-            showToolbox: true
-            , maxBlocks: 2
-            , maxInstances: { "repeat_cake": 1 }
-          }
-          , startingBlocksXml: ``
-          , blockSelection: [
-            { type: "repeat_cake" }
-            , { type: "repeat_block" }
-          ]
-          , prompt: `A cake was cut into 5 rows. Each row had 6 pieces of cake. How many pieces of cake are there in all?`
-          , promptAudio: audios['Test.mp3']
-          , reflections: []
-          , solution: "-repeat-5-times--true-repeat_cake-6-false--true-repeat_cake-6-false--true-repeat_cake-6-false--true-repeat_cake-6-false--true-repeat_cake-6-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: false
-          , isMultiplication: true
-        },
-        {
-          id: "3rd-2"
-          , name: "3rd-2: Multiplication"
-          , description: "A continuation of concepts introduced in P-5"
-          , blockOptions: {
-            showToolbox: true
-            , maxBlocks: 2
-          }
-          , startingBlocksXml: ``
-          , blockSelection: [
-            { type: "repeat_ball" }
-            , { type: "repeat_block" }
-          ]
-          , prompt: `Alex has 4 boxes. Each box has 2 balls. How many balls does Alex have?`
-          , promptAudio: audios['Test.mp3']
-          , reflections: []
-          , solution: "-repeat-4-times--true-repeat_ball-2-false--true-repeat_ball-2-false--true-repeat_ball-2-false--true-repeat_ball-2-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: false
-          , isMultiplication: true
-        },
-        {
-          id: "3rd-3"
-          , name: "3rd-3: Multiplication"
-          , description: "A continuation of concepts introduced in P-5"
-          , blockOptions: {
-            showToolbox: true
-            , maxBlocks: 2
-          }
-          , startingBlocksXml: ``
-          , blockSelection: [
-            { type: "repeat_candy" }
-            , { type: "repeat_block" }
-          ]
-          , prompt: `Kay has 3 Bags. Each bag has 7 candies. How many candies does Kay have?`
-          , promptAudio: audios['Test.mp3']
-          , reflections: []
-          , solution: "-repeat-3-times--true-repeat_candy-7-false--true-repeat_candy-7-false--true-repeat_candy-7-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: false
-          , isMultiplication: true
-        },
-        {
-          id: "3rd-3-1"
-          , name: "3rd-3-1: Multiplication"
-          , description: "A continuation of concepts introduced in P-5"
-          , blockOptions: {
-            showToolbox: true
-            , maxBlocks: 2
-          }
-          , startingBlocksXml: ``
           , blockSelection: [
             { type: "repeat_tree" }
             , { type: "repeat_block" }
           ]
-          , prompt: `Find the product. 3 x 4 = ? <i>Hint: Draw 3 rows with 4 trees in each row.</i>`
-          , promptAudio: audios['Test.mp3']
+          , prompt: `<p>Tell the computer to draw 3 rows of 4 trees.</p> <p>To do this drag the repeat block onto the white page. Place the tree block inside of the repeat block.Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , promptAudio: audios['c2bprompt.mp3']
           , reflections: []
+          , successAudio: audios['c2bsuccess.mp3']
           , solution: "-repeat-3-times--true-repeat_tree-4-false--true-repeat_tree-4-false--true-repeat_tree-4-false-"
           , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
+            {
+              answer: "-false-repeat_tree-4-false-"
+              , hintHtml: `Make sure you drag the repeat block onto the white page too.`
+              , audio: audios["dragRepeatHint.mp3"]
+            },
+            {
+              answer: "-"
+              , hintHtml: `Remember to Drag the blocks onto the white page.`
+              , audio: audios["dragOntoPage.mp3"]
+            }
           ]
-          , isAddition: false
-          , isMultiplication: true
         },
         {
-          id: "3rd-4"
-          , name: "3rd-4: Multiplication"
-          , description: "A continuation of concepts introduced in P-5"
+          id: "C-2c"
+          , name: "C-2c: Introducing the Repeat Block"
+          , description: "This activity has two parts. It asks students to drag the needed row block onto the canvas and update the value. Then It asks the student to Drag the repeat block onto the canvas and update its value."
           , blockOptions: {
             showToolbox: true
-            , maxBlocks: 2
+            , maxInstances: { "repeat_tree": 1, "repeat_block": 1 }
           }
-          , startingBlocksXml: ``
+          , startingBlocksXml: `<block type="repeat_block" x="10" y="65"> 
+                                  <field name="TIMES">3</field>
+                                  <value name="DO">
+                                    <block type="repeat_tree" x="10" y="65">
+                                      <field name="TIMES">4</field>
+                                    </block>
+                                  </value>
+                                <block>`
           , blockSelection: [
-            { type: "repeat_pillow" }
+            { type: "repeat_tree" }
             , { type: "repeat_block" }
           ]
-          , prompt: `Jack, Troy, and Sara each have 6 pillows. How many pillows do they have in all?`
-          , promptAudio: audios['Test.mp3']
+          , prompt: `<p>Tell the computer to draw 4 rows of 4 trees.</p> Change the repeat number from a 3 to a 4. Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , promptAudio: audios['c2cprompt.mp3']
           , reflections: []
-          , solution: "-repeat-3-times--true-repeat_pillow-6-false--true-repeat_pillow-6-false--true-repeat_pillow-6-false-"
+          , successAudio: audios['c2csuccess.mp3']
+          , solution: "-repeat-4-times--true-repeat_tree-4-false--true-repeat_tree-4-false--true-repeat_tree-4-false--true-repeat_tree-4-false-"
           , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
+            {
+              answer: "-repeat-3-times--true-repeat_tree-4-false--true-repeat_tree-4-false--true-repeat_tree-4-false-"
+              , hintHtml: `Make sure you change the orange repeat block number to a 4.`
+              , audio: audios["c2chint1.mp3"]
+            },
+            {
+              answer: "-"
+              , hintHtml: `Remember to Drag the blocks onto the white page.`
+              , audio: audios["dragOntoPage.mp3"]
+            }
           ]
-          , isAddition: false
-          , isMultiplication: true
-        },
-        {
-          id: "3rd-4-1"
-          , name: "3rd-4-1: Multiplication"
-          , description: "A continuation of concepts introduced in P-5"
-          , blockOptions: {
-            showToolbox: true
-            , maxBlocks: 2
-          }
-          , startingBlocksXml: ``
-          , blockSelection: [
-            { type: "repeat_ball" }
-            , { type: "repeat_block" }
-          ]
-          , prompt: `Find the product. 5 x 8 = ?`
-          , promptAudio: audios['Test.mp3']
-          , reflections: []
-          , solution: "-repeat-5-times--true-repeat_ball-8-false--true-repeat_ball-8-false--true-repeat_ball-8-false--true-repeat_ball-8-false--true-repeat_ball-8-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: false
-          , isMultiplication: true
-        },
-        {
-          id: "3rd-5"
-          , name: "3rd-5: Multiplication"
-          , description: "A continuation of concepts introduced in P-5"
-          , blockOptions: {
-            showToolbox: true
-            , maxBlocks: 2
-          }
-          , startingBlocksXml: ``
-          , blockSelection: [
-            { type: "repeat_cookie" }
-            , { type: "repeat_block" }
-          ]
-          , prompt: `Jane baked cookies on a pan. Each row had 7 cookies. There were 4 rows on the pan. How many cookies does Jane have?`
-          , promptAudio: audios['Test.mp3']
-          , reflections: []
-          , solution: "-repeat-4-times--true-repeat_cookie-7-false--true-repeat_cookie-7-false--true-repeat_cookie-7-false--true-repeat_cookie-7-false-"
-          , hints: [
-            // {
-            //   answer: ""
-            //   , hintHtml: ``
-            // }
-          ]
-          , isAddition: false
-          , isMultiplication: true
         },
       ],
       postModule: {

@@ -1,6 +1,6 @@
 <template>
   <div class="multiplication-sentence">
-    <span v-if="showSentence">
+    <span class="sentence" v-if="showSentence">
       {{ c_multiplicationSentence }}
     </span>
   </div>
@@ -37,8 +37,16 @@ export default {
 
 <style scoped>
 .multiplication-sentence {
-  padding: 0 1em;
+  padding: 1em 0;
   font-size: 2em;
   font-weight: bold;
+  display: grid;
+  grid-template: ". sentence " auto / 80px auto;
+  gap: 0.5em;
+  color: black;
+}
+
+.sentence {
+  grid-area: sentence;
 }
 </style>

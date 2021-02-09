@@ -61,7 +61,6 @@ export default {
     },
     c_successAudio() {
       var audios = require.context("@/assets/", false, /\.mp3$/);
-      console.log(audios);
       return audios("./well_done_bell.mp3") || "";
     }
   },

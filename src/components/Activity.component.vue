@@ -68,42 +68,38 @@
             class="white--text"
             v-on:click="runCode()"
           >
-            <AppAudio
-              ref="prompt-sound"
-              :source="c_activity.promptAudio"
-              playOnMounted
-            />
             Run
           </v-btn>
         </span>
       </div>
       <div class="view" id="code">
-        <AdditionLayout
-          v-if="c_activity.isAddition"
-          :numColumns="c_columns"
-          :numRows="c_numRows"
-          :items="c_items"
-          :collectionRows="c_rows"
-          :displayMathSentence="!c_isRunning"
-        />
         <MultiplicationLayout
-          v-if="c_showMultiplicationLayout"
           :columns="c_columns"
           :rows="c_numRows"
           :items="c_items"
         />
-        <AdditionSentence
-          v-if="!c_isRunning && c_activity.isAddition"
-          :values="c_rowSizes"
-        />
+        <AppAudio
+          v-if="c_codeIsValid"
+          ref="prompt-sound"
+          :source="c_activity.successAudio"
+          playOnMounted
+          hideIcon
+          iconClass="black--text"
+        >
+          <MultiplicationSentence
+            v-if="!c_isRunning"
+            :values="c_multiplySentence"
+          />
+        </AppAudio>
         <MultiplicationSentence
-          v-if="c_showMultiplicationSentence"
+          v-else-if="!c_isRunning"
           :values="c_multiplySentence"
         />
       </div>
       <div v-if="!c_isRunning" class="reflection">
+        <!-- TODO: make this a regex string so that we can provide better hints -->
         <AppReflection
-          v-if="c_codeIsValid"
+          v-if="!isRunning && c_codeIsValid"
           @reflection-complete="submitCode"
           :reflections="c_activity.reflections"
         ></AppReflection>
@@ -238,11 +234,9 @@ export default {
     },
     c_defaultHintAudio() {
       var audios = require.context("@/assets/", false, /\.mp3$/);
-      console.log(audios);
       return audios("./keepTrying.mp3") || "";
     },
     c_keepTryingAudio() {
-      console.log(this.c_mappedHintsAudio);
       return get(this.c_mappedHintsAudio, this.path, this.c_defaultHintAudio);
     },
 
@@ -279,15 +273,14 @@ export default {
       return [this.c_numRows, this.c_columns];
     },
     c_showMultiplicationLayout() {
-      return this.c_activity.isMultiplication && !this.c_activity.isAddition;
+      return this.c_activity.isMultiplication;
     },
     c_showMultiplicationSentence() {
       return (
-        this.c_activity.isMultiplication &&
-        !this.c_isRunning &&
-        every(this.rows, row => {
-          return row.length == this.c_columns;
-        })
+        this.c_activity.isMultiplication && !this.c_isRunning // &&
+        // every(this.rows, row => {
+        //   return row.length == this.c_columns;
+        // })
       );
     }
   },
@@ -320,8 +313,9 @@ export default {
       }
     },
     addToPath(toAdd) {
+      if (this.path === "-") this.path = "";
       this.path += toAdd;
-      // console.log(this.path);
+      console.log(this.path);
     },
     initApi(interpreter, globalObject) {
       // Add an API function for add item.
@@ -390,7 +384,7 @@ export default {
     resetExecution() {
       // reset the data
       this.numCircles = 0;
-      this.path = "";
+      this.path = "-";
       this.items = [];
       this.rows = [];
 
