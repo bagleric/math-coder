@@ -33,6 +33,13 @@
           color="primary"
           v-if="iter < c_inputs.length"
           @click="incrementIter"
+          >Skip</v-btn
+        >
+        <v-btn
+          outlined
+          color="primary"
+          v-if="iter < c_inputs.length"
+          @click="incrementIter"
           >Next</v-btn
         >
         <v-btn outlined color="primary" v-else @click="submitForm"
@@ -44,10 +51,10 @@
 </template>
 
 <script>
-const shuffle = require('lodash/shuffle')
+const shuffle = require("lodash/shuffle");
 
 export default {
-  name: 'AppForm',
+  name: "AppForm",
   props: {
     inputs: Array, // array of form inputs
     results: Object, // object with the results
@@ -64,39 +71,39 @@ export default {
     return {
       formValues: {},
       iter: 1
-    }
+    };
   },
   methods: {
-    formUpdated (newValues) {
-      this.$emit('form-updated', newValues)
+    formUpdated(newValues) {
+      this.$emit("form-updated", newValues);
     },
-    incrementIter () {
-      this.iter++
+    incrementIter() {
+      this.iter++;
     },
-    decrementIter () {
-      if (this.iter > 1) this.iter--
+    decrementIter() {
+      if (this.iter > 1) this.iter--;
     },
-    submitHandler (data) {
-      this.$emit('form-complete', data)
+    submitHandler(data) {
+      this.$emit("form-complete", data);
     },
-    submitForm () {
-      this.$emit('form-complete', this.formValues)
+    submitForm() {
+      this.$emit("form-complete", this.formValues);
     }
   },
   computed: {
-    c_inputs () {
-      if (this.shuffle) return shuffle(this.inputs)
-      return this.inputs
+    c_inputs() {
+      if (this.shuffle) return shuffle(this.inputs);
+      return this.inputs;
     },
-    c_inputsAsArrays () {
-      let newInputs = []
+    c_inputsAsArrays() {
+      let newInputs = [];
       for (var i = 0; i < this.c_inputs.length; i++) {
-        newInputs.push([this.c_inputs[i]])
+        newInputs.push([this.c_inputs[i]]);
       }
-      return newInputs
+      return newInputs;
     }
   }
-}
+};
 </script>
 
 <style scoped>
