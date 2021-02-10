@@ -733,6 +733,133 @@ const data = {
             }
           ]
         },
+        {
+          id: "C-3a"
+          , name: "D-1: Introducing the Repeat Block"
+          , description: "It asks students to drag the needed row block onto the canvas and update the value. Then It asks the student to Drag the repeat block onto the canvas and update its value."
+          , blockOptions: {
+            showToolbox: true
+            , maxInstances: { "repeat_pea": 1, "repeat_block": 1 }
+          }
+          , startingBlocksXml: ``
+          , blockSelection: [
+            { type: "repeat_pea" }
+            , { type: "repeat_block" }
+          ]
+          , prompt: `<p>Jack has 2 pea pods. Each pea pod has 6 peas.</p><p>Tell the computer how to draw the problem. Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , promptAudio: audios['c3aprompt.mp3']
+          , reflections: []
+          , successAudio: audios['c3asuccess.mp3']
+          , solution: "-repeat-2-times--true-repeat_pea-6-false--true-repeat_pea-6-false-"
+          // -repeat-2-times--true-repeat_pea-6-false--true-repeat_pea-6-false-
+          , hints: [
+            {
+              //default pea number
+              answer: "-false-repeat_pea-5-false-"
+              , hintHtml: `To draw 6 peas, make sure you change the pea pod block number to a 6.`
+              , audio: audios["c3ahint1.mp3"]
+            },
+            {
+              //default pea number
+              answer: "-false-repeat_pea-6-false-"
+              , hintHtml: `Don't forget to add the repeat block.`
+              , audio: audios["c3ahint4.mp3"]
+            },
+            {
+              //default pea number and default row number
+              answer: "-repeat-3-times--true-repeat_pea-5-false--true-repeat_pea-5-false--true-repeat_pea-5-false-"
+              , hintHtml: `To draw 6 peas, make sure you change the pea pod block number to a 6.`
+              , audio: audios["c3ahint1.mp3"]
+            },
+            {
+              // correct repeat block number wrong Pea number
+              answer: "-repeat-2-times--true-repeat_pea-5-false--true-repeat_pea-5-false-"
+              , hintHtml: `To draw 6 peas, make sure you change the pea pod block number to a 6.`
+              , audio: audios["c3ahint1.mp3"]
+            },
+            {
+              // default repeat block number & empty
+              answer: "-repeat-3-times-"
+              , hintHtml: `Remember to place the pea pod block inside of the repeat block.`
+              , audio: audios["c3ahint2.mp3"]
+            },
+            {
+              // default repeat block number correct Pea number
+              answer: "-repeat-3-times--true-repeat_pea-6-false--true-repeat_pea-6-false--true-repeat_pea-6-false-"
+              , hintHtml: `To draw 2 pea pods, make sure you change the repeat block number to a 2.`
+              , audio: audios["c3ahint3.mp3"]
+            },
+            {
+              // they haven't done anything
+              answer: "-"
+              , hintHtml: `Remember to Drag the blocks onto the white page.`
+              , audio: audios["dragOntoPage.mp3"]
+            }
+          ]
+        },
+        {
+          id: "D-2"
+          , name: "D-2: Introducing the Repeat Block"
+          , description: "This activity has two parts. It asks students to drag the needed row block onto the canvas and update the value. Then It asks the student to Drag the repeat block onto the canvas and update its value."
+          , blockOptions: {
+            showToolbox: true
+            , maxInstances: { "repeat_cake": 1, "repeat_block": 1 }
+          }
+          , startingBlocksXml: ``
+          , blockSelection: [
+            { type: "repeat_cake" }
+            , { type: "repeat_block" }
+          ]
+          , prompt: `<p>Sara cut the cake at a party. She made 4 rows. Each row had 5 pieces of cake. </p><p>Tell the computer how to draw the problem. Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , promptAudio: audios['d2prompt.mp3']
+          , reflections: []
+          , successAudio: audios['d2success.mp3']
+          , solution: "-repeat-4-times--true-repeat_cake-5-false--true-repeat_cake-5-false--true-repeat_cake-5-false--true-repeat_cake-5-false-"
+          , hints: [
+            {
+              //default cake number
+              answer: "-false-repeat_cake-4-false-"
+              , hintHtml: `To draw 5 pieces of cake, make sure you change the pieces of cake block number to a 5.`
+              , audio: audios["d2hint1.mp3"]
+            },
+            {
+              //default cake number
+              answer: "-false-repeat_cake-5-false-"
+              , hintHtml: `Don't forget to add the repeat block.`
+              , audio: audios["c3ahint4.mp3"]
+            },
+            {
+              //default cake number and default row number
+              answer: "-repeat-3-times--true-repeat_cake-4-false--true-repeat_cake-4-false--true-repeat_cake-4-false-"
+              , hintHtml: `To draw 5 pieces of cake, make sure you change the pieces of cake block number to a 5.`
+              , audio: audios["d2hint1.mp3"]
+            },
+            {
+              // correct repeat block number wrong cake number
+              answer: "-repeat-4-times--true-repeat_cake-4-false--true-repeat_cake-4-false-"
+              , hintHtml: `To draw 5 pieces of cake, make sure you change the pieces of cake block number to a 5.`
+              , audio: audios["d2hint1.mp3"]
+            },
+            {
+              // default repeat block number & empty
+              answer: "-repeat-3-times-"
+              , hintHtml: `Remember to place the pieces of cake block inside of the repeat block.`
+              , audio: audios["d2hint2.mp3"]
+            },
+            {
+              // default repeat block number correct cake number
+              answer: "-repeat-3-times--true-repeat_cake-5-false--true-repeat_cake-5-false--true-repeat_cake-5-false-"
+              , hintHtml: `To draw 4 rows of cake, make sure you change the repeat block number to a 4.`
+              , audio: audios["d2hint3.mp3"]
+            },
+            {
+              // they haven't done anything
+              answer: "-"
+              , hintHtml: `Remember to Drag the blocks onto the white page.`
+              , audio: audios["dragOntoPage.mp3"]
+            }
+          ]
+        },
       ],
       postModule: {
         inputs: [

@@ -251,6 +251,8 @@ export default {
       );
     },
     c_keepTryingMessage() {
+      //TODO make this have a list of regular expressions as the key and then test each one until we get to the end/default one
+
       return get(
         this.c_mappedHints,
         this.path,
