@@ -1,11 +1,15 @@
 <template>
   <div class="post-activity">
-    <AppPostActivity :moduleId="moduleId"></AppPostActivity>
+    <AppTestActivity
+      :moduleId="moduleId"
+      test="post"
+      @test-complete="showDone"
+    ></AppTestActivity>
   </div>
 </template>
 
 <script>
-import AppPostActivity from "@/components/PostActivity.component.vue";
+import AppTestActivity from "@/components/TestActivity.component.vue";
 
 export default {
   name: "ViewPostActivity",
@@ -15,7 +19,14 @@ export default {
   data: function() {
     return {};
   },
-  components: { AppPostActivity }
+  components: { AppTestActivity },
+  methods: {
+    showDone() {
+      this.$router.push({
+        name: "Goodbye"
+      });
+    }
+  }
 };
 </script>
 

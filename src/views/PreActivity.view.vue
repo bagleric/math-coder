@@ -1,12 +1,16 @@
 <template>
   <div class="pre-activity-view">
-    <AppPreActivity :moduleId="moduleId"></AppPreActivity>
+    <AppTestActivity
+      :moduleId="moduleId"
+      test="pre"
+      @test-complete="goToActivity"
+    ></AppTestActivity>
   </div>
 </template>
 
 <script>
 // import FormulateInput from
-import AppPreActivity from "@/components/PreActivity.component.vue";
+import AppTestActivity from "@/components/TestActivity.component.vue";
 
 export default {
   name: "PreActivity",
@@ -16,7 +20,18 @@ export default {
   props: {
     moduleId: { required: true, type: String }
   },
-  components: { AppPreActivity }
+  components: { AppTestActivity },
+  methods: {
+    goToActivity() {
+      this.$router.push({
+        name: "Activity",
+        params: {
+          moduleId: this.moduleId,
+          activityNum: 0
+        }
+      });
+    }
+  }
 };
 </script>
 

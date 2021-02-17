@@ -6,6 +6,7 @@ function importAll(r) {
   return audios;
 }
 
+import tests from "@/forms/tests.js"
 const audios = importAll(require.context('@/assets', false, /\.(mp3)$/));
 
 const data = {
@@ -26,59 +27,7 @@ const data = {
           , description: "Interpret the products of whole numbers, such as interpreting 5 × 7 as the total number of objects in 5 groups of 7 objects each."
         }
       ],
-      preModule: {
-        inputs: [
-          {
-            name: "ec44-bb01-406b-a05e-d0980dda2f57"
-            , component: "div"
-            , children: [
-              {
-                name: "7829-d12a-4c13-bddb-31293eef7f6d"
-                , component: "div"
-                , children: "Jane has 5 rocks. Jack has 4 rocks."
-              }
-              , {
-                label: "How many rocks are there?"
-                , name: "356b56a2-79e6-434a-9d7b-079ee856069f"
-                , type: "number"
-              }
-            ]
-          }
-          , {
-            name: "4696957d-4673-4235-93af-23d3eaef70da"
-            , component: "div"
-            , children: [
-              {
-                name: "a85a5ae7-3901-4c22-9cf3-513aaeeec402"
-                , component: "div"
-                , children: "Find the sum. "
-              }
-              , {
-                label: "8 + 5 = ?"
-                , name: "150ecd39-9fc9-4b47-beaf-9684fd8d8a94"
-                , type: "number"
-              }
-            ]
-          }
-          , {
-            name: "59547ca5-fa16-4705-89c2-684effead424"
-            , component: "div"
-            , children: [
-              {
-                name: "66895ee6-069f-434f-a704-a54b164b22c0"
-                , component: "div"
-                , children: "Peter and Fred have 5 coins each."
-              }
-              , {
-                name: "c0f77e1b-c1ea-4720-8803-eb0c692975e0"
-                , label: "How many coins do they have in all?"
-                , type: "number"
-              }
-            ]
-          }
-        ],
-        results: {}
-      },
+      preTest: tests.preTest,
       activities: [
         {
           id: "P-1"
@@ -619,147 +568,7 @@ const data = {
           ]
         },
       ],
-      postModule: {
-        inputs: [
-          {
-            name: "ec44-bb01-406b-a05e-"
-            , component: "div"
-            , children: [
-              {
-                name: "7829-d12a-4c13-bddb-"
-                , component: "div"
-                , children: "Jane has 5 rocks. Jack has 4 rocks."
-              }
-              , {
-                label: "How many rocks are there?"
-                , name: "356b56a2-79e6-434a-9d7b-"
-                , type: "number"
-              }
-            ]
-          }
-          , {
-            name: "4696957d-4673-4235-93af-"
-            , component: "div"
-            , children: [
-              {
-                name: "a85a5ae7-3901-4c22-9cf3-"
-                , component: "div"
-                , children: "Find the sum. "
-              }
-              , {
-                label: "8 + 5 = ?"
-                , name: "150ecd39-9fc9-4b47-beaf-"
-                , type: "number"
-              }
-            ]
-          }
-          , {
-            name: "59547ca5-fa16-4705-89c2-"
-            , component: "div"
-            , children: [
-              {
-                name: "66895ee6-069f-434f-a704-"
-                , component: "div"
-                , children: "Peter and Fred have 5 coins each."
-              }
-              , {
-                name: "c0f77e1b-c1ea-4720-8803-"
-                , label: "How many coins do they have in all?"
-                , type: "number"
-              }
-            ]
-          }
-
-          , {
-            id: "8a5e3656-9f21-4612-84eb-ae66b5ca9f42"
-            , name: "15bb5272-2044-4bbe-b7f7-e24ddf98d7f9"
-            , component: "div"
-            , children: [
-              {
-                name: "cebee9bf-584a-41c4-9d4f-263e8b5eb13c"
-                , component: "div"
-                , children: "Caden has 2 dogs. Each dog has 4 toys. How many toys do the dogs have altogether?"
-              }
-              , {
-                name: "1932ea21-33a0-49e9-a083-313f7e4b717b"
-                , component: "div"
-                , class: "multi-column align-center"
-                , children: [
-                  {
-                    name: "540195ba-b59e-48bb-8894-4f97400f529b"
-                    , type: "number"
-                    , label: "dogs"
-                  }
-                  , {
-                    name: "1fff0b4d-b1a3-4f06-aae5-99e835377b34"
-                    , component: "div"
-                    , children: " x "
-                  }
-                  , {
-                    name: "3ce9716b-40cc-4c2b-8774-08109b7b5c4e"
-                    , label: "toys"
-                    , type: "number"
-                  }
-                  , {
-                    name: "1880ebbd-24b3-4020-84ba-e00767926760"
-                    , component: "div"
-                    , children: "="
-                  }
-                  , {
-                    name: "c4be8a71-f5ff-43d1-a982-fb377d8be4c8"
-                    , type: "number"
-                  }
-                ]
-              }
-            ]
-          }
-          , {
-            name: "82d6f45a-473e-4d8a-a7f0-51bcfd3b736b"
-            , component: "div"
-            , children: [
-              {
-                name: "4bc91e5c-cc06-498f-a830-58db85ae77ec"
-                , component: "div"
-                , children: "Find the product."
-              }
-              , {
-                name: "ec441d9f-2248-46e9-90c1-9e3e39f25bb6"
-                , component: "div"
-                , class: "multi-column align-center"
-                , children: [
-                  {
-                    name: "c71414d5-335a-4bee-9e1d-93312982feea"
-                    , component: "span"
-                    , children: "4 x 2 = "
-                  }
-                  , {
-                    name: "eb5e3fd0-7406-421c-bd27-0f519c543867"
-                    , type: "number"
-                  }
-                ]
-              }
-            ]
-          }
-
-          , {
-            name: "5cd59817-4f05-477e-846d-8f71ec72e6a7"
-            , component: "div"
-            , children: [
-              {
-                name: "5fd76404-86fb-4fdb-b466-2189554abef9"
-                , component: "div"
-                , children: "Arnold, Taylor, and Troy each have 3 pens."
-              }
-              , {
-                name: "cb5fc375-8f3d-4bb4-a657-8fef026e488d"
-                , type: "number"
-                , label: "How many pens do they have together?"
-              }
-            ]
-          }
-        ],
-        results: {}
-      },
+      postTest: tests.postTest,
       wordDefinitions: {
         circle_block: {
           name: "Circle Block"

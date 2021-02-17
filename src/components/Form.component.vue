@@ -2,49 +2,39 @@
   <!-- usage
 <AppForm :inputs="" :results=""></AppForm>
   -->
-  <div class="app-form">
+  <div v-if="!isComplete" class="app-form">
     <div class="form-container" v-if="!stepper">
-      <FormulateForm
-        @submit="submitHandler"
-        @input="formUpdated"
-        :schema="c_inputs"
-        v-model="formValues"
-      />
+      <span v-for="(item, index) in test" v-bind:key="index">
+        <AppQuestion class="question" :question="item" />
+        <v-divider />
+      </span>
       <span class="controls">
-        <v-btn outlined color="primary" @click="submitForm">Submit</v-btn>
+        <v-btn outlined color="primary" @click="submitForm">Next</v-btn>
       </span>
     </div>
     <div v-else class="form-container">
-      <FormulateForm
-        v-model="formValues"
-        v-for="item in c_inputsAsArrays"
-        :key="item[0].name"
-        v-bind="item"
-        :schema="item"
-        v-show="c_inputsAsArrays[iter - 1][0].name == item[0].name"
-      >
-      </FormulateForm>
+      <AppQuestion class="question" v-if="c_question" :question="c_question" />
       <span class="controls">
-        <v-btn text color="primary" v-show="iter > 1" @click="decrementIter"
+        <v-btn
+          text
+          color="primary"
+          v-show="!c_isFirstIter"
+          @click="decrementIter"
           >Previous</v-btn
         >
         <v-btn
           outlined
           color="primary"
-          v-if="iter < c_inputs.length"
-          @click="incrementIter"
-          >Skip</v-btn
+          @click="c_isLastIter ? submitForm() : answerQuestion()"
         >
+          Skip
+        </v-btn>
         <v-btn
-          outlined
           color="primary"
-          v-if="iter < c_inputs.length"
-          @click="incrementIter"
-          >Next</v-btn
+          @click="c_isLastIter ? submitForm() : answerQuestion()"
         >
-        <v-btn outlined color="primary" v-else @click="submitForm"
-          >Submit</v-btn
-        >
+          Next
+        </v-btn>
       </span>
     </div>
   </div>
@@ -52,12 +42,16 @@
 
 <script>
 const shuffle = require("lodash/shuffle");
+import AppQuestion from "@/components/Question.component.vue";
+import timestamp from "time-stamp";
+import { TIMESTAMP_FORMAT } from "@/constants.js";
+import filter from "lodash/filter";
 
 export default {
   name: "AppForm",
+  components: { AppQuestion },
   props: {
-    inputs: Array, // array of form inputs
-    results: Object, // object with the results
+    test: Array, // array of form inputs
     stepper: {
       type: Boolean,
       default: false
@@ -70,7 +64,9 @@ export default {
   data: () => {
     return {
       formValues: {},
-      iter: 1
+      iter: 0,
+      startTime: "",
+      isComplete: false
     };
   },
   methods: {
@@ -78,6 +74,7 @@ export default {
       this.$emit("form-updated", newValues);
     },
     incrementIter() {
+      this.startTime = timestamp.utc(TIMESTAMP_FORMAT);
       this.iter++;
     },
     decrementIter() {
@@ -86,14 +83,29 @@ export default {
     submitHandler(data) {
       this.$emit("form-complete", data);
     },
+    answerQuestion() {
+      this.submitQuestion();
+      this.incrementIter();
+    },
+    submitQuestion() {
+      this.$emit("question-answered", {
+        inputs: filter(this.c_question.inputs, "isInput"),
+        stats: {
+          startTime: this.startTime,
+          endTime: timestamp.utc(TIMESTAMP_FORMAT)
+        }
+      });
+    },
     submitForm() {
+      this.isComplete = true;
+      this.answerQuestion();
       this.$emit("form-complete", this.formValues);
     }
   },
   computed: {
     c_inputs() {
-      if (this.shuffle) return shuffle(this.inputs);
-      return this.inputs;
+      if (this.shuffle) return shuffle(this.test);
+      return this.test;
     },
     c_inputsAsArrays() {
       let newInputs = [];
@@ -101,6 +113,15 @@ export default {
         newInputs.push([this.c_inputs[i]]);
       }
       return newInputs;
+    },
+    c_isLastIter() {
+      return this.iter >= this.c_inputs.length - 1;
+    },
+    c_isFirstIter() {
+      return this.iter === 0;
+    },
+    c_question() {
+      return this.test[this.iter];
     }
   }
 };
@@ -120,5 +141,9 @@ export default {
   display: grid;
   grid-auto-flow: column;
   gap: 1em;
+  padding: 1em;
+}
+.question {
+  padding: 1em;
 }
 </style>
