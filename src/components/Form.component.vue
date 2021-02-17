@@ -65,7 +65,7 @@ export default {
     return {
       formValues: {},
       iter: 0,
-      startTime: "",
+      startTime: timestamp.utc(TIMESTAMP_FORMAT),
       isComplete: false
     };
   },

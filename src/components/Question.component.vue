@@ -3,10 +3,23 @@
 <AppForm :inputs="" :results=""></AppForm>
   -->
   <div>
-    <div v-if="question.forQuestion">{{ question.forQuestion }}</div>
-    <div>{{ question.question }}</div>
-    <div :style="c_style">
-      <span v-for="(input, index) in question.inputs" v-bind:key="index">
+    <div v-if="c_isTesting">
+      <div><strong>Standard:</strong> {{ question.standard }}</div>
+      <div>Justification: {{ question.justification }}</div>
+      <v-divider></v-divider>
+    </div>
+    <div v-if="question.forQuestion">
+      {{ question.forQuestion }}
+    </div>
+    <div>
+      <strong>{{ question.question }}</strong>
+    </div>
+    <div :style="c_containerStyle">
+      <span
+        :style="input.isInput ? c_inputStyle : c_textStyle"
+        v-for="(input, index) in question.inputs"
+        v-bind:key="index"
+      >
         <input
           :ref="'__' + input.name"
           autocomplete="off"
@@ -29,14 +42,6 @@ export default {
     question: {
       type: Object,
       required: true
-    },
-    gridTemplateRows: {
-      type: String,
-      required: false
-    },
-    gridTemplateColumns: {
-      type: String,
-      required: false
     }
   },
   data: () => {
@@ -52,14 +57,19 @@ export default {
     }
   },
   computed: {
-    c_style() {
-      if (this.inputGridTemplate) {
-        return `
-        display: grid;
-        grid-template-rows: ${this.gridTemplateRows};
-        grid-template-columns: ${this.gridTemplateColumns};
-        `;
-      }
+    c_isTesting() {
+      return this.$store.getters.isTesting;
+    },
+    c_containerStyle() {
+      if (this.question.containerStyle) return this.question.containerStyle;
+      return "";
+    },
+    c_inputStyle() {
+      if (this.question.inputStyle) return this.question.inputStyle;
+      return "";
+    },
+    c_textStyle() {
+      if (this.question.textStyle) return this.question.textStyle;
       return "";
     }
   }

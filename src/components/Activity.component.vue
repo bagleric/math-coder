@@ -468,8 +468,13 @@ export default {
         completed: 1,
         ended_at: timestamp.utc(TIMESTAMP_FORMAT),
         no_of_compiles: this.attempts,
-        screen_size: this.getViewSize()
+        screen_size: this.getViewSize(),
+        compilation_timestamps: JSON.stringify(
+          this.activityStats.compilation_timestamps
+        )
       });
+
+      console.log(this.activityStats);
 
       if (!this.$store.getters.isTesting) {
         this.$http
@@ -478,7 +483,7 @@ export default {
             if (!result.data.success) {
               console.log("Failed to submitt event. Response:", result);
             } else {
-              // console.log("Event submitted. Response:", result);
+              console.log("finished submitted. Response:", result);
             }
           })
           .catch(error => {
@@ -516,7 +521,7 @@ export default {
           if (!result.data.success) {
             console.log("Failed to submitt event. Response:", result);
           } else {
-            // console.log("Event submitted. Response:", result);
+            console.log("Event submitted. Response:", result);
           }
         });
       }

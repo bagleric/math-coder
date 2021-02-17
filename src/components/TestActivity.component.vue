@@ -63,7 +63,7 @@ export default {
           question_id: question.name,
           value: question.value,
           start_time: stats.startTime,
-          submit_time: stats.endTime
+          end_time: stats.endTime
         })
         .then(data => {
           console.log("Pre Test submitted. Response:", data);
