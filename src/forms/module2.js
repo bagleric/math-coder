@@ -27,7 +27,7 @@ const data = {
           , description: "Interpret the products of whole numbers, such as interpreting 5 × 7 as the total number of objects in 5 groups of 7 objects each."
         }
       ],
-      preTest: tests.preTest,
+      test: tests.test,
       activities: [
         {
           id: "P-1"
@@ -568,7 +568,6 @@ const data = {
           ]
         },
       ],
-      postTest: tests.postTest,
       wordDefinitions: {
         circle_block: {
           name: "Circle Block"

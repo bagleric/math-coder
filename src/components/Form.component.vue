@@ -78,7 +78,7 @@ export default {
       this.iter++;
     },
     decrementIter() {
-      if (this.iter > 1) this.iter--;
+      if (this.iter > 0) this.iter--;
     },
     submitHandler(data) {
       this.$emit("form-complete", data);

@@ -8,11 +8,11 @@
       <div>Justification: {{ question.justification }}</div>
       <v-divider></v-divider>
     </div>
-    <div v-if="question.forQuestion">
+    <div class="question-text" v-if="question.forQuestion">
       {{ question.forQuestion }}
     </div>
-    <div>
-      <strong>{{ question.question }}</strong>
+    <div class="question-text">
+      {{ question.question }}
     </div>
     <div :style="c_containerStyle">
       <span
@@ -29,13 +29,16 @@
           v-on:focus="$event.target.select()"
           v-on:keyup="inputUpdated(index, input)"
         />
-        <span v-else>{{ input.value }}</span>
+        <span v-else>
+          <AppRenderHtml :html="input.value"> </AppRenderHtml
+        ></span>
       </span>
     </div>
   </div>
 </template>
 
 <script>
+import AppRenderHtml from "@/components/RenderHtml.component.vue";
 export default {
   name: "AppQuestion",
   props: {
@@ -72,6 +75,9 @@ export default {
       if (this.question.textStyle) return this.question.textStyle;
       return "";
     }
+  },
+  components: {
+    AppRenderHtml
   }
 };
 </script>
@@ -79,7 +85,7 @@ export default {
 <style scoped>
 input {
   border: 1px solid lightgrey;
-  padding: 0.5em;
+  padding: 0.25em;
   width: 3em;
   text-align: center;
   margin: 1em;
@@ -87,5 +93,9 @@ input {
 
 input:hover {
   outline: 3px solid lightblue;
+}
+
+.question-text {
+  font-size: larger;
 }
 </style>

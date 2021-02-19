@@ -15,6 +15,7 @@ import AppForm from "@/components/Form.component.vue";
 import AppQuestion from "@/components/Question.component.vue";
 import { STORE_ANSWER_URL } from "@/constants.js";
 import each from "lodash/each";
+import filter from "lodash/filter";
 
 export default {
   name: "AppTestActivity",
@@ -38,9 +39,9 @@ export default {
     },
     c_test() {
       if (this.c_isPreTest) {
-        return this.theModule.preTest;
+        return filter(this.theModule.test, { testType: "pre" });
       } else if (this.c_isPostTest) {
-        return this.theModule.postTest;
+        return filter(this.theModule.test, { testType: "post" });
       }
       throw Error("No test matches. Value must be 'pre' or 'post'");
     },
