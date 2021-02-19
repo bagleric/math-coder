@@ -138,6 +138,8 @@ import assign from "lodash/assign";
 import isFunction from "lodash/isFunction";
 import isEmpty from "lodash/isEmpty";
 import reduce from "lodash/reduce";
+import isUndefined from "lodash/isUndefined";
+import find from "lodash/find";
 import {
   STORE_EVENT_URL,
   TIMESTAMP_FORMAT,
@@ -222,46 +224,38 @@ export default {
     c_answerHints() {
       return get(this, ["c_activity", "hints"], []);
     },
-    c_mappedHintsAudio() {
-      return reduce(
-        this.c_answerHints,
-        (result, value) => {
-          result[value.answer] = value.audio;
-          return result;
-        },
-        {}
-      );
+    c_hintsRegex() {
+      return map(this.c_answerHints, hint => {
+        console.log(hint);
+        let regex = new RegExp(hint.regex);
+        console.log(regex);
+        return { ...hint, regex };
+      });
+    },
+    c_audios() {
+      return require.context("@/assets/", false, /\.mp3$/);
     },
     c_defaultHintAudio() {
-      var audios = require.context("@/assets/", false, /\.mp3$/);
-      return audios("./keepTrying.mp3") || "";
+      return this.c_audios("./keepTrying.mp3") || "";
+    },
+    c_keepTryingHint() {
+      let found = find(this.c_hintsRegex, hint => {
+        console.log(hint.regex.test(this.path));
+        return hint.regex.test(this.path);
+      });
+      if (isUndefined(found)) {
+        return {
+          hintHtml: "It looks like we didn't quite make it. Keep trying.",
+          audio: this.c_defaultHintAudio
+        };
+      }
+      return found;
     },
     c_keepTryingAudio() {
-      return get(this.c_mappedHintsAudio, this.path, this.c_defaultHintAudio);
-    },
-
-    c_mappedHints() {
-      return reduce(
-        this.c_answerHints,
-        (result, value) => {
-          result[value.answer] = value.hintHtml;
-          return result;
-        },
-        {}
-      );
+      return this.c_keepTryingHint.audio;
     },
     c_keepTryingMessage() {
-      //TODO make this have a list of regular expressions as the key and then test each one until we get to the end/default one
-
-      return get(
-        this.c_mappedHints,
-        this.path,
-        get(
-          this,
-          ["keepTryingMsg"],
-          "It looks like we didn't quite make it. Keep trying."
-        )
-      );
+      return this.c_keepTryingHint.hintHtml;
     },
     c_isTesting() {
       return get(this.$store, ["getters", "isTesting"], false);

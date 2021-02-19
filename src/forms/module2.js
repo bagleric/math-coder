@@ -9,6 +9,15 @@ function importAll(r) {
 import tests from "@/forms/tests.js"
 const audios = importAll(require.context('@/assets', false, /\.(mp3)$/));
 
+const sharedHints = {
+  noBlocks: {
+    regexDescription: "No blocks are on the page"
+    , regex: "^[-]{1}$"
+    , hintHtml: `Remember to Drag the blocks onto the white page.`
+    , audio: audios["dragOntoPage.mp3"]
+  }
+};
+
 const data = {
   modules: [
     {
@@ -65,8 +74,9 @@ const data = {
           , solution: "-false-repeat_ball-4-false-"
           , hints: [
             {
-              answer: "-false-repeat_ball-7-false-"
-              , hintHtml: `To draw 4 balls, make sure you change the 7 to a 4.`
+              regexDescription: "must have a '-4-'",
+              regex: "^((?!-4-).)*$"
+              , hintHtml: `To draw 4 balls, make sure you change the number in the block to a 4.`
               , audio: audios["a1hint1.mp3"]
             }
           ]
@@ -90,7 +100,8 @@ const data = {
           , solution: "-false-repeat_book-8-false-"
           , hints: [
             {
-              answer: "-false-repeat_book-5-false-"
+              regexDescription: "must have a '-8-'"
+              , regex: "^((?!-8-).)*$"
               , hintHtml: `To draw 8 books, make sure you change the 5 to an 8.`
               , audio: audios["a2hint1.mp3"]
             }
@@ -115,7 +126,8 @@ const data = {
           , solution: "-false-repeat_candy-7-false-"
           , hints: [
             {
-              answer: "-false-repeat_candy-3-false-"
+              regexDescription: "must have a '-7-'"
+              , regex: "^((?!-7-).)*$"
               , hintHtml: `To draw 7 pieces of candy, make sure you change the 3 to a 7.`
               , audio: audios["a3hint1.mp3"]
             }
@@ -139,15 +151,12 @@ const data = {
           , successAudio: audios['b1success.mp3']
           , solution: "-false-repeat_cookie-6-false-"
           , hints: [
-            {
-              answer: "-false-repeat_cookie-4-false-"
+            sharedHints.noBlocks
+            , {
+              regexDescription: "must have a '-6-'"
+              , regex: "^((?!-6-).)*$"
               , hintHtml: `To draw 6 cookies, make sure you change the 4 to a 6.`
               , audio: audios["b1hint1.mp3"]
-            },
-            {
-              answer: "-"
-              , hintHtml: `Remember to Drag the blocks onto the white page.`
-              , audio: audios["dragOntoPage.mp3"]
             }
           ]
         },
@@ -169,15 +178,11 @@ const data = {
           , successAudio: audios['b2success.mp3']
           , solution: "-false-repeat_pillow-5-false-"
           , hints: [
-            {
-              answer: "-false-repeat_pillow-9-false-"
+            sharedHints.noBlocks
+            , {
+              regex: "-false-repeat_pillow-9-false-"
               , hintHtml: `To draw 5 pillows, make sure you change the 9 to a 5.`
               , audio: audios["b2hint1.mp3"]
-            },
-            {
-              answer: "-"
-              , hintHtml: `Remember to Drag the blocks onto the white page.`
-              , audio: audios["dragOntoPage.mp3"]
             }
           ]
         },
@@ -199,15 +204,11 @@ const data = {
           , successAudio: audios['b3success.mp3']
           , solution: "-false-repeat_star-5-false-"
           , hints: [
-            {
-              answer: "-false-repeat_star-7-false-"
+            sharedHints.noBlocks
+            , {
+              regex: "-false-repeat_star-7-false-"
               , hintHtml: `To draw 5 stars, make sure you change the 7 to a 5.`
               , audio: audios["b3hint1.mp3"]
-            },
-            {
-              answer: "-"
-              , hintHtml: `Remember to Drag the blocks onto the white page.`
-              , audio: audios["dragOntoPage.mp3"]
             }
           ]
         },
@@ -229,15 +230,11 @@ const data = {
           , successAudio: audios['c1asuccess.mp3']
           , solution: "-false-repeat_apple-5-false-"
           , hints: [
-            {
-              answer: "-false-repeat_apple-4-false-"
+            sharedHints.noBlocks
+            , {
+              regex: "-false-repeat_apple-4-false-"
               , hintHtml: `To draw 5 apples, make sure you change the 4 to a 5.`
               , audio: audios["c1ahint1.mp3"]
-            },
-            {
-              answer: "-"
-              , hintHtml: `Remember to Drag the blocks onto the white page.`
-              , audio: audios["dragOntoPage.mp3"]
             }
           ]
         },
@@ -262,15 +259,11 @@ const data = {
           , successAudio: audios['c1bsuccess.mp3']
           , solution: "-repeat-3-times--true-repeat_apple-5-false--true-repeat_apple-5-false--true-repeat_apple-5-false-"
           , hints: [
-            {
-              answer: "-false-repeat_apple-5-false-"
+            sharedHints.noBlocks
+            , {
+              regex: "-false-repeat_apple-5-false-"
               , hintHtml: `Make sure you drag the repeat block onto the white page too.`
               , audio: audios["dragRepeatHint.mp3"]
-            },
-            {
-              answer: "-"
-              , hintHtml: `Remember to Drag the blocks onto the white page.`
-              , audio: audios["dragOntoPage.mp3"]
             }
           ]
         },
@@ -294,15 +287,11 @@ const data = {
           , successAudio: audios['c2asuccess.mp3']
           , solution: "-false-repeat_tree-4-false-"
           , hints: [
-            {
-              answer: "-false-repeat_tree-5-false-"
+            sharedHints.noBlocks
+            , {
+              regex: "-false-repeat_tree-5-false-"
               , hintHtml: `To draw 4 trees, make sure you change the 5 to a 4.`
               , audio: audios["c2ahint1.mp3"]
-            },
-            {
-              answer: "-"
-              , hintHtml: `Remember to Drag the blocks onto the white page.`
-              , audio: audios["dragOntoPage.mp3"]
             }
           ]
         },
@@ -327,15 +316,11 @@ const data = {
           , successAudio: audios['c2bsuccess.mp3']
           , solution: "-repeat-3-times--true-repeat_tree-4-false--true-repeat_tree-4-false--true-repeat_tree-4-false-"
           , hints: [
-            {
-              answer: "-false-repeat_tree-4-false-"
+            sharedHints.noBlocks
+            , {
+              regex: "-false-repeat_tree-4-false-"
               , hintHtml: `Make sure you drag the repeat block onto the white page too.`
               , audio: audios["dragRepeatHint.mp3"]
-            },
-            {
-              answer: "-"
-              , hintHtml: `Remember to Drag the blocks onto the white page.`
-              , audio: audios["dragOntoPage.mp3"]
             }
           ]
         },
@@ -365,15 +350,11 @@ const data = {
           , successAudio: audios['c2csuccess.mp3']
           , solution: "-repeat-4-times--true-repeat_tree-4-false--true-repeat_tree-4-false--true-repeat_tree-4-false--true-repeat_tree-4-false-"
           , hints: [
-            {
-              answer: "-repeat-3-times--true-repeat_tree-4-false--true-repeat_tree-4-false--true-repeat_tree-4-false-"
+            sharedHints.noBlocks
+            , {
+              regex: "-repeat-3-times--true-repeat_tree-4-false--true-repeat_tree-4-false--true-repeat_tree-4-false-"
               , hintHtml: `Make sure you change the orange repeat block number to a 4.`
               , audio: audios["c2chint1.mp3"]
-            },
-            {
-              answer: "-"
-              , hintHtml: `Remember to Drag the blocks onto the white page.`
-              , audio: audios["dragOntoPage.mp3"]
             }
           ]
         },
@@ -397,47 +378,42 @@ const data = {
           , solution: "-repeat-2-times--true-repeat_pea-6-false--true-repeat_pea-6-false-"
           // -repeat-2-times--true-repeat_pea-6-false--true-repeat_pea-6-false-
           , hints: [
-            {
+            sharedHints.noBlocks
+            , {
               //default pea number
-              answer: "-false-repeat_pea-5-false-"
+              regex: "-false-repeat_pea-5-false-"
               , hintHtml: `To draw 6 peas, make sure you change the pea pod block number to a 6.`
               , audio: audios["c3ahint1.mp3"]
             },
             {
               //default pea number
-              answer: "-false-repeat_pea-6-false-"
+              regex: "-false-repeat_pea-6-false-"
               , hintHtml: `Don't forget to add the repeat block.`
               , audio: audios["c3ahint4.mp3"]
             },
             {
               //default pea number and default row number
-              answer: "-repeat-3-times--true-repeat_pea-5-false--true-repeat_pea-5-false--true-repeat_pea-5-false-"
+              regex: "-repeat-3-times--true-repeat_pea-5-false--true-repeat_pea-5-false--true-repeat_pea-5-false-"
               , hintHtml: `To draw 6 peas, make sure you change the pea pod block number to a 6.`
               , audio: audios["c3ahint1.mp3"]
             },
             {
               // correct repeat block number wrong Pea number
-              answer: "-repeat-2-times--true-repeat_pea-5-false--true-repeat_pea-5-false-"
+              regex: "-repeat-2-times--true-repeat_pea-5-false--true-repeat_pea-5-false-"
               , hintHtml: `To draw 6 peas, make sure you change the pea pod block number to a 6.`
               , audio: audios["c3ahint1.mp3"]
             },
             {
               // default repeat block number & empty
-              answer: "-repeat-3-times-"
+              regex: "-repeat-3-times-"
               , hintHtml: `Remember to place the pea pod block inside of the repeat block.`
               , audio: audios["c3ahint2.mp3"]
             },
             {
               // default repeat block number correct Pea number
-              answer: "-repeat-3-times--true-repeat_pea-6-false--true-repeat_pea-6-false--true-repeat_pea-6-false-"
+              regex: "-repeat-3-times--true-repeat_pea-6-false--true-repeat_pea-6-false--true-repeat_pea-6-false-"
               , hintHtml: `To draw 2 pea pods, make sure you change the repeat block number to a 2.`
               , audio: audios["c3ahint3.mp3"]
-            },
-            {
-              // they haven't done anything
-              answer: "-"
-              , hintHtml: `Remember to Drag the blocks onto the white page.`
-              , audio: audios["dragOntoPage.mp3"]
             }
           ]
         },
@@ -460,47 +436,42 @@ const data = {
           , successAudio: audios['d2success.mp3']
           , solution: "-repeat-4-times--true-repeat_cake-5-false--true-repeat_cake-5-false--true-repeat_cake-5-false--true-repeat_cake-5-false-"
           , hints: [
-            {
+            sharedHints.noBlocks
+            , {
               //default cake number
-              answer: "-false-repeat_cake-4-false-"
+              regex: "-false-repeat_cake-4-false-"
               , hintHtml: `To draw 5 pieces of cake, make sure you change the pieces of cake block number to a 5.`
               , audio: audios["d2hint1.mp3"]
             },
             {
               //default cake number
-              answer: "-false-repeat_cake-5-false-"
+              regex: "-false-repeat_cake-5-false-"
               , hintHtml: `Don't forget to add the repeat block.`
               , audio: audios["c3ahint4.mp3"]
             },
             {
               //default cake number and default row number
-              answer: "-repeat-3-times--true-repeat_cake-4-false--true-repeat_cake-4-false--true-repeat_cake-4-false-"
+              regex: "-repeat-3-times--true-repeat_cake-4-false--true-repeat_cake-4-false--true-repeat_cake-4-false-"
               , hintHtml: `To draw 5 pieces of cake, make sure you change the pieces of cake block number to a 5.`
               , audio: audios["d2hint1.mp3"]
             },
             {
               // correct repeat block number wrong cake number
-              answer: "-repeat-4-times--true-repeat_cake-4-false--true-repeat_cake-4-false-"
+              regex: "-repeat-4-times--true-repeat_cake-4-false--true-repeat_cake-4-false-"
               , hintHtml: `To draw 5 pieces of cake, make sure you change the pieces of cake block number to a 5.`
               , audio: audios["d2hint1.mp3"]
             },
             {
               // default repeat block number & empty
-              answer: "-repeat-3-times-"
+              regex: "-repeat-3-times-"
               , hintHtml: `Remember to place the pieces of cake block inside of the repeat block.`
               , audio: audios["d2hint2.mp3"]
             },
             {
               // default repeat block number correct cake number
-              answer: "-repeat-3-times--true-repeat_cake-5-false--true-repeat_cake-5-false--true-repeat_cake-5-false-"
+              regex: "-repeat-3-times--true-repeat_cake-5-false--true-repeat_cake-5-false--true-repeat_cake-5-false-"
               , hintHtml: `To draw 4 rows of cake, make sure you change the repeat block number to a 4.`
               , audio: audios["d2hint3.mp3"]
-            },
-            {
-              // they haven't done anything
-              answer: "-"
-              , hintHtml: `Remember to Drag the blocks onto the white page.`
-              , audio: audios["dragOntoPage.mp3"]
             }
           ]
         },
@@ -523,47 +494,42 @@ const data = {
           , successAudio: audios['d3success.mp3']
           , solution: "-repeat-4-times--true-repeat_pillow-6-false--true-repeat_pillow-6-false--true-repeat_pillow-6-false--true-repeat_pillow-6-false-"
           , hints: [
-            {
+            sharedHints.noBlocks
+            , {
               //default pillow number
-              answer: "-false-repeat_pillow-9-false-"
+              regex: "-false-repeat_pillow-9-false-"
               , hintHtml: `To draw 6 pillows, make sure you change the pillows block number to a 6.`
               , audio: audios["d3hint1.mp3"]
             },
             {
               //default pillow number
-              answer: "-false-repeat_pillow-9-false-"
+              regex: "-false-repeat_pillow-9-false-"
               , hintHtml: `Don't forget to add the repeat block.`
               , audio: audios["c3ahint4.mp3"]
             },
             {
               //default pillow number and default row number
-              answer: "-repeat-3-times--true-repeat_pillow-9-false--true-repeat_pillow-9-false--true-repeat_pillow-9-false-"
+              regex: "-repeat-3-times--true-repeat_pillow-9-false--true-repeat_pillow-9-false--true-repeat_pillow-9-false-"
               , hintHtml: `To draw 6 pillows, make sure you change the pillows block number to a 6.`
               , audio: audios["d3hint1.mp3"]
             },
             {
               // correct repeat block number wrong pillow number
-              answer: "-repeat-4-times--true-repeat_pillow-9-false--true-repeat_pillow-9-false--true-repeat_pillow-9-false--true-repeat_pillow-9-false-"
+              regex: "-repeat-4-times--true-repeat_pillow-9-false--true-repeat_pillow-9-false--true-repeat_pillow-9-false--true-repeat_pillow-9-false-"
               , hintHtml: `To draw 6 pillows, make sure you change the pillows block number to a 6.`
               , audio: audios["d3hint1.mp3"]
             },
             {
               // default repeat block number & empty
-              answer: "-repeat-3-times-"
+              regex: "-repeat-3-times-"
               , hintHtml: `Remember to place the pillows block inside of the repeat block.`
               , audio: audios["d3hint2.mp3"]
             },
             {
               // default repeat block number correct pillow number
-              answer: "-repeat-3-times--true-repeat_pillow-6-false--true-repeat_pillow-6-false--true-repeat_pillow-6-false-"
+              regex: "-repeat-3-times--true-repeat_pillow-6-false--true-repeat_pillow-6-false--true-repeat_pillow-6-false-"
               , hintHtml: `Make sure to count the number of people with pillows. Put that number into the repeat block.`
               , audio: audios["d3hint3.mp3"]
-            },
-            {
-              // they haven't done anything
-              answer: "-"
-              , hintHtml: `Remember to Drag the blocks onto the white page.`
-              , audio: audios["dragOntoPage.mp3"]
             }
           ]
         },
