@@ -3,12 +3,6 @@
     <v-icon v-if="!hideIcon" :class="iconClass">
       mdi-account-voice
     </v-icon>
-    <audio ref="sound" v-if="showControls" controls>
-      <source :src="source" type="audio/mpeg" />
-    </audio>
-    <audio ref="sound" v-else>
-      <source :src="source" type="audio/mpeg" />
-    </audio>
     <slot></slot>
   </span>
 </template>
@@ -17,6 +11,12 @@
 export default {
   name: "AppAudio",
   components: {},
+  data() {
+    return {
+      sound: null,
+      prevSource: this.source
+    };
+  },
   props: {
     showControls: { type: Boolean, required: false, default: false },
     hideIcon: { type: Boolean, required: false, default: false },
@@ -26,13 +26,27 @@ export default {
   },
   methods: {
     play: function() {
-      this.$refs["sound"].play();
+      this.sound.play();
     }
+  },
+  beforeMount() {
+    this.sound = new Audio(this.source);
   },
   mounted() {
     if (this.playOnMounted) {
       this.play();
     }
+  },
+  updated() {
+    console.log(this.prevSource, this.source);
+    if (this.prevSource === this.source) return;
+    this.sound.pause();
+    this.sound = new Audio(this.source);
+    this.play();
+    this.prevSource = this.source;
+  },
+  beforeDestroy() {
+    this.sound.pause();
   }
 };
 </script>

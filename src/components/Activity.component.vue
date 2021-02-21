@@ -103,10 +103,22 @@
           @reflection-complete="submitCode"
           :reflections="c_activity.reflections"
         ></AppReflection>
+        <span
+          v-else-if="c_madeAttemtps && blocksNotConnected"
+          class="not-quite"
+        >
+          <AppAudio
+            ref="hint-sound"
+            :source="c_blocksNotConnectedHint.audio"
+            playOnMounted
+          >
+            {{ c_blocksNotConnectedHint.hintHtml }}
+          </AppAudio>
+        </span>
         <span v-else-if="c_madeAttemtps" class="not-quite">
           <AppAudio
-            ref="prompt-sound"
-            :source="c_keepTryingAudio"
+            ref="hint-sound"
+            :source="c_keepTryingHint.audio"
             playOnMounted
           >
             {{ c_keepTryingMessage }}
@@ -126,7 +138,6 @@ import MultiplicationLayout from "@/components/MultiplicationLayout.component.vu
 import AdditionSentence from "@/components/AdditionSentence.component.vue";
 import MultiplicationSentence from "@/components/MultiplicationSentence.component.vue";
 import map from "lodash/map";
-import every from "lodash/every";
 import AppReflection from "@/components/Reflection.component.vue";
 import AppAudio from "@/components/Audio.component.vue";
 import BlocklyJS from "blockly/javascript";
@@ -137,7 +148,6 @@ import has from "lodash/has";
 import assign from "lodash/assign";
 import isFunction from "lodash/isFunction";
 import isEmpty from "lodash/isEmpty";
-import reduce from "lodash/reduce";
 import isUndefined from "lodash/isUndefined";
 import find from "lodash/find";
 import {
@@ -173,7 +183,6 @@ export default {
   data: () => ({
     code: "",
     attempts: false,
-    numCircles: 0,
     numRows: 0,
     path: "",
     items: [],
@@ -183,7 +192,7 @@ export default {
     rows: [],
     isRunning: false,
     resetCount: 0,
-    keepTryingMsg: undefined,
+    blocksNotConnected: false,
     activityStats: {
       started_at: timestamp.utc(TIMESTAMP_FORMAT),
       ended_at: null,
@@ -191,8 +200,12 @@ export default {
       completed: false,
       compilation_timestamps: [],
       screen_size: ""
-    }
+    },
+    demoWorkspace: null
   }),
+  updated() {
+    this.demoWorkspace = this.$refs.activityBlockly.workspace;
+  },
   computed: {
     c_activity() {
       return this.activity;
@@ -218,29 +231,29 @@ export default {
     c_items() {
       return this.items;
     },
-    demoWorkspace() {
-      return get(this, ["$refs", "activityBlockly", "workspace"]);
-    },
     c_answerHints() {
       return get(this, ["c_activity", "hints"], []);
     },
     c_hintsRegex() {
       return map(this.c_answerHints, hint => {
-        console.log(hint);
         let regex = new RegExp(hint.regex);
-        console.log(regex);
         return { ...hint, regex };
       });
     },
     c_audios() {
       return require.context("@/assets/", false, /\.mp3$/);
     },
+    c_blocksNotConnectedHint() {
+      return {
+        hintHtml: "Make sure you connect all the blocks.",
+        audio: this.c_audios("./connectHint.mp3") || ""
+      };
+    },
     c_defaultHintAudio() {
       return this.c_audios("./keepTrying.mp3") || "";
     },
     c_keepTryingHint() {
       let found = find(this.c_hintsRegex, hint => {
-        console.log(hint.regex.test(this.path));
         return hint.regex.test(this.path);
       });
       if (isUndefined(found)) {
@@ -272,12 +285,7 @@ export default {
       return this.c_activity.isMultiplication;
     },
     c_showMultiplicationSentence() {
-      return (
-        this.c_activity.isMultiplication && !this.c_isRunning // &&
-        // every(this.rows, row => {
-        //   return row.length == this.c_columns;
-        // })
-      );
+      return this.c_activity.isMultiplication && !this.c_isRunning;
     }
   },
   methods: {
@@ -309,9 +317,7 @@ export default {
       }
     },
     addToPath(toAdd) {
-      if (this.path === "-") this.path = "";
       this.path += toAdd;
-      console.log(this.path);
     },
     initApi(interpreter, globalObject) {
       // Add an API function for add item.
@@ -379,8 +385,6 @@ export default {
     },
     resetExecution() {
       // reset the data
-      this.numCircles = 0;
-      this.path = "-";
       this.items = [];
       this.rows = [];
 
@@ -403,17 +407,19 @@ export default {
       }
     },
     runCode() {
-      this.keepTryingMsg = undefined;
+      this.path = "";
+      this.demoWorkspace = this.$refs.activityBlockly.workspace;
+
+      this.attempts++;
+      this.blocksNotConnected = false;
       if (this.demoWorkspace.getTopBlocks().length > 1) {
-        this.keepTryingMsg =
-          "Make sure you connect all of the blocks together!";
+        this.blocksNotConnected = true;
         return;
       }
-
       this.activityStats.compilation_timestamps.push(
         timestamp.utc(TIMESTAMP_FORMAT)
       );
-      this.attempts++;
+
       // Exit is used to signal the end of a script.
       Blockly.JavaScript.addReservedWords("exit");
 
