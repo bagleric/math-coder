@@ -9,9 +9,12 @@
 
 <script>
 export default {
-  name: 'ViewGoodbye',
-  components: {}
-}
+  name: "ViewGoodbye",
+  components: {},
+  beforeCreate() {
+    this.$store.commit("resetUser");
+  }
+};
 </script>
 
 <style scoped>

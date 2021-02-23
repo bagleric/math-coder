@@ -39,6 +39,9 @@ export default {
       isRegistering: false
     };
   },
+  beforeCreate() {
+    this.$store.commit("resetUser");
+  },
   computed: {
     firstName() {
       return this.$store.getters.firstName;
@@ -96,9 +99,7 @@ export default {
         })
         .catch(err => {
           this.isRegistering = false;
-          if (this.$store.getters.isTesting) {
-            console.log({ err });
-          }
+          console.log({ err });
         });
     }
   }

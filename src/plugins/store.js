@@ -10,22 +10,39 @@ import find from 'lodash/find'
 import data from "@/forms/module2.js"
 
 Vue.use(Vuex)
+const defaultUser = {
+  firstName: "",
+  lastName: "",
+  id: 0
+};
 
 export default new Vuex.Store({
   state: {
-    user: {
-      firstName: "",
-      lastName: "",
-      id: 0
-    },
+    user: defaultUser,
     isTesting: false,
     viewAllQuestions: false,
     executionWait: 1,
     data
   },
   mutations: {
+    resetUser(state) {
+      localStorage.removeItem('name');
+      localStorage.removeItem('id');
+      state.user = assign({}, state.user, defaultUser);
+    },
+    initializeStore(state) {
+      state.user = defaultUser
+      if (localStorage.getItem('firstName')) {
+        state.user.firstName = localStorage.name;
+      }
+      if (localStorage.getItem('id')) {
+        state.user.id = localStorage.id;
+      }
+    },
     updateUser(state, newUser) {
-      assign(state.user, newUser);
+      localStorage.name = newUser.firstName;
+      localStorage.id = newUser.id;
+      state.user = assign({}, state.user, newUser);
     },
     toggleIsTesting(state) {
       state.isTesting = !state.isTesting;

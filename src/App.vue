@@ -52,6 +52,9 @@ export default {
     group() {
       this.drawer = false;
     }
+  },
+  beforeCreate() {
+    this.$store.commit("initializeStore");
   }
 };
 </script>
