@@ -17,84 +17,6 @@ const audios = importAll(require.context('@/assets', false, /\.(mp3)$/));
 
 const test = [
   {
-    forQuestion: "Jane has 5 rocks. Jack has 4 rocks.",
-    question: "How many rocks are there altogether?",
-    questionAudio: "",
-    testType: "pre",
-    inputs: [
-      {
-        isInput: true,
-        name: "jane-rocks",
-        // value: 1,
-        answerKey: 9,
-      },
-      {
-        isInput: false,
-        value: "rocks"
-      },
-    ],
-    standard: "2.0A.4",
-    justification: "Provides a simple addition problem for the 2nd grade standard"
-  }
-  , {
-    forQuestion: "Silva has 4 beads. Kate has 5 beads.",
-    question: "How many beads are there altogether?",
-    questionAudio: "",
-    testType: "post",
-    inputs: [
-      {
-        isInput: true,
-        name: "silva-beads",
-        // value: 1,
-        answerKey: 9,
-      },
-      {
-        isInput: false,
-        value: "beads"
-      },
-    ],
-    standard: "2.0A.4",
-    justification: "Provides a simple addition problem for the 2nd grade standard"
-  }
-  , {
-    question: "Find the sum.",
-    questionAudio: "",
-    testType: "pre",
-    inputs: [
-      {
-        isInput: false,
-        value: "8 + 5 = "
-      },
-      {
-        isInput: true,
-        name: "7+5",
-        // value: 1,
-        answerKey: 12,
-      },
-    ],
-    standard: "2.0A.4",
-    justification: "Provides a simple addition problem for the 2nd grade standard. They should be familiar with this sentence structure"
-  }
-  , {
-    question: "Find the sum.",
-    questionAudio: "",
-    testType: "post",
-    inputs: [
-      {
-        isInput: false,
-        value: "4 + 8 = "
-      },
-      {
-        isInput: true,
-        name: "4+8",
-        // value: 1,
-        answerKey: 12,
-      },
-    ],
-    standard: "2.0A.4",
-    justification: "Provides a simple addition problem for the 2nd grade standard. They should be familiar with this sentence structure"
-  }
-  , {
     forQuestion: "Zach puts his stickers in 4 rows. There are 2 stickers in each row.",
     question: "How many stickers does Zach have?",
     questionAudio: "",
@@ -112,13 +34,33 @@ const test = [
       },
     ],
     standard: "2.0A.4",
-    justification: "Uses numbers smaller than 5. Indicates understanding of how to solve a basic word problem using simple counting."
+    justification: ""
   }
   , {
-    forQuestion: "Jay puts 3 oranges on each tray.",
-    question: "How many oranges are on 5 trays?",
+    forQuestion: "Kate placed 4 rows of cookies on a tray. There were 3 cookies in each row.",
+    question: "How many cookies are on the tray?",
     questionAudio: "",
     testType: "post",
+    inputs: [
+      {
+        isInput: true,
+        name: "tray-cookies",
+        // value: 1,
+        answerKey: 8,
+      },
+      {
+        isInput: false,
+        value: "cookies"
+      },
+    ],
+    standard: "2.0A.4",
+    justification: ""
+  }
+  , {
+    forQuestion: "Jay puts 3 oranges in a line.",
+    question: "How many oranges are in 5 lines?",
+    questionAudio: "",
+    testType: "pre",
     inputs: [
       {
         isInput: true,
@@ -132,449 +74,142 @@ const test = [
       },
     ],
     standard: "2.0A.4",
-    justification: "Provides a more complex second-grade question. Only one answer can help us indicate whether the student can find the answer."
+    justification: ""
   }
   , {
-    question: "Bill has 6 toy cars. Each car has 4 wheels.",
+    forQuestion: "Mrs. Jones has 3 rows of desks in her classroom. Each row has 5 desks.",
+    question: "How many desks are there in all?",
+    questionAudio: "",
+    testType: "post",
+    inputs: [
+      {
+        isInput: true,
+        name: "jones-desks",
+        // value: 1,
+        answerKey: 12,
+      },
+      {
+        isInput: false,
+        value: "desks"
+      },
+    ],
+    standard: "2.0A.4",
+    justification: ""
+  }
+  , {
+    forQuestion: "Eli reads 7 books each week for 4 weeks.",
+    question: "How many books did he read altogether?",
     questionAudio: "",
     testType: "pre",
     inputs: [
       {
-        isInput: false,
-        value: "How many wheels are on each car?"
-      },
-      {
         isInput: true,
-        name: "bill-cars-wheels",
+        name: "eli-books",
         // value: 1,
-        answerKey: 4,
-      },
-      {
-        isInput: false,
-        value: "How many equal groups of wheels are there?"
-      },
-      {
-        isInput: true,
-        name: "bill-cars-groups",
-        // value: 1,
-        answerKey: 6,
-      },
-      {
-        isInput: false,
-        value: "How many wheels are there in all?"
-      },
+        answerKey: 28,
+      }
+    ],
+    standard: "3.0A.1",
+    justification: ""
+  }
+  , {
+    forQuestion: "Sue sleeps 8 hours each night.",
+    question: "How many hours does she sleep in 3 nights?",
+    questionAudio: "",
+    testType: "post",
+    inputs: [
       {
         isInput: true,
-        name: "bill-cars-all",
+        name: "sue-sleeps",
         // value: 1,
         answerKey: 24,
-      },
+      }
     ],
-    containerStyle: `
-    display: grid;
-    align-items:center;
-    grid-template-columns: auto 1fr;
-    `,
-    inputStyle: "justify-self:start;",
-    textStyle: "justify-self:end;",
     standard: "3.0A.1",
-    justification: "Provides a third grade level question. Separates the problem into different areas. Helps us understand what part of the problem may be confusing."
+    justification: ""
   }
   , {
-    question: "Ross has 6 cookies. Each cookie has 4 chocolate chips.",
-    questionAudio: "",
-    testType: "post",
-    inputs: [
-      {
-        isInput: false,
-        value: "How many chocolate chips are on each cookie?"
-      },
-      {
-        isInput: true,
-        name: "ross-cookies-chocolate",
-        // value: 1,
-        answerKey: 4,
-      },
-      {
-        isInput: false,
-        value: "How many equal groups of chocolate chips are there?"
-      },
-      {
-        isInput: true,
-        name: "ross-cookies-groups",
-        // value: 1,
-        answerKey: 6,
-      },
-      {
-        isInput: false,
-        value: "How many chocolate chips are there in all?"
-      },
-      {
-        isInput: true,
-        name: "ross-cookies-all",
-        // value: 1,
-        answerKey: 24,
-      },
-    ],
-    containerStyle: `
-    display: grid;
-    align-items:center;
-    grid-template-columns: auto 1fr;
-    `,
-    inputStyle: "justify-self:start;",
-    textStyle: "justify-self:end;",
-    standard: "3.0A.1",
-    justification: "Provides a third grade level question. Separates the problem into different areas. Helps us understand what part of the problem may be confusing."
-  }
-  , {
-    forQuestion: "Fill in the the math sentences.",
-    question: "3 groups of 5",
+    forQuestion: "Peter, Alli, and Fred have 5 coins each.",
+    question: "How many coins do they have in all?",
     questionAudio: "",
     testType: "pre",
     inputs: [
       {
         isInput: true,
-        name: "add-sentence-1-1",
-        // value: 1,
-        answerKey: 5,
-      },
-      {
-        isInput: false,
-        value: "+"
-      },
-      {
-        isInput: true,
-        name: "add-sentence-1-2",
-        // value: 1,
-        answerKey: 5,
-      },
-      {
-        isInput: false,
-        value: "+"
-      },
-      {
-        isInput: true,
-        name: "add-sentence-1-3",
-        // value: 1,
-        answerKey: 5,
-      },
-      {
-        isInput: false,
-        value: "="
-      },
-      {
-        isInput: true,
-        name: "add-sentence-1-4",
-        // value: 1,
-        answerKey: 15,
-      },
-      {
-        isInput: true,
-        name: "mult-sentence-1-1",
-        // value: 1,
-        answerKey: 3,
-      },
-      {
-        isInput: false,
-        value: "x"
-      },
-      {
-        isInput: true,
-        name: "mult-sentence-1-2",
-        // value: 1,
-        answerKey: 5,
-      },
-      {
-        isInput: false,
-        value: "="
-      },
-      {
-        isInput: true,
-        name: "mult-sentence-1-3",
+        name: "peter-coins",
         // value: 1,
         answerKey: 15,
       },
     ],
-    containerStyle: `
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(7,auto);
-    width: min-content;
-    `,
+
     standard: "3.0A.1",
-    justification: "Have the student build the math sentences for both multiplication and addition sentences."
+    justification: ""
   }
   , {
-    forQuestion: "Fill in the the math sentences.",
-    question: "4 groups of 5",
+    forQuestion: "Sara, Jane, Greg, and Henry have 4 coins each.",
+    question: "How many coins do they have in all?",
     questionAudio: "",
     testType: "post",
     inputs: [
       {
         isInput: true,
-        name: "add-sentence-2-1",
+        name: "sara-coins",
         // value: 1,
-        answerKey: 5,
-      },
-      {
-        isInput: false,
-        value: "+"
-      },
-      {
-        isInput: true,
-        name: "add-sentence-2-2",
-        // value: 1,
-        answerKey: 5,
-      },
-      {
-        isInput: false,
-        value: "+"
-      },
-      {
-        isInput: true,
-        name: "add-sentence-2-3",
-        // value: 1,
-        answerKey: 5,
-      },
-      {
-        isInput: false,
-        value: "+"
-      },
-      {
-        isInput: true,
-        name: "add-sentence-2-4",
-        // value: 1,
-        answerKey: 5,
-      },
-      {
-        isInput: false,
-        value: "="
-      },
-      {
-        isInput: true,
-        name: "add-sentence-2-4",
-        // value: 1,
-        answerKey: 20,
-      },
-      {
-        isInput: true,
-        name: "mult-sentence-2-1",
-        // value: 1,
-        answerKey: 4,
-      },
-      {
-        isInput: false,
-        value: "x"
-      },
-      {
-        isInput: true,
-        name: "mult-sentence-2-2",
-        // value: 1,
-        answerKey: 5,
-      },
-      {
-        isInput: false,
-        value: "="
-      },
-      {
-        isInput: true,
-        name: "mult-sentence-2-3",
-        // value: 1,
-        answerKey: 20,
+        answerKey: 16,
       },
     ],
-    containerStyle: `
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(9,auto);
-    width: min-content;
-    `,
     standard: "3.0A.1",
-    justification: "Have the student build the math sentences for both multiplication and addition sentences."
+    justification: ""
   }
   , {
-    forQuestion: "Ada has 3 vases. She puts 5 flowers in each vase.",
-    question: "Write a multiplication sentence to show how many flowers Ada puts in the vases",
+    question: "Find the product:",
     questionAudio: "",
     testType: "pre",
     inputs: [
       {
-        isInput: true,
-        name: "ada-vases-1",
-        // value: 1,
-        answerKey: 3,
-      },
-      {
         isInput: false,
-        value: "x"
+        value: "3 x 4 = "
       },
       {
         isInput: true,
-        name: "ada-vases-2",
+        name: "3x4",
         // value: 1,
-        answerKey: 5,
-      },
-      {
-        isInput: false,
-        value: "="
-      },
-      {
-        isInput: true,
-        name: "ada-vases-3",
-        // value: 1,
-        answerKey: 15,
-      },
-      {
-        isInput: false,
-        value: "vases"
+        answerKey: 12,
       },
     ],
     containerStyle: `
     display: grid;
+    grid-template-columns: auto auto;
     align-items: center;
-    grid-template-columns: repeat(6,auto);
-    width: min-content;
+    width: fit-content;
     `,
     standard: "3.0A.1",
-    justification: "Have the student build a multiplication sentence."
+    justification: ""
   }
   , {
-    forQuestion: "Calvin has 3 plates. He puts 5 grapes on each plate.",
-    question: "Write a multiplication sentence to show how many grapes Calvin puts on the plates",
+    question: "Find the product:",
     questionAudio: "",
     testType: "post",
     inputs: [
       {
-        isInput: true,
-        name: "calvin-grapes-1",
-        // value: 1,
-        answerKey: 3,
-      },
-      {
         isInput: false,
-        value: "x"
+        value: "4 x 2 = "
       },
       {
         isInput: true,
-        name: "calvin-grapes-2",
+        name: "4x2",
         // value: 1,
-        answerKey: 5,
-      },
-      {
-        isInput: false,
-        value: "="
-      },
-      {
-        isInput: true,
-        name: "calvin-grapes-3",
-        // value: 1,
-        answerKey: 15,
-      },
-      {
-        isInput: false,
-        value: "grapes"
+        answerKey: 8,
       },
     ],
     containerStyle: `
     display: grid;
+    grid-template-columns: auto auto;
     align-items: center;
-    grid-template-columns: repeat(6,auto);
-    width: min-content;
+    width: fit-content;
     `,
     standard: "3.0A.1",
-    justification: "Have the student build a multiplication sentence."
-  }
-  , {
-    forQuestion: "Kyle, Jackie, and Edith each have 6 pennies.",
-    question: "Write a multiplication sentence to show how many pennies there are altogether",
-    questionAudio: "",
-    testType: "pre",
-    inputs: [
-      {
-        isInput: true,
-        name: "friends-pennies-1",
-        // value: 1,
-        answerKey: 3,
-      },
-      {
-        isInput: false,
-        value: "x"
-      },
-      {
-        isInput: true,
-        name: "friends-pennies-2",
-        // value: 1,
-        answerKey: 5,
-      },
-      {
-        isInput: false,
-        value: "="
-      },
-      {
-        isInput: true,
-        name: "friends-pennies-3",
-        // value: 1,
-        answerKey: 15,
-      },
-      {
-        isInput: false,
-        value: "pennies"
-      },
-    ],
-    containerStyle: `
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(6,auto);
-    width: min-content;
-    `,
-    standard: "3.0A.1",
-    justification: "Have the student build a multiplication sentence where the group number is not directly given."
-  }
-  , {
-    forQuestion: "Hal, Kit, and Angie each have 6 nickles.",
-    question: "Write a multiplication sentence to show how many nickles there are altogether",
-    questionAudio: "",
-    testType: "post",
-    inputs: [
-      {
-        isInput: true,
-        name: "friends-nickles-1",
-        // value: 1,
-        answerKey: 3,
-      },
-      {
-        isInput: false,
-        value: "x"
-      },
-      {
-        isInput: true,
-        name: "friends-nickles-2",
-        // value: 1,
-        answerKey: 5,
-      },
-      {
-        isInput: false,
-        value: "="
-      },
-      {
-        isInput: true,
-        name: "friends-nickles-3",
-        // value: 1,
-        answerKey: 15,
-      },
-      {
-        isInput: false,
-        value: "nickles"
-      },
-    ],
-    containerStyle: `
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(6,auto);
-    width: min-content;
-    `,
-    standard: "3.0A.1",
-    justification: "Have the student build a multiplication sentence where the group number is not directly given."
+    justification: ""
   }
   , {
     forQuestion: "Round to the nearest ten.",
@@ -584,7 +219,7 @@ const test = [
     inputs: [
       {
         isInput: true,
-        name: "round-1",
+        name: "round-66",
         // value: 1,
         answerKey: 70,
       },
@@ -594,165 +229,17 @@ const test = [
   }
   , {
     forQuestion: "Round to the nearest ten.",
-    question: "77",
+    question: "53",
     questionAudio: "",
     testType: "post",
     inputs: [
       {
         isInput: true,
-        name: "round-up-2",
+        name: "round-53",
         // value: 1,
-        answerKey: 80,
+        answerKey: 53,
       },
     ],
-    standard: "3.MD.A.1",
-    justification: "Provide a control question unrelated to addition or multiplication."
-  }
-  , {
-    forQuestion: "Round to the nearest ten.",
-    question: "54",
-    questionAudio: "",
-    testType: "pre",
-    inputs: [
-      {
-        isInput: true,
-        name: "round-down-1",
-        // value: 1,
-        answerKey: 50,
-      },
-    ],
-    containerStyle: `
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(6,auto);
-    width: min-content;
-    `,
-    standard: "3.MD.A.1",
-    justification: "Provide a control question unrelated to addition or multiplication."
-  }
-  , {
-    forQuestion: "Round to the nearest ten.",
-    question: "43",
-    questionAudio: "",
-    testType: "post",
-    inputs: [
-      {
-        isInput: true,
-        name: "round-down-2",
-        // value: 1,
-        answerKey: 40,
-      },
-    ],
-    containerStyle: `
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(6,auto);
-    width: min-content;
-    `,
-    standard: "3.MD.A.1",
-    justification: "Provide a control question unrelated to addition or multiplication."
-  }
-  , {
-    question: "About how long is the pencil",
-    questionAudio: "",
-    testType: "pre",
-    inputs: [
-      {
-        isInput: false,
-        value: svgs.pencil
-      },
-      {
-        isInput: true,
-        name: "pencil-length",
-        // value: 1,
-        answerKey: 6,
-      },
-      {
-        isInput: false,
-        value: "inches"
-      },
-    ],
-    standard: "2.MD.3",
-    justification: "Provide a control question unrelated to addition or multiplication."
-  }
-  , {
-    question: "About how long is the fork",
-    questionAudio: "",
-    testType: "post",
-    inputs: [
-      {
-        isInput: false,
-        value: svgs.fork
-      },
-      {
-        isInput: true,
-        name: "fork-length",
-        // value: 1,
-        answerKey: 6,
-      },
-      {
-        isInput: false,
-        value: "inches"
-      },
-    ],
-    standard: "2.MD.3",
-    justification: "Provide a control question unrelated to addition or multiplication."
-  }
-  , {
-    question: "How many angles does a triangle have?",
-    questionAudio: "",
-    testType: "pre",
-    inputs: [
-      {
-        isInput: false,
-        value: svgs.triangle,
-      },
-      {
-        isInput: true,
-        name: "angle",
-        // value: 1,
-        answerKey: 3,
-      },
-      {
-        isInput: false,
-        value: "angles"
-      },
-    ],
-    containerStyle: `
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(3,auto);
-    width: min-content;
-    `,
-    standard: "3.MD.A.1",
-    justification: "Provide a control question unrelated to addition or multiplication."
-  }
-  , {
-    question: "How many angles does a diamond have?",
-    questionAudio: "",
-    testType: "post",
-    inputs: [
-      {
-        isInput: false,
-        value: svgs.diamond,
-      },
-      {
-        isInput: true,
-        name: "angle",
-        // value: 1,
-        answerKey: 3,
-      },
-      {
-        isInput: false,
-        value: "angles"
-      },
-    ],
-    containerStyle: `
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(3,auto);
-    width: min-content;
-    `,
     standard: "3.MD.A.1",
     justification: "Provide a control question unrelated to addition or multiplication."
   }
