@@ -3,16 +3,34 @@ import Router from 'vue-router'
 
 import ViewHello from '@/views/Hello.view.vue'
 import ViewGoodbye from '@/views/Goodbye.view.vue'
+import ViewWelcome from '@/views/Welcome.view.vue'
+import ViewParent from '@/views/Parent.view.vue'
 
 Vue.use(Router)
 
 const routes = [
   {
     path: '/',
+    name: 'Welcome',
+    component: ViewWelcome,
+    meta: {
+      breadcrumb: ''
+    }
+  },
+  {
+    path: '/parent-instructions',
+    name: 'ParentInstructions',
+    component: ViewParent,
+    meta: {
+      breadcrumb: 'Parent Instructions'
+    }
+  },
+  {
+    path: '/hello',
     name: 'Hello',
     component: ViewHello,
     meta: {
-      breadcrumb: ''
+      breadcrumb: 'Hello'
     }
   },
   {
