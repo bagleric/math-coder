@@ -82,10 +82,11 @@ const data = {
           }
           , startingBlocksXml: `<block type="repeat_circle" x="10" y="65"></block>`
           , blockSelection: []
-          , prompt: `<p>The blocks on the white page are going to tell the computer what to do.</p><p>Click the <define word="run_button" showInlineHtml>run button</define> below to see what happens.</p>`
+          , prompt: `<p>The blocks on the white page are going to tell the computer what to do.</p><p>Click the run button below to see what happens.</p>`
           , promptAudio: audios['p1prompt.mp3']
           , reflections: []
           , solution: "-false-repeat_circle-5-false-"
+          , successAudio: audios['p1success.mp3']
           , hints: [
             sharedHints.needToStartOver
             // *inside repeat block incorrect
@@ -110,7 +111,7 @@ const data = {
                                   <field name="TIMES">7</field>
                                 </block>`
           , blockSelection: []
-          , prompt: `<p>The blocks on the white page are going to tell the computer what to do.</p><p>Change the 7 on the block to a 4. Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , prompt: `<p>The blocks on the white page are going to tell the computer what to do.</p><p>Change the 7 on the block to a 4.</p>`
           , promptAudio: audios['a1prompt.mp3']
           , reflections: []
           , successAudio: audios['a1success.mp3']
@@ -146,7 +147,7 @@ const data = {
                                   <field name="TIMES">5</field>
                                 </block>`
           , blockSelection: []
-          , prompt: `<p>Tell the computer to draw 8 books.</p><p>Change the 5 on the block to an 8. Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , prompt: `<p>Tell the computer to draw 8 books.</p><p>Change the 5 on the block to an 8.</p>`
           , promptAudio: audios['a2prompt.mp3']
           , reflections: []
           , successAudio: audios['a2success.mp3']
@@ -182,7 +183,7 @@ const data = {
                                   <field name="TIMES">3</field>
                                 </block>`
           , blockSelection: []
-          , prompt: `<p>Tell the computer to draw 7 pieces of candy.</p><p>Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , prompt: `<p>Tell the computer to draw 7 pieces of candy.</p>`
           , promptAudio: audios['a3prompt.mp3']
           , reflections: []
           , successAudio: audios['a3success.mp3']
@@ -218,7 +219,7 @@ const data = {
           , blockSelection: [{
             type: "repeat_cookie"
           }]
-          , prompt: `<p>Tell the computer to draw 6 cookies. Drag the block onto the white page.</p><p>Change the 4 on the block to a 6. Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , prompt: `<p>Tell the computer to draw 6 cookies. Drag the block onto the white page.</p><p>Change the 4 on the block to a 6.</p>`
           , promptAudio: audios['b1prompt.mp3']
           , reflections: []
           , successAudio: audios['b1success.mp3']
@@ -254,7 +255,7 @@ const data = {
           , blockSelection: [{
             type: "repeat_pillow"
           }]
-          , prompt: `<p>Tell the computer to draw 5 pillows. Drag the block onto the white page.</p><p>Change the 9 on the block to a 5. Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , prompt: `<p>Tell the computer to draw 5 pillows. Drag the block onto the white page.</p><p>Change the 9 on the block to a 5.</p>`
           , promptAudio: audios['b2prompt.mp3']
           , reflections: []
           , successAudio: audios['b2success.mp3']
@@ -289,7 +290,7 @@ const data = {
           , blockSelection: [{
             type: "repeat_star"
           }]
-          , prompt: `<p>Tell the computer to draw 5 stars.</p><p>Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , prompt: `<p>Tell the computer to draw 5 stars.</p>`
           , promptAudio: audios['b3prompt.mp3']
           , reflections: []
           , successAudio: audios['b3success.mp3']
@@ -325,7 +326,7 @@ const data = {
           , blockSelection: [{
             type: "repeat_apple"
           }]
-          , prompt: `<p>Tell the computer to draw 5 apples.</p><p>Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , prompt: `<p>Tell the computer to draw 5 apples.</p>`
           , promptAudio: audios['c1aprompt.mp3']
           , reflections: []
           , successAudio: audios['c1asuccess.mp3']
@@ -364,7 +365,7 @@ const data = {
             { type: "repeat_apple" }
             , { type: "repeat_block" }
           ]
-          , prompt: `<p>Tell the computer to draw 3 rows of 5 apples.</p> To do this drag the repeat block onto the white page. Place the apple block inside of the repeat block.<p>Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , prompt: `<p>Tell the computer to draw 3 rows of 5 apples.</p> To do this drag the repeat block onto the white page. Place the apple block inside of the repeat block.`
           , promptAudio: audios['c1bprompt.mp3']
           , reflections: []
           , successAudio: audios['c1bsuccess.mp3']
@@ -411,7 +412,7 @@ const data = {
           , blockSelection: [{
             type: "repeat_tree"
           }]
-          , prompt: `<p>Tell the computer to draw 4 trees.</p><p>Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , prompt: `<p>Tell the computer to draw 4 trees.</p>`
           , promptAudio: audios['c2aprompt.mp3']
           , reflections: []
           , successAudio: audios['c2asuccess.mp3']
@@ -450,7 +451,7 @@ const data = {
             { type: "repeat_tree" }
             , { type: "repeat_block" }
           ]
-          , prompt: `<p>Tell the computer to draw 3 rows of 4 trees.</p> <p>To do this drag the repeat block onto the white page. Place the tree block inside of the repeat block.Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , prompt: `<p>Tell the computer to draw 3 rows of 4 trees.</p> <p>To do this drag the repeat block onto the white page. Place the tree block inside of the repeat block</p>`
           , promptAudio: audios['c2bprompt.mp3']
           , reflections: []
           , successAudio: audios['c2bsuccess.mp3']
@@ -503,7 +504,7 @@ const data = {
             { type: "repeat_tree" }
             , { type: "repeat_block" }
           ]
-          , prompt: `<p>Tell the computer to draw 4 rows of 4 trees.</p> Change the repeat number from a 3 to a 4. Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , prompt: `<p>Tell the computer to draw 4 rows of 4 trees.</p> Change the repeat number from a 3 to a 4.`
           , promptAudio: audios['c2cprompt.mp3']
           , reflections: []
           , successAudio: audios['c2csuccess.mp3']
@@ -549,7 +550,7 @@ const data = {
             { type: "repeat_pea" }
             , { type: "repeat_block" }
           ]
-          , prompt: `<p>Jack has 2 pea pods. Each pea pod has 6 peas.</p><p>Tell the computer how to draw the problem. Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , prompt: `<p>Jack has 2 pea pods. Each pea pod has 6 peas.</p><p>Tell the computer how to draw the problem.</p>`
           , promptAudio: audios['c3aprompt.mp3']
           , reflections: []
           , successAudio: audios['c3asuccess.mp3']
@@ -596,7 +597,7 @@ const data = {
             { type: "repeat_cake" }
             , { type: "repeat_block" }
           ]
-          , prompt: `<p>Sara cut the cake at a party. She made 4 rows. Each row had 5 pieces of cake. </p><p>Tell the computer how to draw the problem. Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , prompt: `<p>Sara cut the cake at a party. She made 4 rows. Each row had 5 pieces of cake. </p><p>Tell the computer how to draw the problem.</p>`
           , promptAudio: audios['d2prompt.mp3']
           , reflections: []
           , successAudio: audios['d2success.mp3']
@@ -642,7 +643,7 @@ const data = {
             { type: "repeat_pillow" }
             , { type: "repeat_block" }
           ]
-          , prompt: `<p>Sara, Troy, David, and Jill each have 6 pillows. How many pillows do they have in all? </p><p>Tell the computer how to draw the problem. Then click <define word="run_button" showInlineHtml>run</define>.</p>`
+          , prompt: `<p>Sara, Troy, David, and Jill each have 6 pillows. How many pillows do they have in all? </p><p>Tell the computer how to draw the problem.</p>`
           , promptAudio: audios['d3prompt.mp3']
           , reflections: []
           , successAudio: audios['d3success.mp3']

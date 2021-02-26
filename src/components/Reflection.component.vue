@@ -3,13 +3,7 @@
 <AppReflection :title="" :message=""></AppReflection>
   -->
   <div class="reflection">
-    <AppAudio
-      ref="prompt-sound"
-      hideIcon
-      :source="c_successAudio"
-      playOnMounted
-    >
-    </AppAudio>
+    <AppAudio hideIcon :source="c_successAudio" playOnMounted> </AppAudio>
     <div class="message">
       <AppRenderHtml parentTag="span" :html="c_reflection"></AppRenderHtml>
     </div>
@@ -23,7 +17,12 @@
         <v-icon>mdi-chevron-left</v-icon>
         Previous
       </v-btn>
-      <v-btn outlined class="next white--text" @click="incrementIter()">
+      <v-btn
+        v-if="showNext"
+        outlined
+        class="next white--text"
+        @click="incrementIter()"
+      >
         <span>Next</span>
         <v-icon>mdi-chevron-right</v-icon>
       </v-btn>
@@ -50,7 +49,7 @@ export default {
         return isArray(reflections);
       }
     },
-    message: String
+    showNext: { type: Boolean, default: true }
   },
   computed: {
     c_reflection() {
@@ -68,6 +67,9 @@ export default {
     iter: 0
   }),
   methods: {
+    allowNext() {
+      alert("Hey");
+    },
     incrementIter() {
       this.iter++;
       if (this.reflections.length < this.iter + 1) {

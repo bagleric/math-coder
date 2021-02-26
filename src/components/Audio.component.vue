@@ -27,6 +27,10 @@ export default {
   methods: {
     play: function() {
       this.sound.play();
+      this.sound.onended = this.played;
+    },
+    played() {
+      this.$emit("played");
     }
   },
   beforeMount() {

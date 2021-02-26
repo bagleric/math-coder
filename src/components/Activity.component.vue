@@ -85,6 +85,7 @@
           playOnMounted
           hideIcon
           iconClass="black--text"
+          @played="allowNext"
         >
           <MultiplicationSentence
             v-if="!c_isRunning"
@@ -102,6 +103,7 @@
           v-if="!isRunning && c_codeIsValid"
           @reflection-complete="submitCode"
           :reflections="c_activity.reflections"
+          :showNext="showNext"
         ></AppReflection>
         <span
           v-else-if="c_madeAttemtps && blocksNotConnected"
@@ -181,6 +183,7 @@ export default {
     }
   },
   data: () => ({
+    showNext: false,
     code: "",
     attempts: false,
     numRows: 0,
@@ -289,6 +292,9 @@ export default {
     }
   },
   methods: {
+    allowNext() {
+      this.showNext = true;
+    },
     restart() {
       this.resetCount++;
     },
