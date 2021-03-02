@@ -19,7 +19,7 @@ const test = [
   {
     forQuestion: "Zach puts his stickers in 4 rows. There are 2 stickers in each row.",
     question: "How many stickers does Zach have?",
-    questionAudio: "",
+    questionAudio: audios["tq-zach-stickers.mp3"],
     testType: "pre",
     inputs: [
       {
@@ -37,9 +37,9 @@ const test = [
     justification: ""
   }
   , {
-    forQuestion: "Kate placed 4 rows of cookies on a tray. There were 3 cookies in each row.",
+    forQuestion: "Kate placed 4 rows of cookies on a tray. There were 2 cookies in each row.",
     question: "How many cookies are on the tray?",
-    questionAudio: "",
+    questionAudio: audios["tq-tray-cookies.mp3"],
     testType: "post",
     inputs: [
       {
@@ -57,36 +57,36 @@ const test = [
     justification: ""
   }
   , {
-    forQuestion: "Jay puts 3 oranges in a line.",
-    question: "How many oranges are in 5 lines?",
-    questionAudio: "",
+    forQuestion: "Our teacher's rug has 5 rows of squares with 3 squares in each row.",
+    question: "How many squares are on the rug?",
+    questionAudio: audios["tq-teacher-rug.mp3"],
     testType: "pre",
     inputs: [
       {
         isInput: true,
-        name: "jay-oranges",
+        name: "teacher-rug",
         // value: 1,
-        answerKey: 12,
+        answerKey: 15,
       },
       {
         isInput: false,
-        value: "oranges"
+        value: "squares"
       },
     ],
     standard: "2.0A.4",
     justification: ""
   }
   , {
-    forQuestion: "Mrs. Jones has 3 rows of desks in her classroom. Each row has 5 desks.",
+    forQuestion: "Mrs. Lee has 3 rows of desks in her classroom. Each row has 5 desks.",
     question: "How many desks are there in all?",
-    questionAudio: "",
+    questionAudio: audios["tq-lee-desks.mp3"],
     testType: "post",
     inputs: [
       {
         isInput: true,
         name: "jones-desks",
         // value: 1,
-        answerKey: 12,
+        answerKey: 15,
       },
       {
         isInput: false,
@@ -99,7 +99,7 @@ const test = [
   , {
     forQuestion: "Eli reads 7 books each week for 4 weeks.",
     question: "How many books did he read altogether?",
-    questionAudio: "",
+    questionAudio: audios["tq-eli-books.mp3"],
     testType: "pre",
     inputs: [
       {
@@ -115,7 +115,7 @@ const test = [
   , {
     forQuestion: "Sue sleeps 8 hours each night.",
     question: "How many hours does she sleep in 3 nights?",
-    questionAudio: "",
+    questionAudio: audios["tq-sue-sleeps.mp3"],
     testType: "post",
     inputs: [
       {
@@ -129,14 +129,14 @@ const test = [
     justification: ""
   }
   , {
-    forQuestion: "Peter, Alli, and Fred have 5 coins each.",
+    forQuestion: "Pedro, Allie, and Fred have 5 coins each.",
     question: "How many coins do they have in all?",
-    questionAudio: "",
+    questionAudio: audios["tq-pedro-coins.mp3"],
     testType: "pre",
     inputs: [
       {
         isInput: true,
-        name: "peter-coins",
+        name: "pedro-coins",
         // value: 1,
         answerKey: 15,
       },
@@ -146,9 +146,9 @@ const test = [
     justification: ""
   }
   , {
-    forQuestion: "Sara, Jane, Greg, and Henry have 4 coins each.",
+    forQuestion: "Sara, Julia, Greg, and Mario have 4 coins each.",
     question: "How many coins do they have in all?",
-    questionAudio: "",
+    questionAudio: audios["tq-sara-coins.mp3"],
     testType: "post",
     inputs: [
       {
@@ -162,17 +162,37 @@ const test = [
     justification: ""
   }
   , {
-    question: "Find the product:",
-    questionAudio: "",
+    question: "3 x 4 = ",
+    questionAudio: audios["tq-3x4.mp3"],
     testType: "pre",
     inputs: [
       {
+        isInput: true,
+        name: "3x4",
+        // value: 1,
+        answerKey: 12,
+      },
+    ],
+    containerStyle: `
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    width: fit-content;
+    `,
+    standard: "3.0A.1",
+    justification: ""
+  }
+  , {
+    questionAudio: audios["tq-4x3.mp3"],
+    testType: "post",
+    inputs: [
+      {
         isInput: false,
-        value: "3 x 4 = "
+        value: "4 x 3 = "
       },
       {
         isInput: true,
-        name: "3x4",
+        name: "4x3",
         // value: 1,
         answerKey: 12,
       },
@@ -187,34 +207,9 @@ const test = [
     justification: ""
   }
   , {
-    question: "Find the product:",
-    questionAudio: "",
-    testType: "post",
-    inputs: [
-      {
-        isInput: false,
-        value: "4 x 2 = "
-      },
-      {
-        isInput: true,
-        name: "4x2",
-        // value: 1,
-        answerKey: 8,
-      },
-    ],
-    containerStyle: `
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
-    width: fit-content;
-    `,
-    standard: "3.0A.1",
-    justification: ""
-  }
-  , {
     forQuestion: "Round to the nearest ten.",
     question: "66",
-    questionAudio: "",
+    questionAudio: audios["tq-round-66.mp3"],
     testType: "pre",
     inputs: [
       {
@@ -229,15 +224,79 @@ const test = [
   }
   , {
     forQuestion: "Round to the nearest ten.",
+    question: "43",
+    questionAudio: audios["tq-round-43.mp3"],
+    testType: "pre",
+    inputs: [
+      {
+        isInput: true,
+        name: "round-43",
+        // value: 1,
+        answerKey: 40,
+      },
+    ],
+    standard: "3.MD.A.1",
+    justification: "Provide a control question unrelated to addition or multiplication."
+  }
+  , {
+    forQuestion: "Round to the nearest ten.",
+    question: "75",
+    questionAudio: audios["tq-round-75.mp3"],
+    testType: "pre",
+    inputs: [
+      {
+        isInput: true,
+        name: "round-75",
+        // value: 1,
+        answerKey: 80,
+      },
+    ],
+    standard: "3.MD.A.1",
+    justification: "Provide a control question unrelated to addition or multiplication."
+  }
+  , {
+    forQuestion: "Round to the nearest ten.",
     question: "53",
-    questionAudio: "",
+    questionAudio: audios["tq-round-53.mp3"],
     testType: "post",
     inputs: [
       {
         isInput: true,
         name: "round-53",
         // value: 1,
-        answerKey: 53,
+        answerKey: 50,
+      },
+    ],
+    standard: "3.MD.A.1",
+    justification: "Provide a control question unrelated to addition or multiplication."
+  }
+  , {
+    forQuestion: "Round to the nearest ten.",
+    question: "82",
+    questionAudio: audios["tq-round-82.mp3"],
+    testType: "post",
+    inputs: [
+      {
+        isInput: true,
+        name: "round-82",
+        // value: 1,
+        answerKey: 80,
+      },
+    ],
+    standard: "3.MD.A.1",
+    justification: "Provide a control question unrelated to addition or multiplication."
+  }
+  , {
+    forQuestion: "Round to the nearest ten.",
+    question: "47",
+    questionAudio: audios["tq-round-47.mp3"],
+    testType: "post",
+    inputs: [
+      {
+        isInput: true,
+        name: "round-47",
+        // value: 1,
+        answerKey: 50,
       },
     ],
     standard: "3.MD.A.1",

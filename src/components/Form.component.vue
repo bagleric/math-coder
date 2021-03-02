@@ -13,7 +13,12 @@
       </span>
     </div>
     <div v-else class="form-container">
-      <AppQuestion class="question" v-if="c_question" :question="c_question" />
+      <AppQuestion
+        class="question"
+        v-bind:key="c_question.question"
+        v-if="c_question"
+        :question="c_question"
+      />
       <span class="controls">
         <v-btn
           text

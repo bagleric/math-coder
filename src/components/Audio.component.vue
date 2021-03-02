@@ -26,6 +26,8 @@ export default {
   },
   methods: {
     play: function() {
+      this.sound.pause();
+      this.sound = new Audio(this.source);
       this.sound.play();
       this.sound.onended = this.played;
     },
@@ -42,10 +44,7 @@ export default {
     }
   },
   updated() {
-    console.log(this.prevSource, this.source);
     if (this.prevSource === this.source) return;
-    this.sound.pause();
-    this.sound = new Audio(this.source);
     this.play();
     this.prevSource = this.source;
   },
