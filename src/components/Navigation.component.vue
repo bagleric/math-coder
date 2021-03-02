@@ -5,18 +5,23 @@
       <span>|</span>
       <span>{{ c_location }}</span>
     </div>
-    <v-chip v-if="c_userName" color="primary">{{ c_userName }}</v-chip>
+    <div class="about">
+      <AppInfoDialog />
+      <v-chip v-if="c_userName" color="primary">{{ c_userName }}</v-chip>
+    </div>
   </div>
 </template>
 
 <script>
 import AppLogo from "@/components/Logo.component.vue";
+import AppInfoDialog from "@/components/InfoDialog.component.vue";
 const get = require("lodash/get");
 
 export default {
   name: "AppNavigation",
   components: {
-    AppLogo
+    AppLogo,
+    AppInfoDialog
   },
   computed: {
     c_userName() {
@@ -44,5 +49,9 @@ export default {
   width: 100%;
   justify-content: space-between;
   grid-auto-flow: column;
+}
+.about {
+  display: inline-flex;
+  align-items: center;
 }
 </style>
