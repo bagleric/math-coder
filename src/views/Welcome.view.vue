@@ -1,7 +1,15 @@
 <template>
   <div class="hello">
-    <h1 class="title">Welcome</h1>
-    <h2>Are you a</h2>
+    <h1 class="title">Welcome! Click your box to continue</h1>
+    <h2>I am a</h2>
+    <v-btn
+      color="primary"
+      :to="{
+        name: 'Hello'
+      }"
+    >
+      Second-Grader
+    </v-btn>
     <v-btn
       color="primary"
       outlined
@@ -10,14 +18,6 @@
       }"
     >
       Parent
-    </v-btn>
-    <v-btn
-      color="primary"
-      :to="{
-        name: 'Hello'
-      }"
-    >
-      Second-Grader
     </v-btn>
   </div>
 </template>
