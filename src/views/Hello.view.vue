@@ -55,28 +55,31 @@ export default {
       this.isRegistering = true;
       let store = this.$store;
 
-      if (this.$store.getters.isTesting) {
-        const user = {
-          firstName: "TEST",
-          lastName: "USER",
-          id: -1
-        };
-        store.commit("updateUser", user);
-        return Promise.resolve();
-      }
+      // if (this.$store.getters.isTesting) {
+      //   const user = {
+      //     firstName: "TEST",
+      //     lastName: "USER",
+      //     id: -1
+      //   };
+      //   store.commit("updateUser", user);
+      //   return Promise.resolve();
+      // }
       return this.$http
         .post(CREATE_USER_URL, {
           first_name: data.firstName,
           last_name: data.lastName
         })
         .then(result => {
+          if (!result.data.success) {
+            console.log("Failed to submit user. Response:", result);
+          }
           const user = {
             firstName: result.data.user.first_name,
             lastName: result.data.user.last_name,
             id: result.data.user.id
           };
           store.commit("updateUser", user);
-          console.log("Hello submitted. Response:", result);
+          // console.log("Hello submitted. Response:", result);
         });
     },
     submitForm(data) {

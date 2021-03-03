@@ -499,7 +499,7 @@ const data = {
                                       <field name="TIMES">4</field>
                                     </block>
                                   </value>
-                                <block>`
+                                </block>`
           , blockSelection: [
             { type: "repeat_tree" }
             , { type: "repeat_block" }

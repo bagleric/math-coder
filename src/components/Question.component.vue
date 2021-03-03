@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     inputUpdated(index, input) {
-      console.log(index, input);
+      // console.log(index, input);
       this.$emit("input-changed", {
         index,
         input
@@ -89,7 +89,7 @@ export default {
     }
   },
   updated() {
-    console.log("Updated question", this.question);
+    // console.log("Updated question", this.question);
   },
   components: {
     AppRenderHtml,

@@ -6,7 +6,7 @@
       <span>{{ c_location }}</span>
     </div>
     <div class="about">
-      <AppInfoDialog />
+      <!-- <AppInfoDialog /> -->
       <v-chip v-if="c_userName" color="primary">{{ c_userName }}</v-chip>
     </div>
   </div>

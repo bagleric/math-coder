@@ -57,7 +57,7 @@ export default {
       this.$emit("test-complete");
     },
     submitQuestion(userId, question, stats) {
-      console.log("submitting question", question, stats);
+      // console.log("submitting question", question, stats);
       return this.$http
         .post(STORE_ANSWER_URL, {
           user_id: userId,
@@ -67,7 +67,7 @@ export default {
           end_time: stats.endTime
         })
         .then(data => {
-          console.log("Pre Test submitted. Response:", data);
+          // console.log("Pre Test submitted. Response:", data);
         })
         .catch(err => {
           console.log(err);
@@ -75,17 +75,17 @@ export default {
     },
 
     answerQuestion(data) {
-      console.log({ data });
+      // console.log({ data });
       const userId = this.$store.getters.userId;
-      if (!this.$store.getters.isTesting) {
-        each(data.inputs, input => {
-          this.submitQuestion(
-            userId,
-            { name: input.name, value: input.value },
-            data.stats
-          );
-        });
-      }
+      // if (!this.$store.getters.isTesting) {
+      each(data.inputs, input => {
+        this.submitQuestion(
+          userId,
+          { name: input.name, value: input.value },
+          data.stats
+        );
+      });
+      // }
     }
   }
 };

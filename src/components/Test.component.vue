@@ -124,11 +124,11 @@ export default {
   },
   methods: {
     updateViewAllQuestions(value) {
-      console.log(value);
+      // console.log(value);
       this.$store.commit("setViewAllQuestions", value);
     },
     updateExecuteWait(value) {
-      console.log(value);
+      // console.log(value);
       this.$store.commit("setExecutionWait", value);
     }
   }

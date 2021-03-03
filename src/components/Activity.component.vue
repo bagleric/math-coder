@@ -480,22 +480,22 @@ export default {
         )
       });
 
-      console.log(this.activityStats);
+      // console.log(this.activityStats);
 
-      if (!this.$store.getters.isTesting) {
-        this.$http
-          .post(FINISH_ACTIVITY_URL, this.activityStats)
-          .then(result => {
-            if (!result.data.success) {
-              console.log("Failed to submitt event. Response:", result);
-            } else {
-              console.log("finished submitted. Response:", result);
-            }
-          })
-          .catch(error => {
-            console.log({ error });
-          });
-      }
+      // if (!this.$store.getters.isTesting) {
+      this.$http
+        .post(FINISH_ACTIVITY_URL, this.activityStats)
+        .then(result => {
+          if (!result.data.success) {
+            console.log("Failed to submitt event. Response:", result);
+          } else {
+            // console.log("finished submitted. Response:", result);
+          }
+        })
+        .catch(error => {
+          console.log({ error });
+        });
+      // }
 
       this.demoWorkspace.clear();
       this.$emit("activity-complete", this.code);
@@ -515,22 +515,22 @@ export default {
         jsonEvent.oldXml = escape(jsonEvent.oldXml);
       }
 
-      if (!this.$store.getters.isTesting) {
-        let toSend = {
-          user_id: this.$store.getters.userId,
-          activity_id: this.c_activity.id,
-          module_id: this.moduleId,
-          blockly_event: JSON.stringify(jsonEvent),
-          created_at: timestamp.utc(TIMESTAMP_FORMAT)
-        };
-        this.$http.post(STORE_EVENT_URL, toSend).then(result => {
-          if (!result.data.success) {
-            console.log("Failed to submitt event. Response:", result);
-          } else {
-            console.log("Event submitted. Response:", result);
-          }
-        });
-      }
+      // if (!this.$store.getters.isTesting) {
+      let toSend = {
+        user_id: this.$store.getters.userId,
+        activity_id: this.c_activity.id,
+        module_id: this.moduleId,
+        blockly_event: JSON.stringify(jsonEvent),
+        created_at: timestamp.utc(TIMESTAMP_FORMAT)
+      };
+      this.$http.post(STORE_EVENT_URL, toSend).then(result => {
+        if (!result.data.success) {
+          console.log("Failed to submitt event. Response:", result);
+        } else {
+          // console.log("Event submitted. Response:", result);
+        }
+      });
+      // }
     }
   }
 };
