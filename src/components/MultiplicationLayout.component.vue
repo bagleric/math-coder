@@ -114,7 +114,7 @@ export default {
   display: grid;
 }
 .marked-item {
-  background: lightblue;
+  /* background: lightblue; */
 }
 .totals-label {
   padding: 0 1em;

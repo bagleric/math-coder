@@ -83,22 +83,16 @@
           ref="prompt-sound"
           :source="c_activity.successAudio"
           playOnMounted
-          hideIcon
           iconClass="black--text"
           @played="allowNext"
         >
-          <MultiplicationSentence
-            v-if="!c_isRunning"
-            :values="c_multiplySentence"
-          />
         </AppAudio>
         <MultiplicationSentence
-          v-else-if="!c_isRunning"
+          v-if="!c_isRunning"
           :values="c_multiplySentence"
         />
       </div>
       <div v-if="!c_isRunning" class="reflection">
-        <!-- TODO: make this a regex string so that we can provide better hints -->
         <AppReflection
           v-if="!isRunning && c_codeIsValid"
           @reflection-complete="submitCode"

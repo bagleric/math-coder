@@ -7,6 +7,8 @@
       @activity-complete="completeActivity"
     ></AppActivity>
     <div class="complete-view" v-else>
+      <AppAudio :source="c_wellDoneAudio" :key="c_wellDoneAudio" playOnMounted>
+      </AppAudio>
       <h2>Well done! You're pretty good at this.</h2>
       <v-btn
         outlined
@@ -20,10 +22,11 @@
 
 <script>
 import AppActivity from "@/components/Activity.component.vue";
+import AppAudio from "@/components/Audio.component.vue";
 
 export default {
   name: "ViewActivity",
-  components: { AppActivity },
+  components: { AppActivity, AppAudio },
   props: {
     moduleId: { type: String, required: true },
     activityNum: { type: Number, required: false }
@@ -34,6 +37,12 @@ export default {
     activitiesComplete: false
   }),
   computed: {
+    c_audios() {
+      return require.context("@/assets/", false, /\.mp3$/);
+    },
+    c_wellDoneAudio() {
+      return this.c_audios("./prettygood.mp3") || "";
+    },
     c_module() {
       return this.$store.getters.getModule(this.moduleId);
     },

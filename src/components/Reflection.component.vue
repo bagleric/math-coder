@@ -3,7 +3,6 @@
 <AppReflection :title="" :message=""></AppReflection>
   -->
   <div class="reflection">
-    <AppAudio hideIcon :source="c_successAudio" playOnMounted> </AppAudio>
     <div class="message">
       <AppRenderHtml parentTag="span" :html="c_reflection"></AppRenderHtml>
     </div>

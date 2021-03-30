@@ -6,15 +6,16 @@
       <FormulateInput
         validation="required"
         type="text"
-        label="First Name"
+        label="First Name*"
         name="firstName"
       />
       <FormulateInput
         validation="required"
         type="text"
-        label="Last Name"
+        label="Last Name*"
         name="lastName"
       />
+      <div class="small-text">* required</div>
       <v-btn :disabled="c_isRegistering" color="primary" type="submit" outlined>
         Continue
         <v-progress-circular
@@ -128,5 +129,10 @@ export default {
   display: grid;
   margin: 3em auto auto;
   justify-content: center;
+}
+
+.small-text{
+  font-size: smaller;
+  padding-bottom: 1em;
 }
 </style>

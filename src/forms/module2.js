@@ -29,7 +29,7 @@ const sharedHints = {
   noBlocks: {
     regexDescription: "No blocks are on the page"
     , regex: "^\s*$"
-    , hintHtml: `Remember to Drag the blocks onto the white page.`
+    , hintHtml: `Remember to drag the blocks onto the white page.`
     , audio: audios["dragOntoPage.mp3"]
   }
   , noRepeat: {
@@ -120,12 +120,12 @@ const data = {
             // no blocks
             sharedHints.needToStartOver
             // inside repeat block missing
-            , {
-              regexDescription: "missing the repeat block",
-              regex: regexInsideRepeatNotFound()
-              , hintHtml: `Remember to drag the ball block onto the page.`
-              , audio: audios["a1hint1.mp3"]
-            }
+            // , {
+            //   regexDescription: "missing the repeat block",
+            //   regex: regexInsideRepeatNotFound()
+            //   , hintHtml: `Remember to drag the ball block onto the page.`
+            //   , audio: audios["a1hint1.mp3"]
+            // }
             // *inside repeat block incorrect
             , {
               regexDescription: "must have a '-4-'",
@@ -156,12 +156,12 @@ const data = {
             // no blocks
             sharedHints.needToStartOver
             // inside repeat block missing
-            , {
-              regexDescription: "missing the repeat block",
-              regex: regexInsideRepeatNotFound()
-              , hintHtml: `Remember to drag the book block onto the page.`
-              , audio: audios["a2hint1.mp3"]
-            }
+            // , {
+            //   regexDescription: "missing the repeat block",
+            //   regex: regexInsideRepeatNotFound()
+            //   , hintHtml: `Remember to drag the book block onto the page.`
+            //   , audio: audios["a2hint1.mp3"]
+            // }
             // *inside repeat block incorrect
             , {
               regexDescription: "must have a '-8-'"
@@ -192,12 +192,12 @@ const data = {
             // no blocks
             sharedHints.needToStartOver
             // inside repeat block missing
-            , {
-              regexDescription: "missing the repeat block",
-              regex: regexInsideRepeatNotFound()
-              , hintHtml: `Remember to drag the candy block onto the page.`
-              , audio: audios["a3hint1.mp3"]
-            }
+            // , {
+            //   regexDescription: "missing the repeat block",
+            //   regex: regexInsideRepeatNotFound()
+            //   , hintHtml: `Remember to drag the candy block onto the page.`
+            //   , audio: audios["a3hint1.mp3"]
+            // }
             // *inside repeat block incorrect
             , {
               regexDescription: "must have a '-7-'"
@@ -219,7 +219,7 @@ const data = {
           , blockSelection: [{
             type: "repeat_cookie"
           }]
-          , prompt: `<p>Tell the computer to draw 6 cookies. Drag the block onto the white page.</p><p>Change the 4 on the block to a 6.</p>`
+          , prompt: `<p>Tell the computer to draw 6 cookies. Also drag the block onto the white page.</p>`
           , promptAudio: audios['b1prompt.mp3']
           , reflections: []
           , successAudio: audios['b1success.mp3']
@@ -238,7 +238,7 @@ const data = {
             , {
               regexDescription: "must have a '-6-'"
               , regex: regexNotFound("-6-")
-              , hintHtml: `To draw 6 cookies, make sure you change the number on the block to a 6.`
+              , hintHtml: `How many cookies do we want to draw? Make sure you change the number on the block.`
               , audio: audios["b1hint2.mp3"]
             }
           ]
@@ -255,7 +255,7 @@ const data = {
           , blockSelection: [{
             type: "repeat_pillow"
           }]
-          , prompt: `<p>Tell the computer to draw 5 pillows. Drag the block onto the white page.</p><p>Change the 9 on the block to a 5.</p>`
+          , prompt: `<p>Tell the computer to draw 5 pillows. Drag the block onto the white page.</p>`
           , promptAudio: audios['b2prompt.mp3']
           , reflections: []
           , successAudio: audios['b2success.mp3']
@@ -264,12 +264,12 @@ const data = {
             // no blocks
             sharedHints.noBlocks
             // inside repeat block missing
-            , {
-              regexDescription: "missing the repeat block",
-              regex: regexInsideRepeatNotFound()
-              , hintHtml: `Remember to drag the pillow block onto the page.`
-              , audio: audios["b2hint1.mp3"]
-            }
+            // , {
+            //   regexDescription: "missing the repeat block",
+            //   regex: regexInsideRepeatNotFound()
+            //   , hintHtml: `Remember to drag the pillow block onto the page.`
+            //   , audio: audios["b2hint1.mp3"]
+            // }
             // *inside repeat block incorrect
             , {
               regex: regexNotFound("-5-")
@@ -299,17 +299,17 @@ const data = {
             // no blocks
             sharedHints.noBlocks
             // inside repeat block missing
-            , {
-              regexDescription: "missing the repeat block",
-              regex: regexInsideRepeatNotFound()
-              , hintHtml: `Remember to drag the star block onto the page.`
-              , audio: audios["b3hint1.mp3"]
-            }
+            // , {
+            //   regexDescription: "missing the repeat block",
+            //   regex: regexInsideRepeatNotFound()
+            //   , hintHtml: `Remember to drag the star block onto the page.`
+            //   , audio: audios["b3hint1.mp3"]
+            // }
             // *inside repeat block incorrect
             , {
               regexDescription: "must have a '-5-'"
               , regex: regexNotFound("-5-")
-              , hintHtml: `To draw 5 stars, make sure you change the number on the block to a 5.`
+              , hintHtml: `Make sure to change the number on the block. How many stars do we want to draw?`
               , audio: audios["b3hint2.mp3"]
             }
           ]
@@ -335,17 +335,17 @@ const data = {
             // no blocks
             sharedHints.noBlocks
             // inside repeat block missing
-            , {
-              regexDescription: "missing the repeat block",
-              regex: regexInsideRepeatNotFound()
-              , hintHtml: `Remember to drag the apples block onto the page.`
-              , audio: audios["c1ahint1.mp3"]
-            }
+            // , {
+            //   regexDescription: "missing the repeat block",
+            //   regex: regexInsideRepeatNotFound()
+            //   , hintHtml: `Remember to drag the apples block onto the page.`
+            //   , audio: audios["c1ahint1.mp3"]
+            // }
             // *inside repeat block incorrect
             , {
               regexDescription: "must have a '-5-'"
               , regex: regexNotFound("-5-")
-              , hintHtml: `To draw 5 apples, make sure you change the number on the block to a 5.`
+              , hintHtml: `How many apples do we want to draw? Remember to change the number on the apple block.`
               , audio: audios["c1ahint2.mp3"]
             }
           ]
@@ -384,8 +384,8 @@ const data = {
             , {
               regexDescription: "must have a '-5-'"
               , regex: regexNotFound("apple-5")
-              , hintHtml: `To draw 5 apples, make sure you change the number on the apples block to a 5.`
-              , audio: audios["c1ahint2.mp3"]
+              , hintHtml: `How many apples do we want to draw in each row? Remember to change the number on the apple block to match.`
+              , audio: audios["c1bhint2.mp3"]
             }
             // outside repeat block missing
             , sharedHints.noRepeat
@@ -393,7 +393,7 @@ const data = {
             , {
               regexDescription: "must have a '-3-'"
               , regex: regexNotFound("-repeat-3-")
-              , hintHtml: `To draw 3 rows of apples, make sure you change the number on the orange repeat block to a 3.`
+              , hintHtml: `How many rows of apples do we want? Remember to change the orange repeat block to match.`
               , audio: audios["c1bhint3.mp3"]
             }
           ]
@@ -421,17 +421,17 @@ const data = {
             // no blocks
             sharedHints.noBlocks
             // inside repeat block missing
-            , {
-              regexDescription: "missing the repeat block",
-              regex: regexInsideRepeatNotFound()
-              , hintHtml: `Remember to drag the trees block onto the page.`
-              , audio: audios["c2ahint1.mp3"]
-            }
+            // , {
+            //   regexDescription: "missing the repeat block",
+            //   regex: regexInsideRepeatNotFound()
+            //   , hintHtml: `Remember to drag the trees block onto the page.`
+            //   , audio: audios["c2ahint1.mp3"]
+            // }
             // *inside repeat block incorrect
             , {
               regexDescription: "must have a '-4-'"
               , regex: regexNotFound("tree-4-")
-              , hintHtml: `To draw 4 trees, make sure you change the number on the tree block to a 4.`
+              , hintHtml: `How many trees do we want to draw? Make sure you change the number on the trees block to match.`
               , audio: audios["c2ahint2.mp3"]
             }
           ]
@@ -451,7 +451,7 @@ const data = {
             { type: "repeat_tree" }
             , { type: "repeat_block" }
           ]
-          , prompt: `<p>Tell the computer to draw 3 rows of 4 trees.</p> <p>To do this drag the repeat block onto the white page. Place the tree block inside of the repeat block</p>`
+          , prompt: `<p>Tell the computer to draw 3 rows of 4 trees.</p> <p>To do this drag the repeat block onto the white page. Place the tree block inside of the repeat block.</p>`
           , promptAudio: audios['c2bprompt.mp3']
           , reflections: []
           , successAudio: audios['c2bsuccess.mp3']
@@ -470,7 +470,7 @@ const data = {
             , {
               regexDescription: "must have a '-4-'"
               , regex: regexNotFound("tree-4-")
-              , hintHtml: `To draw 4 trees, make sure you change the number on the tree block to a 4.`
+              , hintHtml: `How many trees do we want to draw in each row? Make sure you change the number on the trees block to match.`
               , audio: audios["c2ahint2.mp3"]
             }
             // outside repeat block missing
@@ -479,7 +479,7 @@ const data = {
             , {
               regexDescription: "must have a '-3-'"
               , regex: regexNotFound("-repeat-3-")
-              , hintHtml: `To draw 3 rows of trees, make sure you change the number on orange repeat block to a 3.`
+              , hintHtml: `How many rows of trees do we want? Remember to change the orange repeat block to match.`
               , audio: audios["c2bhint3.mp3"]
             }
           ]
@@ -504,7 +504,7 @@ const data = {
             { type: "repeat_tree" }
             , { type: "repeat_block" }
           ]
-          , prompt: `<p>Tell the computer to draw 4 rows of 4 trees.</p> Change the repeat number from a 3 to a 4.`
+          , prompt: `<p>Tell the computer to draw 4 rows of 4 trees.</p>`
           , promptAudio: audios['c2cprompt.mp3']
           , reflections: []
           , successAudio: audios['c2csuccess.mp3']
@@ -523,7 +523,7 @@ const data = {
             , {
               regexDescription: "must have a '-4-'"
               , regex: regexNotFound("tree-4-")
-              , hintHtml: `To draw 4 trees, make sure you change the number on the tree block to a 4.`
+              , hintHtml: `How many trees do we want to draw in each row? Make sure you change the number on the trees block to match.`
               , audio: audios["c2ahint2.mp3"]
             }
             // outside repeat block missing
@@ -532,8 +532,8 @@ const data = {
             , {
               regexDescription: "must have a '-4-'"
               , regex: regexNotFound("-repeat-4-")
-              , hintHtml: `To draw 4 rows of trees, make sure you change the number on orange repeat block to a 4.`
-              , audio: audios["c2chint3.mp3"]
+              , hintHtml: `How many rows of trees do we want? Remember to change the orange repeat block to match.`
+              , audio: audios["c2bhint3.mp3"]
             }
           ]
         },
@@ -566,20 +566,20 @@ const data = {
               , hintHtml: `Remember to place the pea pod block inside of the repeat block.`
               , audio: audios["d1hint1.mp3"]
             }
+            // outside repeat block missing
+            , sharedHints.noRepeat
             // *inside repeat block incorrect
             , {
               regexDescription: "must have a '-6-'"
               , regex: regexNotFound("pea-6")
-              , hintHtml: `To draw 6 peas, make sure you change the pea pod block number to a 6.`
+              , hintHtml: `How many peas do we want in each pod? Make sure to change the pea pod block to match.`
               , audio: audios["d1hint2.mp3"]
             }
-            // outside repeat block missing
-            , sharedHints.noRepeat
             // *outside repeat block incorrect
             , {
               regexDescription: "must have a '-4-'"
               , regex: regexNotFound("-repeat-4-")
-              , hintHtml: `To draw 2 pea pods, make sure you change the number on orange repeat block to a 2.`
+              , hintHtml: `How many pea pods do we want? Change the orange repeat block to match.`
               , audio: audios["d1hint3.mp3"]
             }
           ]
@@ -597,7 +597,7 @@ const data = {
             { type: "repeat_cake" }
             , { type: "repeat_block" }
           ]
-          , prompt: `<p>Sara cut the cake at a party. She made 4 rows. Each row had 5 pieces of cake. </p><p>Tell the computer how to draw the problem.</p>`
+          , prompt: `<p>Josh cut the cake at a party. He made 4 rows. Each row had 5 pieces of cake. </p><p>Tell the computer how to draw the problem.</p>`
           , promptAudio: audios['d2prompt.mp3']
           , reflections: []
           , successAudio: audios['d2success.mp3']
@@ -616,7 +616,7 @@ const data = {
             , {
               regexDescription: "must have a '-5-'"
               , regex: regexNotFound("cake-5")
-              , hintHtml: `To draw 5 pieces of cake, make sure you change the pieces of cake block number to a 5.`
+              , hintHtml: `How many pieces of cake did Josh put in each row? Make sure you change the pieces of cake block number to match.`
               , audio: audios["d2hint2.mp3"]
             }
             // outside repeat block missing
@@ -625,7 +625,7 @@ const data = {
             , {
               regexDescription: "must have a '-4-'"
               , regex: regexNotFound("-repeat-4-")
-              , hintHtml: `To draw 4 rows of cake, make sure you change the number on orange repeat block to a 4.`
+              , hintHtml: `How many rows did Josh cut? Make sure you change the number on the orange repeat block to match.`
               , audio: audios["d2hint3.mp3"]
             }
           ]
@@ -643,7 +643,7 @@ const data = {
             { type: "repeat_pillow" }
             , { type: "repeat_block" }
           ]
-          , prompt: `<p>Sara, Troy, David, and Jill each have 6 pillows. How many pillows do they have in all? </p><p>Tell the computer how to draw the problem.</p>`
+          , prompt: `<p>Laura, Troy, David, and Jill each have 6 pillows. How many pillows do they have in all? </p><p>Tell the computer how to draw the problem.</p>`
           , promptAudio: audios['d3prompt.mp3']
           , reflections: []
           , successAudio: audios['d3success.mp3']
@@ -658,15 +658,15 @@ const data = {
               , hintHtml: `Remember to place the pillows block inside of the orange repeat block.`
               , audio: audios["d3hint1.mp3"]
             }
+            // outside repeat block missing
+            , sharedHints.noRepeat
             // *inside repeat block incorrect
             , {
               regexDescription: "must have a '-6-'"
               , regex: regexNotFound("pillow-6")
-              , hintHtml: `To draw 6 pillows, make sure you change the pillows block number to a 6.`
+              , hintHtml: `How many pillows does each person have? Change the pillows block number to match.`
               , audio: audios["d3hint2.mp3"]
             }
-            // outside repeat block missing
-            , sharedHints.noRepeat
             // *outside repeat block incorrect
             , {
               regexDescription: "must have a '-4-'"

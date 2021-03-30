@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1 class="title">Welcome! Click your box to continue</h1>
+    <h1 class="title">Welcome! Click your box to continue.</h1>
     <h2>I am a</h2>
     <v-btn
       color="primary"

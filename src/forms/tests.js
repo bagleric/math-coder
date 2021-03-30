@@ -184,12 +184,9 @@ const test = [
   }
   , {
     questionAudio: audios["tq-4x3.mp3"],
+    question: "4 x 3 = ",
     testType: "post",
     inputs: [
-      {
-        isInput: false,
-        value: "4 x 3 = "
-      },
       {
         isInput: true,
         name: "4x3",
@@ -306,4 +303,4 @@ const test = [
 
 export default {
   test
-} 
+}
