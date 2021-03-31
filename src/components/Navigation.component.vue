@@ -8,6 +8,11 @@
     <div class="about">
       <!-- <AppInfoDialog /> -->
       <v-chip v-if="c_userName" color="primary">{{ c_userName }}</v-chip>
+      <img
+        class="blockly-built"
+        type="image/svg+xml"
+        src="@/assets/blockly_logo_built_on.svg"
+      />
     </div>
   </div>
 </template>
@@ -53,5 +58,9 @@ export default {
 .about {
   display: inline-flex;
   align-items: center;
+}
+
+.blockly-built {
+  height: 3em;
 }
 </style>

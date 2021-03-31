@@ -9,7 +9,7 @@
     <div class="complete-view" v-else>
       <AppAudio :source="c_wellDoneAudio" :key="c_wellDoneAudio" playOnMounted>
       </AppAudio>
-      <h2>Well done! You're pretty good at this.</h2>
+      <h2>Well done! Continue to the last section.</h2>
       <v-btn
         outlined
         color="primary"
@@ -41,7 +41,7 @@ export default {
       return require.context("@/assets/", false, /\.mp3$/);
     },
     c_wellDoneAudio() {
-      return this.c_audios("./prettygood.mp3") || "";
+      return this.c_audios("./continue-to-last.mp3") || "";
     },
     c_module() {
       return this.$store.getters.getModule(this.moduleId);

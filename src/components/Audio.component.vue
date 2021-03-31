@@ -1,8 +1,13 @@
 <template>
-  <span class="app-audio" v-on:mouseenter="play">
-    <v-icon v-if="!hideIcon" :class="iconClass">
-      mdi-account-voice
-    </v-icon>
+  <span class="app-audio" v-on:mousedown="play">
+    <v-tooltip bottom>
+      <template v-slot:activator="{ on, attrs }">
+        <v-icon v-bind="attrs" v-on="on" v-if="!hideIcon" :class="iconClass">
+          mdi-account-voice
+        </v-icon>
+      </template>
+      <span>Click to hear this sound again</span>
+    </v-tooltip>
     <slot></slot>
   </span>
 </template>
@@ -60,5 +65,32 @@ export default {
 }
 .v-icon {
   cursor: pointer;
+}
+
+.v-icon:hover {
+  -webkit-animation: jiggle 0.5s 2;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-name: jiggle;
+  -moz-animation-iteration-count: 2;
+  -webkit-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+}
+
+@-moz-keyframes jiggle {
+  0% {
+    -moz-transform: rotate(-5deg);
+  }
+  50% {
+    -moz-transform: rotate(5deg);
+  }
+}
+
+@-webkit-keyframes jiggle {
+  0% {
+    -webkit-transform: rotate(-5deg);
+  }
+  50% {
+    -webkit-transform: rotate(5deg);
+  }
 }
 </style>
