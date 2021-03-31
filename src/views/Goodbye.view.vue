@@ -4,9 +4,9 @@
     </AppAudio>
     <h1>Mission accomplished!</h1>
     <p>
-      Thank you for your participation in this study. You may close the browser
-      to end your session.
+      Thank you for your participation in this study.
     </p>
+    <p>You may close the browser to end your session.</p>
     <div class="pyro">
       <div class="before"></div>
       <div class="after"></div>
